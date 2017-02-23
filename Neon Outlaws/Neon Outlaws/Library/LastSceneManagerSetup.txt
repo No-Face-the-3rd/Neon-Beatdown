@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Scenes/Dev-Jacob-controls.unity
-  isLoaded: 1
-  isActive: 1

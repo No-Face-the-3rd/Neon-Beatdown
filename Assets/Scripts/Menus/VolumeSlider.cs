@@ -8,7 +8,7 @@ public class VolumeSlider : MonoBehaviour
 {
     public Slider slider;
     public AudioSource[] audioSources;
-    public AudioMixer audioMixer;
+
     public void VolumeSliderController()
     {
         foreach (AudioSource audioSource in audioSources)
