@@ -1,0 +1,554 @@
+fileFormatVersion: 2
+guid: d0ea6add7a49cbb40a736c6deb1cffdc
+timeCreated: 1487291415
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: sp_sprite_master_0
+    21300002: sp_sprite_master_1
+    21300004: sp_sprite_master_2
+    21300006: sp_sprite_master_3
+    21300008: sp_sprite_master_4
+    21300010: sp_sprite_master_5
+    21300012: sp_sprite_master_6
+    21300014: sp_sprite_master_7
+    21300016: sp_sprite_master_8
+    21300018: sp_sprite_master_9
+    21300020: sp_sprite_master_10
+    21300022: sp_sprite_master_11
+    21300024: sp_sprite_master_12
+    21300026: sp_sprite_master_13
+    21300028: sp_sprite_master_14
+    21300030: sp_sprite_master_15
+    21300032: sp_sprite_master_16
+    21300034: sp_sprite_master_17
+    21300036: sp_sprite_master_18
+    21300038: sp_sprite_master_19
+    21300040: sp_sprite_master_20
+    21300042: sp_sprite_master_21
+    21300044: sp_sprite_master_22
+    21300046: sp_sprite_master_23
+    21300048: sp_sprite_master_24
+    21300050: sp_sprite_master_25
+    21300052: sp_sprite_master_26
+    21300054: sp_sprite_master_27
+    21300056: sp_sprite_master_28
+    21300058: sp_sprite_master_29
+    21300060: sp_sprite_master_30
+    21300062: sp_sprite_master_31
+    21300064: sp_sprite_master_32
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sp_sprite_master_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4401
+        width: 523
+        height: 608
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_1
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 4401
+        width: 581
+        height: 438
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_2
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 4401
+        width: 394
+        height: 593
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_3
+      rect:
+        serializedVersion: 2
+        x: 1818
+        y: 4384
+        width: 455
+        height: 601
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_4
+      rect:
+        serializedVersion: 2
+        x: 2524
+        y: 4384
+        width: 837
+        height: 207
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_5
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 3730
+        width: 391
+        height: 607
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_6
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 3730
+        width: 249
+        height: 610
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_7
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 3730
+        width: 342
+        height: 585
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_8
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 3112
+        width: 672
+        height: 462
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_9
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 3102
+        width: 448
+        height: 549
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_10
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 3095
+        width: 394
+        height: 622
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_11
+      rect:
+        serializedVersion: 2
+        x: 1975
+        y: 3095
+        width: 771
+        height: 531
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_12
+      rect:
+        serializedVersion: 2
+        x: 2864
+        y: 3112
+        width: 603
+        height: 593
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_13
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 2467
+        width: 463
+        height: 596
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_14
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 2470
+        width: 719
+        height: 548
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_15
+      rect:
+        serializedVersion: 2
+        x: 1431
+        y: 2476
+        width: 522
+        height: 530
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_16
+      rect:
+        serializedVersion: 2
+        x: 2105
+        y: 2467
+        width: 424
+        height: 487
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_17
+      rect:
+        serializedVersion: 2
+        x: 2650
+        y: 2470
+        width: 502
+        height: 543
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_18
+      rect:
+        serializedVersion: 2
+        x: 3273
+        y: 2467
+        width: 352
+        height: 576
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_19
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1852
+        width: 662
+        height: 571
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_20
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 1852
+        width: 920
+        height: 514
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_21
+      rect:
+        serializedVersion: 2
+        x: 2032
+        y: 1847
+        width: 667
+        height: 539
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_22
+      rect:
+        serializedVersion: 2
+        x: 2874
+        y: 1852
+        width: 470
+        height: 556
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_23
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 1030
+        width: 377
+        height: 414
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_24
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1025
+        width: 225
+        height: 723
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_25
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 1180
+        width: 283
+        height: 477
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_26
+      rect:
+        serializedVersion: 2
+        x: 1975
+        y: 1170
+        width: 355
+        height: 465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_27
+      rect:
+        serializedVersion: 2
+        x: 2508
+        y: 1244
+        width: 432
+        height: 396
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_28
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 304
+        width: 453
+        height: 477
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_29
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 324
+        width: 706
+        height: 477
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_30
+      rect:
+        serializedVersion: 2
+        x: 1421
+        y: 346
+        width: 325
+        height: 472
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_31
+      rect:
+        serializedVersion: 2
+        x: 2337
+        y: 393
+        width: 384
+        height: 396
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_master_32
+      rect:
+        serializedVersion: 2
+        x: 2886
+        y: 503
+        width: 862
+        height: 251
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
