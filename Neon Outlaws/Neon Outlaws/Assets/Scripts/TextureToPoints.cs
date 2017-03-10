@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 [System.Serializable]
 public class Vector2Serialization
 
@@ -137,17 +136,22 @@ public class TextureToPoints : MonoBehaviour {
 
     public bool showHitVisualizer = false;
 
+    public SpriteRenderer sprRend;
+
 	// Use this for initialization
 	void Start () {
         getPoly();
         getLineRend();
         if (colliderPoints.Count >= 1 && poly != null)
             setPath(curInd);
+        sprRend = GetComponent<SpriteRenderer>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
         showHitVisualization();
+        string spriteInd = sprRend.sprite.name.Replace(sprRend.sprite.texture.name + "_", "");
+        setPath(int.Parse(spriteInd));
 	}
 
     public Texture2D getSpriteSheet()
@@ -183,10 +187,13 @@ public class TextureToPoints : MonoBehaviour {
 
     public void setPath(int index)
     {
-        changeInd = index;
-        if (colliderPoints.Count > 0)
+        if (changeInd != index)
         {
-            poly.SetPath(0,System.Array.ConvertAll(colliderPoints[index].subList.ToArray(), delegate(Vector2Serialization v) { return (Vector2)v; }));
+            changeInd = index;
+            if (colliderPoints.Count > 0)
+            {
+                poly.SetPath(0, System.Array.ConvertAll(colliderPoints[index].subList.ToArray(), delegate (Vector2Serialization v) { return (Vector2)v; }));
+            }
         }
     }
 
