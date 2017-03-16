@@ -20,11 +20,13 @@ public class WaitState : IAIStates
     public void ToApproachState()
     {
         enemy.currentState = enemy.approachState;
+        Debug.Log("Approach state active");
     }
 
     public void ToRetreatState()
     {
         enemy.currentState = enemy.retreatState;
+        Debug.Log("Retreat state active");
     }
 
     public void ToWaitState()
@@ -34,7 +36,12 @@ public class WaitState : IAIStates
 
     private void Wait()
     {
-        enemy.rb.position = enemy.rb.position;
-        enemy.speed = 0;
+        //if (enemy.velocityX > 0)
+        //{
+        //    // if (enemy.flipRight)
+        //    enemy.rb.AddForce(Vector2.right * enemy.speed);
+        //}
+        if (enemy.velocityX <= 0)
+            enemy.velocityX = 0;
     }
 }

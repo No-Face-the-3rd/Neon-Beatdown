@@ -5,7 +5,7 @@ using UnityEngine;
 public class ApproachState : IAIStates
 {
     private readonly EnemyAIController enemy;
-    
+    private float    raycastDistance = 10.0f;
     public ApproachState(EnemyAIController ai)
     {
         enemy = ai;
@@ -13,7 +13,7 @@ public class ApproachState : IAIStates
 
 	public void UpdateState()
     {
-        Approach(); // Move towards 
+        Approach(); // Move towards opponent
     }
 
     public void ToApproachState()
@@ -24,19 +24,21 @@ public class ApproachState : IAIStates
     public void ToRetreatState()
     {
         enemy.currentState = enemy.retreatState;
+        Debug.Log("Retreat state active");
     }
 
     public void ToWaitState()
     {
         enemy.currentState = enemy.waitState;
+        Debug.Log("Wait state active");
     }
 
     private void Approach()
     {
-        //Vector2.MoveTowards(enemy.rb.position, enemy.opponent.GetComponent<Rigidbody2D>().position, 25);
         enemy.rb.AddForce(Vector2.left * enemy.speed);
 
-        RaycastHit2D hit = Physics2D.Raycast(enemy.rb.position, Vector2.left, 7.5f);
+        RaycastHit2D hit = Physics2D.Raycast(enemy.rb.position, Vector2.left, raycastDistance);
+        
         if (hit.collider != null)
         {
             ToWaitState();
