@@ -5,7 +5,8 @@ using UnityEngine;
 public class RetreatState : IAIStates
 {
     private readonly EnemyAIController enemy;
-    private float    raycastDistance = 0.5f;
+    public Vector2   raycastOrigin;
+    private float    raycastDistance = 1.03f;
 
     public RetreatState(EnemyAIController ai)
     {
@@ -37,26 +38,15 @@ public class RetreatState : IAIStates
     // Retreats until it detects the wall behind it
     private void Retreat()
     {
+        raycastOrigin = enemy.rb.position + new Vector2(1.5f, 3);
         enemy.rb.AddForce(Vector2.right * enemy.speed);
 
-        RaycastHit2D hit = Physics2D.Raycast(enemy.rb.position, Vector2.right, raycastDistance);
+        RaycastHit2D hit = Physics2D.Raycast(raycastOrigin, Vector2.right, raycastDistance);
+
         if (hit.collider != null)
         {
-            
+            Debug.Log("Collided with " + hit.collider.tag);
             ToWaitState();
         }
     }
-
-    void Update()
-    {
-        
-    }
-
-    //void OnCollisionEnter2D(Collision2D other)
-    //{
-    //    if(other.collider.tag == "Wall")
-    //    {
-    //        ToWaitState();
-    //    }
-    //}
 }

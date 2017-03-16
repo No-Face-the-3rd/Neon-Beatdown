@@ -35,7 +35,6 @@ public class EnemyAIController : MonoBehaviour
     {
         currentState.UpdateState();
         velocityX = rb.velocity.x;
-        Debug.DrawRay(rb.position, Vector2.left, Color.red);
-        Debug.DrawRay(rb.position, Vector2.right, Color.red);
+        Debug.DrawRay(retreatState.raycastOrigin, Vector2.right, Color.magenta);
     }
 }
