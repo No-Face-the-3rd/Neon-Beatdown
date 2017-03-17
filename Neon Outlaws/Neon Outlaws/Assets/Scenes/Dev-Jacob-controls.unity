@@ -14280,6 +14280,7 @@ MonoBehaviour:
   curInd: 0
   prevInd: 0
   showHitVisualizer: 0
+  sprRend: {fileID: 0}
 --- !u!60 &1148691450
 PolygonCollider2D:
   m_ObjectHideFlags: 0
