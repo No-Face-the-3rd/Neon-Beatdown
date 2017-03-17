@@ -6,6 +6,7 @@ public class ApproachState : IAIStates
 {
     private readonly EnemyAIController enemy;
     private float    raycastDistance = 10.0f;
+
     public ApproachState(EnemyAIController ai)
     {
         enemy = ai;
@@ -35,14 +36,27 @@ public class ApproachState : IAIStates
 
     private void Approach()
     {
-        enemy.rb.AddForce(Vector2.left * enemy.speed);
+        RaycastHit2D hit;
+        if (enemy.opponent.GetComponent<Rigidbody2D>().position.x > enemy.rb.position.x)
+        {
+            enemy.turnToOpponent();
+            enemy.rb.AddForce(Vector2.right * enemy.speed);
 
-        RaycastHit2D hit = Physics2D.Raycast(enemy.rb.position, Vector2.left, raycastDistance);
-        
+            hit = Physics2D.Raycast(enemy.rb.position, Vector2.right, raycastDistance);
+        }
+        else
+        {
+            enemy.turnToOpponent();
+            enemy.turn = false;
+            enemy.rb.AddForce(Vector2.left * enemy.speed);
+
+            hit = Physics2D.Raycast(enemy.rb.position, Vector2.left, raycastDistance);
+        }
+
         if (hit.collider != null)
         {
-            Debug.Log("Collided with " + hit.collider.tag);
-            ToWaitState();
+            //Debug.Log("Collided with " + hit.collider.tag);
+            //ToWaitState();
         }
     }
 }

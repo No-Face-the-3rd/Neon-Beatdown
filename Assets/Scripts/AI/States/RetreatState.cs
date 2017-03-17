@@ -45,7 +45,7 @@ public class RetreatState : IAIStates
 
         if (hit.collider != null)
         {
-            Debug.Log("Collided with " + hit.collider.tag);
+            //Debug.Log("Collided with " + hit.collider.tag);
             ToWaitState();
         }
     }

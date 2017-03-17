@@ -8,6 +8,7 @@ public class EnemyAIController : MonoBehaviour
     public Rigidbody2D rb;
     public float speed = 10;
     public float velocityX;
+    public bool turn = false;
     [HideInInspector] public IAIStates     currentState;
     [HideInInspector] public ApproachState approachState;
     [HideInInspector] public RetreatState  retreatState;
@@ -24,7 +25,7 @@ public class EnemyAIController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        currentState = retreatState;
+        currentState = approachState;
         Debug.Log(currentState);
         opponent = GameObject.Find("StickPunchMan");
         rb = GetComponent<Rigidbody2D>();
@@ -35,6 +36,13 @@ public class EnemyAIController : MonoBehaviour
     {
         currentState.UpdateState();
         velocityX = rb.velocity.x;
-        Debug.DrawRay(retreatState.raycastOrigin, Vector2.right, Color.magenta);
+    }
+
+    public void turnToOpponent()
+    {
+        turn = !turn;
+        Vector3 scale = transform.localScale;
+        scale.x *= 1;
+        transform.localScale = scale;
     }
 }
