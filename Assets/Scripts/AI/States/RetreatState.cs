@@ -38,15 +38,15 @@ public class RetreatState : IAIStates
     // Retreats until it detects the wall behind it
     private void Retreat()
     {
-        raycastOrigin = enemy.rb.position + new Vector2(1.5f, 3);
+        //raycastOrigin = enemy.rb.position + new Vector2(1.5f, 3);
         enemy.rb.AddForce(Vector2.right * enemy.speed);
 
-        RaycastHit2D hit = Physics2D.Raycast(raycastOrigin, Vector2.right, raycastDistance);
+        //RaycastHit2D hit = Physics2D.Raycast(raycastOrigin, Vector2.right, raycastDistance);
 
-        if (hit.collider != null)
-        {
+        //if (hit.collider != null)
+        //{
             //Debug.Log("Collided with " + hit.collider.tag);
-            ToWaitState();
-        }
+            //ToWaitState();
+        //}
     }
 }
