@@ -1598,7 +1598,7 @@ GameObject:
   - component: {fileID: 1148691453}
   - component: {fileID: 1148691449}
   - component: {fileID: 1148691448}
-  - component: {fileID: 1148691456}
+  - component: {fileID: 1148691457}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -1619,7 +1619,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoAssignGlobal: 1
   actionMaps:
-  - actionMap: {fileID: 11400000, guid: 1a2cc925a2dfb1e4ea05113921481770, type: 2}
+  - actionMap: {fileID: 11400000, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
     active: 1
     blockSubsequent: 0
 --- !u!114 &1148691449
@@ -14711,7 +14711,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &1148691456
+--- !u!114 &1148691457
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -14719,16 +14719,60 @@ MonoBehaviour:
   m_GameObject: {fileID: 1148691447}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd931981dca39064591a016c7b0add8b, type: 3}
+  m_Script: {fileID: 11500000, guid: 070ad7113e87dcc46a7bfe2a8e5bada3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pInput: {fileID: 1148691448}
+  overrideAI: 1
+  pInput: {fileID: 0}
   moveX:
-    action: {fileID: 114313604115475516, guid: 1a2cc925a2dfb1e4ea05113921481770, type: 2}
+    action: {fileID: 114268061983492346, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
   moveY:
-    action: {fileID: 114068711210891174, guid: 1a2cc925a2dfb1e4ea05113921481770, type: 2}
-  accept:
-    action: {fileID: 114972957052671390, guid: 1a2cc925a2dfb1e4ea05113921481770, type: 2}
+    action: {fileID: 114070570101543980, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+  escape:
+    action: {fileID: 114123799873866626, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+  buttonZero:
+    action: {fileID: 114557931793683396, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+  buttonOne:
+    action: {fileID: 114769036059018060, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+  buttonTwo:
+    action: {fileID: 114846403234472082, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+  buttonThree:
+    action: {fileID: 114304531654997138, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+  buttonFour:
+    action: {fileID: 114516019795622718, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+  curState:
+    moveX: 0
+    moveY: 0
+    escape:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    lightAttack:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    heavyAttack:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    abilityOne:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    abilityTwo:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    abilityThree:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    ultimateAbility:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+  inputQueue: []
+  queueSize: 100
 --- !u!1 &1170971753
 GameObject:
   m_ObjectHideFlags: 0
