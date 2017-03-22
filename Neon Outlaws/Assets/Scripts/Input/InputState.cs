@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputNew;
 
 
 [System.Serializable]
@@ -30,24 +31,33 @@ public class ButtonInfo
         wasPressed = wasReleased = isHeld = false;
         if (down)
         {
-            if (isDown == false)
+            if (!isDown)
             {
                 wasPressed = true;
                 isDown = true;
             }
-            else
-            {
-                isHeld = true;
-            }
+            isHeld = true;
+            
         }
         else
         {
-            if (isDown == true)
+            if (isDown)
             {
                 wasReleased = true;
                 isDown = false;
             }
         }
+    }
+
+    public static implicit operator ButtonInfo(ButtonInputControl b)
+    {
+        ButtonInfo ret = new ButtonInfo();
+        ret.wasPressed = b.wasJustPressed;
+        ret.isHeld = b.isHeld;
+        ret.wasReleased = b.wasJustReleased;
+        if (ret.isHeld == ret.wasPressed)
+            ret.isDown = true;
+        return ret;
     }
 }
 
@@ -92,13 +102,5 @@ public class InputState
     /// </summary>
     public ButtonInfo ultimateAbility;
 
-    /// <summary>
-    /// Clears the data held and resets to a state of no input.
-    /// </summary>
-    public void Clear()
-    {
-        moveX = moveY = 0.0f;
-        escape = lightAttack = heavyAttack = abilityOne = abilityTwo = abilityThree = ultimateAbility = new ButtonInfo();
-    }
 
 }

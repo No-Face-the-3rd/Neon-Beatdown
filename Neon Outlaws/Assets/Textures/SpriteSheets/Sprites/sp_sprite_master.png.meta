@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: d0ea6add7a49cbb40a736c6deb1cffdc
-timeCreated: 1489684680
+timeCreated: 1487291415
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -92,13 +92,13 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Standalone
-    maxTextureSize: 8192
-    textureFormat: 12
+    maxTextureSize: 2048
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 1
+    overridden: 0
   - buildTarget: Android
     maxTextureSize: 2048
     textureFormat: -1
@@ -369,10 +369,10 @@ TextureImporter:
       name: sp_sprite_master_19
       rect:
         serializedVersion: 2
-        x: 105
+        x: 100
         y: 1852
-        width: 619
-        height: 568
+        width: 662
+        height: 571
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
