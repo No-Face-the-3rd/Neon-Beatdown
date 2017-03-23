@@ -1,10 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.AI;
 
-public class EnemyAIController : MonoBehaviour
-{
+public class EnemyAIController : MonoBehaviour {
     public Rigidbody2D rb;
     public float speed = 10;
     public float velocityX;
@@ -21,8 +19,7 @@ public class EnemyAIController : MonoBehaviour
     [HideInInspector] public GameObject    opponent;
     private Animator  animator;
 
-    private void Awake()
-    {
+    private void Awake() {
         rb            = GetComponent<Rigidbody2D>();
         animator      = GetComponent<Animator>();
         approachState = new ApproachState(this);
@@ -31,8 +28,7 @@ public class EnemyAIController : MonoBehaviour
     }
     
 	// Use this for initialization
-	void Start ()
-    {
+	void Start () {
         currentState = waitState;
         Debug.Log(currentState);
         opponent = GameObject.Find("StickPunchMan");
@@ -40,8 +36,7 @@ public class EnemyAIController : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update ()
-    {
+	void Update () {
         currentState.UpdateState();
         velocityX = rb.velocity.x;
         //Debug.Log(turn);
@@ -73,8 +68,7 @@ public class EnemyAIController : MonoBehaviour
         }
     }
 
-    public void turnToOpponent()
-    {
+    public void turnToOpponent() {
         turn = !turn;
         Vector3 scale = transform.localScale;
         scale.x *= 1;
