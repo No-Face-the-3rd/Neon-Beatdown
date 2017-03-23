@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RetreatState : IAIStates {
     private readonly EnemyAIController enemy;
+    private InputState inputState;
+    private CombatInputListener cil;
     public Vector2   raycastOrigin;
     private float    raycastDistance = 1.03f;
 

@@ -105,7 +105,6 @@ GameObject:
   - component: {fileID: 643171}
   - component: {fileID: 643170}
   - component: {fileID: 643169}
-  - component: {fileID: 643168}
   - component: {fileID: 643167}
   m_Layer: 0
   m_Name: StickPunchManAI
@@ -122,20 +121,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 643166}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 070ad7113e87dcc46a7bfe2a8e5bada3, type: 3}
+  m_Script: {fileID: 11500000, guid: 6bdacea0b2f34d34fb19ec4df47d5a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &643168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 643166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84d2c07be54604d7d9acbaf6555da85a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  speed: 10
+  velocityX: 0
+  turn: 1
+  approach: 0
+  retreat: 0
+  wait: 1
+  opponent: {fileID: 0}
 --- !u!114 &643169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +143,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec38882b9fa6f3a448dc73ba7bbd2708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteSheet: {fileID: 0}
+  sprites: []
+  colliderPoints: []
+  alphaThresh: 0
+  distThresh: 0
+  centerX: 0
+  centerY: -1
+  pixelScale: 1
+  changeInd: 0
+  curInd: 0
+  prevInd: 0
+  showHitVisualizer: 0
 --- !u!120 &643170
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -822,8 +830,6 @@ GameObject:
   - component: {fileID: 1460600269}
   - component: {fileID: 1460600268}
   - component: {fileID: 1460600267}
-  - component: {fileID: 1460600266}
-  - component: {fileID: 1460600265}
   m_Layer: 0
   m_Name: StickPunchMan
   m_TagString: Untagged
@@ -831,28 +837,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1460600265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1460600264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 070ad7113e87dcc46a7bfe2a8e5bada3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1460600266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1460600264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84d2c07be54604d7d9acbaf6555da85a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1460600267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -864,6 +848,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec38882b9fa6f3a448dc73ba7bbd2708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteSheet: {fileID: 0}
+  sprites: []
+  colliderPoints: []
+  alphaThresh: 0
+  distThresh: 0
+  centerX: 0
+  centerY: -1
+  pixelScale: 1
+  changeInd: 0
+  curInd: 0
+  prevInd: 0
+  showHitVisualizer: 0
 --- !u!120 &1460600268
 LineRenderer:
   m_ObjectHideFlags: 0
