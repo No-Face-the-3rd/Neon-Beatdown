@@ -12,17 +12,13 @@ MonoBehaviour:
   m_Name: MenuActionMap
   m_EditorClassIdentifier: 
   m_Actions:
-  - {fileID: 114313604115475516}
-  - {fileID: 114068711210891174}
-  - {fileID: 114876084083391650}
-  - {fileID: 114972957052671390}
-  - {fileID: 114587058200176742}
-  - {fileID: 114679780968606066}
-  - {fileID: 114827130707709692}
-  - {fileID: 114059142493229450}
-  - {fileID: 114690513574168288}
+  - {fileID: 114213937635851168}
+  - {fileID: 114106623315586038}
+  - {fileID: 114396434775169038}
+  - {fileID: 114663407223743340}
+  - {fileID: 114610340763726446}
   m_ControlSchemes:
-  - m_Name: Gamepad
+  - m_Name: GamePad
     m_SerializableDeviceTypes:
     - m_TypeName: UnityEngine.InputNew.Gamepad, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
@@ -93,50 +89,6 @@ MonoBehaviour:
       snap: 1
       primaryIsButtonAxis: 0
     - sources:
-      - controlIndex: 12
-        deviceType:
-          m_TypeName: UnityEngine.InputNew.Gamepad, Assembly-CSharp, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-      deadZone: 0.3
-      buttonAxisSources: []
-      gravity: 1000
-      sensitivity: 1000
-      snap: 1
-      primaryIsButtonAxis: 0
-    - sources:
-      - controlIndex: 13
-        deviceType:
-          m_TypeName: UnityEngine.InputNew.Gamepad, Assembly-CSharp, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-      deadZone: 0.3
-      buttonAxisSources: []
-      gravity: 1000
-      sensitivity: 1000
-      snap: 1
-      primaryIsButtonAxis: 0
-    - sources:
-      - controlIndex: 17
-        deviceType:
-          m_TypeName: UnityEngine.InputNew.Gamepad, Assembly-CSharp, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-      deadZone: 0.3
-      buttonAxisSources: []
-      gravity: 1000
-      sensitivity: 1000
-      snap: 1
-      primaryIsButtonAxis: 0
-    - sources:
-      - controlIndex: 15
-        deviceType:
-          m_TypeName: UnityEngine.InputNew.Gamepad, Assembly-CSharp, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-      deadZone: 0.3
-      buttonAxisSources: []
-      gravity: 1000
-      sensitivity: 1000
-      snap: 1
-      primaryIsButtonAxis: 0
-    - sources:
       - controlIndex: 22
         deviceType:
           m_TypeName: UnityEngine.InputNew.Gamepad, Assembly-CSharp, Version=0.0.0.0,
@@ -166,6 +118,16 @@ MonoBehaviour:
           deviceType:
             m_TypeName: UnityEngine.InputNew.Keyboard, Assembly-CSharp, Version=0.0.0.0,
               Culture=neutral, PublicKeyToken=null
+      - negative:
+          controlIndex: 276
+          deviceType:
+            m_TypeName: UnityEngine.InputNew.Keyboard, Assembly-CSharp, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+        positive:
+          controlIndex: 275
+          deviceType:
+            m_TypeName: UnityEngine.InputNew.Keyboard, Assembly-CSharp, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
       gravity: 1000
       sensitivity: 1000
       snap: 1
@@ -183,6 +145,16 @@ MonoBehaviour:
           deviceType:
             m_TypeName: UnityEngine.InputNew.Keyboard, Assembly-CSharp, Version=0.0.0.0,
               Culture=neutral, PublicKeyToken=null
+      - negative:
+          controlIndex: 274
+          deviceType:
+            m_TypeName: UnityEngine.InputNew.Keyboard, Assembly-CSharp, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+        positive:
+          controlIndex: 273
+          deviceType:
+            m_TypeName: UnityEngine.InputNew.Keyboard, Assembly-CSharp, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
       gravity: 1000
       sensitivity: 1000
       snap: 1
@@ -192,58 +164,11 @@ MonoBehaviour:
         deviceType:
           m_TypeName: UnityEngine.InputNew.Keyboard, Assembly-CSharp, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
-      deadZone: 0.3
-      buttonAxisSources: []
-      gravity: 1000
-      sensitivity: 1000
-      snap: 1
-      primaryIsButtonAxis: 0
-    - sources:
-      - controlIndex: 107
+      - controlIndex: 1
         deviceType:
           m_TypeName: UnityEngine.InputNew.Keyboard, Assembly-CSharp, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
-      deadZone: 0.3
-      buttonAxisSources: []
-      gravity: 1000
-      sensitivity: 1000
-      snap: 1
-      primaryIsButtonAxis: 0
-    - sources:
-      - controlIndex: 108
-        deviceType:
-          m_TypeName: UnityEngine.InputNew.Keyboard, Assembly-CSharp, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-      deadZone: 0.3
-      buttonAxisSources: []
-      gravity: 1000
-      sensitivity: 1000
-      snap: 1
-      primaryIsButtonAxis: 0
-    - sources:
-      - controlIndex: 117
-        deviceType:
-          m_TypeName: UnityEngine.InputNew.Keyboard, Assembly-CSharp, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-      deadZone: 0.3
-      buttonAxisSources: []
-      gravity: 1000
-      sensitivity: 1000
-      snap: 1
-      primaryIsButtonAxis: 0
-    - sources:
-      - controlIndex: 105
-        deviceType:
-          m_TypeName: UnityEngine.InputNew.Keyboard, Assembly-CSharp, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-      deadZone: 0.3
-      buttonAxisSources: []
-      gravity: 1000
-      sensitivity: 1000
-      snap: 1
-      primaryIsButtonAxis: 0
-    - sources:
-      - controlIndex: 111
+      - controlIndex: 13
         deviceType:
           m_TypeName: UnityEngine.InputNew.Keyboard, Assembly-CSharp, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
@@ -258,6 +183,29 @@ MonoBehaviour:
         deviceType:
           m_TypeName: UnityEngine.InputNew.Keyboard, Assembly-CSharp, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
+      - controlIndex: 107
+        deviceType:
+          m_TypeName: UnityEngine.InputNew.Keyboard, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+      - controlIndex: 2
+        deviceType:
+          m_TypeName: UnityEngine.InputNew.Keyboard, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+      deadZone: 0.3
+      buttonAxisSources: []
+      gravity: 1000
+      sensitivity: 1000
+      snap: 1
+      primaryIsButtonAxis: 0
+    - sources:
+      - controlIndex: 27
+        deviceType:
+          m_TypeName: UnityEngine.InputNew.Keyboard, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+      - controlIndex: 8
+        deviceType:
+          m_TypeName: UnityEngine.InputNew.Keyboard, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
       deadZone: 0.3
       buttonAxisSources: []
       gravity: 1000
@@ -266,7 +214,7 @@ MonoBehaviour:
       primaryIsButtonAxis: 0
   m_MapTypeName: MenuActionMap, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
---- !u!114 &114059142493229450
+--- !u!114 &114106623315586038
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -275,34 +223,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5eba7b4b2e3ea134991ccbff5f47c2c8, type: 3}
-  m_Name: Button5
-  m_EditorClassIdentifier: 
-  m_ActionMap: {fileID: 11400000}
-  m_ActionIndex: 7
-  m_ControlData:
-    componentControlIndices: 
-    controlType: 0
-    name: Button5
-    defaultValue: 0
---- !u!114 &114068711210891174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eba7b4b2e3ea134991ccbff5f47c2c8, type: 3}
-  m_Name: MoveY
+  m_Name: VerticalNav
   m_EditorClassIdentifier: 
   m_ActionMap: {fileID: 11400000}
   m_ActionIndex: 1
   m_ControlData:
     componentControlIndices: 
     controlType: 1
-    name: MoveY
+    name: VerticalNav
     defaultValue: 0
---- !u!114 &114313604115475516
+--- !u!114 &114213937635851168
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -311,16 +241,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5eba7b4b2e3ea134991ccbff5f47c2c8, type: 3}
-  m_Name: MoveX
+  m_Name: HorizontalNav
   m_EditorClassIdentifier: 
   m_ActionMap: {fileID: 11400000}
   m_ActionIndex: 0
   m_ControlData:
     componentControlIndices: 
     controlType: 1
-    name: MoveX
+    name: HorizontalNav
     defaultValue: 0
---- !u!114 &114587058200176742
+--- !u!114 &114396434775169038
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -329,88 +259,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5eba7b4b2e3ea134991ccbff5f47c2c8, type: 3}
-  m_Name: Button2
-  m_EditorClassIdentifier: 
-  m_ActionMap: {fileID: 11400000}
-  m_ActionIndex: 4
-  m_ControlData:
-    componentControlIndices: 
-    controlType: 0
-    name: Button2
-    defaultValue: 0
---- !u!114 &114679780968606066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eba7b4b2e3ea134991ccbff5f47c2c8, type: 3}
-  m_Name: Button3
-  m_EditorClassIdentifier: 
-  m_ActionMap: {fileID: 11400000}
-  m_ActionIndex: 5
-  m_ControlData:
-    componentControlIndices: 
-    controlType: 0
-    name: Button3
-    defaultValue: 0
---- !u!114 &114690513574168288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eba7b4b2e3ea134991ccbff5f47c2c8, type: 3}
-  m_Name: ButtonEscape
-  m_EditorClassIdentifier: 
-  m_ActionMap: {fileID: 11400000}
-  m_ActionIndex: 8
-  m_ControlData:
-    componentControlIndices: 
-    controlType: 0
-    name: ButtonEscape
-    defaultValue: 0
---- !u!114 &114827130707709692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eba7b4b2e3ea134991ccbff5f47c2c8, type: 3}
-  m_Name: Button4
-  m_EditorClassIdentifier: 
-  m_ActionMap: {fileID: 11400000}
-  m_ActionIndex: 6
-  m_ControlData:
-    componentControlIndices: 
-    controlType: 0
-    name: Button4
-    defaultValue: 0
---- !u!114 &114876084083391650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eba7b4b2e3ea134991ccbff5f47c2c8, type: 3}
-  m_Name: Button0
+  m_Name: Accept
   m_EditorClassIdentifier: 
   m_ActionMap: {fileID: 11400000}
   m_ActionIndex: 2
   m_ControlData:
     componentControlIndices: 
     controlType: 0
-    name: Button0
+    name: Accept
     defaultValue: 0
---- !u!114 &114972957052671390
+--- !u!114 &114610340763726446
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -419,12 +277,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5eba7b4b2e3ea134991ccbff5f47c2c8, type: 3}
-  m_Name: Button1
+  m_Name: Resume
+  m_EditorClassIdentifier: 
+  m_ActionMap: {fileID: 11400000}
+  m_ActionIndex: 4
+  m_ControlData:
+    componentControlIndices: 
+    controlType: 0
+    name: Resume
+    defaultValue: 0
+--- !u!114 &114663407223743340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eba7b4b2e3ea134991ccbff5f47c2c8, type: 3}
+  m_Name: Decline
   m_EditorClassIdentifier: 
   m_ActionMap: {fileID: 11400000}
   m_ActionIndex: 3
   m_ControlData:
     componentControlIndices: 
     controlType: 0
-    name: Button1
+    name: Decline
     defaultValue: 0

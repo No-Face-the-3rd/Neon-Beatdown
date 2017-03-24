@@ -20,6 +20,9 @@ public class CombatInputListener : MonoBehaviour {
     public ButtonAction buttonTwo;
     public ButtonAction buttonThree;
     public ButtonAction buttonFour;
+
+    //public ButtonAction acceptAction;
+    //public ButtonAction declineAction;
     //public ButtonAction buttonFive;
 
 
@@ -27,10 +30,36 @@ public class CombatInputListener : MonoBehaviour {
 
     public List<InputState> inputQueue;
     public int queueSize;
+    private bool handled = false;
 
     // Use this for initialization
     void Start() {
         pInput = GetComponent<PlayerInput>();
+        //moveX.Bind(pInput.handle);
+        //moveY.Bind(pInput.handle);
+        //escape.Bind(pInput.handle);
+        //buttonZero.Bind(pInput.handle);
+        //buttonOne.Bind(pInput.handle);
+        //buttonTwo.Bind(pInput.handle);
+        //buttonThree.Bind(pInput.handle);
+        //buttonFour.Bind(pInput.handle);
+        //pInput.handle.maps[0].active = false;
+    }
+
+    // Update is called once per frame
+    void Update() {
+        if (DeviceMapper.mapper.players.Count >= 1 && !handled)
+            doThings();
+
+
+    }
+
+    void doThings()
+    {
+        handled = true;
+        DeviceMapper.PlayerInfo info = DeviceMapper.mapper.players[0];
+        pInput.handle = DeviceMapper.mapper.players[0].handle;
+        pInput.handle.maps[0].active = false;
         moveX.Bind(pInput.handle);
         moveY.Bind(pInput.handle);
         escape.Bind(pInput.handle);
@@ -41,15 +70,9 @@ public class CombatInputListener : MonoBehaviour {
         buttonFour.Bind(pInput.handle);
     }
 
-    // Update is called once per frame
-    void Update() {
-
-    }
-
-
     void FixedUpdate()
     {
-        if (overrideAI)
+        if (overrideAI && handled)
         {
             setAxis(moveX.control.value, out curState.moveX);
             setAxis(moveY.control.value, out curState.moveY);
