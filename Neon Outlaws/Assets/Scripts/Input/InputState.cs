@@ -59,6 +59,13 @@ public class ButtonInfo
             ret.isDown = true;
         return ret;
     }
+
+    public override string ToString()
+    {
+        string ret = "";
+        ret = "Is Held: " + isHeld + "\nWas Just Pressed: " + wasPressed + "\nWas Just Released: " + wasReleased;
+        return ret;
+    }
 }
 
 [System.Serializable]
@@ -100,7 +107,7 @@ public class InputState
     /// Information on button state: ultimate ability
     /// <para>Not Currently Used</para>
     /// </summary>
-    public ButtonInfo ultimateAbility;
+    //public ButtonInfo ultimateAbility;
 
 
 }

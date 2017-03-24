@@ -678,6 +678,51 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 352280669}
+--- !u!1 &375706709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 375706710}
+  - component: {fileID: 375706711}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &375706710
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 375706709}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.07439472, y: 0.4713176, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &375706711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 375706709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190f30996bcdfae419e1e576dcfc02d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blah: {fileID: 948790112}
+  acceptAction:
+    action: {fileID: 114396434775169038, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
+  declineAction:
+    action: {fileID: 114663407223743340, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
 --- !u!1 &376774829
 GameObject:
   m_ObjectHideFlags: 0
@@ -14592,6 +14637,113 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1 &948790110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 948790113}
+  - component: {fileID: 948790112}
+  - component: {fileID: 948790111}
+  m_Layer: 0
+  m_Name: PlayerController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &948790111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 948790110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 070ad7113e87dcc46a7bfe2a8e5bada3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overrideAI: 1
+  pInput: {fileID: 0}
+  moveX:
+    action: {fileID: 114268061983492346, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+  moveY:
+    action: {fileID: 114070570101543980, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+  escape:
+    action: {fileID: 114123799873866626, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+  buttonZero:
+    action: {fileID: 114557931793683396, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+  buttonOne:
+    action: {fileID: 114769036059018060, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+  buttonTwo:
+    action: {fileID: 114846403234472082, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+  buttonThree:
+    action: {fileID: 114304531654997138, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+  buttonFour:
+    action: {fileID: 114516019795622718, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+  curState:
+    moveX: 0
+    moveY: 0
+    escape:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    lightAttack:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    heavyAttack:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    abilityOne:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    abilityTwo:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    abilityThree:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+  inputQueue: []
+  queueSize: 100
+--- !u!114 &948790112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 948790110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84d2c07be54604d7d9acbaf6555da85a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoAssignGlobal: 0
+  actionMaps:
+  - actionMap: {fileID: 11400000, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
+    active: 1
+    blockSubsequent: 1
+  - actionMap: {fileID: 11400000, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+    active: 1
+    blockSubsequent: 0
+--- !u!4 &948790113
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 948790110}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.07439472, y: 0.4713176, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &956177452
 GameObject:
   m_ObjectHideFlags: 0
@@ -14843,17 +14995,23 @@ GameObject:
   - component: {fileID: 1148691454}
   - component: {fileID: 1148691453}
   - component: {fileID: 1148691449}
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD:Assets/Scenes/Dev-Jacob-controls.unity
 =======
   - component: {fileID: 1148691448}
   - component: {fileID: 1148691457}
 >>>>>>> refs/remotes/origin/Dev-J-Controller:Neon Outlaws/Assets/Scenes/Dev-Jacob-controls.unity
+>>>>>>> origin/Dev
   m_Layer: 0
   m_Name: StickPunchMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< HEAD
+  m_IsActive: 1
+=======
   m_IsActive: 0
 --- !u!114 &1148691448
 MonoBehaviour:
@@ -14874,6 +15032,7 @@ MonoBehaviour:
     active: 1
     blockSubsequent: 0
 >>>>>>> refs/remotes/origin/Dev-J-Controller:Neon Outlaws/Assets/Scenes/Dev-Jacob-controls.unity
+>>>>>>> origin/Dev
 --- !u!114 &1148691449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27962,6 +28121,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD:Assets/Scenes/Dev-Jacob-controls.unity
 =======
 --- !u!114 &1148691457
@@ -28027,6 +28188,7 @@ MonoBehaviour:
   inputQueue: []
   queueSize: 100
 >>>>>>> refs/remotes/origin/Dev-J-Controller:Neon Outlaws/Assets/Scenes/Dev-Jacob-controls.unity
+>>>>>>> origin/Dev
 --- !u!1 &1170971753
 GameObject:
   m_ObjectHideFlags: 0
