@@ -1,0 +1,554 @@
+fileFormatVersion: 2
+guid: d5e2c8e0cbf462840ae7268c3cb31500
+timeCreated: 1487359446
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: sp_sprite_silhouette_0
+    21300002: sp_sprite_silhouette_1
+    21300004: sp_sprite_silhouette_2
+    21300006: sp_sprite_silhouette_3
+    21300008: sp_sprite_silhouette_4
+    21300010: sp_sprite_silhouette_5
+    21300012: sp_sprite_silhouette_6
+    21300014: sp_sprite_silhouette_7
+    21300016: sp_sprite_silhouette_8
+    21300018: sp_sprite_silhouette_9
+    21300020: sp_sprite_silhouette_10
+    21300022: sp_sprite_silhouette_11
+    21300024: sp_sprite_silhouette_12
+    21300026: sp_sprite_silhouette_13
+    21300028: sp_sprite_silhouette_14
+    21300030: sp_sprite_silhouette_15
+    21300032: sp_sprite_silhouette_16
+    21300034: sp_sprite_silhouette_17
+    21300036: sp_sprite_silhouette_18
+    21300038: sp_sprite_silhouette_19
+    21300040: sp_sprite_silhouette_20
+    21300042: sp_sprite_silhouette_21
+    21300044: sp_sprite_silhouette_22
+    21300046: sp_sprite_silhouette_23
+    21300048: sp_sprite_silhouette_24
+    21300050: sp_sprite_silhouette_25
+    21300052: sp_sprite_silhouette_26
+    21300054: sp_sprite_silhouette_27
+    21300056: sp_sprite_silhouette_28
+    21300058: sp_sprite_silhouette_29
+    21300060: sp_sprite_silhouette_30
+    21300062: sp_sprite_silhouette_31
+    21300064: sp_sprite_silhouette_32
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 4401
+        width: 507
+        height: 606
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_1
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 4401
+        width: 559
+        height: 436
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_2
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 4404
+        width: 376
+        height: 582
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_3
+      rect:
+        serializedVersion: 2
+        x: 1833
+        y: 4389
+        width: 423
+        height: 596
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_4
+      rect:
+        serializedVersion: 2
+        x: 2532
+        y: 4392
+        width: 829
+        height: 194
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_5
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 3730
+        width: 384
+        height: 607
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_6
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 3736
+        width: 239
+        height: 601
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_7
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 3730
+        width: 337
+        height: 585
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_8
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 3114
+        width: 657
+        height: 460
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_9
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 3102
+        width: 408
+        height: 549
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_10
+      rect:
+        serializedVersion: 2
+        x: 1481
+        y: 3112
+        width: 354
+        height: 605
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_11
+      rect:
+        serializedVersion: 2
+        x: 1976
+        y: 3100
+        width: 756
+        height: 524
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_12
+      rect:
+        serializedVersion: 2
+        x: 2869
+        y: 3114
+        width: 581
+        height: 588
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_13
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 2467
+        width: 446
+        height: 593
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_14
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 2470
+        width: 707
+        height: 548
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_15
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 2477
+        width: 512
+        height: 529
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_16
+      rect:
+        serializedVersion: 2
+        x: 2113
+        y: 2467
+        width: 416
+        height: 486
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_17
+      rect:
+        serializedVersion: 2
+        x: 2659
+        y: 2470
+        width: 486
+        height: 541
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_18
+      rect:
+        serializedVersion: 2
+        x: 3275
+        y: 2470
+        width: 345
+        height: 570
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_19
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 1852
+        width: 619
+        height: 568
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_20
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 1857
+        width: 910
+        height: 509
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_21
+      rect:
+        serializedVersion: 2
+        x: 2042
+        y: 1847
+        width: 648
+        height: 536
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_22
+      rect:
+        serializedVersion: 2
+        x: 2874
+        y: 1854
+        width: 445
+        height: 554
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_23
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 1032
+        width: 362
+        height: 411
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_24
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 1027
+        width: 222
+        height: 712
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_25
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 1185
+        width: 276
+        height: 468
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_26
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 1173
+        width: 333
+        height: 460
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_27
+      rect:
+        serializedVersion: 2
+        x: 2508
+        y: 1249
+        width: 427
+        height: 388
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_28
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 309
+        width: 451
+        height: 470
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_29
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 329
+        width: 692
+        height: 466
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_30
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 348
+        width: 317
+        height: 468
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_31
+      rect:
+        serializedVersion: 2
+        x: 2338
+        y: 397
+        width: 378
+        height: 387
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sp_sprite_silhouette_32
+      rect:
+        serializedVersion: 2
+        x: 2886
+        y: 503
+        width: 849
+        height: 219
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
