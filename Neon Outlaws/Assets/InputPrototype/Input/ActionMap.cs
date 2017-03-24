@@ -65,11 +65,12 @@ namespace UnityEngine.InputNew
 
 		private static void HandlePlayModeCustomizations()
 		{
-			// TODO: Fix error.
-			// get_isPlayingOrWillChangePlaymode is not allowed to be called from a MonoBehaviour constructor,
-			// call it in Awake or Start instead. Called from script 'ActionMap' on game object 'MenuActions'.
-			// See "Script Serialization" page in the Unity Manual for further details.
-			if (EditorApplication.isPlayingOrWillChangePlaymode)
+            // TODO: Fix error.
+            // get_isPlayingOrWillChangePlaymode is not allowed to be called from a MonoBehaviour constructor,
+            // call it in Awake or Start instead. Called from script 'ActionMap' on game object 'MenuActions'.
+            // See "Script Serialization" page in the Unity Manual for further details.
+#if UNITY_EDITOR
+            if (EditorApplication.isPlayingOrWillChangePlaymode)
 			{
 				s_IsInPlayMode = true;
 			}
@@ -85,8 +86,8 @@ namespace UnityEngine.InputNew
 			}
 		}
 #endif
-
-		public Type mapType
+#endif
+        public Type mapType
 		{
 			get
 			{
