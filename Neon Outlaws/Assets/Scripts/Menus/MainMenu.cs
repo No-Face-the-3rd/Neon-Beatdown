@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour {
     // Load the development fight scene
     public void LoadSceneOnSelect()
     {
-        SceneManager.LoadScene("Dev-Jacob-controls");
+        SceneManager.LoadScene("Dev-Chris-AI");
     }
 
     // Deactivate main panel, bring up the options panel

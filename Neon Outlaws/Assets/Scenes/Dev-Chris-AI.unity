@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 643170}
   - component: {fileID: 643169}
   - component: {fileID: 643167}
+  - component: {fileID: 643168}
   m_Layer: 0
   m_Name: StickPunchManAI
   m_TagString: Untagged
@@ -132,6 +133,68 @@ MonoBehaviour:
   retreat: 0
   wait: 1
   opponent: {fileID: 0}
+--- !u!114 &643168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 643166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c2b9cfe6972a93449d67081ba4c0e7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overrideAI: 1
+  pInput: {fileID: 0}
+  moveX:
+    action: {fileID: 0}
+  moveY:
+    action: {fileID: 0}
+  escape:
+    action: {fileID: 0}
+  buttonZero:
+    action: {fileID: 0}
+  buttonOne:
+    action: {fileID: 0}
+  buttonTwo:
+    action: {fileID: 0}
+  buttonThree:
+    action: {fileID: 0}
+  buttonFour:
+    action: {fileID: 0}
+  curState:
+    moveX: 0
+    moveY: 0
+    escape:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    lightAttack:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    heavyAttack:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    abilityOne:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    abilityTwo:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    abilityThree:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    ultimateAbility:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+  inputQueue: []
+  queueSize: 0
 --- !u!114 &643169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -576,8 +639,9 @@ GameObject:
   m_Component:
   - component: {fileID: 222731830}
   - component: {fileID: 222731829}
-  - component: {fileID: 222731828}
   - component: {fileID: 222731827}
+  - component: {fileID: 222731831}
+  - component: {fileID: 222731828}
   m_Layer: 0
   m_Name: WallLeft
   m_TagString: Wall
@@ -616,18 +680,20 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!65 &222731828
-BoxCollider:
+--- !u!61 &222731828
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 222731826}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.99999994}
 --- !u!33 &222731829
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -648,6 +714,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &222731831
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 222731826}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &337621194
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,8 +743,9 @@ GameObject:
   m_Component:
   - component: {fileID: 337621198}
   - component: {fileID: 337621197}
-  - component: {fileID: 337621196}
   - component: {fileID: 337621195}
+  - component: {fileID: 337621199}
+  - component: {fileID: 337621196}
   m_Layer: 0
   m_Name: WallRight
   m_TagString: Wall
@@ -697,18 +784,20 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!65 &337621196
-BoxCollider:
+--- !u!61 &337621196
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 337621194}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.99999994}
 --- !u!33 &337621197
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -729,6 +818,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &337621199
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 337621194}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &614909408
 GameObject:
   m_ObjectHideFlags: 0
@@ -1281,8 +1390,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2008256132}
   - component: {fileID: 2008256131}
-  - component: {fileID: 2008256130}
   - component: {fileID: 2008256129}
+  - component: {fileID: 2008256133}
+  - component: {fileID: 2008256130}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Ground
@@ -1321,18 +1431,20 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!65 &2008256130
-BoxCollider:
+--- !u!61 &2008256130
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2008256128}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1}
 --- !u!33 &2008256131
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1353,3 +1465,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &2008256133
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2008256128}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7

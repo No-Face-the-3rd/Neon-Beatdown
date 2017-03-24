@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAIController : MonoBehaviour {
+    CombatInputListener cbi;
+
     public Rigidbody2D rb;
     public float speed = 10;
-    public float velocityX;
     public bool turn = true;
 
     public bool approach = false;
@@ -20,6 +21,7 @@ public class EnemyAIController : MonoBehaviour {
     private Animator  animator;
 
     private void Awake() {
+        //cbi.overrideAI = true;
         rb            = GetComponent<Rigidbody2D>();
         animator      = GetComponent<Animator>();
         approachState = new ApproachState(this);
@@ -38,7 +40,7 @@ public class EnemyAIController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         currentState.UpdateState();
-        velocityX = rb.velocity.x;
+        cbi.moveX = rb.velocity.x;
         //Debug.Log(turn);
 
         if (velocityX > 0)
