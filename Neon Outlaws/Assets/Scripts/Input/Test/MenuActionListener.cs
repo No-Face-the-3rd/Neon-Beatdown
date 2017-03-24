@@ -22,5 +22,5 @@ public class MenuActionListener : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-	}
+    }
 }
