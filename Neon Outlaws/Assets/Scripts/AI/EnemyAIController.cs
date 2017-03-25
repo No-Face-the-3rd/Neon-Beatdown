@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class EnemyAIController : MonoBehaviour {
     CombatInputListener cbi;
+    InputState inputState;
 
     public Rigidbody2D rb;
     public float speed = 10;
     public bool turn = true;
-
-    public bool approach = false;
-    public bool retreat  = false;
-    public bool wait     = true;
 
     [HideInInspector] public IAIStates     currentState;
     [HideInInspector] public ApproachState approachState;
@@ -21,7 +18,8 @@ public class EnemyAIController : MonoBehaviour {
     private Animator  animator;
 
     private void Awake() {
-        //cbi.overrideAI = true;
+        cbi           = new CombatInputListener();
+        inputState    = new InputState();
         rb            = GetComponent<Rigidbody2D>();
         animator      = GetComponent<Animator>();
         approachState = new ApproachState(this);
@@ -31,6 +29,7 @@ public class EnemyAIController : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
+        cbi.overrideAI = false;
         currentState = waitState;
         Debug.Log(currentState);
         opponent = GameObject.Find("StickPunchMan");
@@ -39,35 +38,13 @@ public class EnemyAIController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        inputState.moveX = speed;
+        inputState.moveY = speed;
+        
+
+
         currentState.UpdateState();
-        cbi.moveX = rb.velocity.x;
         //Debug.Log(turn);
-
-        if (velocityX > 0)
-            animator.Play("SP_Walk(Forward)");
-        if (velocityX == 0)
-
-        // For testing animations
-        if (approach)
-        {
-            currentState = approachState;
-            retreat = false;
-            wait    = false;
-        }
-            
-        if (retreat)
-        {
-            currentState = retreatState;
-            approach = false;
-            wait     = false;
-        }
-            
-        if (wait)
-        {
-            currentState = waitState;
-            approach = false;
-            retreat  = false;
-        }
     }
 
     public void turnToOpponent() {

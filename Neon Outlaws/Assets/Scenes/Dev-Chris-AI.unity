@@ -127,11 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   speed: 10
-  velocityX: 0
   turn: 1
-  approach: 0
-  retreat: 0
-  wait: 1
   opponent: {fileID: 0}
 --- !u!114 &643168
 MonoBehaviour:
@@ -186,10 +182,6 @@ MonoBehaviour:
       wasReleased: 0
       isHeld: 0
     abilityThree:
-      wasPressed: 0
-      wasReleased: 0
-      isHeld: 0
-    ultimateAbility:
       wasPressed: 0
       wasReleased: 0
       isHeld: 0

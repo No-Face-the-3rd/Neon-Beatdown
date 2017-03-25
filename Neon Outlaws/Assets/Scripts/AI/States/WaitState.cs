@@ -5,6 +5,7 @@ using UnityEngine;
 public class WaitState : IAIStates {
 
     private readonly EnemyAIController enemy;
+    private InputState inputState;
 
     public WaitState(EnemyAIController ai) {
         enemy = ai;
@@ -34,15 +35,15 @@ public class WaitState : IAIStates {
         //    // if (enemy.flipRight)
         //    enemy.rb.AddForce(Vector2.right * enemy.speed);
         //}
-        if (enemy.velocityX < 0) {
-            enemy.velocityX++;
-            if (enemy.velocityX >= 0)
-                enemy.velocityX = 0;
+        if (inputState.moveX < 0) {
+            inputState.moveX++;
+            if (inputState.moveX >= 0)
+                inputState.moveX = 0;
         }
-        if (enemy.velocityX > 0) {
-            enemy.velocityX--;
-            if (enemy.velocityX <= 0)
-                enemy.velocityX = 0;
+        if (inputState.moveX > 0) {
+            inputState.moveX--;
+            if (inputState.moveX <= 0)
+                inputState.moveX = 0;
         }
     }
 }

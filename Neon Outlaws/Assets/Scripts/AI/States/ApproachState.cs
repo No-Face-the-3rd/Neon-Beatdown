@@ -9,7 +9,7 @@ public class ApproachState : IAIStates {
     public ApproachState(EnemyAIController ai) {
         enemy = ai;
     }
-
+    
 	public void UpdateState() {
         Approach(); // Move towards opponent
     }
