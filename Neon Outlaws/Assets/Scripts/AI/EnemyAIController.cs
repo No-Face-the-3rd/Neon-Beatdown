@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class EnemyAIController : MonoBehaviour {
     CombatInputListener cbi;
+    public InputState inputState;
 
     public Rigidbody2D rb;
     public float speed = 10;
-    public bool turn = true;
-
-    public bool approach = false;
-    public bool retreat  = false;
-    public bool wait     = true;
+    public float jumpSpeed = 10;
 
     [HideInInspector] public IAIStates     currentState;
     [HideInInspector] public ApproachState approachState;
@@ -21,7 +18,8 @@ public class EnemyAIController : MonoBehaviour {
     private Animator  animator;
 
     private void Awake() {
-        //cbi.overrideAI = true;
+        cbi           = new CombatInputListener();
+        inputState    = new InputState();
         rb            = GetComponent<Rigidbody2D>();
         animator      = GetComponent<Animator>();
         approachState = new ApproachState(this);
@@ -31,7 +29,8 @@ public class EnemyAIController : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
-        currentState = waitState;
+        cbi.overrideAI = false;
+        currentState = approachState;
         Debug.Log(currentState);
         opponent = GameObject.Find("StickPunchMan");
         rb = GetComponent<Rigidbody2D>();
@@ -39,41 +38,10 @@ public class EnemyAIController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        inputState.moveX = speed;
+        inputState.moveY = jumpSpeed;
+
         currentState.UpdateState();
-        cbi.moveX = rb.velocity.x;
         //Debug.Log(turn);
-
-        if (velocityX > 0)
-            animator.Play("SP_Walk(Forward)");
-        if (velocityX == 0)
-
-        // For testing animations
-        if (approach)
-        {
-            currentState = approachState;
-            retreat = false;
-            wait    = false;
-        }
-            
-        if (retreat)
-        {
-            currentState = retreatState;
-            approach = false;
-            wait     = false;
-        }
-            
-        if (wait)
-        {
-            currentState = waitState;
-            approach = false;
-            retreat  = false;
-        }
-    }
-
-    public void turnToOpponent() {
-        turn = !turn;
-        Vector3 scale = transform.localScale;
-        scale.x *= 1;
-        transform.localScale = scale;
     }
 }
