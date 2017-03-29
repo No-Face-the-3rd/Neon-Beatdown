@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemyAIController : MonoBehaviour {
     CombatInputListener cbi;
-    InputState inputState;
+    public InputState inputState;
 
     public Rigidbody2D rb;
     public float speed = 10;
-    public bool turn = true;
+    public float jumpSpeed = 10;
 
     [HideInInspector] public IAIStates     currentState;
     [HideInInspector] public ApproachState approachState;
@@ -30,7 +30,7 @@ public class EnemyAIController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         cbi.overrideAI = false;
-        currentState = waitState;
+        currentState = approachState;
         Debug.Log(currentState);
         opponent = GameObject.Find("StickPunchMan");
         rb = GetComponent<Rigidbody2D>();
@@ -39,18 +39,9 @@ public class EnemyAIController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         inputState.moveX = speed;
-        inputState.moveY = speed;
-        
-
+        inputState.moveY = jumpSpeed;
 
         currentState.UpdateState();
         //Debug.Log(turn);
-    }
-
-    public void turnToOpponent() {
-        turn = !turn;
-        Vector3 scale = transform.localScale;
-        scale.x *= 1;
-        transform.localScale = scale;
     }
 }

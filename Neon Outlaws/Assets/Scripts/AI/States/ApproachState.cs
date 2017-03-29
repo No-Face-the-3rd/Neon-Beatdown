@@ -29,20 +29,19 @@ public class ApproachState : IAIStates {
     }
 
     private void Approach() {
-        enemy.rb.AddForce(Vector2.left * enemy.speed);
-        /*    RaycastHit2D hit;
-            if (enemy.opponent.GetComponent<Rigidbody2D>().position.x > enemy.rb.position.x) {
-                enemy.turnToOpponent();
-                enemy.rb.AddForce(Vector2.right * enemy.speed);
+        enemy.rb.AddForce(Vector2.left * enemy.inputState.moveX);
+        RaycastHit2D hit;
+        if (enemy.opponent.GetComponent<Rigidbody2D>().position.x > enemy.rb.position.x)
+        {
+            enemy.rb.AddForce(Vector2.right * enemy.speed);
 
-                hit = Physics2D.Raycast(enemy.rb.position, Vector2.right, raycastDistance);
-            }
-            else {
-                enemy.turnToOpponent();
-                enemy.turn = false;
-                enemy.rb.AddForce(Vector2.left * enemy.speed);
+            hit = Physics2D.Raycast(enemy.rb.position, Vector2.right, raycastDistance);
+        }
+        else
+        {
+            enemy.rb.AddForce(Vector2.left * enemy.speed);
 
-                hit = Physics2D.Raycast(enemy.rb.position, Vector2.left, raycastDistance);
-            }*/
+            hit = Physics2D.Raycast(enemy.rb.position, Vector2.left, raycastDistance);
+        }
     }
 }
