@@ -22,7 +22,7 @@ public class DeviceMapper : MonoBehaviour {
     public static DeviceMapper mapper;
 
 
-    public PlayerInput blah;
+    public PlayerInput globalInput;
 
     private PlayerHandle globalHandle;
     public List<PlayerInfo> players = new List<PlayerInfo>();
@@ -46,7 +46,7 @@ public class DeviceMapper : MonoBehaviour {
 
         globalHandle = PlayerHandleManager.GetNewPlayerHandle();
         globalHandle.global = true;
-        List<ActionMapSlot> actionMaps = blah.actionMaps;
+        List<ActionMapSlot> actionMaps = globalInput.actionMaps;
         foreach(ActionMapSlot slot in actionMaps)
         {
             ActionMapInput input = ActionMapInput.Create(slot.actionMap);
@@ -74,7 +74,7 @@ public class DeviceMapper : MonoBehaviour {
                 handle.AssignDevice(device, true);
             }
 
-            foreach(ActionMapSlot slot in blah.actionMaps)
+            foreach(ActionMapSlot slot in globalInput.actionMaps)
             {
                 ActionMapInput map = ActionMapInput.Create(slot.actionMap);
                 map.TryInitializeWithDevices(handle.GetApplicableDevices());
