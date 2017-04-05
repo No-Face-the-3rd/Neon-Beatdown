@@ -1388,6 +1388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190f30996bcdfae419e1e576dcfc02d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxPlayers: 2
   globalInput: {fileID: 858310287}
   acceptAction:
     action: {fileID: 114396434775169038, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
@@ -1774,6 +1775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pInput: {fileID: 1027975411}
+  playerNum: 0
   horizNavAction:
     action: {fileID: 114213937635851168, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
   vertNavAction:
@@ -1825,7 +1827,8 @@ MonoBehaviour:
   maxJumpHeight: 0
   maxJumpTime: 0
   fallTime: 0
-  buttonBlock: 0
+  buttonBlock: 1
+  playerNum: 0
   currentCharacterState: 0
   inputQueue: []
   queueSize: 100

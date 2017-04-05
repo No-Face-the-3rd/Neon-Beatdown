@@ -51,6 +51,7 @@ public class CombatInputListener : MonoBehaviour {
         DeviceMapper.PlayerInfo info = DeviceMapper.mapper.players[index];
         pInput.handle = info.handle;
         pInput.handle.maps[0].active = false;
+        playerNum = info.playerNum;
         moveX.Bind(pInput.handle);
         moveY.Bind(pInput.handle);
         escape.Bind(pInput.handle);
@@ -60,6 +61,7 @@ public class CombatInputListener : MonoBehaviour {
         heavyAttack.Bind(pInput.handle);
         abilityThree.Bind(pInput.handle);
         //UltBlock.Bind(pInput.handle);
+        buttonBlock.Bind(pInput.handle);
     }
 
     void FixedUpdate()
@@ -75,6 +77,7 @@ public class CombatInputListener : MonoBehaviour {
             setButton(abilityTwo.control, out curState.abilityTwo);
             setButton(abilityThree.control, out curState.abilityThree);
             //setButton(ult.control, out curState.ultimateAbility);
+            setButton(buttonBlock.control, out curState.buttonBlock);
         }
         if (controller != null)
             controller.takeInput(curState);
@@ -92,6 +95,7 @@ public class CombatInputListener : MonoBehaviour {
         setButton(state.abilityTwo, out curState.abilityTwo);
         setButton(state.abilityThree, out curState.abilityThree);
         //setButton(state.ultimateAbility, out curState.ultimateAbility);
+        setButton(state.buttonBlock, out curState.buttonBlock);
     }
 
     public void setAxis(float value, out float outAxis)

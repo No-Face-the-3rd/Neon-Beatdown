@@ -4,14 +4,35 @@ using UnityEngine;
 
 public class NBCharacterController : MonoBehaviour {
 
+    [System.Flags]
     public enum CharacterState
     {
-        Idle, Crouch, Block, Hit, Down, DownRecovery, Walk,
-        Dash, Jump, JumpHit, JumpDown,
-        JumpLight, JumpHeavy,
-        Light, LightRecovery, LightConsecutive, LightConsecutiveRecovery,
-        HeavyCharge,Heavy,HeavyRecovery
-        
+        Idle = 0,
+        Crouch = 1 << 0,
+        Block = 1 << 1,
+        Hit = 1 << 2,
+        Down = 1 << 3,
+        DownRecovery = 1 << 4,
+        Walk = 1 << 5,
+        Dash = 1 << 6,
+        Jump = 1 << 7,
+        JumpHit = 1 << 8,
+        JumpDown = 1 << 9,
+        JumpLight = 1 << 10,
+        JumpHeavy = 1 << 11,
+        Light = 1 << 12,
+        LightRecovery = 1 << 13,
+        LightConsecutive = 1 << 14,
+        LightConsecutiveRecovery = 1 << 15,
+        HeavyCharge = 1 << 16,
+        Heavy = 1 << 17,
+        HeavyRecovery = 1 << 18,
+        AbilityOne = 1 << 19,
+        AbilityOneRecovery = 1 << 20,
+        AbilityTwo = 1 << 21,
+        AbilityTwoRecovery = 1 << 22,
+        AbilityThree = 1 << 23,
+        AbilityThreeRecovery = 1 << 24
     };
 
 
@@ -25,7 +46,7 @@ public class NBCharacterController : MonoBehaviour {
     public float fallTime;
     public bool buttonBlock = false;
 
-
+    public int playerNum;
 
     public CharacterState currentCharacterState;
 
@@ -60,15 +81,18 @@ public class NBCharacterController : MonoBehaviour {
                     sendCrouch(currentInputState.moveY);
                     sendWalk(currentInputState.moveX);
                     sendDash(currentInputState.moveX);
+                    sendBlock(currentInputState.moveX, currentInputState.buttonBlock.wasPressed);
                     break;
                 case CharacterState.Crouch:
                     sendCrouch(currentInputState.moveY);
                     sendWalk(currentInputState.moveX);
+                    sendBlock(currentInputState.moveX, currentInputState.buttonBlock.wasPressed);
                     break;
                 case CharacterState.Walk:
                     sendCrouch(currentInputState.moveY);
                     sendWalk(currentInputState.moveX);
                     sendDash(currentInputState.moveX);
+                    sendBlock(currentInputState.moveX, currentInputState.buttonBlock.wasPressed);
                     break;
             }
             
@@ -158,13 +182,34 @@ public class NBCharacterController : MonoBehaviour {
         }
     }
 
-    void sendBlock(float moveX)
+    void sendBlock(float moveX, bool wasPressed)
     {
-
-    }
-
-    void sendBlock(bool wasPressed)
-    {
+        if (buttonBlock == false)
+        {
+            NBCharacterController opponent = CharacterLocator.locator.getCharacter((playerNum % 2) + 1);
+            if (opponent != null)
+            {
+                CharacterState attackingStates = CharacterState.Heavy | CharacterState.Light | CharacterState.LightConsecutive |
+                    CharacterState.JumpLight | CharacterState.JumpHeavy | CharacterState.AbilityOne | CharacterState.AbilityTwo |
+                    CharacterState.AbilityThree;
+                if ((opponent.currentCharacterState & attackingStates) != 0)
+                {
+                    bool opponentLeftCheck = opponent.transform.position.x < transform.position.x && moveX > 0.1f;
+                    bool opponentRightCheck = opponent.transform.position.x > transform.position.x && moveX < -0.1f;
+                    if (opponentLeftCheck || opponentRightCheck)
+                    {
+                        sendTrigger("Block");
+                    }
+                }
+            }
+        }
+        else
+        {
+            if (wasPressed)
+            {
+                sendTrigger("Block");
+            }
+        }
 
     }
 
