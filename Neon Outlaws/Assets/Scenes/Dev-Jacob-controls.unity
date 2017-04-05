@@ -1685,16 +1685,18 @@ MonoBehaviour:
     action: {fileID: 114070570101543980, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
   escape:
     action: {fileID: 114123799873866626, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
-  buttonZero:
+  abilityOne:
     action: {fileID: 114557931793683396, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
-  buttonOne:
+  abilityTwo:
     action: {fileID: 114769036059018060, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
-  buttonTwo:
+  lightAttack:
     action: {fileID: 114846403234472082, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
-  buttonThree:
+  heavyAttack:
     action: {fileID: 114304531654997138, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
-  buttonFour:
+  abilityThree:
     action: {fileID: 114516019795622718, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+  buttonBlock:
+    action: {fileID: 114674364586557058, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
   controller: {fileID: 1148691448}
   curState:
     moveX: 0
@@ -1720,6 +1722,10 @@ MonoBehaviour:
       wasReleased: 0
       isHeld: 0
     abilityThree:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    buttonBlock:
       wasPressed: 0
       wasReleased: 0
       isHeld: 0
@@ -1819,6 +1825,7 @@ MonoBehaviour:
   maxJumpHeight: 0
   maxJumpTime: 0
   fallTime: 0
+  buttonBlock: 0
   currentCharacterState: 0
   inputQueue: []
   queueSize: 100

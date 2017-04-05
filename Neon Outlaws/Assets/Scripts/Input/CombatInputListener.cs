@@ -15,12 +15,13 @@ public class CombatInputListener : MonoBehaviour {
     public AxisAction moveX;
     public AxisAction moveY;
     public ButtonAction escape;
-    public ButtonAction buttonZero;
-    public ButtonAction buttonOne;
-    public ButtonAction buttonTwo;
-    public ButtonAction buttonThree;
-    public ButtonAction buttonFour;
-    //public ButtonAction UltBlock;
+    public ButtonAction abilityOne;
+    public ButtonAction abilityTwo;
+    public ButtonAction lightAttack;
+    public ButtonAction heavyAttack;
+    public ButtonAction abilityThree;
+    //public ButtonAction ult;
+    public ButtonAction buttonBlock;
 
     public NBCharacterController controller;
     
@@ -53,11 +54,11 @@ public class CombatInputListener : MonoBehaviour {
         moveX.Bind(pInput.handle);
         moveY.Bind(pInput.handle);
         escape.Bind(pInput.handle);
-        buttonZero.Bind(pInput.handle);
-        buttonOne.Bind(pInput.handle);
-        buttonTwo.Bind(pInput.handle);
-        buttonThree.Bind(pInput.handle);
-        buttonFour.Bind(pInput.handle);
+        abilityOne.Bind(pInput.handle);
+        abilityTwo.Bind(pInput.handle);
+        lightAttack.Bind(pInput.handle);
+        heavyAttack.Bind(pInput.handle);
+        abilityThree.Bind(pInput.handle);
         //UltBlock.Bind(pInput.handle);
     }
 
@@ -68,12 +69,12 @@ public class CombatInputListener : MonoBehaviour {
             setAxis(moveX.control.value, out curState.moveX);
             setAxis(moveY.control.value, out curState.moveY);
             setButton(escape.control, out curState.escape);
-            setButton(buttonTwo.control, out curState.lightAttack);
-            setButton(buttonThree.control, out curState.heavyAttack);
-            setButton(buttonZero.control, out curState.abilityOne);
-            setButton(buttonOne.control, out curState.abilityTwo);
-            setButton(buttonFour.control, out curState.abilityThree);
-            //setButton(UltBlock.control, out curState.ultimateAbility);
+            setButton(lightAttack.control, out curState.lightAttack);
+            setButton(heavyAttack.control, out curState.heavyAttack);
+            setButton(abilityOne.control, out curState.abilityOne);
+            setButton(abilityTwo.control, out curState.abilityTwo);
+            setButton(abilityThree.control, out curState.abilityThree);
+            //setButton(ult.control, out curState.ultimateAbility);
         }
         if (controller != null)
             controller.takeInput(curState);

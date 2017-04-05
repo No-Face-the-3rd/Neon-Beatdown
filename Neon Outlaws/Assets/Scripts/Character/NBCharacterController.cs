@@ -23,6 +23,8 @@ public class NBCharacterController : MonoBehaviour {
     public float maxJumpHeight;
     public float maxJumpTime;
     public float fallTime;
+    public bool buttonBlock = false;
+
 
 
     public CharacterState currentCharacterState;
@@ -51,10 +53,6 @@ public class NBCharacterController : MonoBehaviour {
     {
         if (inputQueue.Count > 0)
         {
-            //if (inputQueue[inputQueue.Count - 1].ultimateAbility.wasPressed == true)
-            //{
-            //    anim.SetTrigger("Block");
-            //}
             InputState currentInputState = inputQueue[inputQueue.Count - 1];
             switch (currentCharacterState)
             {
@@ -159,4 +157,15 @@ public class NBCharacterController : MonoBehaviour {
             }
         }
     }
+
+    void sendBlock(float moveX)
+    {
+
+    }
+
+    void sendBlock(bool wasPressed)
+    {
+
+    }
+
 }
