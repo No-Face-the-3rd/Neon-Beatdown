@@ -29,7 +29,7 @@ public class ApproachState : IAIStates {
     }
 
     private void Approach() {
-        enemy.rb.AddForce(Vector2.left * enemy.inputState.moveX);
+        enemy.rb.AddForce(Vector2.left * enemy.speed);
         RaycastHit2D hit;
         if (enemy.opponent.GetComponent<Rigidbody2D>().position.x > enemy.rb.position.x)
         {
@@ -42,6 +42,11 @@ public class ApproachState : IAIStates {
             enemy.rb.AddForce(Vector2.left * enemy.speed);
 
             hit = Physics2D.Raycast(enemy.rb.position, Vector2.left, raycastDistance);
+        }
+       
+        if (hit/*.collider.tag == "Player"*/)
+        {
+            enemy.speed = 0;
         }
     }
 }

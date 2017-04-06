@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAIController : MonoBehaviour {
-    CombatInputListener cbi;
+    public CombatInputListener cbi;
     public InputState inputState;
 
     public Rigidbody2D rb;
-    public float speed = 10;
-    public float jumpSpeed = 10;
+    public float speed = .01f;
+    public float jumpSpeed = 5;
 
     [HideInInspector] public IAIStates     currentState;
     [HideInInspector] public ApproachState approachState;
