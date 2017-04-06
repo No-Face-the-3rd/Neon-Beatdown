@@ -7,32 +7,33 @@ public class NBCharacterController : MonoBehaviour {
     [System.Flags]
     public enum CharacterState
     {
-        Idle = 0,
-        Crouch = 1 << 0,
-        Block = 1 << 1,
-        Hit = 1 << 2,
-        Down = 1 << 3,
-        DownRecovery = 1 << 4,
-        Walk = 1 << 5,
-        Dash = 1 << 6,
-        Jump = 1 << 7,
-        JumpHit = 1 << 8,
-        JumpDown = 1 << 9,
-        JumpLight = 1 << 10,
-        JumpHeavy = 1 << 11,
-        Light = 1 << 12,
-        LightRecovery = 1 << 13,
-        LightConsecutive = 1 << 14,
-        LightConsecutiveRecovery = 1 << 15,
-        HeavyCharge = 1 << 16,
-        Heavy = 1 << 17,
-        HeavyRecovery = 1 << 18,
-        AbilityOne = 1 << 19,
-        AbilityOneRecovery = 1 << 20,
-        AbilityTwo = 1 << 21,
-        AbilityTwoRecovery = 1 << 22,
-        AbilityThree = 1 << 23,
-        AbilityThreeRecovery = 1 << 24
+        None = 0,
+        Idle = 1 << 0,
+        Crouch = 1 << 1,
+        Block = 1 << 2,
+        Hit = 1 << 3,
+        Down = 1 << 4,
+        DownRecovery = 1 << 5,
+        Walk = 1 << 6,
+        Dash = 1 << 7,
+        Jump = 1 << 8,
+        JumpHit = 1 << 9,
+        JumpDown = 1 << 10,
+        JumpLight = 1 << 11,
+        JumpHeavy = 1 << 12,
+        Light = 1 << 13,
+        LightRecovery = 1 << 14,
+        LightConsecutive = 1 << 15,
+        LightConsecutiveRecovery = 1 << 16,
+        HeavyCharge = 1 << 17,
+        Heavy = 1 << 18,
+        HeavyRecovery = 1 << 19,
+        AbilityOne = 1 << 20,
+        AbilityOneRecovery = 1 << 21,
+        AbilityTwo = 1 << 22,
+        AbilityTwoRecovery = 1 << 23,
+        AbilityThree = 1 << 24,
+        AbilityThreeRecovery = 1 << 25
     };
 
 
@@ -75,28 +76,12 @@ public class NBCharacterController : MonoBehaviour {
         if (inputQueue.Count > 0)
         {
             InputState currentInputState = inputQueue[inputQueue.Count - 1];
-            switch (currentCharacterState)
-            {
-                case CharacterState.Idle:
-                    sendCrouch(currentInputState.moveY);
-                    sendWalk(currentInputState.moveX);
-                    sendDash(currentInputState.moveX);
-                    sendBlock(currentInputState.moveX, currentInputState.buttonBlock.wasPressed);
-                    break;
-                case CharacterState.Crouch:
-                    sendCrouch(currentInputState.moveY);
-                    sendWalk(currentInputState.moveX);
-                    sendBlock(currentInputState.moveX, currentInputState.buttonBlock.wasPressed);
-                    break;
-                case CharacterState.Walk:
-                    sendCrouch(currentInputState.moveY);
-                    sendWalk(currentInputState.moveX);
-                    sendDash(currentInputState.moveX);
-                    sendBlock(currentInputState.moveX, currentInputState.buttonBlock.wasPressed);
-                    break;
-            }
-            
+            sendCrouch(currentInputState.moveY);
+            sendWalk(currentInputState.moveX);
+            sendDash(currentInputState.moveX);
+            sendBlock(currentInputState.moveX, currentInputState.buttonBlock.wasPressed);
         }
+        doFace();
     }
 
     public void takeInput(InputState state)
@@ -128,89 +113,123 @@ public class NBCharacterController : MonoBehaviour {
 
     void sendCrouch(float moveY)
     {
-        sendBool("Crouch", moveY < -0.5f);
+        CharacterState affectedStates = CharacterState.Idle | CharacterState.Crouch |
+            CharacterState.Walk;
+        if ((currentCharacterState & affectedStates) != 0)
+        {
+            sendBool("Crouch", moveY < -0.5f);
+        }
     }
 
     void sendWalk(float moveX)
     {
-        sendFloat("Walk", moveX);
+        CharacterState affectedStates = CharacterState.Idle | CharacterState.Crouch |
+            CharacterState.Walk;
+        if ((currentCharacterState & affectedStates) != 0)
+        {
+            sendFloat("Walk", moveX * Mathf.Sign(transform.localScale.x));
+        }
     }
 
     void sendDash(float moveX)
     {
-        float abs = Mathf.Abs(moveX);
-        if (abs > 0.5f)
+        CharacterState affectedStates = CharacterState.Idle | CharacterState.Walk;
+        if ((currentCharacterState & affectedStates) != 0)
         {
-            float sign = Mathf.Sign(moveX);
-            bool wentCenter = false;
-            bool wentOpposite = false;
-            bool triggered = false;
 
-            for (int i = inputQueue.Count - 2; i > inputQueue.Count - 1 - dashLeeway; i--)
+            float abs = Mathf.Abs(moveX);
+            if (abs > 0.5f)
             {
-                float iSign = Mathf.Sign(inputQueue[i].moveX);
-                float iAbs = Mathf.Abs(inputQueue[i].moveX);
-                
-                if(iAbs > 0.5f)
-                {
-                    if(iSign != sign)
-                    {
-                        wentOpposite = true;
-                    }
-                    if(iSign == sign && wentCenter)
-                    {
-                        triggered = true;
-                    }
-                }
-                if(iAbs < 0.5f)
-                {
-                    wentCenter = true;
-                }
+                float sign = Mathf.Sign(moveX) * Mathf.Sign(transform.localScale.x);
+                bool wentCenter = false;
+                bool wentOpposite = false;
+                bool triggered = false;
 
-                if (wentOpposite || triggered)
+                for (int i = inputQueue.Count - 2; i > inputQueue.Count - 1 - dashLeeway; i--)
                 {
-                    break;
+                    float iSign = Mathf.Sign(inputQueue[i].moveX) * Mathf.Sign(transform.localScale.x);
+                    float iAbs = Mathf.Abs(inputQueue[i].moveX);
+
+                    if (iAbs > 0.5f)
+                    {
+                        if (iSign != sign)
+                        {
+                            wentOpposite = true;
+                        }
+                        if (iSign == sign && wentCenter)
+                        {
+                            triggered = true;
+                        }
+                    }
+                    if (iAbs < 0.5f)
+                    {
+                        wentCenter = true;
+                    }
+
+                    if (wentOpposite || triggered)
+                    {
+                        break;
+                    }
                 }
-            }
-            if (triggered)
-            {
-                if (sign > 0.5f)
-                    sendTrigger("Dash(Forward)");
-                else
-                    sendTrigger("Dash(Backward)");
+                if (triggered)
+                {
+                    if (sign > 0.5f)
+                        sendTrigger("Dash(Forward)");
+                    else
+                        sendTrigger("Dash(Backward)");
+                }
             }
         }
     }
 
     void sendBlock(float moveX, bool wasPressed)
     {
-        if (buttonBlock == false)
+        CharacterState affectedStates = CharacterState.Idle | CharacterState.Crouch |
+            CharacterState.Walk;
+        if ((currentCharacterState & affectedStates) != 0)
         {
-            NBCharacterController opponent = CharacterLocator.locator.getCharacter((playerNum % 2) + 1);
-            if (opponent != null)
+            if (buttonBlock == false)
             {
-                CharacterState attackingStates = CharacterState.Heavy | CharacterState.Light | CharacterState.LightConsecutive |
-                    CharacterState.JumpLight | CharacterState.JumpHeavy | CharacterState.AbilityOne | CharacterState.AbilityTwo |
-                    CharacterState.AbilityThree;
-                if ((opponent.currentCharacterState & attackingStates) != 0)
+                NBCharacterController opponent = CharacterLocator.locator.getCharacter((playerNum % 2) + 1);
+                if (opponent != null)
                 {
-                    bool opponentLeftCheck = opponent.transform.position.x < transform.position.x && moveX > 0.1f;
-                    bool opponentRightCheck = opponent.transform.position.x > transform.position.x && moveX < -0.1f;
-                    if (opponentLeftCheck || opponentRightCheck)
+                    CharacterState attackingStates = CharacterState.Heavy | CharacterState.Light | CharacterState.LightConsecutive |
+                        CharacterState.JumpLight | CharacterState.JumpHeavy | CharacterState.AbilityOne | CharacterState.AbilityTwo |
+                        CharacterState.AbilityThree;
+                    if ((opponent.currentCharacterState & attackingStates) != 0)
                     {
-                        sendTrigger("Block");
+                        bool opponentLeftCheck = opponent.transform.position.x < transform.position.x && moveX > 0.1f;
+                        bool opponentRightCheck = opponent.transform.position.x > transform.position.x && moveX < -0.1f;
+                        if (opponentLeftCheck || opponentRightCheck)
+                        {
+                            sendTrigger("Block");
+                        }
                     }
                 }
             }
-        }
-        else
-        {
-            if (wasPressed)
+            else
             {
-                sendTrigger("Block");
+                if (wasPressed)
+                {
+                    sendTrigger("Block");
+                }
             }
         }
-
     }
+
+    void doFace()
+    {
+        NBCharacterController opponent = 
+            CharacterLocator.locator.getCharacter((playerNum % 2) + 1);
+        if (opponent != null)
+        {
+            float facing =
+                Mathf.Sign(opponent.transform.position.x - transform.position.x);
+            transform.localScale = new Vector3(facing * Mathf.Abs(transform.localScale.x),
+                transform.localScale.y, transform.localScale.z);
+        }
+    }
+
+
 
 }

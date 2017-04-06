@@ -18,11 +18,19 @@ public class CharacterLocator : MonoBehaviour {
         {
             Destroy(this.gameObject);
         }
+        characters = new List<NBCharacterController>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+        NBCharacterController[] charactersExist = FindObjectsOfType<NBCharacterController>();
+        for(int i = 0;i < charactersExist.Length;i++)
+        {
+            if(!(characters.FindIndex(character => character.playerNum == charactersExist[i].playerNum) >= 0))
+            {
+                characters.Add(charactersExist[i]);
+            }
+        }
 	}
 
     public NBCharacterController getCharacter(int playerNum)

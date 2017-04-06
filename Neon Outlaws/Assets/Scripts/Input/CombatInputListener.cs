@@ -41,8 +41,8 @@ public class CombatInputListener : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (DeviceMapper.mapper.players.Count > 0 && !handled)
-            bindInput(0);
+        if (DeviceMapper.mapper.players.Count >= playerNum && !handled)
+            bindInput(playerNum - 1);
     }
 
     public void bindInput(int index)
