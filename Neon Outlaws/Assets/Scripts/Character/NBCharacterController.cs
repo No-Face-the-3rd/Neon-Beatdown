@@ -54,13 +54,17 @@ public class NBCharacterController : MonoBehaviour {
     private Rigidbody2D rb;
     private Animator anim;
 
+    public List<CharacterState> stateQueue;
     public List<InputState> inputQueue;
     public int queueSize;
+    private Vector3 vel;
+    public bool grounded = false;
     
     
     // Use this for initialization
     void Start ()
     {
+        stateQueue = new List<CharacterState>();
         inputQueue = new List<InputState>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -80,7 +84,13 @@ public class NBCharacterController : MonoBehaviour {
             sendWalk(currentInputState.moveX);
             sendDash(currentInputState.moveX);
             sendBlock(currentInputState.moveX, currentInputState.buttonBlock.wasPressed);
+            sendJump(currentInputState.moveY);
         }
+        checkGrounded();
+        sendGrounded();
+        stateQueue.Add(currentCharacterState);
+        if (stateQueue.Count > queueSize)
+            stateQueue.RemoveAt(0);
         doFace();
     }
 
@@ -144,6 +154,7 @@ public class NBCharacterController : MonoBehaviour {
                 bool wentCenter = false;
                 bool wentOpposite = false;
                 bool triggered = false;
+                CharacterState dashableStates = CharacterState.Idle | CharacterState.Walk;
 
                 for (int i = inputQueue.Count - 2; i > inputQueue.Count - 1 - dashLeeway; i--)
                 {
@@ -166,7 +177,7 @@ public class NBCharacterController : MonoBehaviour {
                         wentCenter = true;
                     }
 
-                    if (wentOpposite || triggered)
+                    if (wentOpposite || triggered || (stateQueue[i] & dashableStates) == 0)
                     {
                         break;
                     }
@@ -217,6 +228,51 @@ public class NBCharacterController : MonoBehaviour {
         }
     }
 
+    void sendJump(float moveY)
+    {
+        CharacterState affectedStates = CharacterState.Idle | CharacterState.Crouch |
+            CharacterState.Walk;
+        if ((currentCharacterState & affectedStates) != 0)
+        {
+            if(moveY > 0.5f)
+            {
+                sendTrigger("Jump");
+            }
+        }
+    }
+
+    void sendGrounded()
+    {
+        sendBool("Grounded", grounded);
+    }
+
+    void getVelocity()
+    {
+        vel = rb.velocity;
+    }
+
+    void checkGrounded()
+    {
+        if (Mathf.Abs(rb.velocity.y) <= Mathf.Epsilon)
+        {
+            if (vel.y < 0.0f)
+            {
+                grounded = true;
+            }
+            if (vel.y > 0.0f)
+            {
+
+            }
+        }
+        if(rb.velocity.y > 0.0f)
+        {
+            grounded = false;
+        }
+        getVelocity();
+
+    }
+
+
     void doFace()
     {
         NBCharacterController opponent = 
@@ -230,6 +286,10 @@ public class NBCharacterController : MonoBehaviour {
         }
     }
 
+    void doJump()
+    {
+        float initVel = 2.0f * maxJumpHeight / maxJumpTime;
+    }
 
 
 }
