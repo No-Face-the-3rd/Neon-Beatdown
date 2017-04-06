@@ -47,6 +47,7 @@ public class NBCharacterController : MonoBehaviour {
     public float fallTime;
     public bool buttonBlock = false;
 
+    public bool grounded = false;
     public int playerNum;
 
     public CharacterState currentCharacterState;
@@ -57,8 +58,8 @@ public class NBCharacterController : MonoBehaviour {
     public List<CharacterState> stateQueue;
     public List<InputState> inputQueue;
     public int queueSize;
-    private Vector3 vel;
-    public bool grounded = false;
+    private Vector2 vel;
+    private float gravity = 0.0f;
     
     
     // Use this for initialization
@@ -92,6 +93,7 @@ public class NBCharacterController : MonoBehaviour {
         if (stateQueue.Count > queueSize)
             stateQueue.RemoveAt(0);
         doFace();
+        doGravity();
     }
 
     public void takeInput(InputState state)
@@ -255,13 +257,13 @@ public class NBCharacterController : MonoBehaviour {
     {
         if (Mathf.Abs(rb.velocity.y) <= Mathf.Epsilon)
         {
-            if (vel.y < 0.0f)
+            if (vel.y < -Mathf.Epsilon)
             {
                 grounded = true;
             }
-            if (vel.y > 0.0f)
+            if (vel.y > Mathf.Epsilon)
             {
-
+                gravity = -2.0f * maxJumpHeight / (fallTime * fallTime);
             }
         }
         if(rb.velocity.y > 0.0f)
@@ -289,6 +291,14 @@ public class NBCharacterController : MonoBehaviour {
     void doJump()
     {
         float initVel = 2.0f * maxJumpHeight / maxJumpTime;
+        gravity = 2.0f * (maxJumpHeight - initVel * maxJumpTime) / (maxJumpTime * maxJumpTime);
+    }
+
+
+    void doGravity()
+    {
+        if(!grounded)
+            rb.velocity = rb.velocity + new Vector2(0.0f, gravity * Time.deltaTime);
     }
 
 
