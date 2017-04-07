@@ -2,39 +2,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Flags]
+public enum CharacterState
+{
+    None = 0,
+    Idle = 1 << 0,
+    Crouch = 1 << 1,
+    Block = 1 << 2,
+    Hit = 1 << 3,
+    Down = 1 << 4,
+    DownRecovery = 1 << 5,
+    Walk = 1 << 6,
+    Dash = 1 << 7,
+    Jump = 1 << 8,
+    JumpHit = 1 << 9,
+    JumpDown = 1 << 10,
+    JumpLight = 1 << 11,
+    JumpHeavy = 1 << 12,
+    Light = 1 << 13,
+    LightRecovery = 1 << 14,
+    LightConsecutive = 1 << 15,
+    LightConsecutiveRecovery = 1 << 16,
+    HeavyCharge = 1 << 17,
+    Heavy = 1 << 18,
+    HeavyRecovery = 1 << 19,
+    AbilityOne = 1 << 20,
+    AbilityOneRecovery = 1 << 21,
+    AbilityTwo = 1 << 22,
+    AbilityTwoRecovery = 1 << 23,
+    AbilityThree = 1 << 24,
+    AbilityThreeRecovery = 1 << 25
+};
+
 public class NBCharacterController : MonoBehaviour {
 
-    [System.Flags]
-    public enum CharacterState
-    {
-        None = 0,
-        Idle = 1 << 0,
-        Crouch = 1 << 1,
-        Block = 1 << 2,
-        Hit = 1 << 3,
-        Down = 1 << 4,
-        DownRecovery = 1 << 5,
-        Walk = 1 << 6,
-        Dash = 1 << 7,
-        Jump = 1 << 8,
-        JumpHit = 1 << 9,
-        JumpDown = 1 << 10,
-        JumpLight = 1 << 11,
-        JumpHeavy = 1 << 12,
-        Light = 1 << 13,
-        LightRecovery = 1 << 14,
-        LightConsecutive = 1 << 15,
-        LightConsecutiveRecovery = 1 << 16,
-        HeavyCharge = 1 << 17,
-        Heavy = 1 << 18,
-        HeavyRecovery = 1 << 19,
-        AbilityOne = 1 << 20,
-        AbilityOneRecovery = 1 << 21,
-        AbilityTwo = 1 << 22,
-        AbilityTwoRecovery = 1 << 23,
-        AbilityThree = 1 << 24,
-        AbilityThreeRecovery = 1 << 25
-    };
 
 
     public float walkSpeedForward;
@@ -46,6 +47,8 @@ public class NBCharacterController : MonoBehaviour {
     public float maxJumpTime;
     public float fallTime;
     public bool buttonBlock = false;
+    [Range(0.0f,1.0f)]
+    public float idleStopRatio = 0.0f;
 
     public bool grounded = false;
     public int playerNum;
@@ -59,8 +62,8 @@ public class NBCharacterController : MonoBehaviour {
     public List<InputState> inputQueue;
     public int queueSize;
     private Vector2 vel;
-    private float gravity = 0.0f;
-    
+    private float gravity;
+    private bool walkingForward = false;
     
     // Use this for initialization
     void Start ()
@@ -69,7 +72,9 @@ public class NBCharacterController : MonoBehaviour {
         inputQueue = new List<InputState>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-	}
+        gravity = -2.0f * (maxJumpHeight) / (maxJumpTime * maxJumpTime);
+
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -86,6 +91,7 @@ public class NBCharacterController : MonoBehaviour {
             sendDash(currentInputState.moveX);
             sendBlock(currentInputState.moveX, currentInputState.buttonBlock.wasPressed);
             sendJump(currentInputState.moveY);
+            
         }
         checkGrounded();
         sendGrounded();
@@ -93,6 +99,7 @@ public class NBCharacterController : MonoBehaviour {
         if (stateQueue.Count > queueSize)
             stateQueue.RemoveAt(0);
         doFace();
+        doIdle();
         doGravity();
     }
 
@@ -140,6 +147,7 @@ public class NBCharacterController : MonoBehaviour {
         if ((currentCharacterState & affectedStates) != 0)
         {
             sendFloat("Walk", moveX * Mathf.Sign(transform.localScale.x));
+            walkingForward = (moveX * Mathf.Sign(transform.localScale.x)) > 0.1f;
         }
     }
 
@@ -255,16 +263,16 @@ public class NBCharacterController : MonoBehaviour {
 
     void checkGrounded()
     {
-        if (Mathf.Abs(rb.velocity.y) <= Mathf.Epsilon)
+        if (Mathf.Abs(rb.velocity.y) < Mathf.Epsilon)
         {
-            if (vel.y < -Mathf.Epsilon)
+            if (vel.y < -Mathf.Epsilon || Mathf.Abs(vel.y) < Mathf.Epsilon)
             {
                 grounded = true;
             }
-            if (vel.y > Mathf.Epsilon)
-            {
-                gravity = -2.0f * maxJumpHeight / (fallTime * fallTime);
-            }
+        }
+        if (Mathf.Sign(vel.y) != Mathf.Sign(rb.velocity.y))
+        {
+            gravity = -2.0f * maxJumpHeight / (fallTime * fallTime);
         }
         if(rb.velocity.y > 0.0f)
         {
@@ -291,15 +299,35 @@ public class NBCharacterController : MonoBehaviour {
     void doJump()
     {
         float initVel = 2.0f * maxJumpHeight / maxJumpTime;
+        grounded = false;
         gravity = 2.0f * (maxJumpHeight - initVel * maxJumpTime) / (maxJumpTime * maxJumpTime);
+        rb.velocity = new Vector2(rb.velocity.x, initVel);
     }
 
+    void doIdle()
+    {
+        CharacterState affectedStates = CharacterState.Idle | CharacterState.Crouch;
+        if ((currentCharacterState & affectedStates) != 0)
+            rb.velocity = new Vector2(rb.velocity.x * idleStopRatio, rb.velocity.y);
+    }
 
     void doGravity()
     {
-        if(!grounded)
-            rb.velocity = rb.velocity + new Vector2(0.0f, gravity * Time.deltaTime);
+        rb.velocity = rb.velocity + new Vector2(0.0f, gravity * Time.deltaTime);
     }
 
+    void doWalk()
+    {
+        float vel = 0.0f;
+        if(walkingForward)
+        {
+            vel = Mathf.Sign(transform.localScale.x) * walkSpeedForward / anim.GetCurrentAnimatorStateInfo(0).length;
+        }
+        else
+        {
+            vel = Mathf.Sign(transform.localScale.x) * -walkSpeedBackward / anim.GetCurrentAnimatorStateInfo(0).length;
+        }
+        rb.velocity = new Vector2(vel, rb.velocity.y);
+    }
 
 }
