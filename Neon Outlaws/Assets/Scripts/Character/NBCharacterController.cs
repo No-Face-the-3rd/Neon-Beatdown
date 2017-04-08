@@ -36,8 +36,6 @@ public enum CharacterState
 
 public class NBCharacterController : MonoBehaviour {
 
-
-
     public float walkSpeedForward;
     public float walkSpeedBackward;
     public float dashSpeedForward;
@@ -46,14 +44,16 @@ public class NBCharacterController : MonoBehaviour {
     public float maxJumpHeight;
     public float maxJumpTime;
     public float fallTime;
+    public float jumpHorizontalModifier;
     public bool buttonBlock = false;
-    [Range(0.0f,1.0f)]
+    [Range(0.0f, 1.0f)]
     public float idleStopRatio = 0.0f;
 
     public bool grounded = false;
     public int playerNum;
 
     public CharacterState currentCharacterState;
+    public PhysicsMaterial2D jumpMat;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -64,9 +64,10 @@ public class NBCharacterController : MonoBehaviour {
     private Vector2 vel;
     private float gravity;
     private bool walkingForward = false;
-    
+    private bool dashingForward = false;
+
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         stateQueue = new List<CharacterState>();
         inputQueue = new List<InputState>();
@@ -75,11 +76,14 @@ public class NBCharacterController : MonoBehaviour {
         gravity = -2.0f * (maxJumpHeight) / (maxJumpTime * maxJumpTime);
 
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
-	}
+
+    }
+
+
 
     void FixedUpdate()
     {
@@ -91,7 +95,8 @@ public class NBCharacterController : MonoBehaviour {
             sendDash(currentInputState.moveX);
             sendBlock(currentInputState.moveX, currentInputState.buttonBlock.wasPressed);
             sendJump(currentInputState.moveY);
-            
+            sendLightAttack(currentInputState.lightAttack.wasPressed);
+
         }
         checkGrounded();
         sendGrounded();
@@ -103,18 +108,7 @@ public class NBCharacterController : MonoBehaviour {
         doGravity();
     }
 
-    public void takeInput(InputState state)
-    {
-        inputQueue.Add(state);
-        if (inputQueue.Count > queueSize)
-            inputQueue.RemoveAt(0);
-    }
-
-    public void setState(CharacterState state)
-    {
-        currentCharacterState = state;
-    }
-
+    #region Animation Generic Send Methods    
     void sendTrigger(string name)
     {
         anim.SetTrigger(name);
@@ -129,7 +123,22 @@ public class NBCharacterController : MonoBehaviour {
     {
         anim.SetFloat(name, value);
     }
+    #endregion
 
+    public void takeInput(InputState state)
+    {
+        inputQueue.Add(state);
+        if (inputQueue.Count > queueSize)
+            inputQueue.RemoveAt(0);
+    }
+
+    public void setState(CharacterState state)
+    {
+        currentCharacterState = state;
+    }
+
+
+    #region Animation Specific Send Method Logic
     void sendCrouch(float moveY)
     {
         CharacterState affectedStates = CharacterState.Idle | CharacterState.Crouch |
@@ -195,9 +204,15 @@ public class NBCharacterController : MonoBehaviour {
                 if (triggered)
                 {
                     if (sign > 0.5f)
+                    {
                         sendTrigger("Dash(Forward)");
+                        dashingForward = true;
+                    }
                     else
+                    {
                         sendTrigger("Dash(Backward)");
+                        dashingForward = false;
+                    }
                 }
             }
         }
@@ -244,7 +259,7 @@ public class NBCharacterController : MonoBehaviour {
             CharacterState.Walk;
         if ((currentCharacterState & affectedStates) != 0)
         {
-            if(moveY > 0.5f)
+            if(moveY > 0.75f)
             {
                 sendTrigger("Jump");
             }
@@ -255,6 +270,20 @@ public class NBCharacterController : MonoBehaviour {
     {
         sendBool("Grounded", grounded);
     }
+
+    void sendLightAttack(bool wasPressed)
+    {
+        CharacterState affectedStates = CharacterState.Idle | CharacterState.Crouch |
+            CharacterState.Walk | CharacterState.Jump;
+        if((currentCharacterState & affectedStates) != 0)
+        {
+            if(wasPressed)
+            {
+                sendTrigger("Light");
+            }
+        }        
+    }
+    #endregion 
 
     void getVelocity()
     {
@@ -268,6 +297,7 @@ public class NBCharacterController : MonoBehaviour {
             if (vel.y < -Mathf.Epsilon || Mathf.Abs(vel.y) < Mathf.Epsilon)
             {
                 grounded = true;
+                rb.sharedMaterial = null;
             }
         }
         if (Mathf.Sign(vel.y) != Mathf.Sign(rb.velocity.y))
@@ -277,6 +307,7 @@ public class NBCharacterController : MonoBehaviour {
         if(rb.velocity.y > 0.0f)
         {
             grounded = false;
+            rb.sharedMaterial = jumpMat;
         }
         getVelocity();
 
@@ -298,15 +329,21 @@ public class NBCharacterController : MonoBehaviour {
 
     void doJump()
     {
-        float initVel = 2.0f * maxJumpHeight / maxJumpTime;
+        float initVerticalVel = 2.0f * maxJumpHeight / maxJumpTime;
         grounded = false;
-        gravity = 2.0f * (maxJumpHeight - initVel * maxJumpTime) / (maxJumpTime * maxJumpTime);
-        rb.velocity = new Vector2(rb.velocity.x, initVel);
+        gravity = 2.0f * (maxJumpHeight - initVerticalVel * maxJumpTime) /
+            (maxJumpTime * maxJumpTime);
+        float initHorizontalVel = rb.velocity.x;
+        if(Mathf.Abs(initHorizontalVel) > Mathf.Epsilon)
+        {
+            initHorizontalVel *= jumpHorizontalModifier;
+        }
+        rb.velocity = new Vector2(initHorizontalVel, initVerticalVel);
     }
 
     void doIdle()
     {
-        CharacterState affectedStates = CharacterState.Idle | CharacterState.Crouch;
+        CharacterState affectedStates = CharacterState.Idle | CharacterState.Crouch | CharacterState.Light;
         if ((currentCharacterState & affectedStates) != 0)
             rb.velocity = new Vector2(rb.velocity.x * idleStopRatio, rb.velocity.y);
     }
@@ -319,13 +356,32 @@ public class NBCharacterController : MonoBehaviour {
     void doWalk()
     {
         float vel = 0.0f;
-        if(walkingForward)
+        if (walkingForward)
         {
-            vel = Mathf.Sign(transform.localScale.x) * walkSpeedForward / anim.GetCurrentAnimatorStateInfo(0).length;
+            vel = Mathf.Sign(transform.localScale.x) * walkSpeedForward
+                / anim.GetCurrentAnimatorStateInfo(0).length;
         }
         else
         {
-            vel = Mathf.Sign(transform.localScale.x) * -walkSpeedBackward / anim.GetCurrentAnimatorStateInfo(0).length;
+            vel = Mathf.Sign(transform.localScale.x) * -walkSpeedBackward 
+                / anim.GetCurrentAnimatorStateInfo(0).length;
+        }
+        rb.velocity = new Vector2(vel, rb.velocity.y);
+    }
+
+    void doDash()
+    {
+        float vel = 0.0f;
+
+        if(dashingForward)
+        {
+            vel = Mathf.Sign(transform.localScale.x) * dashSpeedForward 
+                / anim.GetCurrentAnimatorStateInfo(0).length;
+        }
+        else
+        {
+            vel = Mathf.Sign(transform.localScale.x) * -dashSpeedBackward
+                / anim.GetCurrentAnimatorStateInfo(0).length;
         }
         rb.velocity = new Vector2(vel, rb.velocity.y);
     }
