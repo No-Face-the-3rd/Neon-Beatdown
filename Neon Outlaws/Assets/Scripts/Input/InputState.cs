@@ -108,6 +108,8 @@ public class InputState
     /// <para>Not Currently Used</para>
     /// </summary>
     //public ButtonInfo ultimateAbility;
-
-
+    /// <summary>
+    /// Information on button state: block button
+    /// </summary>
+    public ButtonInfo buttonBlock;
 }
