@@ -21,6 +21,7 @@ MonoBehaviour:
   - {fileID: 114769036059018060}
   - {fileID: 114516019795622718}
   - {fileID: 114370801902750894}
+  - {fileID: 114674364586557058}
   m_ControlSchemes:
   - m_Name: Gamepad
     m_SerializableDeviceTypes:
@@ -57,12 +58,12 @@ MonoBehaviour:
       deadZone: 0.3
       buttonAxisSources:
       - negative:
-          controlIndex: 9
+          controlIndex: 8
           deviceType:
             m_TypeName: UnityEngine.InputNew.Gamepad, Assembly-CSharp, Version=0.0.0.0,
               Culture=neutral, PublicKeyToken=null
         positive:
-          controlIndex: 8
+          controlIndex: 9
           deviceType:
             m_TypeName: UnityEngine.InputNew.Gamepad, Assembly-CSharp, Version=0.0.0.0,
               Culture=neutral, PublicKeyToken=null
@@ -138,6 +139,17 @@ MonoBehaviour:
       primaryIsButtonAxis: 0
     - sources:
       - controlIndex: 15
+        deviceType:
+          m_TypeName: UnityEngine.InputNew.Gamepad, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+      deadZone: 0.3
+      buttonAxisSources: []
+      gravity: 1000
+      sensitivity: 1000
+      snap: 1
+      primaryIsButtonAxis: 0
+    - sources:
+      - controlIndex: 16
         deviceType:
           m_TypeName: UnityEngine.InputNew.Gamepad, Assembly-CSharp, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
@@ -259,6 +271,17 @@ MonoBehaviour:
       primaryIsButtonAxis: 0
     - sources:
       - controlIndex: 108
+        deviceType:
+          m_TypeName: UnityEngine.InputNew.Keyboard, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+      deadZone: 0.3
+      buttonAxisSources: []
+      gravity: 1000
+      sensitivity: 1000
+      snap: 1
+      primaryIsButtonAxis: 0
+    - sources:
+      - controlIndex: 104
         deviceType:
           m_TypeName: UnityEngine.InputNew.Keyboard, Assembly-CSharp, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
@@ -395,6 +418,24 @@ MonoBehaviour:
     componentControlIndices: 
     controlType: 0
     name: special1_a
+    defaultValue: 0
+--- !u!114 &114674364586557058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eba7b4b2e3ea134991ccbff5f47c2c8, type: 3}
+  m_Name: block_lb
+  m_EditorClassIdentifier: 
+  m_ActionMap: {fileID: 11400000}
+  m_ActionIndex: 9
+  m_ControlData:
+    componentControlIndices: 
+    controlType: 0
+    name: block_lb
     defaultValue: 0
 --- !u!114 &114769036059018060
 MonoBehaviour:

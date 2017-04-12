@@ -5,6 +5,7 @@ using UnityEngine.InputNew;
 
 public class MenuInputListener : MonoBehaviour {
     public PlayerInput pInput;
+    public int playerNum;
 
     public AxisAction horizNavAction;
     public AxisAction vertNavAction;
