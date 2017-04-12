@@ -14795,9 +14795,9 @@ LineRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1148691447}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -27670,9 +27670,9 @@ LineRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1169969390}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -29308,7 +29308,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64f8abdb26b06514f964c83a70060da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeedForward: 1
 --- !u!1 &1845191950
 GameObject:
   m_ObjectHideFlags: 0
