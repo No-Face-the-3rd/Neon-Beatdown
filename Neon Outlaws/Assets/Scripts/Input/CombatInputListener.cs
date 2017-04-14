@@ -45,25 +45,6 @@ public class CombatInputListener : MonoBehaviour {
             bindInput(playerNum - 1);
     }
 
-    public void bindInput(int index)
-    {
-        handled = true;
-        DeviceMapper.PlayerInfo info = DeviceMapper.mapper.players[index];
-        pInput.handle = info.handle;
-        pInput.handle.maps[0].active = false;
-        playerNum = info.playerNum;
-        moveX.Bind(pInput.handle);
-        moveY.Bind(pInput.handle);
-        escape.Bind(pInput.handle);
-        abilityOne.Bind(pInput.handle);
-        abilityTwo.Bind(pInput.handle);
-        lightAttack.Bind(pInput.handle);
-        heavyAttack.Bind(pInput.handle);
-        abilityThree.Bind(pInput.handle);
-        //UltBlock.Bind(pInput.handle);
-        buttonBlock.Bind(pInput.handle);
-    }
-
     void FixedUpdate()
     {
         if (overrideAI && handled)
@@ -83,6 +64,26 @@ public class CombatInputListener : MonoBehaviour {
             controller.takeInput(curState);
         curState = new InputState();
     }
+
+    public void bindInput(int index)
+    {
+        handled = true;
+        PlayerInfo info = DeviceMapper.mapper.players[index];
+        pInput.handle = info.handle;
+        pInput.handle.maps[0].active = false;
+        playerNum = info.playerNum;
+        moveX.Bind(pInput.handle);
+        moveY.Bind(pInput.handle);
+        escape.Bind(pInput.handle);
+        abilityOne.Bind(pInput.handle);
+        abilityTwo.Bind(pInput.handle);
+        lightAttack.Bind(pInput.handle);
+        heavyAttack.Bind(pInput.handle);
+        abilityThree.Bind(pInput.handle);
+        //UltBlock.Bind(pInput.handle);
+        buttonBlock.Bind(pInput.handle);
+    }
+
 
     public void setCurState(InputState state)
     {
