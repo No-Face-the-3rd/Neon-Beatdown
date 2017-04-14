@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 120302543}
   - component: {fileID: 120302544}
   m_Layer: 5
-  m_Name: Slider 1
+  m_Name: Healthbar Player 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1070,7 +1070,7 @@ GameObject:
   - component: {fileID: 610109667}
   - component: {fileID: 610109666}
   m_Layer: 5
-  m_Name: Text
+  m_Name: RoundTimerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1263,6 +1263,68 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 726454561}
+--- !u!1 &773490818
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 773490820}
+  - component: {fileID: 773490819}
+  - component: {fileID: 773490821}
+  m_Layer: 0
+  m_Name: RoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &773490819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 773490818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7d609f4f521fc47b9856995a77b309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roundTimer:
+    duration: 99
+  timerText: {fileID: 610109666}
+--- !u!4 &773490820
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 773490818}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.2501523, y: 3.1523273, z: -30.11451}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &773490821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 773490818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3b33c8136fe5c4885c8baad1ea0518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBars:
+  - objectRef: {fileID: 120302542}
+    sliderBar: {fileID: 0}
+    counters: []
+  - objectRef: {fileID: 1003226514}
+    sliderBar: {fileID: 0}
+    counters: []
 --- !u!1 &854407369
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,6 +1420,7 @@ GameObject:
   - component: {fileID: 858310286}
   - component: {fileID: 858310287}
   - component: {fileID: 858310288}
+  - component: {fileID: 858310289}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1425,6 +1488,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be439d3e733de204fbcfca91a7d734bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &858310289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 858310284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71c379555e3b57246874e0047a7684ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characters: []
+  attacks: []
+  levels: []
+  healthBars:
+  - background: {fileID: 2800000, guid: fe3c74d534b7f8848bb7bd1ba06aa64d, type: 3}
+    foreground: {fileID: 2800000, guid: de5cafacaa718f646a879ff15d8f6480, type: 3}
+    counterFill: {fileID: 2800000, guid: 92df0839a40595e46ae3b122312e7e4f, type: 3}
+  - background: {fileID: 2800000, guid: 186055d3ddc761e4eb68361d010ca3b9, type: 3}
+    foreground: {fileID: 2800000, guid: 55788e78df91f5f41a78a38c47eaed11, type: 3}
+    counterFill: {fileID: 2800000, guid: 9a163faf2051d284a81db1ff21b793c2, type: 3}
 --- !u!1 &956177452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,7 +1587,7 @@ GameObject:
   - component: {fileID: 1003226515}
   - component: {fileID: 1003226516}
   m_Layer: 5
-  m_Name: Slider 2
+  m_Name: Healthbar Player 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1799,6 +1883,7 @@ MonoBehaviour:
     action: {fileID: 114663407223743340, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
   resumeAction:
     action: {fileID: 114610340763726446, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
+  selectedCharacter: 0
   curState:
     horizNav: 0
     vertNav: 0
@@ -28214,6 +28299,7 @@ MonoBehaviour:
     action: {fileID: 114663407223743340, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
   resumeAction:
     action: {fileID: 114610340763726446, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
+  selectedCharacter: 0
   curState:
     horizNav: 0
     vertNav: 0

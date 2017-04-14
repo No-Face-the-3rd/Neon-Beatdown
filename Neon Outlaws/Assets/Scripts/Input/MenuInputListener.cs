@@ -15,6 +15,8 @@ public class MenuInputListener : MonoBehaviour {
     public ButtonAction declineAction;
     public ButtonAction resumeAction;
 
+    public int selectedCharacter = -1;
+
     public menuInputState curState = new menuInputState();
 
     private bool handled = false;
@@ -47,7 +49,7 @@ public class MenuInputListener : MonoBehaviour {
     public void bindInput(int index)
     {
         handled = true;
-        DeviceMapper.PlayerInfo info = DeviceMapper.mapper.players[index];
+        PlayerInfo info = DeviceMapper.mapper.players[index];
         pInput.handle = info.handle;
         playerNum = info.playerNum;
         horizNavAction.Bind(pInput.handle);

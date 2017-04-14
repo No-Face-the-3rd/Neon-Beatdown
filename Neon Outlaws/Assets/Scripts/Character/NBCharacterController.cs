@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 [System.Flags]
 public enum CharacterState
 {
@@ -34,8 +36,8 @@ public enum CharacterState
     AbilityThreeRecovery = 1 << 25
 };
 
-public class NBCharacterController : MonoBehaviour {
-
+public class NBCharacterController : MonoBehaviour
+{
     public float walkSpeedForward;
     public float walkSpeedBackward;
     public float dashSpeedForward;

@@ -68,7 +68,7 @@ public class CombatInputListener : MonoBehaviour {
     public void bindInput(int index)
     {
         handled = true;
-        DeviceMapper.PlayerInfo info = DeviceMapper.mapper.players[index];
+        PlayerInfo info = DeviceMapper.mapper.players[index];
         pInput.handle = info.handle;
         pInput.handle.maps[0].active = false;
         playerNum = info.playerNum;
