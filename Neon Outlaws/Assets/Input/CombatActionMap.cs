@@ -14,4 +14,5 @@ public class CombatActionMap : ActionMapInput {
 	public ButtonInputControl @special2_B { get { return (ButtonInputControl)this[6]; } }
 	public ButtonInputControl @special3_Rb { get { return (ButtonInputControl)this[7]; } }
 	public ButtonInputControl @ultimate_Rt { get { return (ButtonInputControl)this[8]; } }
+	public ButtonInputControl @block_Lb { get { return (ButtonInputControl)this[9]; } }
 }
