@@ -45,32 +45,66 @@ public class HealthbarManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(!initialized)
+		if(initialized)
+        {
+            updateValues();
+        }
+        else
         {
             initializeArt();
         }
-
 	}
 
     void initializeArt()
     {
+        bool success = true;
         for(int i = 0;i < healthBars.Count;i++)
         {
+            int playerNum = i + 1;
             healthBars[i] = new HealthBar(healthBars[i].objectRef);
-            int character = PlayerLocator.locator.getMenuListener(i + 1).selectedCharacter;
-            RawImage background = healthBars[i].objectRef.transform.
-                FindChild("Background").GetComponent<RawImage>();
-            if(background != null && character >= 0)
+            MenuInputListener menuListener = PlayerLocator.locator.getMenuListener(playerNum);
+            if(menuListener == null)
             {
-                
+                success = false;
+                break;
             }
-            RawImage foreground = healthBars[i].objectRef.transform.
-                FindChild("Fill").GetComponent<RawImage>();
+            int character = menuListener.selectedCharacter;
+            if (character >= 0)
+            {
+                Image background = healthBars[i].objectRef.transform.
+                    FindChild("Background").GetComponent<Image>();
+                HealthBarElements healthBar = ObjectDB.data.getHealthbar(character);
+                if (background != null)
+                {
+                    background.sprite = healthBar.background;
+                }
+                Image foreground = healthBars[i].objectRef.transform.
+                    FindChild("Fill Area").FindChild("Fill").GetComponent<Image>();
+                if (foreground != null)
+                {
+                    foreground.sprite = healthBar.foreground;
+                }
+            }
         }
+        if (success)
+        {
+            initialized = true;
+        }
+
     }
+
+
 
     void updateValues()
     {
-
+        for (int i = 0; i < healthBars.Count; i++)
+        {
+            int playerNum = i + 1;
+            NBCharacterController character = CharacterLocator.locator.getCharacter(playerNum);
+            if (character != null)
+            {
+                healthBars[i].sliderBar.value = character.getCurHealthPercent();
+            }
+        }
     }
 }
