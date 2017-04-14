@@ -1842,6 +1842,10 @@ MonoBehaviour:
   jumpHorizontalModifier: 2.5
   buttonBlock: 1
   idleStopRatio: 0.4
+  walkSlowRatio: 0.5
+  consecutiveLightsForSecond: 2
+  maxHeavyChargeTime: 20
+  consecutiveLightDecay: 10
   grounded: 0
   playerNum: 1
   currentCharacterState: 0
@@ -14981,6 +14985,10 @@ MonoBehaviour:
   jumpHorizontalModifier: 2.5
   buttonBlock: 1
   idleStopRatio: 0.4
+  walkSlowRatio: 0.5
+  consecutiveLightsForSecond: 2
+  maxHeavyChargeTime: 20
+  consecutiveLightDecay: 10
   grounded: 0
   playerNum: 2
   currentCharacterState: 0

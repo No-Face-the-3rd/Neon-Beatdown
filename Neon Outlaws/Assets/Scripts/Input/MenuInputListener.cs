@@ -22,4 +22,10 @@ public class MenuInputListener : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    void FixedUpdate()
+    {
+        menuInputState curState = new menuInputState();
+        
+    }
 }
