@@ -292,14 +292,13 @@ public class NBCharacterController : MonoBehaviour {
         {
             if(wasPressed)
             {
-                if(numConsecutiveLights <= consecutiveLightsForSecond)
+                if(numConsecutiveLights < consecutiveLightsForSecond)
                 {
                     sendTrigger("Light");
                 }
                 else
                 {
                     sendTrigger("Light(Consecutive)");
-                    numConsecutiveLights = 0;
                 }
             }
         }
@@ -316,7 +315,6 @@ public class NBCharacterController : MonoBehaviour {
             if ((stateQueue[i] & nonDecayStates) != 0)
             {
                 decayed = false;
-                break;
             }
         }
         if(decayed)
@@ -335,13 +333,15 @@ public class NBCharacterController : MonoBehaviour {
             if (wasPressed)
             {
                 sendTrigger("Heavy");
-                heavyCharge = 0;
             }
             sendBool("Heavy(Charge)", isHeld);
         }
     }
 
-
+    void sendDowned(bool downed)
+    {
+        sendBool("Downed", downed);
+    }
 
     #endregion 
 
@@ -472,6 +472,8 @@ public class NBCharacterController : MonoBehaviour {
     void doHeavyAttack()
     {
 
+
+        heavyCharge = 0;
     }
 
     float getCurHealthPercent()

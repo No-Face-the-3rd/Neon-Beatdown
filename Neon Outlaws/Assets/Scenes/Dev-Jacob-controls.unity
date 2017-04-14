@@ -1788,6 +1788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pInput: {fileID: 1027975411}
   playerNum: 0
+  overrideAI: 0
   horizNavAction:
     action: {fileID: 114213937635851168, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
   vertNavAction:
@@ -1798,6 +1799,21 @@ MonoBehaviour:
     action: {fileID: 114663407223743340, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
   resumeAction:
     action: {fileID: 114610340763726446, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
+  curState:
+    horizNav: 0
+    vertNav: 0
+    accept:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    decline:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    resume:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
 --- !u!1 &1148691447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1845,7 +1861,8 @@ MonoBehaviour:
   walkSlowRatio: 0.5
   consecutiveLightsForSecond: 2
   maxHeavyChargeTime: 20
-  consecutiveLightDecay: 10
+  consecutiveLightDecay: 15
+  blockDamageTaken: 0.2
   grounded: 0
   playerNum: 1
   currentCharacterState: 0
@@ -1853,6 +1870,7 @@ MonoBehaviour:
   stateQueue: 
   inputQueue: []
   queueSize: 100
+  maxHealth: 1000
 --- !u!114 &1148691449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14988,7 +15006,8 @@ MonoBehaviour:
   walkSlowRatio: 0.5
   consecutiveLightsForSecond: 2
   maxHeavyChargeTime: 20
-  consecutiveLightDecay: 10
+  consecutiveLightDecay: 15
+  blockDamageTaken: 0.2
   grounded: 0
   playerNum: 2
   currentCharacterState: 0
@@ -14996,6 +15015,7 @@ MonoBehaviour:
   stateQueue: 
   inputQueue: []
   queueSize: 100
+  maxHealth: 1000
 --- !u!114 &1169969392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28183,6 +28203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pInput: {fileID: 1217247007}
   playerNum: 0
+  overrideAI: 0
   horizNavAction:
     action: {fileID: 114213937635851168, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
   vertNavAction:
@@ -28193,6 +28214,21 @@ MonoBehaviour:
     action: {fileID: 114663407223743340, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
   resumeAction:
     action: {fileID: 114610340763726446, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
+  curState:
+    horizNav: 0
+    vertNav: 0
+    accept:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    decline:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    resume:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
 --- !u!114 &1217247006
 MonoBehaviour:
   m_ObjectHideFlags: 0
