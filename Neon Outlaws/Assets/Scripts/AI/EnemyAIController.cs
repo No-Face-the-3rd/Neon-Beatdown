@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyAIController : MonoBehaviour
 {
+    //replace with player locator
     public CombatInputListener cbi;
     public InputState inputState;
 

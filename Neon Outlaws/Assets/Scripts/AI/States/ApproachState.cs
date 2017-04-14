@@ -40,11 +40,13 @@ public class ApproachState : IAIStates {
         float approachRange = 8.0f;
         if(Mathf.Abs(selfController.transform.position.x - opponent.transform.position.x) > approachRange)
         {
+            
             self.inputState.moveX = selfController.transform.localScale.x;
         }
         else
         {
             self.inputState.moveX = -selfController.transform.localScale.x;
+            //ToRetreatState();
         }
 
         //RaycastHit2D hit;
