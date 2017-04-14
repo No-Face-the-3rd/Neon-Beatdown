@@ -294,12 +294,29 @@ public class NBCharacterController : MonoBehaviour {
                 else
                 {
                     sendTrigger("Light(Consecutive)");
+                    numConsecutiveLights = 0;
                 }
             }
         }
-        for (int i = stateQueue.Count - 1; i > stateQueue.Count - 1 - consecutiveLightDecay; i--)
+        bool decayed = true;
+        CharacterState nonDecayStates = CharacterState.Light | CharacterState.LightRecovery;
+        CharacterState decayedStates = CharacterState.LightConsecutiveRecovery | CharacterState.LightConsecutive;
+        for (int i = stateQueue.Count - 1; i > stateQueue.Count - 1 - consecutiveLightDecay && i >= 0; i--)
         {
-            
+            if((stateQueue[i] & decayedStates) != 0)
+            {
+                decayed = true;
+                break;
+            }            
+            if ((stateQueue[i] & nonDecayStates) != 0)
+            {
+                decayed = false;
+                break;
+            }
+        }
+        if(decayed)
+        {
+            numConsecutiveLights = 0;
         }
 
     }
