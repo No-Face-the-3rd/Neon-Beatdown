@@ -53,6 +53,8 @@ public class NBCharacterController : MonoBehaviour {
     public int consecutiveLightsForSecond = 0;
     public int maxHeavyChargeTime = 0;
     public int consecutiveLightDecay = 0;
+    [Range(0.0f, 1.0f)]
+    public float blockDamageTaken = 0.2f;
 
     public bool grounded = false;
     public int playerNum;
@@ -73,6 +75,10 @@ public class NBCharacterController : MonoBehaviour {
     private int heavyCharge = 0;
     private int numConsecutiveLights = 0;
 
+
+    private float curHealth = 0.0f;
+    public float maxHealth = 1000.0f;
+
     // Use this for initialization
     void Start()
     {
@@ -81,7 +87,7 @@ public class NBCharacterController : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         gravity = -2.0f * (maxJumpHeight) / (maxJumpTime * maxJumpTime);
-
+        curHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -286,7 +292,6 @@ public class NBCharacterController : MonoBehaviour {
         {
             if(wasPressed)
             {
-                numConsecutiveLights++;
                 if(numConsecutiveLights <= consecutiveLightsForSecond)
                 {
                     sendTrigger("Light");
@@ -307,7 +312,7 @@ public class NBCharacterController : MonoBehaviour {
             {
                 decayed = true;
                 break;
-            }            
+            }
             if ((stateQueue[i] & nonDecayStates) != 0)
             {
                 decayed = false;
@@ -448,6 +453,46 @@ public class NBCharacterController : MonoBehaviour {
     {
         heavyCharge++;
         heavyCharge = Mathf.Clamp(heavyCharge, 0, maxHeavyChargeTime);
+    }
+
+    void doLightAttack()
+    {
+        numConsecutiveLights++;
+
+
+    }
+
+    void doLightConsecutive()
+    {
+        numConsecutiveLights = 0;
+
+
+    }
+
+    void doHeavyAttack()
+    {
+
+    }
+
+    float getCurHealthPercent()
+    {
+        return Mathf.Clamp(curHealth / maxHealth, 0.0f, 1.0f);
+    }
+
+    void beDamaged(float damage)
+    {
+        float finalDamage = damage;
+        if(currentCharacterState == CharacterState.Block)
+        {
+            finalDamage = finalDamage * blockDamageTaken;
+        }
+        changeHealth(-finalDamage);
+    }
+
+    void changeHealth(float health)
+    {
+        curHealth += health;
+        Mathf.Clamp(curHealth, 0.0f, maxHealth);
     }
 
 }
