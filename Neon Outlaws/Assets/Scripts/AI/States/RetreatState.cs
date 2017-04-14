@@ -39,32 +39,39 @@ public class RetreatState : IAIStates {
     // Retreats until it detects the wall behind it
     private void Retreat()
     {
-    //    NBCharacterController selfController = self.cbi.controller;
-    //    NBCharacterController opponent = CharacterLocator.locator.getCharacter((selfController.playerNum % 2) + 1);
+        NBCharacterController selfController = self.cbi.controller;
+        NBCharacterController opponent = CharacterLocator.locator.getCharacter((selfController.playerNum % 2) + 1);
+        float retreatRange = 5.0f;
+        if(Mathf.Abs(selfController.transform.position.x - opponent.transform.position.x) < retreatRange)
+        {
+            self.inputState.moveX = -selfController.transform.localScale.x;
+        }
+        else
+            ToApproachState();
 
-    //    if (self.opponent.GetComponent<Rigidbody2D>().position.x > self.rb.position.x)
-    //    {
-    //        hit = Physics2D.Raycast(self.rb.position, Vector2.right, raycastDistance);
-    //        if (hit.distance > 3)
-    //        {
-    //            self.inputState.moveX = -1;
-    //        }
-    //        else
-    //        {
-    //            ToApproachState();
-    //        }
-    //    }
-    //    else
-    //    {
-    //        hit = Physics2D.Raycast(self.rb.position, Vector2.left, raycastDistance);
-    //        if (hit.distance > 3)
-    //        {
-    //            self.inputState.moveX = 1;
-    //        }
-    //        else
-    //        {
-    //            ToApproachState();
-    //        }
-    //    }
+        /*if (self.opponent.GetComponent<Rigidbody2D>().position.x > self.rb.position.x)
+        {
+            hit = Physics2D.Raycast(self.rb.position, Vector2.right, raycastDistance);
+            if (hit.distance > 3)
+            {
+                self.inputState.moveX = -1;
+            }
+            else
+            {
+                ToApproachState();
+            }
+        }
+        else
+        {
+            hit = Physics2D.Raycast(self.rb.position, Vector2.left, raycastDistance);
+            if (hit.distance > 3)
+            {
+                self.inputState.moveX = 1;
+            }
+            else
+            {
+                ToApproachState();
+            }
+        }*/
     }
 }

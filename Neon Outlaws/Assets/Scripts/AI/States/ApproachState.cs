@@ -44,10 +44,7 @@ public class ApproachState : IAIStates {
             self.inputState.moveX = selfController.transform.localScale.x;
         }
         else
-        {
-            self.inputState.moveX = -selfController.transform.localScale.x;
-            //ToRetreatState();
-        }
+            ToRetreatState();
 
         //RaycastHit2D hit;
         //if (self.opponent.GetComponent<Rigidbody2D>().position.x > self.rb.position.x)
