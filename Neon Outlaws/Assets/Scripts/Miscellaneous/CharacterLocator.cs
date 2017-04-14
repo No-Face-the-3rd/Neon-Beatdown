@@ -23,15 +23,21 @@ public class CharacterLocator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        findCharacters();
+	}
+
+    void findCharacters()
+    {
         NBCharacterController[] charactersExist = FindObjectsOfType<NBCharacterController>();
-        for(int i = 0;i < charactersExist.Length;i++)
+        for (int i = 0; i < charactersExist.Length; i++)
         {
-            if(!(characters.FindIndex(character => character.playerNum == charactersExist[i].playerNum) >= 0))
+            if (!(characters.FindIndex(character => character.playerNum == charactersExist[i].playerNum) >= 0))
             {
                 characters.Add(charactersExist[i]);
             }
         }
-	}
+
+    }
 
     public NBCharacterController getCharacter(int playerNum)
     {

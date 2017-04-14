@@ -113,3 +113,28 @@ public class InputState
     /// </summary>
     public ButtonInfo buttonBlock;
 }
+
+[System.Serializable]
+public class menuInputState
+{
+    /// <summary>
+    /// Value from -1 to 1. X axis Controls
+    /// </summary>
+    public float horizNav;
+    /// <summary>
+    /// Value from -1 to 1. Y axis Controls
+    /// </summary>
+    public float vertNav;
+    /// <summary>
+    /// Information on button state: accept
+    /// </summary>
+    public ButtonInfo accept;
+    /// <summary>
+    /// Information on button state: decline
+    /// </summary>
+    public ButtonInfo decline;
+    /// <summary>
+    /// Information on button state: resume
+    /// </summary>
+    public ButtonInfo resume;
+}
