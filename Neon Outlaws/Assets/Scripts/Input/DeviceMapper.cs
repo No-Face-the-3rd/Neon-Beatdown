@@ -3,23 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputNew;
 
+public class PlayerInfo
+{
+    public PlayerHandle handle;
+    public ButtonInputControl acceptControl;
+    public ButtonInputControl declineControl;
+    public int playerNum;
+
+    public PlayerInfo(PlayerHandle inHandle, ButtonAction acceptAction, ButtonAction declineAction, int playerNumIn)
+    {
+        this.handle = inHandle;
+        acceptControl = (ButtonInputControl)inHandle.GetActions(acceptAction.action.actionMap)[acceptAction.action.actionIndex];
+        declineControl = (ButtonInputControl)inHandle.GetActions(declineAction.action.actionMap)[declineAction.action.actionIndex];
+        playerNum = playerNumIn;
+    }
+}
+
 public class DeviceMapper : MonoBehaviour {
 
-    public class PlayerInfo
-    {
-        public PlayerHandle handle;
-        public ButtonInputControl acceptControl;
-        public ButtonInputControl declineControl;
-        public int playerNum;
-
-        public PlayerInfo(PlayerHandle inHandle, ButtonAction acceptAction, ButtonAction declineAction, int playerNumIn)
-        {
-            this.handle = inHandle;
-            acceptControl = (ButtonInputControl)inHandle.GetActions(acceptAction.action.actionMap)[acceptAction.action.actionIndex];
-            declineControl = (ButtonInputControl)inHandle.GetActions(declineAction.action.actionMap)[declineAction.action.actionIndex];
-            playerNum = playerNumIn;
-        }
-    }
 
     public static DeviceMapper mapper;
     public int maxPlayers;
@@ -115,4 +116,17 @@ public class DeviceMapper : MonoBehaviour {
         }
 
 	}
+
+    public PlayerInfo getPlayer(int playerNum)
+    {
+        int ind = players.FindIndex(player => player.playerNum == playerNum);
+        if(ind >= 0)
+        {
+            return players[ind];
+        }
+        else
+        {
+            return null;
+        }
+    }
 }
