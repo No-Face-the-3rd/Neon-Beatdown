@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Taken and changed from a Sebastian Lague 2D platformer tutorial
 public class BlimpMovement : MonoBehaviour {
     public Vector3[] localWaypoints;
     Vector3[] globalWaypoints;
@@ -34,6 +35,8 @@ public class BlimpMovement : MonoBehaviour {
         return Mathf.Pow(x, a) / (Mathf.Pow(x, a) + Mathf.Pow(1 - x, a));
     }
 
+    // Waypoint positions are relative to the blimp's position, not the world position
+    // (so to get it to move 50 units on the Y axis, a waypoint's position needs to be set as (0, 50, 0))
     Vector3 blimpMovement()
     {
         if (Time.time < nextMoveTime)
