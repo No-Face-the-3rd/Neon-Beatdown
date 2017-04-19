@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class StageSelectMenu : MonoBehaviour {
     public GameObject stageSelectPanel;
     public GameObject characterSelectPanel;
@@ -17,3 +18,4 @@ public class StageSelectMenu : MonoBehaviour {
     }
 
 }
+
