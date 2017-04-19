@@ -22,6 +22,14 @@ public class ButtonInfo
 
     private bool isDown = false;
 
+    public ButtonInfo()
+    {
+        wasPressed = false;
+        wasReleased = false;
+        isHeld = false;
+        isDown = false;
+    }
+
     /// <summary>
     /// 
     /// </summary>
@@ -108,6 +116,55 @@ public class InputState
     /// <para>Not Currently Used</para>
     /// </summary>
     //public ButtonInfo ultimateAbility;
+    /// <summary>
+    /// Information on button state: block button
+    /// </summary>
+    public ButtonInfo buttonBlock;
 
+    public InputState()
+    {
+        moveX = 0.0f;
+        moveY = 0.0f;
+        escape = new ButtonInfo();
+        lightAttack = new ButtonInfo();
+        heavyAttack = new ButtonInfo();
+        abilityOne = new ButtonInfo();
+        abilityTwo = new ButtonInfo();
+        abilityThree = new ButtonInfo();
+        buttonBlock = new ButtonInfo();
+    }
+}
 
+[System.Serializable]
+public class menuInputState
+{
+    /// <summary>
+    /// Value from -1 to 1. X axis Controls
+    /// </summary>
+    public float horizNav;
+    /// <summary>
+    /// Value from -1 to 1. Y axis Controls
+    /// </summary>
+    public float vertNav;
+    /// <summary>
+    /// Information on button state: accept
+    /// </summary>
+    public ButtonInfo accept;
+    /// <summary>
+    /// Information on button state: decline
+    /// </summary>
+    public ButtonInfo decline;
+    /// <summary>
+    /// Information on button state: resume
+    /// </summary>
+    public ButtonInfo resume;
+
+    public menuInputState()
+    {
+        horizNav = 0.0f;
+        vertNav = 0.0f;
+        accept = new ButtonInfo();
+        decline = new ButtonInfo();
+        resume = new ButtonInfo();
+    }
 }

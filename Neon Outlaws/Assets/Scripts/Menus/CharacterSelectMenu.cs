@@ -16,4 +16,11 @@ public class CharacterSelectMenu : MonoBehaviour {
         characterSelectPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
     }
+
+    public void LoadStageSelect()
+    {
+        characterSelectPanel.SetActive(false);
+        stageSelectPanel.SetActive(true);
+    }
+
 }

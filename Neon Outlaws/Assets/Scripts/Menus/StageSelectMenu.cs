@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StageSelection : MonoBehaviour {
+
+public class StageSelectMenu : MonoBehaviour {
     public GameObject stageSelectPanel;
     public GameObject characterSelectPanel;
     
-    // Load the development fight scene
     public void LoadSceneOnSelect() {
-        SceneManager.LoadScene("Dev-Chris-AI");
+        SceneManager.LoadScene("Dev-Chris-Stage");
     }
 
-    public void LoadCharacterMenu() {
+    public void LoadCharacterSelect() {
         stageSelectPanel.SetActive(false);
         characterSelectPanel.SetActive(true);
     }
+
 }
+

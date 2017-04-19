@@ -136,6 +136,7 @@ public class TextureToPoints : MonoBehaviour {
     private LineRenderer lineRend;
 
     public bool showHitVisualizer = false;
+    private SpriteRenderer sprRend;
 
 	// Use this for initialization
 	void Start () {
@@ -143,12 +144,15 @@ public class TextureToPoints : MonoBehaviour {
         getLineRend();
         if (colliderPoints.Count >= 1 && poly != null)
             setPath(curInd);
+        sprRend = GetComponent<SpriteRenderer>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
         showHitVisualization();
-	}
+        string spriteInd = sprRend.sprite.name.Replace(sprRend.sprite.texture.name + "_", "");
+        setPath(int.Parse(spriteInd));
+    }
 
     public Texture2D getSpriteSheet()
     {
