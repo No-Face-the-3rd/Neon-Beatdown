@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 [System.Flags]
 public enum CharacterState
 {
@@ -34,8 +36,8 @@ public enum CharacterState
     AbilityThreeRecovery = 1 << 25
 };
 
-public class NBCharacterController : MonoBehaviour {
-
+public class NBCharacterController : MonoBehaviour
+{
     public float walkSpeedForward;
     public float walkSpeedBackward;
     public float dashSpeedForward;
@@ -47,7 +49,16 @@ public class NBCharacterController : MonoBehaviour {
     public float jumpHorizontalModifier;
     public bool buttonBlock = false;
     [Range(0.0f, 1.0f)]
-    public float idleStopRatio = 0.0f;
+    public float idleStopRatio = 0.4f;
+    [Range(0.0f, 1.0f)]
+    public float walkSlowRatio = 0.5f;
+    public int consecutiveLightsForSecond = 0;
+    public int maxHeavyChargeTime = 0;
+    public int consecutiveLightDecay = 0;
+    [Range(0.0f, 1.0f)]
+    public float blockDamageTaken = 0.2f;
+    public float minHeavyChargeDamage = 0.0f;
+    public float maxHeavyChargeDamage = 0.0f;
 
     public bool grounded = false;
     public int playerNum;
@@ -65,6 +76,14 @@ public class NBCharacterController : MonoBehaviour {
     private float gravity;
     private bool walkingForward = false;
     private bool dashingForward = false;
+    private int heavyCharge = 0;
+    private int numConsecutiveLights = 0;
+
+    public List<int> attackIndices = new List<int>();
+
+
+    private float curHealth = 0.0f;
+    public float maxHealth = 1000.0f;
 
     // Use this for initialization
     void Start()
@@ -74,7 +93,7 @@ public class NBCharacterController : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         gravity = -2.0f * (maxJumpHeight) / (maxJumpTime * maxJumpTime);
-
+        curHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -96,7 +115,7 @@ public class NBCharacterController : MonoBehaviour {
             sendBlock(currentInputState.moveX, currentInputState.buttonBlock.wasPressed);
             sendJump(currentInputState.moveY);
             sendLightAttack(currentInputState.lightAttack.wasPressed);
-
+            sendHeavyAttack(currentInputState.heavyAttack.wasPressed, currentInputState.heavyAttack.isHeld);
         }
         checkGrounded();
         sendGrounded();
@@ -126,7 +145,7 @@ public class NBCharacterController : MonoBehaviour {
     #endregion
 
     public void takeInput(InputState state)
-    {
+    {    
         inputQueue.Add(state);
         if (inputQueue.Count > queueSize)
             inputQueue.RemoveAt(0);
@@ -175,7 +194,7 @@ public class NBCharacterController : MonoBehaviour {
                 bool triggered = false;
                 CharacterState dashableStates = CharacterState.Idle | CharacterState.Walk;
 
-                for (int i = inputQueue.Count - 2; i > inputQueue.Count - 1 - dashLeeway; i--)
+                for (int i = inputQueue.Count - 2; i > inputQueue.Count - 1 - dashLeeway && i >= 0; i--)
                 {
                     float iSign = Mathf.Sign(inputQueue[i].moveX) * Mathf.Sign(transform.localScale.x);
                     float iAbs = Mathf.Abs(inputQueue[i].moveX);
@@ -256,7 +275,7 @@ public class NBCharacterController : MonoBehaviour {
     void sendJump(float moveY)
     {
         CharacterState affectedStates = CharacterState.Idle | CharacterState.Crouch |
-            CharacterState.Walk;
+            CharacterState.Walk | CharacterState.Dash;
         if ((currentCharacterState & affectedStates) != 0)
         {
             if(moveY > 0.75f)
@@ -274,15 +293,62 @@ public class NBCharacterController : MonoBehaviour {
     void sendLightAttack(bool wasPressed)
     {
         CharacterState affectedStates = CharacterState.Idle | CharacterState.Crouch |
-            CharacterState.Walk | CharacterState.Jump;
+            CharacterState.Walk | CharacterState.Jump | CharacterState.LightRecovery;
         if((currentCharacterState & affectedStates) != 0)
         {
             if(wasPressed)
             {
-                sendTrigger("Light");
+                if(numConsecutiveLights < consecutiveLightsForSecond)
+                {
+                    sendTrigger("Light");
+                }
+                else
+                {
+                    sendTrigger("Light(Consecutive)");
+                }
             }
-        }        
+        }
+        bool decayed = true;
+        CharacterState nonDecayStates = CharacterState.Light | CharacterState.LightRecovery;
+        CharacterState decayedStates = CharacterState.LightConsecutiveRecovery | CharacterState.LightConsecutive;
+        for (int i = stateQueue.Count - 1; i > stateQueue.Count - 1 - consecutiveLightDecay && i >= 0; i--)
+        {
+            if((stateQueue[i] & decayedStates) != 0)
+            {
+                decayed = true;
+                break;
+            }
+            if ((stateQueue[i] & nonDecayStates) != 0)
+            {
+                decayed = false;
+            }
+        }
+        if(decayed)
+        {
+            numConsecutiveLights = 0;
+        }
+
     }
+
+    void sendHeavyAttack(bool wasPressed, bool isHeld)
+    {
+        CharacterState affectedStates = CharacterState.Idle | CharacterState.Crouch |
+            CharacterState.Walk | CharacterState.Jump | CharacterState.HeavyCharge;
+        if((currentCharacterState & affectedStates) != 0)
+        {
+            if (wasPressed)
+            {
+                sendTrigger("Heavy");
+            }
+            sendBool("Heavy(Charge)", isHeld);
+        }
+    }
+
+    void sendDowned(bool downed)
+    {
+        sendBool("Downed", downed);
+    }
+
     #endregion 
 
     void getVelocity()
@@ -343,7 +409,9 @@ public class NBCharacterController : MonoBehaviour {
 
     void doIdle()
     {
-        CharacterState affectedStates = CharacterState.Idle | CharacterState.Crouch | CharacterState.Light;
+        CharacterState affectedStates = CharacterState.Idle | CharacterState.Crouch |
+            CharacterState.Light | CharacterState.Heavy | CharacterState.HeavyCharge |
+            CharacterState.HeavyRecovery;
         if ((currentCharacterState & affectedStates) != 0)
             rb.velocity = new Vector2(rb.velocity.x * idleStopRatio, rb.velocity.y);
     }
@@ -366,6 +434,7 @@ public class NBCharacterController : MonoBehaviour {
             vel = Mathf.Sign(transform.localScale.x) * -walkSpeedBackward 
                 / anim.GetCurrentAnimatorStateInfo(0).length;
         }
+        vel = (Mathf.Abs(rb.velocity.x) > Mathf.Abs(vel)) ? vel * walkSlowRatio + rb.velocity.x * (1.0f - walkSlowRatio) : vel;
         rb.velocity = new Vector2(vel, rb.velocity.y);
     }
 
@@ -384,6 +453,64 @@ public class NBCharacterController : MonoBehaviour {
                 / anim.GetCurrentAnimatorStateInfo(0).length;
         }
         rb.velocity = new Vector2(vel, rb.velocity.y);
+    }
+
+    void doHeavyCharge()
+    {
+        heavyCharge++;
+        heavyCharge = Mathf.Clamp(heavyCharge, 0, maxHeavyChargeTime);
+    }
+
+    void doLightAttack()
+    {
+        numConsecutiveLights++;
+        spawnAttack(0, 0.0f);
+    }
+
+
+    void doLightConsecutive()
+    {
+        numConsecutiveLights = 0;
+        spawnAttack(2, 0.0f);
+
+    }
+
+    void doHeavyAttack()
+    {
+        float damageChange = Mathf.Lerp(minHeavyChargeDamage, maxHeavyChargeDamage, (float)heavyCharge / (float)maxHeavyChargeTime);
+        spawnAttack(1, damageChange);
+        heavyCharge = 0;
+    }
+
+    public float getCurHealthPercent()
+    {
+        return Mathf.Clamp(curHealth / maxHealth, 0.0f, 1.0f);
+    }
+
+    public void beDamaged(float damage)
+    {
+        float finalDamage = damage;
+        if(currentCharacterState == CharacterState.Block)
+        {
+            finalDamage = finalDamage * blockDamageTaken;
+        }
+        changeHealth(-finalDamage);
+    }
+
+    public void changeHealth(float health)
+    {
+        curHealth += health;
+        Mathf.Clamp(curHealth, 0.0f, maxHealth);
+    }
+    void spawnAttack(int attackIndex, float damageModifier)
+    {
+        GameObject attack = ObjectDB.data.getAttack(attackIndices[attackIndex]);
+        GameObject tmp = (GameObject)Instantiate(attack, transform.position, Quaternion.identity);
+        DamageDealer damage = tmp.GetComponent<DamageDealer>();
+        damage.owner = playerNum;
+        damage.damage += damageModifier;
+        tmp.transform.localScale = gameObject.transform.localScale;
+        Physics2D.IgnoreCollision(tmp.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>());
     }
 
 }
