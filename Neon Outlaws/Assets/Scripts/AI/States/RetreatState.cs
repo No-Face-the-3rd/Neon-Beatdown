@@ -3,44 +3,68 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RetreatState : IAIStates {
-    private readonly EnemyAIController enemy;
+    private readonly EnemyAIController self;
     private InputState inputState;
-    private CombatInputListener cil;
     public Vector2   raycastOrigin;
     private float    raycastDistance = 1.03f;
 
-    public RetreatState(EnemyAIController ai) {
-        enemy = ai;
+
+    public RetreatState(EnemyAIController ai)
+    {
+        self = ai;
     }
 
-    public void UpdateState() {
+    public void UpdateState()
+    {
         Retreat();
     }
 
-    public void ToApproachState() {
-        enemy.currentState = enemy.approachState;
+    public void ToApproachState()
+    {
+        self.currentState = self.approachState;
         Debug.Log("Approach state active");
     }
 
-    public void ToRetreatState() {
+    public void ToRetreatState()
+    {
         Debug.Log("Already retreating");
     }
 
-    public void ToWaitState() {
-        enemy.currentState = enemy.waitState;
+    public void ToWaitState()
+    {
+        self.currentState = self.waitState;
         Debug.Log("Wait state active");
     }
 
     // Retreats until it detects the wall behind it
-    private void Retreat() {
-        //raycastOrigin = enemy.rb.position + new Vector2(1.5f, 3);
-        enemy.rb.AddForce(Vector2.right * enemy.speed);
+    private void Retreat()
+    {
+    //    NBCharacterController selfController = self.cbi.controller;
+    //    NBCharacterController opponent = CharacterLocator.locator.getCharacter((selfController.playerNum % 2) + 1);
 
-        //RaycastHit2D hit = Physics2D.Raycast(raycastOrigin, Vector2.right, raycastDistance);
-
-        //if (hit.collider != null) {
-            //Debug.Log("Collided with " + hit.collider.tag);
-            //ToWaitState();
-        //}
+    //    if (self.opponent.GetComponent<Rigidbody2D>().position.x > self.rb.position.x)
+    //    {
+    //        hit = Physics2D.Raycast(self.rb.position, Vector2.right, raycastDistance);
+    //        if (hit.distance > 3)
+    //        {
+    //            self.inputState.moveX = -1;
+    //        }
+    //        else
+    //        {
+    //            ToApproachState();
+    //        }
+    //    }
+    //    else
+    //    {
+    //        hit = Physics2D.Raycast(self.rb.position, Vector2.left, raycastDistance);
+    //        if (hit.distance > 3)
+    //        {
+    //            self.inputState.moveX = 1;
+    //        }
+    //        else
+    //        {
+    //            ToApproachState();
+    //        }
+    //    }
     }
 }
