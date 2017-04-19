@@ -253,6 +253,10 @@ MonoBehaviour:
   mainMenuPanel: {fileID: 1841334992}
   optionsMenuPanel: {fileID: 866852937}
   characterSelectPanel: {fileID: 1409956829}
+  versusButton: {fileID: 36983384}
+  trainingButton: {fileID: 33240933}
+  settingsButton: {fileID: 468175595}
+  exitButton: {fileID: 1323692871}
 --- !u!114 &33240933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,7 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 2
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -400,6 +404,10 @@ MonoBehaviour:
   mainMenuPanel: {fileID: 1841334992}
   optionsMenuPanel: {fileID: 866852937}
   characterSelectPanel: {fileID: 1409956829}
+  versusButton: {fileID: 36983384}
+  trainingButton: {fileID: 33240933}
+  settingsButton: {fileID: 468175595}
+  exitButton: {fileID: 1323692871}
 --- !u!114 &36983384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,7 +420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 2
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1889,6 +1897,10 @@ MonoBehaviour:
   mainMenuPanel: {fileID: 1841334992}
   optionsMenuPanel: {fileID: 866852937}
   characterSelectPanel: {fileID: 1409956829}
+  versusButton: {fileID: 36983384}
+  trainingButton: {fileID: 33240933}
+  settingsButton: {fileID: 468175595}
+  exitButton: {fileID: 1323692871}
 --- !u!114 &468175595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1901,7 +1913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 2
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -5884,6 +5896,10 @@ MonoBehaviour:
   mainMenuPanel: {fileID: 1841334992}
   optionsMenuPanel: {fileID: 866852937}
   characterSelectPanel: {fileID: 1409956829}
+  versusButton: {fileID: 36983384}
+  trainingButton: {fileID: 33240933}
+  settingsButton: {fileID: 468175595}
+  exitButton: {fileID: 1323692871}
 --- !u!114 &1323692871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5896,7 +5912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 2
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -6224,7 +6240,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1409956830
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7557,7 +7573,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1841334993
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7637,6 +7653,10 @@ MonoBehaviour:
   mainMenuPanel: {fileID: 1841334992}
   optionsMenuPanel: {fileID: 866852937}
   characterSelectPanel: {fileID: 1409956829}
+  versusButton: {fileID: 0}
+  trainingButton: {fileID: 0}
+  settingsButton: {fileID: 0}
+  exitButton: {fileID: 0}
 --- !u!1 &1865484748
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,17 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour {
+    menuInputState inputState;
+
     public GameObject mainMenuPanel;
     public GameObject optionsMenuPanel;
     public GameObject characterSelectPanel;
 
-    // Load the development fight scene
-    //public void LoadSceneOnSelect() {
-        //SceneManager.LoadScene("Dev-Chris-AI");
-    //}
+    public Button versusButton;
+    public Button trainingButton;
+    public Button settingsButton;
+    public Button exitButton;
+
+    void Start() {
+        MenuInputListener menuInputListener = PlayerLocator.locator.getMenuListener(1);
+        
+    }
+
+
+
+    void MoveDownInMenu() {
+
+    }
+
+    void TakeInput(menuInputState theMenuInputState) {
+        inputState = theMenuInputState;
+    }
 
     // Deactivate main panel, activate the CSS panel
     public void LoadCharacterSelectPanel() {
