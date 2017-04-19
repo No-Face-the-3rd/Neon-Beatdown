@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAIController : MonoBehaviour {
-    CombatInputListener cbi;
+public class EnemyAIController : MonoBehaviour
+{
+    //replace with player locator
+    public CombatInputListener cbi;
     public InputState inputState;
 
     public Rigidbody2D rb;
@@ -17,8 +19,9 @@ public class EnemyAIController : MonoBehaviour {
     [HideInInspector] public GameObject    opponent;
     private Animator  animator;
 
-    private void Awake() {
-        cbi           = new CombatInputListener();
+    private void Awake()
+    {
+        //cbi           = GetComponent<CombatInputListener>();
         inputState    = new InputState();
         rb            = GetComponent<Rigidbody2D>();
         animator      = GetComponent<Animator>();
@@ -28,20 +31,24 @@ public class EnemyAIController : MonoBehaviour {
     }
     
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         cbi.overrideAI = false;
         currentState = approachState;
         Debug.Log(currentState);
-        opponent = GameObject.Find("StickPunchMan");
+        opponent = GameObject.Find("GameObject");
         rb = GetComponent<Rigidbody2D>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-        inputState.moveX = speed;
-        inputState.moveY = jumpSpeed;
+    //Used for consistency along framerates
+	void FixedUpdate ()
+    {
+        inputState = new InputState();
+        //inputState.moveX = speed;
+        //inputState.moveY = jumpSpeed;
 
         currentState.UpdateState();
+        cbi.setCurState(inputState);
         //Debug.Log(turn);
     }
 }
