@@ -5,8 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class HealthBarElements
 {
-    public Texture2D background;
-    public Texture2D foreground;
+    public Sprite background;
+    public Sprite foreground;
     public Texture2D counterFill;
 }
 

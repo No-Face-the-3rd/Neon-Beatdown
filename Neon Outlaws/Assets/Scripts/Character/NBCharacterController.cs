@@ -57,6 +57,8 @@ public class NBCharacterController : MonoBehaviour
     public int consecutiveLightDecay = 0;
     [Range(0.0f, 1.0f)]
     public float blockDamageTaken = 0.2f;
+    public float minHeavyChargeDamage = 0.0f;
+    public float maxHeavyChargeDamage = 0.0f;
 
     public bool grounded = false;
     public int playerNum;
@@ -76,6 +78,8 @@ public class NBCharacterController : MonoBehaviour
     private bool dashingForward = false;
     private int heavyCharge = 0;
     private int numConsecutiveLights = 0;
+
+    public List<int> attackIndices = new List<int>();
 
 
     private float curHealth = 0.0f;
@@ -460,30 +464,30 @@ public class NBCharacterController : MonoBehaviour
     void doLightAttack()
     {
         numConsecutiveLights++;
-
-
+        spawnAttack(0, 0.0f);
     }
+
 
     void doLightConsecutive()
     {
         numConsecutiveLights = 0;
-
+        spawnAttack(2, 0.0f);
 
     }
 
     void doHeavyAttack()
     {
-
-
+        float damageChange = Mathf.Lerp(minHeavyChargeDamage, maxHeavyChargeDamage, (float)heavyCharge / (float)maxHeavyChargeTime);
+        spawnAttack(1, damageChange);
         heavyCharge = 0;
     }
 
-    float getCurHealthPercent()
+    public float getCurHealthPercent()
     {
         return Mathf.Clamp(curHealth / maxHealth, 0.0f, 1.0f);
     }
 
-    void beDamaged(float damage)
+    public void beDamaged(float damage)
     {
         float finalDamage = damage;
         if(currentCharacterState == CharacterState.Block)
@@ -493,10 +497,20 @@ public class NBCharacterController : MonoBehaviour
         changeHealth(-finalDamage);
     }
 
-    void changeHealth(float health)
+    public void changeHealth(float health)
     {
         curHealth += health;
         Mathf.Clamp(curHealth, 0.0f, maxHealth);
+    }
+    void spawnAttack(int attackIndex, float damageModifier)
+    {
+        GameObject attack = ObjectDB.data.getAttack(attackIndices[attackIndex]);
+        GameObject tmp = (GameObject)Instantiate(attack, transform.position, Quaternion.identity);
+        DamageDealer damage = tmp.GetComponent<DamageDealer>();
+        damage.owner = playerNum;
+        damage.damage += damageModifier;
+        tmp.transform.localScale = gameObject.transform.localScale;
+        Physics2D.IgnoreCollision(tmp.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>());
     }
 
 }
