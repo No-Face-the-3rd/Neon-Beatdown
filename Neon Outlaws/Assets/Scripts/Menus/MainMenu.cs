@@ -9,26 +9,36 @@ public class MainMenu : MonoBehaviour {
     public GameObject mainMenuPanel;
     public GameObject optionsMenuPanel;
     public GameObject characterSelectPanel;
+    
+    //public Text versusText;
+    //public Text trainingText;
+    //public Text settingsText;
+    //public Text exitText;
 
-    public Button versusButton;
-    public Button trainingButton;
-    public Button settingsButton;
-    public Button exitButton;
+    //void Start() {
+    //    MenuInputListener menuInputListener = PlayerLocator.locator.getMenuListener(0);
+    //    TakeInput(menuInputListener.curState);
+    //}
 
-    void Start() {
-        MenuInputListener menuInputListener = PlayerLocator.locator.getMenuListener(1);
+    //void FixedUpdate() {
         
-    }
+    //    if (inputState.vertNav > .05f)
+    //        MoveUpInMenu();
+    //    if (inputState.vertNav < .05f)
+    //        MoveDownInMenu();
+    //}
 
+    //void MoveUpInMenu() {
 
+    //}
 
-    void MoveDownInMenu() {
+    //void MoveDownInMenu() {
 
-    }
+    //}
 
-    void TakeInput(menuInputState theMenuInputState) {
-        inputState = theMenuInputState;
-    }
+    //void TakeInput(menuInputState theMenuInputState) {
+    //    inputState = theMenuInputState;
+    //}
 
     // Deactivate main panel, activate the CSS panel
     public void LoadCharacterSelectPanel() {

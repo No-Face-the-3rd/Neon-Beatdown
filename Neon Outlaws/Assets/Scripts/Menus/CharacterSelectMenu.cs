@@ -19,13 +19,20 @@ public class CharacterSelectMenu : MonoBehaviour {
     }
 
     void FixedUpdate() {
+        if (inputState.vertNav > .05f)
+            MoveUpInMenu();
         if (inputState.vertNav < .05f)
             MoveDownInMenu();
+    }
+
+    void MoveUpInMenu() {
+
     }
 
     void MoveDownInMenu() {
         
     }
+
     void TakeInput(menuInputState theMenuInputState) {
         inputState = theMenuInputState;
     }
