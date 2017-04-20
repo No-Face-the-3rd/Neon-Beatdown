@@ -51,4 +51,14 @@ public class CharacterLocator : MonoBehaviour {
             return null;
         }            
     }
+
+    public int getNumCharacters()
+    {
+        return characters.Count;
+    }
+
+    public void clearLists()
+    {
+        characters.Clear();
+    }
 }
