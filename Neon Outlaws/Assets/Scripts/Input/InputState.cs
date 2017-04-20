@@ -133,6 +133,11 @@ public class InputState
         abilityThree = new ButtonInfo();
         buttonBlock = new ButtonInfo();
     }
+
+    public void clearAxes()
+    {
+        moveX = moveY = 0.0f;
+    }
 }
 
 [System.Serializable]
@@ -166,5 +171,10 @@ public class menuInputState
         accept = new ButtonInfo();
         decline = new ButtonInfo();
         resume = new ButtonInfo();
+    }
+
+    public void clearAxes()
+    {
+        horizNav = vertNav = 0.0f;
     }
 }

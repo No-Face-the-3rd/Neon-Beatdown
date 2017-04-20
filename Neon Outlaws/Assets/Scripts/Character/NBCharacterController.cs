@@ -407,7 +407,7 @@ public class NBCharacterController : MonoBehaviour
         rb.velocity = new Vector2(initHorizontalVel, initVerticalVel);
     }
 
-    void doIdle()
+    public void doIdle()
     {
         CharacterState affectedStates = CharacterState.Idle | CharacterState.Crouch |
             CharacterState.Light | CharacterState.Heavy | CharacterState.HeavyCharge |
