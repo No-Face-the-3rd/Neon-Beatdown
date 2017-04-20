@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour {
     menuInputState inputState;
+    TitleMenu titleMenu;
 
     public GameObject mainMenuPanel;
     public GameObject optionsMenuPanel;
     public GameObject characterSelectPanel;
+    public GameObject nextSelectedButton;
     
     //public Text versusText;
     //public Text trainingText;
@@ -21,7 +23,7 @@ public class MainMenu : MonoBehaviour {
     //}
 
     //void FixedUpdate() {
-        
+
     //    if (inputState.vertNav > .05f)
     //        MoveUpInMenu();
     //    if (inputState.vertNav < .05f)
@@ -44,12 +46,14 @@ public class MainMenu : MonoBehaviour {
     public void LoadCharacterSelectPanel() {
         mainMenuPanel.SetActive(false);
         characterSelectPanel.SetActive(true);
+        titleMenu.menuEventSystem.SetSelectedGameObject(nextSelectedButton);
     }
 
     // Deactivate main panel, activate the options panel
     public void LoadOptionsPanel() {
         mainMenuPanel.SetActive(false);
         optionsMenuPanel.SetActive(true);
+        titleMenu.menuEventSystem.SetSelectedGameObject(nextSelectedButton);
     }
 
     // If playing through the Unity Editor, exit play mode. Otherwise exit to desktop

@@ -9,33 +9,32 @@ public class CharacterSelectMenu : MonoBehaviour {
     public GameObject characterSelectPanel;
     public GameObject stageSelectPanel;
     public GameObject mainMenuPanel;
-
-    public Button selectedImage;
+        
     public Image player1Outline;
     public bool characterSelected;
 
-    void Start() {
-        MenuInputListener menuInputListener = PlayerLocator.locator.getMenuListener(1);
-    }
+    //void Start() {
+    //    MenuInputListener menuInputListener = PlayerLocator.locator.getMenuListener(1);
+    //}
 
-    void FixedUpdate() {
-        if (inputState.vertNav > .05f)
-            MoveUpInMenu();
-        if (inputState.vertNav < .05f)
-            MoveDownInMenu();
-    }
+    //void FixedUpdate() {
+    //    if (inputState.vertNav > .05f)
+    //        MoveUpInMenu();
+    //    if (inputState.vertNav < .05f)
+    //        MoveDownInMenu();
+    //}
 
-    void MoveUpInMenu() {
+    //void MoveUpInMenu() {
 
-    }
+    //}
 
-    void MoveDownInMenu() {
+    //void MoveDownInMenu() {
         
-    }
+    //}
 
-    void TakeInput(menuInputState theMenuInputState) {
-        inputState = theMenuInputState;
-    }
+    //void TakeInput(menuInputState theMenuInputState) {
+    //    inputState = theMenuInputState;
+    //}
 
     public void LoadMainMenu() {
         characterSelectPanel.SetActive(false);
