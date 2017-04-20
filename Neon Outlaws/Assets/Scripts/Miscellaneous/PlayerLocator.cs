@@ -121,4 +121,26 @@ public class PlayerLocator : MonoBehaviour {
             return null;
         }
     }
+
+    public int getNumPlayers()
+    {
+        return players.Count;
+    }
+
+    public int getNumCombatListeners()
+    {
+        return playerCombatInputListeners.Count;
+    }
+
+    public int getNumMenuListeners()
+    {
+        return playerMenuInputListeners.Count;
+    }
+
+    public void clearLists()
+    {
+        players.Clear();
+        playerCombatInputListeners.Clear();
+        playerMenuInputListeners.Clear();
+    }
 }

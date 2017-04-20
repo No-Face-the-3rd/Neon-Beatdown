@@ -77,4 +77,10 @@ public class MenuInputListener : MonoBehaviour {
     {
         outButton = value;
     }
+
+
+    public void setActive(bool active)
+    {
+        pInput.handle.maps[0].active = active;
+    }
 }
