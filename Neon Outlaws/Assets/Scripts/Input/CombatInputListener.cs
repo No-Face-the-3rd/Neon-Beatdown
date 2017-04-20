@@ -70,7 +70,6 @@ public class CombatInputListener : MonoBehaviour {
         handled = true;
         PlayerInfo info = DeviceMapper.mapper.players[index];
         pInput.handle = info.handle;
-        pInput.handle.maps[0].active = false;
         playerNum = info.playerNum;
         moveX.Bind(pInput.handle);
         moveY.Bind(pInput.handle);
@@ -109,4 +108,8 @@ public class CombatInputListener : MonoBehaviour {
         outButton = value;
     }
 
+    public void setActive(bool active)
+    {
+        pInput.handle.maps[1].active = active;
+    }
 }

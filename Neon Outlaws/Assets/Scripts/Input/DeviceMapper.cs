@@ -9,13 +9,15 @@ public class PlayerInfo
     public ButtonInputControl acceptControl;
     public ButtonInputControl declineControl;
     public int playerNum;
+    public GameObject controller;
 
-    public PlayerInfo(PlayerHandle inHandle, ButtonAction acceptAction, ButtonAction declineAction, int playerNumIn)
+    public PlayerInfo(PlayerHandle inHandle, ButtonAction acceptAction, ButtonAction declineAction, int playerNumIn, GameObject controllerIn)
     {
         this.handle = inHandle;
         acceptControl = (ButtonInputControl)inHandle.GetActions(acceptAction.action.actionMap)[acceptAction.action.actionIndex];
         declineControl = (ButtonInputControl)inHandle.GetActions(declineAction.action.actionMap)[declineAction.action.actionIndex];
         playerNum = playerNumIn;
+        controller = controllerIn;
     }
 }
 
@@ -33,6 +35,9 @@ public class DeviceMapper : MonoBehaviour {
 
     public ButtonAction acceptAction, declineAction;
 
+    public int controllerIndex = -1;
+
+    public bool canLeave = true;
 
 	// Use this for initialization
 	void Start () {
@@ -111,7 +116,27 @@ public class DeviceMapper : MonoBehaviour {
                     handle.maps.Add(map);
                 }
 
-                players.Add(new PlayerInfo(handle, acceptAction, declineAction, num));
+                GameObject controller = GameObject.Instantiate(ObjectDB.data.getPrefab(controllerIndex));
+                players.Add(new PlayerInfo(handle, acceptAction, declineAction, num, controller));
+                CombatInputListener cil = controller.GetComponent<CombatInputListener>();
+                MenuInputListener mil = controller.GetComponent<MenuInputListener>();
+                int index = players.Count - 1;
+                cil.bindInput(index);
+                mil.bindInput(index);                
+            }
+        }
+
+        if(canLeave)
+        {
+            for(int i = 0;i < players.Count;i++)
+            {
+               if(players[i].declineControl.wasJustReleased)
+                {
+                    players[i].handle.Destroy();
+                    Destroy(players[i].controller);
+                    players.Remove(players[i]);
+                    continue;
+                }
             }
         }
 
