@@ -2,6 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class goalValues
+{
+    public AnimationCurve weight;
+    public float value;
+    public float xValue;
+}
+public enum ValueNames
+{
+    Approach, Retreat
+}
+
+
 public class EnemyAIController : MonoBehaviour
 {
     //replace with player locator
@@ -18,6 +31,8 @@ public class EnemyAIController : MonoBehaviour
     [HideInInspector] public WaitState     waitState;
     [HideInInspector] public GameObject    opponent;
     private Animator  animator;
+
+    public List<goalValues> values = new List<goalValues>();
 
     private void Awake()
     {
@@ -50,5 +65,28 @@ public class EnemyAIController : MonoBehaviour
         currentState.UpdateState();
         cbi.setCurState(inputState);
         //Debug.Log(turn);
+
+        float weights = 0.0f;
+        float val = 0.0f;
+        for(int i = 0;i < 3;i++)
+        {
+            weights += values[i].weight.Evaluate(values[i].xValue);
+            val += values[i].value;
+        }
+        val /= weights;
+
+        if (val > 0.5f)
+        {
+
+        }
+
+    }
+
+    public void setValue(int index, float value)
+    {
+        if(index >= 0 && index < values.Count)
+        {
+            values[index].value = value;
+        }
     }
 }
