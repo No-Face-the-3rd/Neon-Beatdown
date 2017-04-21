@@ -30,6 +30,13 @@ public class ButtonInfo
         isDown = false;
     }
 
+    public ButtonInfo(ButtonInfo button)
+    {
+        wasPressed = button.wasPressed;
+        wasReleased = button.wasReleased;
+        isHeld = button.isHeld;
+        isDown = button.isDown;
+    }
     /// <summary>
     /// 
     /// </summary>
@@ -134,6 +141,19 @@ public class InputState
         buttonBlock = new ButtonInfo();
     }
 
+    public InputState(InputState input)
+    {
+        moveX = input.moveX;
+        moveY = input.moveY;
+        escape = new ButtonInfo(input.escape);
+        lightAttack = new ButtonInfo(input.lightAttack);
+        heavyAttack = new ButtonInfo(input.heavyAttack);
+        abilityOne = new ButtonInfo(input.abilityOne);
+        abilityTwo = new ButtonInfo(input.abilityTwo);
+        abilityThree = new ButtonInfo(input.abilityThree);
+        buttonBlock = new ButtonInfo(input.buttonBlock);
+    }
+
     public void clearAxes()
     {
         moveX = moveY = 0.0f;
@@ -171,6 +191,15 @@ public class menuInputState
         accept = new ButtonInfo();
         decline = new ButtonInfo();
         resume = new ButtonInfo();
+    }
+
+    public menuInputState(menuInputState input)
+    {
+        horizNav = input.horizNav;
+        vertNav = input.vertNav;
+        accept = new ButtonInfo(input.accept);
+        decline = new ButtonInfo(input.decline);
+        resume = new ButtonInfo(input.resume);
     }
 
     public void clearAxes()
