@@ -55,7 +55,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pInput: {fileID: 114657466920540984}
   playerNum: 0
-  overrideAI: 0
+  overrideAI: 1
   horizNavAction:
     action: {fileID: 114213937635851168, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
   vertNavAction:
