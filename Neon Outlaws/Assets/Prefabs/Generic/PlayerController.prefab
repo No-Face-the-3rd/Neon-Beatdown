@@ -1,0 +1,167 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1500139504155960}
+  m_IsPrefabParent: 1
+--- !u!1 &1500139504155960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4098065011609062}
+  - component: {fileID: 114657466920540984}
+  - component: {fileID: 114202310909828298}
+  - component: {fileID: 114031654006978480}
+  m_Layer: 0
+  m_Name: PlayerController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4098065011609062
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1500139504155960}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114031654006978480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1500139504155960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 220bf8598a38dfd41b1e1cbfd724ce23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pInput: {fileID: 114657466920540984}
+  playerNum: 0
+  overrideAI: 1
+  horizNavAction:
+    action: {fileID: 114213937635851168, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
+  vertNavAction:
+    action: {fileID: 114106623315586038, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
+  acceptAction:
+    action: {fileID: 114396434775169038, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
+  declineAction:
+    action: {fileID: 114663407223743340, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
+  resumeAction:
+    action: {fileID: 114610340763726446, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
+  selectedCharacter: -1
+  curState:
+    horizNav: 0
+    vertNav: 0
+    accept:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    decline:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    resume:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+--- !u!114 &114202310909828298
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1500139504155960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c2b9cfe6972a93449d67081ba4c0e7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overrideAI: 1
+  pInput: {fileID: 114657466920540984}
+  moveX:
+    action: {fileID: 114268061983492346, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+  moveY:
+    action: {fileID: 114070570101543980, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+  escape:
+    action: {fileID: 114123799873866626, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+  abilityOne:
+    action: {fileID: 114557931793683396, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+  abilityTwo:
+    action: {fileID: 114769036059018060, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+  lightAttack:
+    action: {fileID: 114846403234472082, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+  heavyAttack:
+    action: {fileID: 114304531654997138, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+  abilityThree:
+    action: {fileID: 114516019795622718, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+  buttonBlock:
+    action: {fileID: 114674364586557058, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+  controller: {fileID: 0}
+  curState:
+    moveX: 0
+    moveY: 0
+    escape:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    lightAttack:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    heavyAttack:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    abilityOne:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    abilityTwo:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    abilityThree:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    buttonBlock:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+  playerNum: 0
+--- !u!114 &114657466920540984
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1500139504155960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84d2c07be54604d7d9acbaf6555da85a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoAssignGlobal: 0
+  actionMaps:
+  - actionMap: {fileID: 11400000, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
+    active: 1
+    blockSubsequent: 1
+  - actionMap: {fileID: 11400000, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
+    active: 1
+    blockSubsequent: 0
