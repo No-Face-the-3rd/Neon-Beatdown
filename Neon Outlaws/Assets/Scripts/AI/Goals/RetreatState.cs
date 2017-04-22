@@ -39,7 +39,7 @@ public class RetreatState : IAIStates {
     // Retreats until it detects the wall behind it
     private void Retreat()
     {
-        NBCharacterController selfController = self.cbi.controller;
+        NBCharacterController selfController = self.cil.controller;
         NBCharacterController opponent = CharacterLocator.locator.getCharacter((selfController.playerNum % 2) + 1);
         float retreatRange = 5.0f;
         if(Mathf.Abs(selfController.transform.position.x - opponent.transform.position.x) < retreatRange)

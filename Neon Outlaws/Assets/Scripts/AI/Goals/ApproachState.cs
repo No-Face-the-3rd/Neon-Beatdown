@@ -35,7 +35,7 @@ public class ApproachState : IAIStates {
 
     private void Approach()
     {
-        NBCharacterController selfController = self.cbi.controller;
+        NBCharacterController selfController = self.cil.controller;
         NBCharacterController opponent = CharacterLocator.locator.getCharacter((selfController.playerNum % 2) + 1);
         float approachRange = 8.0f;
         if(Mathf.Abs(selfController.transform.position.x - opponent.transform.position.x) > approachRange)
