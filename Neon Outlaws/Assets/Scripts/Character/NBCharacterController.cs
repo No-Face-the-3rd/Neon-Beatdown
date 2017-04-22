@@ -106,6 +106,8 @@ public class NBCharacterController : MonoBehaviour
 
     void FixedUpdate()
     {
+        CombatInputListener cil = PlayerLocator.locator.getCombatListener(playerNum);
+        takeInput(cil.getCurState());
         if (inputQueue.Count > 0)
         {
             InputState currentInputState = inputQueue[inputQueue.Count - 1];

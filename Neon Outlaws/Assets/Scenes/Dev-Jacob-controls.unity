@@ -861,13 +861,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11cec11bd256f08479207e76e73119d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minX: -80
-  maxX: 80
+  minX: -40
+  maxX: 40
   viewportEdgeBuffer: 0.08
-  num: 1
-  curMinX: 0
-  curMaxX: 0
-  pos: {x: 0, y: 0, z: 0}
+  panSpeed: 0.35
+  panOffset: 0.5
 --- !u!1 &506729357
 GameObject:
   m_ObjectHideFlags: 0
