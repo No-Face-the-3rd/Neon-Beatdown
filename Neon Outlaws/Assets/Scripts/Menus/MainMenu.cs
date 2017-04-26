@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour {
     menuInputState inputState;
     //TitleMenu titleMenu;
-    MenuInputListener menuInputListener = PlayerLocator.locator.getMenuListener(1);
+    MenuInputListener menuInputListener;
 
     public GameObject mainMenuPanel;
     public GameObject optionsMenuPanel;
@@ -17,24 +17,25 @@ public class MainMenu : MonoBehaviour {
 
     //public GameObject nextSelectedButton;
 
-    //public Text versusText;
-    //public Text trainingText;
-    //public Text settingsText;
-    //public Text exitText;
-
     void Start()
     {
-        menuInputListener.getCurState();
-        TakeInput(menuInputListener.curState);
     }
 
     void FixedUpdate()
     {
-
-        if (inputState.vertNav > .05f)
-            MoveUpInMenu();
-        if (inputState.vertNav < .05f)
-            MoveDownInMenu();
+        if (menuInputListener != null)
+        {
+            TakeInput(menuInputListener.getCurState());
+            if (inputState.vertNav > .05f)
+                MoveUpInMenu();
+            if (inputState.vertNav < .05f)
+                MoveDownInMenu();
+        }
+        else
+        {
+            menuInputListener = PlayerLocator.locator.getMenuListener(1);
+        }
+        //menuInputListener.getCurState();
     }
 
     void MoveUpInMenu()
