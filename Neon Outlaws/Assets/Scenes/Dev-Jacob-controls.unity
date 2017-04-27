@@ -861,13 +861,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11cec11bd256f08479207e76e73119d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minX: -80
-  maxX: 80
+  minX: -40
+  maxX: 40
   viewportEdgeBuffer: 0.08
-  num: 1
-  curMinX: 0
-  curMaxX: 0
-  pos: {x: 0, y: 0, z: 0}
+  panSpeed: 0.35
+  panOffset: 0.5
 --- !u!1 &506729357
 GameObject:
   m_ObjectHideFlags: 0
@@ -1363,6 +1361,7 @@ GameObject:
   - component: {fileID: 773490820}
   - component: {fileID: 773490819}
   - component: {fileID: 773490821}
+  - component: {fileID: 773490822}
   m_Layer: 0
   m_Name: RoundManager
   m_TagString: Untagged
@@ -1415,6 +1414,19 @@ MonoBehaviour:
   - objectRef: {fileID: 1003226514}
     sliderBar: {fileID: 0}
     counters: []
+--- !u!114 &773490822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 773490818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ca419e37215fa346b1a8014cb4514c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerMan: {fileID: 0}
+  healthMan: {fileID: 0}
 --- !u!1 &854407369
 GameObject:
   m_ObjectHideFlags: 0

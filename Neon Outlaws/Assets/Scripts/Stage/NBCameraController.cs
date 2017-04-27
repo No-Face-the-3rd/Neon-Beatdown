@@ -7,38 +7,30 @@ public class NBCameraController : MonoBehaviour {
     public float minX = 0.0f, maxX = 0.0f;
     public float viewportEdgeBuffer = 0.1f;
 
-    public int num = 1;
-
-    public float curMinX = 0.0f, curMaxX = 0.0f;
-
-    public Vector3 pos;
+    [Range(0.0f,1.0f)]
+    public float panSpeed = 0.5f;
+    public float panOffset = 0.25f;
 
     private Camera mainCam;
+
+    private Vector3 panTarget;
 
 	// Use this for initialization
 	void Start () {
         mainCam = GetComponent<Camera>();
+        panTarget = transform.position;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        NBCharacterController charControl = CharacterLocator.locator.getCharacter(num);
-        if (charControl != null)
-        {
-            GameObject character = charControl.gameObject;
-            float zDist = Mathf.Abs(character.transform.position.z - transform.position.z);
-            Vector3 outPos = mainCam.ViewportToWorldPoint(new Vector3(0.0f, 0.5f, zDist));
-            curMinX = outPos.x;
-            outPos = mainCam.ViewportToWorldPoint(new Vector3(1.0f, 0.5f, zDist));
-            curMaxX = outPos.x;
-            pos = mainCam.WorldToViewportPoint(character.transform.position);
-            if (pos.x < viewportEdgeBuffer || pos.x > 1.0f - viewportEdgeBuffer)
-            {
-                character.transform.position = mainCam.ViewportToWorldPoint(new Vector3(viewportEdgeBuffer, pos.y, zDist));
-                charControl.setState(CharacterState.Idle);
-                charControl.doIdle();
-            }
-        }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    void FixedUpdate()
+    {
+        checkPan();
+        doPan();
     }
 
     public void checkPan()
@@ -50,11 +42,107 @@ public class NBCameraController : MonoBehaviour {
         {
             int playerNum = i + 1;
             NBCharacterController character = CharacterLocator.locator.getCharacter(playerNum);
-            if(character != null)
+            if (character != null)
             {
-
+                GameObject charObj = character.gameObject;
+                float zDist = Mathf.Abs(charObj.transform.position.z - transform.position.z);
+                Vector3 charPos = mainCam.WorldToViewportPoint(character.transform.position);
+                if (charPos.x < viewportEdgeBuffer)
+                {
+                    leftEdge = true;
+                    ControlEdge toAdd = new ControlEdge();
+                    toAdd.character = character;
+                    toAdd.left = true;
+                    toAdd.zDist = zDist;
+                    edgeCharacters.Add(toAdd);
+                    continue;
+                }
+                if (charPos.x > 1.0f - viewportEdgeBuffer)
+                {
+                    rightEdge = true;
+                    ControlEdge toAdd = new ControlEdge();
+                    toAdd.character = character;
+                    toAdd.left = false;
+                    toAdd.zDist = zDist;
+                    edgeCharacters.Add(toAdd);
+                    continue;
+                }
             }
         }
+        if (leftEdge != rightEdge)
+        {
+            Vector3 offset = Vector3.zero;
+
+            float curMinX = mainCam.ViewportToWorldPoint(new Vector3(0.0f,
+                edgeCharacters[0].character.transform.position.y,
+                edgeCharacters[0].zDist)).x;
+            float curMaxX = mainCam.ViewportToWorldPoint(new Vector3(1.0f,
+                edgeCharacters[0].character.transform.position.y,
+                edgeCharacters[0].zDist)).x;
+            if ((leftEdge))
+            {
+                if (curMinX > minX)
+                {
+                    offset.x = -1.0f * panOffset;
+                }
+                else
+                {
+                    for (int i = 0; i < edgeCharacters.Count; i++)
+                    {
+                        edgeCharacters[i].character.doIdle();
+                        Vector3 charPos = mainCam.WorldToViewportPoint(
+                            edgeCharacters[i].character.transform.position);
+                        edgeCharacters[i].character.transform.position = mainCam.ViewportToWorldPoint(
+                            new Vector3(viewportEdgeBuffer, charPos.y, charPos.z));
+                    }
+                }
+            }
+            if (rightEdge)
+            {
+                if (curMaxX < maxX)
+                {
+                    offset.x = 1.0f * panOffset;
+                }
+                else
+                {
+                    for (int i = 0; i < edgeCharacters.Count; i++)
+                    {
+                        edgeCharacters[i].character.doIdle();
+                        Vector3 charPos = mainCam.WorldToViewportPoint(
+                            edgeCharacters[i].character.transform.position);
+                        edgeCharacters[i].character.transform.position = mainCam.ViewportToWorldPoint(
+                            new Vector3(1.0f - viewportEdgeBuffer, charPos.y, charPos.z));
+                    }
+                }
+            }
+            setPanOffset(offset);
+
+        }
+        else if (leftEdge == true)
+        {
+            for (int i = 0; i < edgeCharacters.Count; i++)
+            {
+                edgeCharacters[i].character.doIdle();
+                Vector3 charPos = mainCam.WorldToViewportPoint(
+                    edgeCharacters[i].character.transform.position);
+                edgeCharacters[i].character.transform.position = mainCam.ViewportToWorldPoint(
+                    new Vector3((edgeCharacters[i].left ? viewportEdgeBuffer : 
+                    1.0f - viewportEdgeBuffer),charPos.y, charPos.z));
+            }
+        }
+    }
+
+
+    public void doPan()
+    {
+        Vector3 location = Vector3.Lerp(mainCam.transform.position,
+            panTarget, panSpeed * Vector3.Distance(mainCam.transform.position, panTarget));
+        mainCam.transform.position = location;
+    }
+
+    public void setPanOffset(Vector3 offset)
+    {
+        panTarget = mainCam.transform.position + offset;
     }
 }
 
@@ -62,4 +150,5 @@ struct ControlEdge
 {
     public NBCharacterController character;
     public bool left;
+    public float zDist;
 }
