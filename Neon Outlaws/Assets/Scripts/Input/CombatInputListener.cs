@@ -41,8 +41,7 @@ public class CombatInputListener : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (DeviceMapper.mapper.players.Count >= playerNum && !handled)
-            bindInput(playerNum - 1);
+
     }
 
     void FixedUpdate()
@@ -60,9 +59,8 @@ public class CombatInputListener : MonoBehaviour {
             //setButton(ult.control, out curState.ultimateAbility);
             setButton(buttonBlock.control, out curState.buttonBlock);
         }
-        if (controller != null)
-            controller.takeInput(curState);
-        curState = new InputState();
+        //if (controller != null)
+        //    controller.takeInput(getCurState());
     }
 
     public void bindInput(int index)
@@ -86,16 +84,23 @@ public class CombatInputListener : MonoBehaviour {
 
     public void setCurState(InputState state)
     {
-        setAxis(state.moveX, out curState.moveX);
-        setAxis(state.moveY, out curState.moveY);
-        setButton(state.escape, out curState.escape);
-        setButton(state.lightAttack, out curState.lightAttack);
-        setButton(state.heavyAttack, out curState.heavyAttack);
-        setButton(state.abilityOne, out curState.abilityOne);
-        setButton(state.abilityTwo, out curState.abilityTwo);
-        setButton(state.abilityThree, out curState.abilityThree);
-        //setButton(state.ultimateAbility, out curState.ultimateAbility);
-        setButton(state.buttonBlock, out curState.buttonBlock);
+        InputState toAssign = new InputState(state);
+        setAxis(toAssign.moveX, out curState.moveX);
+        setAxis(toAssign.moveY, out curState.moveY);
+        setButton(toAssign.escape, out curState.escape);
+        setButton(toAssign.lightAttack, out curState.lightAttack);
+        setButton(toAssign.heavyAttack, out curState.heavyAttack);
+        setButton(toAssign.abilityOne, out curState.abilityOne);
+        setButton(toAssign.abilityTwo, out curState.abilityTwo);
+        setButton(toAssign.abilityThree, out curState.abilityThree);
+        //setButton(toAssign.ultimateAbility, out curState.ultimateAbility);
+        setButton(toAssign.buttonBlock, out curState.buttonBlock);
+    }
+
+    public InputState getCurState()
+    {
+        InputState ret = new InputState(curState);
+        return ret;
     }
 
     public void setAxis(float value, out float outAxis)
