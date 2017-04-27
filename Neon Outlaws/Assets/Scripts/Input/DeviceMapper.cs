@@ -10,6 +10,7 @@ public class PlayerInfo
     public ButtonInputControl declineControl;
     public int playerNum;
     public GameObject controller;
+    public bool canLeave;
 
     public PlayerInfo(PlayerHandle inHandle, ButtonAction acceptAction, ButtonAction declineAction, int playerNumIn, GameObject controllerIn)
     {
@@ -18,6 +19,7 @@ public class PlayerInfo
         declineControl = (ButtonInputControl)inHandle.GetActions(declineAction.action.actionMap)[declineAction.action.actionIndex];
         playerNum = playerNumIn;
         controller = controllerIn;
+        canLeave = false;
     }
 }
 
@@ -37,7 +39,6 @@ public class DeviceMapper : MonoBehaviour {
 
     public int controllerIndex = -1;
 
-    public bool canLeave = true;
 
 	// Use this for initialization
 	void Start () {
@@ -126,20 +127,21 @@ public class DeviceMapper : MonoBehaviour {
             }
         }
 
-        if(canLeave)
+
+        for (int i = 0; i < players.Count; i++)
         {
-            for(int i = 0;i < players.Count;i++)
+            if (players[i].canLeave)
             {
-               if(players[i].declineControl.wasJustReleased)
+                if (players[i].declineControl.wasJustReleased)
                 {
                     players[i].handle.Destroy();
                     Destroy(players[i].controller);
                     players.Remove(players[i]);
                     continue;
                 }
+
             }
         }
-
 	}
 
     public PlayerInfo getPlayer(int playerNum)
@@ -152,6 +154,20 @@ public class DeviceMapper : MonoBehaviour {
         else
         {
             return null;
+        }
+    }
+
+    public void setPlayerCanLeave(int playerNum, bool playerLeavable)
+    {
+        int ind = players.FindIndex(player => player.playerNum == playerNum);
+        if(ind >= 0)
+        {
+            players[ind].canLeave = playerLeavable;
+        }
+        else
+        {
+            Debug.LogError(System.Reflection.MethodBase.GetCurrentMethod().Name + 
+                " Could not find player with player number: " + playerNum);
         }
     }
 }

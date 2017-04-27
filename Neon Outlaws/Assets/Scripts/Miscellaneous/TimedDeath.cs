@@ -8,7 +8,7 @@ public class TimedDeath : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        deathTime.init();	
+        deathTime.startTimer();	
 	}
 	
 	// Update is called once per frame
