@@ -14981,6 +14981,7 @@ GameObject:
   - component: {fileID: 1169969392}
   - component: {fileID: 1169969391}
   - component: {fileID: 1169969399}
+  - component: {fileID: 1169969400}
   m_Layer: 0
   m_Name: GameObject (1)
   m_TagString: Untagged
@@ -28158,104 +28159,78 @@ MonoBehaviour:
       wasReleased: 0
       isHeld: 0
   rb: {fileID: 0}
-  speed: 10
-  jumpSpeed: 10
   opponent: {fileID: 0}
   selfController: {fileID: 0}
   enemyController: {fileID: 0}
   values:
-  - weight:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 2
-        time: -0.643835
-        value: -0.0036406543
-        inSlope: 0.4549341
-        outSlope: 0.4549341
-        tangentMode: 34
-      - serializedVersion: 2
-        time: 1.4022362
-        value: 0.9271869
-        inSlope: 0.4549341
-        outSlope: 0.4549341
-        tangentMode: 34
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    curveInput: 0
+  - weight: NaN
     curveOutput: 0
-  - weight:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 0
-      m_PostInfinity: 0
-      m_RotationOrder: 0
-    curveInput: 0
+    input: 0
+--- !u!114 &1169969400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1169969390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8e250bbbb3ba140b4cda9ce4984e67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 0}
+  myValues:
+    weight: 0
     curveOutput: 0
-  - weight:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 0
-      m_PostInfinity: 0
-      m_RotationOrder: 0
-    curveInput: 0
-    curveOutput: 0
-  - weight:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 0
-      m_PostInfinity: 0
-      m_RotationOrder: 0
-    curveInput: 0
-    curveOutput: 0
-  - weight:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 0
-      m_PostInfinity: 0
-      m_RotationOrder: 0
-    curveInput: 0
-    curveOutput: 0
-  - weight:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 0
-      m_PostInfinity: 0
-      m_RotationOrder: 0
-    curveInput: 0
-    curveOutput: 0
-  - weight:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 0
-      m_PostInfinity: 0
-      m_RotationOrder: 0
-    curveInput: 0
-    curveOutput: 0
-  - weight:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 0
-      m_PostInfinity: 0
-      m_RotationOrder: 0
-    curveInput: 0
-    curveOutput: 0
-  - weight:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 0
-      m_PostInfinity: 0
-      m_RotationOrder: 0
-    curveInput: 0
-    curveOutput: 0
-  - weight:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 0
-      m_PostInfinity: 0
-      m_RotationOrder: 0
-    curveInput: 0
-    curveOutput: 0
+    input: 0
+  inputTarget: 0
+  desireToApproach:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0.0118356235
+      value: 0.027706906
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 3.4601192
+      value: 1.9013098
+      inSlope: 1.4901161
+      outSlope: 1.4901161
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 3.937985
+      value: 4.9424095
+      inSlope: 0.17893541
+      outSlope: 0.17893541
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 4.988861
+      value: 4.970866
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  desireToApproachW:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: -0.0049216747
+      inSlope: 0.88866514
+      outSlope: 0.88866514
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 4.9982424
+      value: 4.9909744
+      inSlope: 1.219248
+      outSlope: 1.219248
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1170971753
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class goalValues
 }
 public enum InputTarget
 {
-    horizontal, jump, attack
+    horizontal, jump, attack, block
 }
 
 
@@ -25,10 +25,6 @@ public class EnemyAIController : MonoBehaviour
 
     public Rigidbody2D rb;
 
-    [HideInInspector] public IAIStates     currentState;
-    [HideInInspector] public ApproachState approachState;
-    [HideInInspector] public RetreatState  retreatState;
-    [HideInInspector] public WaitState     waitState;
     [HideInInspector] public GameObject    opponent;
     [HideInInspector] public NBCharacterController selfController;
     [HideInInspector] public NBCharacterController enemyController;
@@ -45,17 +41,12 @@ public class EnemyAIController : MonoBehaviour
         inputState    = new InputState();
         rb            = GetComponent<Rigidbody2D>();
         animator      = GetComponent<Animator>();
-        approachState = new ApproachState(this);
-        retreatState  = new RetreatState(this);
-        waitState     = new WaitState(this);
     }
     
 	// Use this for initialization
 	void Start ()
     {
         cil.overrideAI = false;
-        currentState = approachState;
-        Debug.Log(currentState);
         opponent = GameObject.Find("GameObject");
         rb = GetComponent<Rigidbody2D>();
 	}
@@ -81,7 +72,6 @@ public class EnemyAIController : MonoBehaviour
 
         }
 
-        currentState.UpdateState();
         cil.setCurState(inputState);
         //Debug.Log(turn);
 
@@ -100,7 +90,17 @@ public class EnemyAIController : MonoBehaviour
         values.Add(goalsIn);
     }
 
-
+    void evaluateGoals()
+    {
+        float weights = 0.0f;
+        float val = 0.0f;
+        
+        for(int i = 0; i < values.Count; ++i)
+        {
+            val += values[i].curveOutput;
+            weights += values[i].weight;
+        }
+    }
 
     /*
      plan:
