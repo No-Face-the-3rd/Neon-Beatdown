@@ -35,6 +35,7 @@ public class PlayerLocator : MonoBehaviour {
 
     void findPlayers()
     {
+        players.RemoveAll(player => player == null);
         PlayerInput[] inputsExist = FindObjectsOfType<PlayerInput>();
         for (int i = 0; i < inputsExist.Length; i++)
         {
