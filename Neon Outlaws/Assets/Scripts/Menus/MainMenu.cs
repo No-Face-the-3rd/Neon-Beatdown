@@ -19,6 +19,7 @@ public class MainMenu : MonoBehaviour {
 
     void Start()
     {
+
     }
 
     void FixedUpdate()
