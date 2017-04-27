@@ -36,8 +36,8 @@ public class EnemyAIController : MonoBehaviour
     {
         //cbi           = GetComponent<CombatInputListener>();
         selfController = GetComponent<NBCharacterController>();
-        enemyController = CharacterLocator.locator.getCharacter((selfController.playerNum % 2) + 1);
-        cil = PlayerLocator.locator.getCombatListener(selfController.playerNum);
+       // enemyController = CharacterLocator.locator.getCharacter((selfController.playerNum % 2) + 1);
+        //cil = PlayerLocator.locator.getCombatListener(selfController.playerNum);
         inputState    = new InputState();
         rb            = GetComponent<Rigidbody2D>();
         animator      = GetComponent<Animator>();
@@ -46,7 +46,7 @@ public class EnemyAIController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        cil.overrideAI = false;
+        //cil.overrideAI = false;
         opponent = GameObject.Find("GameObject");
         rb = GetComponent<Rigidbody2D>();
 	}
@@ -54,25 +54,36 @@ public class EnemyAIController : MonoBehaviour
     //Used for consistency along framerates
 	void FixedUpdate ()
     {
-        inputState = new InputState();
-        //inputState.moveX = speed;
-        //inputState.moveY = jumpSpeed;
-
-        float weights = 0.0f;
-        float val = 0.0f;
-        for(int i = 0;i < 3;i++)
+        //temp awake fix
+        if (cil != null && enemyController != null)
         {
-           // weights += values[i].weight.Evaluate(values[i].curveInput);
-            val += values[i].curveOutput;
-        }
-        val /= weights;
+                cil.overrideAI = false;
+                if (enemyController != null)
+                {
+                    MenuInputListener mil = PlayerLocator.locator.getMenuListener(enemyController.playerNum);
+                    if (mil != null)
+                        mil.setActive(false);
+                }
+            inputState = new InputState();
 
-        if (val > 0.5f)
+            float horizontalDesire = evaluateHorizontal();
+
+            //test for now
+            //if (horizontalDesire > 3.0f)
+            //{
+            //    inputState.moveX = selfController.transform.localScale.x;
+            //}
+            inputState.moveX = horizontalDesire * selfController.transform.localScale.x;
+
+            cil.setCurState(inputState);
+
+        }
+        else
         {
-
+            enemyController = CharacterLocator.locator.getCharacter((selfController.playerNum % 2) + 1);
+            cil = PlayerLocator.locator.getCombatListener(selfController.playerNum);
         }
 
-        cil.setCurState(inputState);
         //Debug.Log(turn);
 
     }
@@ -90,16 +101,30 @@ public class EnemyAIController : MonoBehaviour
         values.Add(goalsIn);
     }
 
-    void evaluateGoals()
+    //maybe have it return a float for horizontal/jump/attack/block
+    float evaluateHorizontal()
     {
         float weights = 0.0f;
         float val = 0.0f;
-        
+
+        List<int> toRemove = new List<int>();
         for(int i = 0; i < values.Count; ++i)
         {
-            val += values[i].curveOutput;
-            weights += values[i].weight;
+            if(values[i].input == InputTarget.horizontal)
+            {
+
+                val += values[i].curveOutput;
+                weights += values[i].weight;
+                toRemove.Insert(0, i);
+            }
         }
+        for(int i = 0;i < toRemove.Count;i++)
+        {
+            values.RemoveAt(toRemove[i]);
+        }
+        val /= weights;
+
+        return val;
     }
 
     /*

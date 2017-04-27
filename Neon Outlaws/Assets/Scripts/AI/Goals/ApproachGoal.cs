@@ -14,22 +14,31 @@ public class ApproachGoal : BaseGoal
     //returns the weight value of my desire to approach based on distance
     public AnimationCurve desireToApproachW; 
 
-    void Awake()
+    protected override void Awake()
     {
         //setting so my enemyAiController knows this goal is for horizontal movement
+        base.Awake();
         myValues.input = InputTarget.horizontal;
+            desireToApproachW.keys[0].time = desireToApproach.keys[0].time;
+            desireToApproachW.keys[desireToApproachW.keys.Length - 1].time = desireToApproach[desireToApproach.keys.Length - 1].time;
     }
 
     public override void evaluateGoal()
     {
-        float curDist = Mathf.Abs(self.selfController.transform.position.x - self.enemyController.transform.position.x);
+        //temp awake fix
+        if (self.cil != null && self.enemyController != null)
+        {
+            float curDist = Mathf.Abs(self.selfController.transform.position.x - self.enemyController.transform.position.x);
+            curDist = Mathf.Clamp(curDist, desireToApproach.keys[0].time, desireToApproach.keys[desireToApproach.keys.Length - 1].time);
 
-        float desireWeight = desireToApproachW.Evaluate(curDist);
-        float desire = desireToApproach.Evaluate(curDist);
-        desire /= desireWeight;
 
-        myValues.curveOutput = desire;
-        myValues.weight = desireWeight;
-        //send desire to Enemy ai controller
+            float desireWeight = desireToApproachW.Evaluate(curDist);
+            float desire = desireToApproach.Evaluate(curDist);
+            //desire /= desireWeight;
+
+            myValues.curveOutput = desire;
+            myValues.weight = desireWeight;
+        }
+        //send desire to Enemy ai controller which basegoal already accomplishes
     }
 }

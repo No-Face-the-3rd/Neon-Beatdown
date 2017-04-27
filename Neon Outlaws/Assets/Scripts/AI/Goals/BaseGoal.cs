@@ -9,7 +9,7 @@ public class BaseGoal : MonoBehaviour
     public goalValues myValues;
     public InputTarget inputTarget;
 
-    void Awake()
+    protected virtual void Awake()
     {
         self = GetComponent<EnemyAIController>();
     }
