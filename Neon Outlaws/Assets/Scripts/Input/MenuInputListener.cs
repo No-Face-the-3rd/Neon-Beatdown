@@ -43,7 +43,7 @@ public class MenuInputListener : MonoBehaviour {
         }
         //conditional to take input here
         //take input here
-        curState.clearAxes();
+
     }
 
     public void bindInput(int index)

@@ -8,7 +8,7 @@ public class Timer {
     private float curTime = 0.0f;
     private bool active = false;
 
-    public void init()
+    public void startTimer()
     {
         setActive(true);
     }
