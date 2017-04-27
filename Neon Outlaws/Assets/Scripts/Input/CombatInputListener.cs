@@ -59,9 +59,8 @@ public class CombatInputListener : MonoBehaviour {
             //setButton(ult.control, out curState.ultimateAbility);
             setButton(buttonBlock.control, out curState.buttonBlock);
         }
-        if (controller != null)
-            controller.takeInput(getCurState());
-        curState.clearAxes();
+        //if (controller != null)
+        //    controller.takeInput(getCurState());
     }
 
     public void bindInput(int index)
