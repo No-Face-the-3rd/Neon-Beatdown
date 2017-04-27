@@ -9,6 +9,8 @@ public class RoundVictoryManager : MonoBehaviour {
 
     private bool roundActive;
 
+    public Timer transitionTimer;
+
 	// Use this for initialization
 	void Start () {
         timerMan = GetComponent<RoundTimerManager>();
@@ -19,9 +21,26 @@ public class RoundVictoryManager : MonoBehaviour {
 	void Update () {
         if(roundActive)
         {
-
+            
         }
+        else
+        {
+            if(transitionTimer.isPassed())
+            {
+                startRound();
+            }
+        }
+        transitionTimer.update();
 	}
 
+    void startRound()
+    {
+        roundActive = true;
 
+    }
+
+    void endMatch()
+    {
+
+    }
 }
