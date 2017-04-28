@@ -10,13 +10,8 @@ public class TitleMenu : MonoBehaviour {
     public GameObject mainMenuPanel;
     public GameObject titleMenuPanel;
     public GameObject selectedButton;
-    //public GameObject nextSelectedButton;
-    //public UnityEngine.EventSystems.EventSystem menuEventSystem;
-
-    void Start()
-    {
-        
-    }
+    public GameObject nextSelectedButton;
+    public UnityEngine.EventSystems.EventSystem menuEventSystem;
 
     void TakeInput(menuInputState theMenuInputState)
     {

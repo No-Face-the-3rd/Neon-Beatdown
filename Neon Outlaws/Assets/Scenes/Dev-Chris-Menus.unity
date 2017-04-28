@@ -316,14 +316,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 33240930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa6d18fa4ed9cb64b9f5b23d35fea6a2, type: 3}
+  m_Script: {fileID: 11500000, guid: af9499022cb7d4040ae595ca41a16625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuPanel: {fileID: 1841334992}
-  optionsMenuPanel: {fileID: 0}
+  optionsMenuPanel: {fileID: 2109022699}
   characterSelectPanel: {fileID: 1409956829}
-  menuButtons: []
-  selectedButton: {fileID: 0}
 --- !u!114 &33240933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,7 +361,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 33240932}
+      - m_Target: {fileID: 0}
         m_MethodName: LoadCharacterSelectPanel
         m_Mode: 1
         m_Arguments:
@@ -466,14 +464,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 36983381}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa6d18fa4ed9cb64b9f5b23d35fea6a2, type: 3}
+  m_Script: {fileID: 11500000, guid: af9499022cb7d4040ae595ca41a16625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuPanel: {fileID: 1841334992}
-  optionsMenuPanel: {fileID: 0}
+  optionsMenuPanel: {fileID: 2109022699}
   characterSelectPanel: {fileID: 1409956829}
-  menuButtons: []
-  selectedButton: {fileID: 0}
 --- !u!114 &36983384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,7 +509,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 36983383}
+      - m_Target: {fileID: 0}
         m_MethodName: LoadCharacterSelectPanel
         m_Mode: 1
         m_Arguments:
@@ -1095,7 +1091,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -6, y: -23}
   m_SizeDelta: {x: 406, y: 23}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1715,14 +1711,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 468175592}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa6d18fa4ed9cb64b9f5b23d35fea6a2, type: 3}
+  m_Script: {fileID: 11500000, guid: af9499022cb7d4040ae595ca41a16625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuPanel: {fileID: 1841334992}
   optionsMenuPanel: {fileID: 2109022699}
   characterSelectPanel: {fileID: 1409956829}
-  menuButtons: []
-  selectedButton: {fileID: 0}
 --- !u!114 &468175595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1762,7 +1756,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 468175594}
+      - m_Target: {fileID: 0}
         m_MethodName: LoadOptionsPanel
         m_Mode: 1
         m_Arguments:
@@ -2681,7 +2675,7 @@ RectTransform:
   - {fileID: 1095591998}
   - {fileID: 1027011209}
   m_Father: {fileID: 1306306228}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5414,9 +5408,9 @@ RectTransform:
   m_Children:
   - {fileID: 1293280096}
   - {fileID: 1841334993}
+  - {fileID: 2109022700}
   - {fileID: 1409956830}
   - {fileID: 722814608}
-  - {fileID: 2109022700}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5506,14 +5500,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1323692868}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa6d18fa4ed9cb64b9f5b23d35fea6a2, type: 3}
+  m_Script: {fileID: 11500000, guid: af9499022cb7d4040ae595ca41a16625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuPanel: {fileID: 1841334992}
-  optionsMenuPanel: {fileID: 0}
+  optionsMenuPanel: {fileID: 2109022699}
   characterSelectPanel: {fileID: 1409956829}
-  menuButtons: []
-  selectedButton: {fileID: 0}
 --- !u!114 &1323692871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5553,7 +5545,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1323692870}
+      - m_Target: {fileID: 0}
         m_MethodName: QuitOnSelect
         m_Mode: 1
         m_Arguments:
@@ -5873,7 +5865,7 @@ RectTransform:
   - {fileID: 1579986728}
   - {fileID: 344504192}
   m_Father: {fileID: 1306306228}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -6890,7 +6882,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -6, y: -23}
   m_SizeDelta: {x: 406, y: 23}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7064,6 +7056,8 @@ MonoBehaviour:
   mainMenuPanel: {fileID: 1841334992}
   titleMenuPanel: {fileID: 1293280095}
   selectedButton: {fileID: 1815688441}
+  nextSelectedButton: {fileID: 0}
+  menuEventSystem: {fileID: 0}
 --- !u!1 &1836914618
 GameObject:
   m_ObjectHideFlags: 0
@@ -7149,7 +7143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1841334993
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7228,9 +7222,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa6d18fa4ed9cb64b9f5b23d35fea6a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenuPanel: {fileID: 1841334992}
-  optionsMenuPanel: {fileID: 0}
-  characterSelectPanel: {fileID: 1409956829}
   menuButtons:
   - {fileID: 36983381}
   - {fileID: 33240930}
@@ -7336,7 +7327,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 131.5, y: 24}
   m_SizeDelta: {x: 406, y: 23}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7568,7 +7559,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2109022700
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7587,7 +7578,7 @@ RectTransform:
   - {fileID: 1522358409}
   - {fileID: 369714195}
   m_Father: {fileID: 1306306228}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
