@@ -73,6 +73,7 @@ public class EnemyAIController : MonoBehaviour
             //{
             //    inputState.moveX = selfController.transform.localScale.x;
             //}
+            Debug.Log(horizontalDesire);
             inputState.moveX = horizontalDesire * selfController.transform.localScale.x;
 
             cil.setCurState(inputState);
