@@ -7,7 +7,7 @@ public class HealthBarElements
 {
     public Sprite background;
     public Sprite foreground;
-    public Texture2D counterFill;
+    public Sprite counterFill;
 }
 
 
