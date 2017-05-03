@@ -15,7 +15,7 @@ public class RoundTimerManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         roundTimer.update();
-        timerText.text = "Time: " + Mathf.Ceil(roundTimer.timeRemaining());
+        timerText.text = Mathf.Ceil(roundTimer.timeRemaining()).ToString();
 	}
 
     public void resetRound()
@@ -31,6 +31,11 @@ public class RoundTimerManager : MonoBehaviour {
     public bool timeEnd()
     {
         return roundTimer.isPassed();
+    }
+
+    public float timeLeft()
+    {
+        return roundTimer.timeRemaining();
     }
 
 }
