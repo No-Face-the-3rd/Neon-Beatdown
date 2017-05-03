@@ -38,4 +38,9 @@ public class RoundTimerManager : MonoBehaviour {
         return roundTimer.timeRemaining();
     }
 
+    public void pauseTimer(bool paused = true)
+    {
+        roundTimer.setActive(!paused);
+    }
+
 }

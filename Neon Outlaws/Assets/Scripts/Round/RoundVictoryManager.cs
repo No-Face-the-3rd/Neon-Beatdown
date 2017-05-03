@@ -14,10 +14,16 @@ public class RoundVictoryManager : MonoBehaviour {
 
     private int currentRound = 0;
 
+    private List<int> numVictories = new List<int>();
+
 	// Use this for initialization
 	void Start () {
         timerMan = GetComponent<RoundTimerManager>();
         healthMan = GetComponent<HealthbarManager>();
+        for(int i = 0;i < healthMan.healthBars.Count;i++)
+        {
+            numVictories.Add(0);
+        }
         startRound();	
 	}
 	
@@ -25,7 +31,11 @@ public class RoundVictoryManager : MonoBehaviour {
 	void Update () {
         if(roundActive)
         {
-            
+            if(timerMan.timeEnd())
+            {
+                timerMan.pauseTimer(true);
+                endRound();
+            }
         }
         else
         {
@@ -41,16 +51,33 @@ public class RoundVictoryManager : MonoBehaviour {
             }
         }
         transitionTimer.update();
+
+        doMarkers();
 	}
 
     void startRound()
     {
         roundActive = true;
+        timerMan.resetRound();
         timerMan.startRound();
+    }
+
+    void endRound()
+    {
+
     }
 
     void endMatch()
     {
 
+    }
+
+    void doMarkers()
+    {
+        for(int i = 0;i < numVictories.Count;i++)
+        {
+            numVictories[i] = Mathf.Clamp(numVictories[i], 0, roundsToWin + 1);
+            healthMan.activateMarkers(i + 1, numVictories[i]);
+        }
     }
 }
