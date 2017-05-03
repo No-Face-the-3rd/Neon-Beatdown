@@ -1573,7 +1573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 690357157}
   - component: {fileID: 690357156}
-  - component: {fileID: 690357155}
+  - component: {fileID: 690357158}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1581,24 +1581,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &690357155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 690357154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &690357156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1626,6 +1608,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &690357158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 690357154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc3f7e6427ab7a46905b029b194f678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerToListen: 1
+  inputActionsPerSecond: 10
+  inputState:
+    horizNav: 0
+    vertNav: 0
+    horizAsButton:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    vertAsButton:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    accept:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    decline:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    resume:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
 --- !u!1 &726454561
 GameObject:
   m_ObjectHideFlags: 0
@@ -28507,9 +28525,18 @@ MonoBehaviour:
   resumeAction:
     action: {fileID: 114610340763726446, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
   selectedCharacter: 1
+  deadZone: 0.5
   curState:
     horizNav: 0
     vertNav: 0
+    horizAsButton:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    vertAsButton:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
     accept:
       wasPressed: 0
       wasReleased: 0
@@ -28554,9 +28581,18 @@ MonoBehaviour:
   buttonBlock:
     action: {fileID: 114674364586557058, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
   controller: {fileID: 1169969391}
+  deadZone: 0.5
   curState:
     moveX: 0
     moveY: 0
+    xAsButton:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    yAsButton:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
     escape:
       wasPressed: 0
       wasReleased: 0
