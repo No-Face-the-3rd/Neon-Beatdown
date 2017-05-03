@@ -81,6 +81,19 @@ public class ButtonInfo
         ret = "Is Held: " + isHeld + "\nWas Just Pressed: " + wasPressed + "\nWas Just Released: " + wasReleased;
         return ret;
     }
+    public bool axisDown(float axis, float deadZone)
+    {
+        bool ret = false;
+        if(Mathf.Abs(axis) >= deadZone)
+        {
+            ret = true;
+        }
+        return ret;
+    }
+    public void fromAxis(float axis, float deadZone)
+    {
+        setPressState(axisDown(axis, deadZone));
+    }
 }
 
 [System.Serializable]
@@ -94,6 +107,8 @@ public class InputState
     /// Value from -1 to 1. Y axis Controls
     /// </summary>
     public float moveY;
+    public ButtonInfo xAsButton;
+    public ButtonInfo yAsButton;
     /// <summary>
     /// Information on button state: escape
     /// </summary>
@@ -139,6 +154,8 @@ public class InputState
         abilityTwo = new ButtonInfo();
         abilityThree = new ButtonInfo();
         buttonBlock = new ButtonInfo();
+        xAsButton = new ButtonInfo();
+        yAsButton = new ButtonInfo();
     }
 
     public InputState(InputState input)
@@ -152,6 +169,8 @@ public class InputState
         abilityTwo = new ButtonInfo(input.abilityTwo);
         abilityThree = new ButtonInfo(input.abilityThree);
         buttonBlock = new ButtonInfo(input.buttonBlock);
+        xAsButton = new ButtonInfo(input.xAsButton);
+        yAsButton = new ButtonInfo(input.yAsButton);
     }
 
     public void clearAxes()
@@ -171,6 +190,8 @@ public class menuInputState
     /// Value from -1 to 1. Y axis Controls
     /// </summary>
     public float vertNav;
+    public ButtonInfo horizAsButton;
+    public ButtonInfo vertAsButton;
     /// <summary>
     /// Information on button state: accept
     /// </summary>
@@ -191,6 +212,8 @@ public class menuInputState
         accept = new ButtonInfo();
         decline = new ButtonInfo();
         resume = new ButtonInfo();
+        horizAsButton = new ButtonInfo();
+        vertAsButton = new ButtonInfo();
     }
 
     public menuInputState(menuInputState input)
@@ -200,6 +223,8 @@ public class menuInputState
         accept = new ButtonInfo(input.accept);
         decline = new ButtonInfo(input.decline);
         resume = new ButtonInfo(input.resume);
+        horizAsButton = new ButtonInfo(input.horizAsButton);
+        vertAsButton = new ButtonInfo(input.vertAsButton);
     }
 
     public void clearAxes()
