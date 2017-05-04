@@ -1633,9 +1633,18 @@ MonoBehaviour:
   buttonBlock:
     action: {fileID: 114674364586557058, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
   controller: {fileID: 1148691448}
+  deadZone: 0.5
   curState:
     moveX: 0
     moveY: 0
+    xAsButton:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    yAsButton:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
     escape:
       wasPressed: 0
       wasReleased: 0
@@ -1722,9 +1731,18 @@ MonoBehaviour:
   resumeAction:
     action: {fileID: 114610340763726446, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
   selectedCharacter: -1
+  deadZone: 0.5
   curState:
     horizNav: 0
     vertNav: 0
+    horizAsButton:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    vertAsButton:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
     accept:
       wasPressed: 0
       wasReleased: 0
@@ -14903,6 +14921,7 @@ GameObject:
   - component: {fileID: 1169969399}
   - component: {fileID: 1169969400}
   - component: {fileID: 1169969401}
+  - component: {fileID: 1169969402}
   m_Layer: 0
   m_Name: GameObject (1)
   m_TagString: Untagged
@@ -28051,6 +28070,14 @@ MonoBehaviour:
   inputState:
     moveX: 0
     moveY: 0
+    xAsButton:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    yAsButton:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
     escape:
       wasPressed: 0
       wasReleased: 0
@@ -28170,7 +28197,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1169969390}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 515406aefa917f0408cd28e2fbba60d6, type: 3}
   m_Name: 
@@ -28185,29 +28212,23 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 2
-      time: -0.0019496428
+      time: 0
       value: -5
       inSlope: 0
       outSlope: -0
       tangentMode: 65
     - serializedVersion: 2
-      time: 5.3606925
+      time: 6
       value: -5
       inSlope: 0
-      outSlope: -0.010405336
+      outSlope: 0.76651573
       tangentMode: 5
     - serializedVersion: 2
-      time: 5.3723235
-      value: -0.4135659
-      inSlope: 0.14781952
-      outSlope: 0.14781952
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 10.388147
+      time: 6.1
       value: 0
-      inSlope: -0.003969191
-      outSlope: Infinity
-      tangentMode: 97
+      inSlope: 1.5377998
+      outSlope: -0
+      tangentMode: 65
     - serializedVersion: 2
       time: 19.994677
       value: 0
@@ -28227,14 +28248,14 @@ MonoBehaviour:
       outSlope: 0.0108700385
       tangentMode: 0
     - serializedVersion: 2
-      time: 5.372324
+      time: 5.953824
       value: 5
       inSlope: 0
-      outSlope: -27.811384
+      outSlope: -65.981766
       tangentMode: 69
     - serializedVersion: 2
-      time: 5.533305
-      value: 0.52289045
+      time: 6.0229893
+      value: 0.4363562
       inSlope: -0.106938325
       outSlope: -0.106938325
       tangentMode: 0
@@ -28244,6 +28265,89 @@ MonoBehaviour:
       inSlope: -0.014393976
       outSlope: -0.014393976
       tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!114 &1169969402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1169969390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef3bde8e45b455840b6429027db997a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 0}
+  myValues:
+    weight: 0
+    curveOutput: 0
+    input: 0
+  inputTarget: 2
+  desireToAttack:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: -1
+      value: 5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+    - serializedVersion: 2
+      time: -0.05
+      value: 5
+      inSlope: 0
+      outSlope: -25
+      tangentMode: 69
+    - serializedVersion: 2
+      time: 0.05
+      value: 2.5
+      inSlope: -25
+      outSlope: -250.00005
+      tangentMode: 69
+    - serializedVersion: 2
+      time: 0.06
+      value: 0
+      inSlope: -250.00005
+      outSlope: -0
+      tangentMode: 69
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  desireToAttackW:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: -1
+      value: 5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+    - serializedVersion: 2
+      time: 0
+      value: 5
+      inSlope: 0
+      outSlope: -2.5
+      tangentMode: 5
+    - serializedVersion: 2
+      time: 0.1
+      value: 0
+      inSlope: -25
+      outSlope: -0
+      tangentMode: 65
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
@@ -28358,9 +28462,18 @@ MonoBehaviour:
   resumeAction:
     action: {fileID: 114610340763726446, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
   selectedCharacter: 0
+  deadZone: 0.5
   curState:
     horizNav: 0
     vertNav: 0
+    horizAsButton:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    vertAsButton:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
     accept:
       wasPressed: 0
       wasReleased: 0
@@ -28405,9 +28518,18 @@ MonoBehaviour:
   buttonBlock:
     action: {fileID: 114674364586557058, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
   controller: {fileID: 1169969391}
+  deadZone: 0.5
   curState:
     moveX: 0
     moveY: 0
+    xAsButton:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    yAsButton:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
     escape:
       wasPressed: 0
       wasReleased: 0

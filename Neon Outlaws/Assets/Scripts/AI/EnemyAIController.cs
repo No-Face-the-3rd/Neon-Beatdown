@@ -54,6 +54,7 @@ public class EnemyAIController : MonoBehaviour
     //Used for consistency along framerates
 	void FixedUpdate ()
     {
+        bool lightAttack = false;
         //temp awake fix
         if (cil != null && enemyController != null)
         {
@@ -65,19 +66,14 @@ public class EnemyAIController : MonoBehaviour
                         mil.setActive(false);
                 }
             inputState = new InputState();
-
+            //horizontal movement based on my horizontal animation curves
             float horizontalDesire = evaluateHorizontal();
-
-            //test for now
-            //if (horizontalDesire > 3.0f)
-            //{
-            //    inputState.moveX = selfController.transform.localScale.x;
-            //}
-            Debug.Log(horizontalDesire);
             inputState.moveX = horizontalDesire * selfController.transform.localScale.x;
-
+            //light attack evaluation
+            lightAttack = evaluateLightAttack(.0f);
+            inputState.lightAttack.setPressState(lightAttack);
+            //send inputs
             cil.setCurState(inputState);
-
         }
         else
         {
@@ -126,6 +122,33 @@ public class EnemyAIController : MonoBehaviour
         val /= weights;
 
         return val;
+    }
+
+    bool evaluateLightAttack(float threshold)
+    {
+        float val = 0.0f;
+        float weights = 0.0f;
+
+        List<int> toRemove = new List<int>();
+        for(int i = 0; i < values.Count; ++i)
+        {
+            if(values[i].input == InputTarget.attack)
+            {
+                val += values[i].curveOutput;
+                weights += values[i].weight;
+                toRemove.Insert(0, i);
+            }
+        }
+        for(int i = 0; i < toRemove.Count; i++)
+        {
+            values.RemoveAt(toRemove[i]);
+        }
+        val /= weights;
+
+        if (val > threshold)
+            return true;
+        else
+            return false;
     }
 
     /*

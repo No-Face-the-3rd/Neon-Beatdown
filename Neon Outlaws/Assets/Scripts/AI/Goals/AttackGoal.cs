@@ -22,8 +22,17 @@ public class AttackGoal : BaseGoal
         //temp awake fix
         if (self.cil != null && self.enemyController != null)
         {
+            //get the absolute value of the distance
+            float curDist = Mathf.Abs(self.selfController.transform.position.x - self.enemyController.transform.position.x);
+            //subtract with attack range
+            curDist -= 2;
 
+            float desire = desireToAttack.Evaluate(curDist);
+            float desireWeight = desireToAttackW.Evaluate(curDist);
+
+            myValues.curveOutput = desire;
+            myValues.weight = desireWeight;
         }
-
+        //send desire to enemy ai controller which basegoal already accomplishes
     }
 }
