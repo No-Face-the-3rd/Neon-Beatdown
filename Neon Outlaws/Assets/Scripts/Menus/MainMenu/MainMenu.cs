@@ -5,11 +5,7 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour {
     menuInputState inputState;
-    TitleMenu titleMenu;
     MenuInputListener menuInputListener;
-
-    //public GameObject[] menuButtons;
-    public GameObject selectedButton;
 
     void FixedUpdate()
     {

@@ -3,23 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MainMenuButtons : MonoBehaviour {
-    TitleMenu titleMenu;
     public GameObject mainMenuPanel;
     public GameObject soundMenuPanel;
     public GameObject characterSelectPanel;
 
+    public UnityEngine.EventSystems.EventSystem menuEventSystem;
+    public GameObject startingMainButton;
+    public GameObject startingCharacterSelectButton;
+    public GameObject startingAudioButton;
+    
     // Deactivate main panel, activate the CSS panel
     public void LoadCharacterSelectPanel() {
         mainMenuPanel.SetActive(false);
         characterSelectPanel.SetActive(true);
-        titleMenu.menuEventSystem.SetSelectedGameObject(GameObject.Find("kpopButton"));
+        menuEventSystem.SetSelectedGameObject(startingCharacterSelectButton);
     }
 
     // Deactivate main panel, activate the options panel
     public void LoadSoundPanel() {
         mainMenuPanel.SetActive(false);
         soundMenuPanel.SetActive(true);
-        titleMenu.menuEventSystem.SetSelectedGameObject(GameObject.Find("BackButton"));
+        menuEventSystem.SetSelectedGameObject(startingAudioButton);
     }
 
     // If playing through the Unity Editor, exit play mode. Otherwise exit to desktop

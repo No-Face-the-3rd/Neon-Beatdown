@@ -322,6 +322,10 @@ MonoBehaviour:
   mainMenuPanel: {fileID: 1841334992}
   soundMenuPanel: {fileID: 2109022699}
   characterSelectPanel: {fileID: 1409956829}
+  menuEventSystem: {fileID: 871160144}
+  startingMainButton: {fileID: 36983381}
+  startingCharacterSelectButton: {fileID: 587286981}
+  startingAudioButton: {fileID: 1522358408}
 --- !u!114 &33240933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,6 +474,10 @@ MonoBehaviour:
   mainMenuPanel: {fileID: 1841334992}
   soundMenuPanel: {fileID: 2109022699}
   characterSelectPanel: {fileID: 1409956829}
+  menuEventSystem: {fileID: 871160144}
+  startingMainButton: {fileID: 36983381}
+  startingCharacterSelectButton: {fileID: 587286981}
+  startingAudioButton: {fileID: 1522358408}
 --- !u!114 &36983384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1717,6 +1725,10 @@ MonoBehaviour:
   mainMenuPanel: {fileID: 1841334992}
   soundMenuPanel: {fileID: 2109022699}
   characterSelectPanel: {fileID: 1409956829}
+  menuEventSystem: {fileID: 871160144}
+  startingMainButton: {fileID: 36983381}
+  startingCharacterSelectButton: {fileID: 587286981}
+  startingAudioButton: {fileID: 1522358408}
 --- !u!114 &468175595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2245,7 +2257,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.8235294, g: 0, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.07586193, g: 0, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -4645,7 +4657,7 @@ GameObject:
   - component: {fileID: 1157583303}
   - component: {fileID: 1157583302}
   m_Layer: 5
-  m_Name: CharacterSelectImage
+  m_Name: CharacterSelectBGImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5101,7 +5113,7 @@ Transform:
   - {fileID: 483266288}
   - {fileID: 1008417776}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1286441064
 GameObject:
@@ -5449,7 +5461,7 @@ RectTransform:
   - {fileID: 1409956830}
   - {fileID: 722814608}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5543,6 +5555,10 @@ MonoBehaviour:
   mainMenuPanel: {fileID: 1841334992}
   soundMenuPanel: {fileID: 2109022699}
   characterSelectPanel: {fileID: 1409956829}
+  menuEventSystem: {fileID: 871160144}
+  startingMainButton: {fileID: 36983381}
+  startingCharacterSelectButton: {fileID: 587286981}
+  startingAudioButton: {fileID: 1522358408}
 --- !u!114 &1323692871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6304,8 +6320,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b456f05bcc8b574a83b67a7e7a63c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  optionsMenuPanel: {fileID: 0}
+  menuEventSystem: {fileID: 0}
   soundMenuPanel: {fileID: 2109022699}
+  mainMenuPanel: {fileID: 1841334992}
 --- !u!114 &1522358411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6326,7 +6343,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.8235294, g: 0, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.07586193, g: 0, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -6346,7 +6363,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1522358410}
-        m_MethodName: LoadOptionsPanel
+        m_MethodName: LoadMainMenuPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7090,6 +7107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec344c6c911daff4bbb61b51b571d242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenuButtons: {fileID: 1893067175}
   mainMenuPanel: {fileID: 1841334992}
   titleMenuPanel: {fileID: 1293280095}
   nextSelectedButton: {fileID: 36983381}
@@ -7258,7 +7276,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa6d18fa4ed9cb64b9f5b23d35fea6a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedButton: {fileID: 0}
 --- !u!1 &1873970328
 GameObject:
   m_ObjectHideFlags: 0
@@ -7327,6 +7344,53 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1873970328}
+--- !u!1 &1893067174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1893067176}
+  - component: {fileID: 1893067175}
+  m_Layer: 0
+  m_Name: MenuButtonsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1893067175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1893067174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af9499022cb7d4040ae595ca41a16625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenuPanel: {fileID: 1841334992}
+  soundMenuPanel: {fileID: 2109022699}
+  characterSelectPanel: {fileID: 1409956829}
+  menuEventSystem: {fileID: 871160144}
+  startingMainButton: {fileID: 36983381}
+  startingCharacterSelectButton: {fileID: 587286981}
+  startingAudioButton: {fileID: 1522358408}
+--- !u!4 &1893067176
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1893067174}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 356.27032, y: 226.76276, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1932564305
 GameObject:
   m_ObjectHideFlags: 0
@@ -7585,7 +7649,7 @@ GameObject:
   - component: {fileID: 2109022701}
   - component: {fileID: 2109022703}
   m_Layer: 5
-  m_Name: SoundPanel
+  m_Name: AudioPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7660,8 +7724,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b456f05bcc8b574a83b67a7e7a63c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  optionsMenuPanel: {fileID: 0}
+  menuEventSystem: {fileID: 0}
   soundMenuPanel: {fileID: 2109022699}
+  mainMenuPanel: {fileID: 0}
 --- !u!1 &2131842702
 GameObject:
   m_ObjectHideFlags: 0
