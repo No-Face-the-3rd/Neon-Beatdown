@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuPanel: {fileID: 1841334992}
-  optionsMenuPanel: {fileID: 2109022699}
+  soundMenuPanel: {fileID: 2109022699}
   characterSelectPanel: {fileID: 1409956829}
 --- !u!114 &33240933
 MonoBehaviour:
@@ -361,7 +361,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 33240932}
         m_MethodName: LoadCharacterSelectPanel
         m_Mode: 1
         m_Arguments:
@@ -468,7 +468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuPanel: {fileID: 1841334992}
-  optionsMenuPanel: {fileID: 2109022699}
+  soundMenuPanel: {fileID: 2109022699}
   characterSelectPanel: {fileID: 1409956829}
 --- !u!114 &36983384
 MonoBehaviour:
@@ -509,7 +509,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 36983383}
         m_MethodName: LoadCharacterSelectPanel
         m_Mode: 1
         m_Arguments:
@@ -1678,7 +1678,7 @@ GameObject:
   - component: {fileID: 468175595}
   - component: {fileID: 468175594}
   m_Layer: 5
-  m_Name: SettingsButton
+  m_Name: AudioButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1715,7 +1715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuPanel: {fileID: 1841334992}
-  optionsMenuPanel: {fileID: 2109022699}
+  soundMenuPanel: {fileID: 2109022699}
   characterSelectPanel: {fileID: 1409956829}
 --- !u!114 &468175595
 MonoBehaviour:
@@ -1756,8 +1756,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: LoadOptionsPanel
+      - m_Target: {fileID: 468175594}
+        m_MethodName: LoadSoundPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3382,13 +3382,14 @@ GameObject:
   - component: {fileID: 871160145}
   - component: {fileID: 871160144}
   - component: {fileID: 871160143}
+  - component: {fileID: 871160146}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &871160143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3434,6 +3435,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &871160146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 871160142}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc3f7e6427ab7a46905b029b194f678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerToListen: 1
+  inputActionsPerSecond: 10
+  inputState:
+    horizNav: 0
+    vertNav: 0
+    horizAsButton:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    vertAsButton:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    accept:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    decline:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    resume:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
 --- !u!1 &879362227
 GameObject:
   m_ObjectHideFlags: 0
@@ -3581,7 +3618,7 @@ GameObject:
   - component: {fileID: 916189467}
   - component: {fileID: 916189466}
   m_Layer: 5
-  m_Name: SettingsButtonText
+  m_Name: AudioButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5504,7 +5541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuPanel: {fileID: 1841334992}
-  optionsMenuPanel: {fileID: 2109022699}
+  soundMenuPanel: {fileID: 2109022699}
   characterSelectPanel: {fileID: 1409956829}
 --- !u!114 &1323692871
 MonoBehaviour:
@@ -5545,7 +5582,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1323692870}
         m_MethodName: QuitOnSelect
         m_Mode: 1
         m_Arguments:
@@ -7055,9 +7092,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuPanel: {fileID: 1841334992}
   titleMenuPanel: {fileID: 1293280095}
-  selectedButton: {fileID: 1815688441}
-  nextSelectedButton: {fileID: 0}
-  menuEventSystem: {fileID: 0}
+  nextSelectedButton: {fileID: 36983381}
+  menuEventSystem: {fileID: 871160144}
 --- !u!1 &1836914618
 GameObject:
   m_ObjectHideFlags: 0
@@ -7143,7 +7179,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1841334993
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7222,11 +7258,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa6d18fa4ed9cb64b9f5b23d35fea6a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuButtons:
-  - {fileID: 36983381}
-  - {fileID: 33240930}
-  - {fileID: 468175592}
-  - {fileID: 1323692868}
   selectedButton: {fileID: 0}
 --- !u!1 &1873970328
 GameObject:

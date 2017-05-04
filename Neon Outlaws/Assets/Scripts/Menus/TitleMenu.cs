@@ -9,7 +9,7 @@ public class TitleMenu : MonoBehaviour {
 
     public GameObject mainMenuPanel;
     public GameObject titleMenuPanel;
-    public GameObject selectedButton;
+    //public GameObject selectedButton;
     public GameObject nextSelectedButton;
     public UnityEngine.EventSystems.EventSystem menuEventSystem;
 
@@ -36,6 +36,6 @@ public class TitleMenu : MonoBehaviour {
     {
         titleMenuPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
-        //menuEventSystem.SetSelectedGameObject(nextSelectedButton);
+        menuEventSystem.SetSelectedGameObject(nextSelectedButton);
     }
 }

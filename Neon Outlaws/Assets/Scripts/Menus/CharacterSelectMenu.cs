@@ -9,7 +9,7 @@ public class CharacterSelectMenu : MonoBehaviour {
     public GameObject characterSelectPanel;
     public GameObject stageSelectPanel;
     public GameObject mainMenuPanel;
-        
+    
     public Image player1Outline;
     public bool characterSelected;
 

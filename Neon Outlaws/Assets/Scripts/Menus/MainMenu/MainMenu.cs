@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour {
     TitleMenu titleMenu;
     MenuInputListener menuInputListener;
 
-    public GameObject[] menuButtons;
+    //public GameObject[] menuButtons;
     public GameObject selectedButton;
 
     void FixedUpdate()
@@ -17,13 +17,13 @@ public class MainMenu : MonoBehaviour {
         {
             TakeInput(menuInputListener.getCurState());
 
-            if (inputState.vertNav > .05f) {
+            //if (inputState.vertNav > .05f) {
 
-            }
+            //}
 
-            if (inputState.vertNav < .05f) {
+            //if (inputState.vertNav < .05f) {
 
-            }
+            //}
         }
         else
         {
