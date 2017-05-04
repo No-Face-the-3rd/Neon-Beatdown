@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class CharacterSelectMenu : MonoBehaviour {
     menuInputState inputState;
-    
+
+    public MainMenuButtons mainMenuButtons;
+    public UnityEngine.EventSystems.EventSystem menuEventSystem;
+
     public GameObject characterSelectPanel;
     public GameObject stageSelectPanel;
     public GameObject mainMenuPanel;
@@ -39,6 +42,7 @@ public class CharacterSelectMenu : MonoBehaviour {
     public void LoadMainMenu() {
         characterSelectPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
+        menuEventSystem.SetSelectedGameObject(mainMenuButtons.startingMainButton);
     }
 
     public void LoadStageSelect()

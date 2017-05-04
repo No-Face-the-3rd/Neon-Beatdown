@@ -2232,10 +2232,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a7073013c9377f498b557789dea115a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenuButtons: {fileID: 1893067175}
+  menuEventSystem: {fileID: 871160144}
   characterSelectPanel: {fileID: 1409956829}
-  stageSelectPanel: {fileID: 0}
+  stageSelectPanel: {fileID: 722814607}
   mainMenuPanel: {fileID: 1841334992}
-  player1Outline: {fileID: 0}
+  player1Outline: {fileID: 1579986729}
   characterSelected: 0
 --- !u!114 &587286984
 MonoBehaviour:
@@ -3736,6 +3738,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a7073013c9377f498b557789dea115a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenuButtons: {fileID: 0}
+  menuEventSystem: {fileID: 0}
   characterSelectPanel: {fileID: 1409956829}
   stageSelectPanel: {fileID: 0}
   mainMenuPanel: {fileID: 1841334992}
@@ -6320,7 +6324,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b456f05bcc8b574a83b67a7e7a63c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuEventSystem: {fileID: 0}
+  mainMenuButtons: {fileID: 1893067175}
+  menuEventSystem: {fileID: 871160144}
   soundMenuPanel: {fileID: 2109022699}
   mainMenuPanel: {fileID: 1841334992}
 --- !u!114 &1522358411
@@ -7724,6 +7729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b456f05bcc8b574a83b67a7e7a63c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenuButtons: {fileID: 0}
   menuEventSystem: {fileID: 0}
   soundMenuPanel: {fileID: 2109022699}
   mainMenuPanel: {fileID: 0}
