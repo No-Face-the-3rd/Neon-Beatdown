@@ -13,7 +13,7 @@ public class goalValues
 }
 public enum InputTarget
 {
-    horizontal, jump, attack, block
+    horizontal, jump, lightAttack, block
 }
 
 
@@ -54,24 +54,26 @@ public class EnemyAIController : MonoBehaviour
     //Used for consistency along framerates
 	void FixedUpdate ()
     {
-        bool lightAttack = false;
         //temp awake fix
         if (cil != null && enemyController != null)
         {
-                cil.overrideAI = false;
-                if (enemyController != null)
-                {
-                    MenuInputListener mil = PlayerLocator.locator.getMenuListener(enemyController.playerNum);
-                    if (mil != null)
-                        mil.setActive(false);
-                }
+            bool lightAttack = false;
+            cil.overrideAI = false;
+            if (enemyController != null)
+            {
+                MenuInputListener mil = PlayerLocator.locator.getMenuListener(enemyController.playerNum);
+                if (mil != null)
+                mil.setActive(false);
+            }
             inputState = new InputState();
             //horizontal movement based on my horizontal animation curves
-            float horizontalDesire = evaluateHorizontal();
+            float horizontalDesire = evaluateGoal(InputTarget.horizontal);
             inputState.moveX = horizontalDesire * selfController.transform.localScale.x;
+
             //light attack evaluation
-            lightAttack = evaluateLightAttack(.0f);
+            lightAttack = evaluateLightAttack(1.0f);
             inputState.lightAttack.setPressState(lightAttack);
+
             //send inputs
             cil.setCurState(inputState);
         }
@@ -85,29 +87,16 @@ public class EnemyAIController : MonoBehaviour
 
     }
 
-    //public void setValue(int index, float value)
-    //{
-    //    if(index >= 0 && index < values.Count)
-    //    {
-    //        values[index].curveOutput = value;
-    //    }
-    //}
-
-    public void addGoal(goalValues goalsIn)
-    {
-        values.Add(goalsIn);
-    }
-
     //maybe have it return a float for horizontal/jump/attack/block
-    float evaluateHorizontal()
+    public float evaluateGoal(InputTarget iTarget)
     {
         float weights = 0.0f;
         float val = 0.0f;
 
         List<int> toRemove = new List<int>();
-        for(int i = 0; i < values.Count; ++i)
+        for (int i = 0; i < values.Count; ++i)
         {
-            if(values[i].input == InputTarget.horizontal)
+            if (values[i].input == iTarget)
             {
 
                 val += values[i].curveOutput;
@@ -115,7 +104,7 @@ public class EnemyAIController : MonoBehaviour
                 toRemove.Insert(0, i);
             }
         }
-        for(int i = 0;i < toRemove.Count;i++)
+        for (int i = 0; i < toRemove.Count; i++)
         {
             values.RemoveAt(toRemove[i]);
         }
@@ -124,32 +113,48 @@ public class EnemyAIController : MonoBehaviour
         return val;
     }
 
+    public void addGoal(goalValues goalsIn)
+    {
+        values.Add(goalsIn);
+    }
+
+    //float evaluateHorizontal()
+    //{
+    //    float weights = 0.0f;
+    //    float val = 0.0f;
+
+    //    List<int> toRemove = new List<int>();
+    //    for(int i = 0; i < values.Count; ++i)
+    //    {
+    //        if(values[i].input == InputTarget.horizontal)
+    //        {
+
+    //            val += values[i].curveOutput;
+    //            weights += values[i].weight;
+    //            toRemove.Insert(0, i);
+    //        }
+    //    }
+    //    for(int i = 0;i < toRemove.Count;i++)
+    //    {
+    //        values.RemoveAt(toRemove[i]);
+    //    }
+    //    val /= weights;
+
+    //    return val;
+    //}
+
     bool evaluateLightAttack(float threshold)
     {
-        float val = 0.0f;
-        float weights = 0.0f;
+        float value = evaluateGoal(InputTarget.lightAttack);
 
-        List<int> toRemove = new List<int>();
-        for(int i = 0; i < values.Count; ++i)
-        {
-            if(values[i].input == InputTarget.attack)
-            {
-                val += values[i].curveOutput;
-                weights += values[i].weight;
-                toRemove.Insert(0, i);
-            }
-        }
-        for(int i = 0; i < toRemove.Count; i++)
-        {
-            values.RemoveAt(toRemove[i]);
-        }
-        val /= weights;
-
-        if (val > threshold)
+        //Debug.Log(val);
+        if (value > threshold)
             return true;
         else
             return false;
     }
+
+
 
     /*
      plan:

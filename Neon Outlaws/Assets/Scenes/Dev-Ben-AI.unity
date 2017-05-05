@@ -1800,9 +1800,9 @@ MonoBehaviour:
   buttonBlock: 1
   idleStopRatio: 0.4
   walkSlowRatio: 0.5
-  consecutiveLightsForSecond: 0
+  consecutiveLightsForSecond: 2
   maxHeavyChargeTime: 0
-  consecutiveLightDecay: 0
+  consecutiveLightDecay: 10
   blockDamageTaken: 0.2
   minHeavyChargeDamage: 0
   maxHeavyChargeDamage: 0
@@ -14921,7 +14921,7 @@ GameObject:
   - component: {fileID: 1169969399}
   - component: {fileID: 1169969400}
   - component: {fileID: 1169969401}
-  - component: {fileID: 1169969402}
+  - component: {fileID: 1169969403}
   m_Layer: 0
   m_Name: GameObject (1)
   m_TagString: Untagged
@@ -14952,9 +14952,9 @@ MonoBehaviour:
   buttonBlock: 1
   idleStopRatio: 0.4
   walkSlowRatio: 0.5
-  consecutiveLightsForSecond: 0
+  consecutiveLightsForSecond: 2
   maxHeavyChargeTime: 0
-  consecutiveLightDecay: 0
+  consecutiveLightDecay: 10
   blockDamageTaken: 0.2
   minHeavyChargeDamage: 0
   maxHeavyChargeDamage: 0
@@ -28177,8 +28177,8 @@ MonoBehaviour:
       outSlope: -0.00032240266
       tangentMode: 0
     - serializedVersion: 2
-      time: 10.635778
-      value: 4.211843
+      time: 13.483562
+      value: 3.465998
       inSlope: 0.20675361
       outSlope: 0.20675361
       tangentMode: 0
@@ -28197,7 +28197,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1169969390}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 515406aefa917f0408cd28e2fbba60d6, type: 3}
   m_Name: 
@@ -28218,13 +28218,13 @@ MonoBehaviour:
       outSlope: -0
       tangentMode: 65
     - serializedVersion: 2
-      time: 6
+      time: 6.2
       value: -5
       inSlope: 0
       outSlope: 0.76651573
       tangentMode: 5
     - serializedVersion: 2
-      time: 6.1
+      time: 7.1
       value: 0
       inSlope: 1.5377998
       outSlope: -0
@@ -28248,27 +28248,99 @@ MonoBehaviour:
       outSlope: 0.0108700385
       tangentMode: 0
     - serializedVersion: 2
-      time: 5.953824
+      time: 7
       value: 5
       inSlope: 0
-      outSlope: -65.981766
+      outSlope: -49.900047
       tangentMode: 69
     - serializedVersion: 2
-      time: 6.0229893
-      value: 0.4363562
+      time: 7.1
+      value: 0.01
       inSlope: -0.106938325
-      outSlope: -0.106938325
-      tangentMode: 0
+      outSlope: 0.00093989144
+      tangentMode: 65
     - serializedVersion: 2
       time: 19.985296
       value: 0.022110779
-      inSlope: -0.014393976
+      inSlope: 0.00093989144
       outSlope: -0.014393976
-      tangentMode: 0
+      tangentMode: 5
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &1169969402
+  desireRetreatAfterLA:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0.5
+      inSlope: 0.115484
+      outSlope: -0
+      tangentMode: 65
+    - serializedVersion: 2
+      time: 2
+      value: 0.5
+      inSlope: 0
+      outSlope: 0.19729137
+      tangentMode: 5
+    - serializedVersion: 2
+      time: 3
+      value: 2
+      inSlope: 0.2977252
+      outSlope: 0.2977252
+      tangentMode: 1
+    - serializedVersion: 2
+      time: 4
+      value: 5
+      inSlope: 0.26226044
+      outSlope: -0
+      tangentMode: 65
+    - serializedVersion: 2
+      time: 10
+      value: 5
+      inSlope: 0
+      outSlope: 0.89060444
+      tangentMode: 5
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  desireRetreatAfterLAW:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0.2
+      outSlope: 0.2
+      tangentMode: 34
+    - serializedVersion: 2
+      time: 1
+      value: 0.2
+      inSlope: 0.23333335
+      outSlope: 0.23333335
+      tangentMode: 34
+    - serializedVersion: 2
+      time: 4
+      value: 1
+      inSlope: 0.115931034
+      outSlope: -0
+      tangentMode: 65
+    - serializedVersion: 2
+      time: 10
+      value: 1
+      inSlope: 0
+      outSlope: -0.005150694
+      tangentMode: 5
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!114 &1169969403
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -28276,7 +28348,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1169969390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef3bde8e45b455840b6429027db997a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 547ebf32e169bac4294467610561bcef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 0}
@@ -28326,25 +28398,25 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 2
       time: -1
-      value: 5
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 34
     - serializedVersion: 2
       time: 0
-      value: 5
+      value: 1
       inSlope: 0
       outSlope: -2.5
       tangentMode: 5
     - serializedVersion: 2
       time: 0.1
-      value: 0
+      value: 0.01
       inSlope: -25
       outSlope: -0
       tangentMode: 65
     - serializedVersion: 2
       time: 1
-      value: 0
+      value: 0.01
       inSlope: 0
       outSlope: 0
       tangentMode: 34

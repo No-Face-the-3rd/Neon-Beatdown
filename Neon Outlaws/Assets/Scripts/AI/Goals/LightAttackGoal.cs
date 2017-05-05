@@ -2,14 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackGoal : BaseGoal
+public class LightAttackGoal : BaseGoal
 {
-    //test class for attacking
     public AnimationCurve desireToAttack;
     public AnimationCurve desireToAttackW;
-
-    public AnimationCurve test;
-    public AnimationCurve testw;
 
     protected override void Awake()
     {
