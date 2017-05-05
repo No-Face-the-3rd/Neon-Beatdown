@@ -16,6 +16,7 @@ public class MenuInputListener : MonoBehaviour {
     public ButtonAction resumeAction;
 
     public int selectedCharacter = -1;
+    public float deadZone = 0.5f;
 
     public menuInputState curState = new menuInputState();
 
@@ -41,10 +42,14 @@ public class MenuInputListener : MonoBehaviour {
             setButton(declineAction.control, out curState.decline);
             setButton(resumeAction.control, out curState.resume);
         }
+        curState.horizAsButton.fromAxis(curState.horizNav, deadZone);
+        curState.vertAsButton.fromAxis(curState.vertNav, deadZone);
         //conditional to take input here
         //take input here
-        curState.clearAxes();
+
     }
+
+
 
     public void bindInput(int index)
     {

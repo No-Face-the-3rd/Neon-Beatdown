@@ -24,6 +24,7 @@ public class CombatInputListener : MonoBehaviour {
     public ButtonAction buttonBlock;
 
     public NBCharacterController controller;
+    public float deadZone = 0.5f;
     
     public InputState curState = new InputState();
 
@@ -59,9 +60,10 @@ public class CombatInputListener : MonoBehaviour {
             //setButton(ult.control, out curState.ultimateAbility);
             setButton(buttonBlock.control, out curState.buttonBlock);
         }
-        if (controller != null)
-            controller.takeInput(getCurState());
-        curState.clearAxes();
+        curState.xAsButton.fromAxis(curState.moveX, deadZone);
+        curState.yAsButton.fromAxis(curState.moveY, deadZone);
+        //if (controller != null)
+        //    controller.takeInput(getCurState());
     }
 
     public void bindInput(int index)
