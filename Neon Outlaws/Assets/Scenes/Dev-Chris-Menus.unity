@@ -2103,7 +2103,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 483266286}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -437.23862, y: -198.8801, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1281739120}
@@ -5101,8 +5101,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1281739120}
+  - component: {fileID: 1281739121}
   m_Layer: 0
-  m_Name: AudioMaster
+  m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5123,6 +5124,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1281739121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1281739119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cff9eba8b8242f4bb3ece2328e6b335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuAudioSource: {fileID: 483266287}
+  sfxAudioSource: {fileID: 1008417775}
+  lowPitchRange: 0.95
+  highPitchRange: 1.05
 --- !u!1 &1293280095
 GameObject:
   m_ObjectHideFlags: 0
