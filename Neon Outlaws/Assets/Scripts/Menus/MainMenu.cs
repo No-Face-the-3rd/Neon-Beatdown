@@ -21,14 +21,6 @@ public class MainMenu : MonoBehaviour {
         if (menuInputListener != null)
         {
             TakeInput(menuInputListener.getCurState());
-
-            //if (inputState.vertNav > .05f) {
-
-            //}
-
-            //if (inputState.vertNav < .05f) {
-
-            //}
         }
         else
         {

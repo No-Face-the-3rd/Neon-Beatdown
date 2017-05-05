@@ -17,18 +17,29 @@ public class CharacterSelectMenu : MonoBehaviour {
     public Image[] characterImages;
     public bool characterSelected;
 
-    //void Start() {
+    //void Start()
+    //{
     //    MenuInputListener menuInputListener = PlayerLocator.locator.getMenuListener(1);
     //}
 
     void FixedUpdate()
     {
+        if (menuInputListener != null)
+        {
+            TakeInput(menuInputListener.getCurState());
+        }
+        else
+        {
+            menuInputListener = PlayerLocator.locator.getMenuListener(1);
+        }
+
         for (int i = 0; i < 5; i++)
         {
             //if (inputState.vertNav < .05f)
             //    i += 1;
             //if (inputState.vertNav < .05f)
             //    i -= 1;
+            
 
             player1Outline.transform.position = characterImages[i].transform.position;
         }        
