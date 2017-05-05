@@ -127,5 +127,14 @@ public class HealthbarManager : MonoBehaviour {
         }
     }
 
+    public int hasVictor()
+    {
+        int ret = -1;
 
+        for (int i = 0; i < healthBars.Count; i++)
+        {
+
+        }
+        return ret;
+    }
 }
