@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 324b9e06402d11f42b73c3ddc7c5b98e
-timeCreated: 1493858286
+timeCreated: 1494012550
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -227,7 +227,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 25
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -246,13 +246,13 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Standalone
-    maxTextureSize: 8192
-    textureFormat: 12
+    maxTextureSize: 2048
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 1
+    overridden: 0
   - buildTarget: Android
     maxTextureSize: 2048
     textureFormat: -1
@@ -276,10 +276,10 @@ TextureImporter:
       name: detective_sprite_master_0
       rect:
         serializedVersion: 2
-        x: 62
-        y: 7392
-        width: 443
-        height: 764
+        x: 15
+        y: 1848
+        width: 112
+        height: 191
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,10 +289,10 @@ TextureImporter:
       name: detective_sprite_master_1
       rect:
         serializedVersion: 2
-        x: 571
-        y: 7388
-        width: 413
-        height: 772
+        x: 140
+        y: 1847
+        width: 106
+        height: 193
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,10 +302,10 @@ TextureImporter:
       name: detective_sprite_master_2
       rect:
         serializedVersion: 2
-        x: 1018
-        y: 7388
-        width: 446
-        height: 760
+        x: 254
+        y: 1847
+        width: 112
+        height: 190
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,10 +315,10 @@ TextureImporter:
       name: detective_sprite_master_3
       rect:
         serializedVersion: 2
-        x: 1484
-        y: 7388
-        width: 441
-        height: 768
+        x: 371
+        y: 1847
+        width: 113
+        height: 193
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -328,10 +328,10 @@ TextureImporter:
       name: detective_sprite_master_4
       rect:
         serializedVersion: 2
-        x: 2052
-        y: 7388
-        width: 390
-        height: 765
+        x: 513
+        y: 1847
+        width: 99
+        height: 192
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -341,10 +341,10 @@ TextureImporter:
       name: detective_sprite_master_5
       rect:
         serializedVersion: 2
-        x: 2492
-        y: 7404
-        width: 322
-        height: 741
+        x: 623
+        y: 1851
+        width: 81
+        height: 186
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -354,10 +354,10 @@ TextureImporter:
       name: detective_sprite_master_6
       rect:
         serializedVersion: 2
-        x: 2868
-        y: 7386
-        width: 421
-        height: 766
+        x: 717
+        y: 1844
+        width: 106
+        height: 194
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -367,10 +367,10 @@ TextureImporter:
       name: detective_sprite_master_7
       rect:
         serializedVersion: 2
-        x: 3343
-        y: 7391
-        width: 305
-        height: 765
+        x: 835
+        y: 1847
+        width: 77
+        height: 192
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -380,10 +380,10 @@ TextureImporter:
       name: detective_sprite_master_8
       rect:
         serializedVersion: 2
-        x: 3700
-        y: 7386
-        width: 608
-        height: 754
+        x: 925
+        y: 1846
+        width: 153
+        height: 189
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -393,10 +393,10 @@ TextureImporter:
       name: detective_sprite_master_9
       rect:
         serializedVersion: 2
-        x: 4403
-        y: 7400
-        width: 626
-        height: 760
+        x: 1100
+        y: 1848
+        width: 157
+        height: 192
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -406,10 +406,10 @@ TextureImporter:
       name: detective_sprite_master_10
       rect:
         serializedVersion: 2
-        x: 5127
-        y: 7392
-        width: 618
-        height: 768
+        x: 1281
+        y: 1848
+        width: 153
+        height: 192
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -419,10 +419,10 @@ TextureImporter:
       name: detective_sprite_master_11
       rect:
         serializedVersion: 2
-        x: 5831
-        y: 7388
-        width: 612
-        height: 760
+        x: 1457
+        y: 1847
+        width: 153
+        height: 190
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -432,10 +432,10 @@ TextureImporter:
       name: detective_sprite_master_12
       rect:
         serializedVersion: 2
-        x: 6507
-        y: 7388
-        width: 381
-        height: 757
+        x: 1626
+        y: 1847
+        width: 96
+        height: 190
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -445,10 +445,10 @@ TextureImporter:
       name: detective_sprite_master_13
       rect:
         serializedVersion: 2
-        x: 6972
-        y: 7388
-        width: 639
-        height: 672
+        x: 1743
+        y: 1847
+        width: 160
+        height: 169
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -458,10 +458,10 @@ TextureImporter:
       name: detective_sprite_master_14
       rect:
         serializedVersion: 2
-        x: 7700
-        y: 7359
-        width: 441
-        height: 781
+        x: 1925
+        y: 1836
+        width: 111
+        height: 200
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -471,10 +471,10 @@ TextureImporter:
       name: detective_sprite_master_15
       rect:
         serializedVersion: 2
-        x: 44
-        y: 6484
-        width: 596
-        height: 824
+        x: 11
+        y: 1621
+        width: 149
+        height: 207
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -484,10 +484,10 @@ TextureImporter:
       name: detective_sprite_master_16
       rect:
         serializedVersion: 2
-        x: 715
-        y: 6483
-        width: 417
-        height: 672
+        x: 176
+        y: 1620
+        width: 107
+        height: 168
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -497,10 +497,10 @@ TextureImporter:
       name: detective_sprite_master_17
       rect:
         serializedVersion: 2
-        x: 1207
-        y: 6504
-        width: 409
-        height: 858
+        x: 301
+        y: 1626
+        width: 103
+        height: 215
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -510,10 +510,10 @@ TextureImporter:
       name: detective_sprite_master_18
       rect:
         serializedVersion: 2
-        x: 1692
-        y: 6591
-        width: 372
-        height: 650
+        x: 423
+        y: 1647
+        width: 93
+        height: 165
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -523,10 +523,10 @@ TextureImporter:
       name: detective_sprite_master_19
       rect:
         serializedVersion: 2
-        x: 2138
-        y: 6555
-        width: 338
-        height: 685
+        x: 534
+        y: 1638
+        width: 85
+        height: 172
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -536,10 +536,10 @@ TextureImporter:
       name: detective_sprite_master_20
       rect:
         serializedVersion: 2
-        x: 2552
-        y: 6487
-        width: 363
-        height: 594
+        x: 638
+        y: 1621
+        width: 91
+        height: 151
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -549,10 +549,10 @@ TextureImporter:
       name: detective_sprite_master_21
       rect:
         serializedVersion: 2
-        x: 2992
-        y: 6508
-        width: 436
-        height: 760
+        x: 748
+        y: 1627
+        width: 109
+        height: 190
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -562,10 +562,10 @@ TextureImporter:
       name: detective_sprite_master_22
       rect:
         serializedVersion: 2
-        x: 3503
-        y: 6508
-        width: 475
-        height: 763
+        x: 875
+        y: 1627
+        width: 120
+        height: 191
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -575,10 +575,10 @@ TextureImporter:
       name: detective_sprite_master_23
       rect:
         serializedVersion: 2
-        x: 4054
-        y: 6806
-        width: 225
-        height: 233
+        x: 1012
+        y: 1700
+        width: 58
+        height: 60
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -588,10 +588,10 @@ TextureImporter:
       name: detective_sprite_master_24
       rect:
         serializedVersion: 2
-        x: 4355
-        y: 6766
-        width: 275
-        height: 384
+        x: 1088
+        y: 1691
+        width: 70
+        height: 97
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -601,10 +601,10 @@ TextureImporter:
       name: detective_sprite_master_25
       rect:
         serializedVersion: 2
-        x: 4704
-        y: 6487
-        width: 551
-        height: 717
+        x: 1176
+        y: 1621
+        width: 138
+        height: 181
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -614,10 +614,10 @@ TextureImporter:
       name: detective_sprite_master_26
       rect:
         serializedVersion: 2
-        x: 5328
-        y: 6489
-        width: 696
-        height: 639
+        x: 1332
+        y: 1622
+        width: 174
+        height: 160
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -627,10 +627,10 @@ TextureImporter:
       name: detective_sprite_master_27
       rect:
         serializedVersion: 2
-        x: 6096
-        y: 6506
-        width: 756
-        height: 656
+        x: 1524
+        y: 1626
+        width: 190
+        height: 165
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -640,10 +640,10 @@ TextureImporter:
       name: detective_sprite_master_28
       rect:
         serializedVersion: 2
-        x: 6928
-        y: 6482
-        width: 678
-        height: 726
+        x: 1731
+        y: 1620
+        width: 171
+        height: 182
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -653,10 +653,10 @@ TextureImporter:
       name: detective_sprite_master_29
       rect:
         serializedVersion: 2
-        x: 72
-        y: 5668
-        width: 541
-        height: 735
+        x: 16
+        y: 1416
+        width: 138
+        height: 185
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -666,10 +666,10 @@ TextureImporter:
       name: detective_sprite_master_30
       rect:
         serializedVersion: 2
-        x: 715
-        y: 5668
-        width: 428
-        height: 752
+        x: 176
+        y: 1416
+        width: 110
+        height: 190
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -679,10 +679,10 @@ TextureImporter:
       name: detective_sprite_master_31
       rect:
         serializedVersion: 2
-        x: 1245
-        y: 5669
-        width: 714
-        height: 734
+        x: 311
+        y: 1417
+        width: 179
+        height: 184
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -692,10 +692,10 @@ TextureImporter:
       name: detective_sprite_master_32
       rect:
         serializedVersion: 2
-        x: 2061
-        y: 5675
-        width: 732
-        height: 706
+        x: 515
+        y: 1416
+        width: 184
+        height: 180
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -705,10 +705,10 @@ TextureImporter:
       name: detective_sprite_master_33
       rect:
         serializedVersion: 2
-        x: 2895
-        y: 5675
-        width: 458
-        height: 706
+        x: 723
+        y: 1418
+        width: 116
+        height: 178
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -718,10 +718,10 @@ TextureImporter:
       name: detective_sprite_master_34
       rect:
         serializedVersion: 2
-        x: 3455
-        y: 5676
-        width: 501
-        height: 724
+        x: 863
+        y: 1419
+        width: 126
+        height: 181
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -731,10 +731,10 @@ TextureImporter:
       name: detective_sprite_master_35
       rect:
         serializedVersion: 2
-        x: 4057
-        y: 5660
-        width: 707
-        height: 740
+        x: 1014
+        y: 1415
+        width: 178
+        height: 185
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -744,10 +744,10 @@ TextureImporter:
       name: detective_sprite_master_36
       rect:
         serializedVersion: 2
-        x: 4866
-        y: 5664
-        width: 676
-        height: 697
+        x: 1216
+        y: 1415
+        width: 170
+        height: 176
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -757,10 +757,10 @@ TextureImporter:
       name: detective_sprite_master_37
       rect:
         serializedVersion: 2
-        x: 5644
-        y: 5668
-        width: 990
-        height: 535
+        x: 1411
+        y: 1417
+        width: 248
+        height: 134
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -770,10 +770,10 @@ TextureImporter:
       name: detective_sprite_master_38
       rect:
         serializedVersion: 2
-        x: 6736
-        y: 5626
-        width: 722
-        height: 729
+        x: 1683
+        y: 1406
+        width: 182
+        height: 183
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -783,10 +783,10 @@ TextureImporter:
       name: detective_sprite_master_39
       rect:
         serializedVersion: 2
-        x: 7581
-        y: 5624
-        width: 507
-        height: 737
+        x: 1895
+        y: 1404
+        width: 127
+        height: 187
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -796,10 +796,10 @@ TextureImporter:
       name: detective_sprite_master_40
       rect:
         serializedVersion: 2
-        x: 44
-        y: 4872
-        width: 404
-        height: 693
+        x: 11
+        y: 1218
+        width: 101
+        height: 174
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -809,10 +809,10 @@ TextureImporter:
       name: detective_sprite_master_41
       rect:
         serializedVersion: 2
-        x: 536
-        y: 4872
-        width: 420
-        height: 690
+        x: 134
+        y: 1218
+        width: 106
+        height: 173
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -822,10 +822,10 @@ TextureImporter:
       name: detective_sprite_master_42
       rect:
         serializedVersion: 2
-        x: 1043
-        y: 4872
-        width: 401
-        height: 660
+        x: 260
+        y: 1218
+        width: 101
+        height: 165
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -835,10 +835,10 @@ TextureImporter:
       name: detective_sprite_master_43
       rect:
         serializedVersion: 2
-        x: 1532
-        y: 4877
-        width: 401
-        height: 667
+        x: 383
+        y: 1219
+        width: 101
+        height: 169
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -848,10 +848,10 @@ TextureImporter:
       name: detective_sprite_master_44
       rect:
         serializedVersion: 2
-        x: 2022
-        y: 4872
-        width: 634
-        height: 673
+        x: 504
+        y: 1216
+        width: 160
+        height: 172
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -861,10 +861,10 @@ TextureImporter:
       name: detective_sprite_master_45
       rect:
         serializedVersion: 2
-        x: 2872
-        y: 4844
-        width: 471
-        height: 702
+        x: 716
+        y: 1211
+        width: 120
+        height: 176
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -874,10 +874,10 @@ TextureImporter:
       name: detective_sprite_master_46
       rect:
         serializedVersion: 2
-        x: 3432
-        y: 4952
-        width: 509
-        height: 533
+        x: 856
+        y: 1238
+        width: 130
+        height: 134
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -887,10 +887,10 @@ TextureImporter:
       name: detective_sprite_master_47
       rect:
         serializedVersion: 2
-        x: 4058
-        y: 4884
-        width: 390
-        height: 665
+        x: 1014
+        y: 1221
+        width: 98
+        height: 167
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -900,10 +900,10 @@ TextureImporter:
       name: detective_sprite_master_48
       rect:
         serializedVersion: 2
-        x: 4535
-        y: 4980
-        width: 1054
-        height: 473
+        x: 1133
+        y: 1245
+        width: 265
+        height: 119
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -913,10 +913,10 @@ TextureImporter:
       name: detective_sprite_master_49
       rect:
         serializedVersion: 2
-        x: 5678
-        y: 4683
-        width: 431
-        height: 805
+        x: 1419
+        y: 1170
+        width: 109
+        height: 202
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -926,10 +926,10 @@ TextureImporter:
       name: detective_sprite_master_50
       rect:
         serializedVersion: 2
-        x: 6208
-        y: 4688
-        width: 368
-        height: 800
+        x: 1552
+        y: 1172
+        width: 92
+        height: 200
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -939,10 +939,10 @@ TextureImporter:
       name: detective_sprite_master_51
       rect:
         serializedVersion: 2
-        x: 6662
-        y: 4683
-        width: 218
-        height: 801
+        x: 1666
+        y: 1170
+        width: 54
+        height: 202
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -952,10 +952,10 @@ TextureImporter:
       name: detective_sprite_master_52
       rect:
         serializedVersion: 2
-        x: 6950
-        y: 4683
-        width: 332
-        height: 821
+        x: 1736
+        y: 1170
+        width: 85
+        height: 206
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -965,10 +965,10 @@ TextureImporter:
       name: detective_sprite_master_53
       rect:
         serializedVersion: 2
-        x: 7354
-        y: 4683
-        width: 350
-        height: 821
+        x: 1838
+        y: 1170
+        width: 88
+        height: 206
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -978,10 +978,10 @@ TextureImporter:
       name: detective_sprite_master_54
       rect:
         serializedVersion: 2
-        x: 46
-        y: 3863
-        width: 423
-        height: 805
+        x: 11
+        y: 965
+        width: 106
+        height: 202
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -991,10 +991,10 @@ TextureImporter:
       name: detective_sprite_master_55
       rect:
         serializedVersion: 2
-        x: 556
-        y: 3863
-        width: 444
-        height: 805
+        x: 139
+        y: 964
+        width: 111
+        height: 204
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1004,10 +1004,10 @@ TextureImporter:
       name: detective_sprite_master_56
       rect:
         serializedVersion: 2
-        x: 1119
-        y: 3863
-        width: 452
-        height: 862
+        x: 279
+        y: 965
+        width: 114
+        height: 216
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1017,10 +1017,10 @@ TextureImporter:
       name: detective_sprite_master_57
       rect:
         serializedVersion: 2
-        x: 1680
-        y: 3863
-        width: 444
-        height: 805
+        x: 419
+        y: 965
+        width: 112
+        height: 203
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1030,10 +1030,10 @@ TextureImporter:
       name: detective_sprite_master_58
       rect:
         serializedVersion: 2
-        x: 2264
-        y: 3864
-        width: 448
-        height: 779
+        x: 564
+        y: 966
+        width: 114
+        height: 195
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1043,10 +1043,10 @@ TextureImporter:
       name: detective_sprite_master_59
       rect:
         serializedVersion: 2
-        x: 2788
-        y: 3864
-        width: 461
-        height: 792
+        x: 697
+        y: 966
+        width: 116
+        height: 198
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1056,10 +1056,10 @@ TextureImporter:
       name: detective_sprite_master_60
       rect:
         serializedVersion: 2
-        x: 3379
-        y: 3864
-        width: 494
-        height: 784
+        x: 844
+        y: 966
+        width: 125
+        height: 194
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1069,10 +1069,10 @@ TextureImporter:
       name: detective_sprite_master_61
       rect:
         serializedVersion: 2
-        x: 4003
-        y: 3864
-        width: 503
-        height: 768
+        x: 1000
+        y: 966
+        width: 128
+        height: 192
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1082,10 +1082,10 @@ TextureImporter:
       name: detective_sprite_master_62
       rect:
         serializedVersion: 2
-        x: 4712
-        y: 3863
-        width: 1248
-        height: 754
+        x: 1176
+        y: 965
+        width: 314
+        height: 190
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1095,10 +1095,10 @@ TextureImporter:
       name: detective_sprite_master_63
       rect:
         serializedVersion: 2
-        x: 6101
-        y: 3868
-        width: 1589
-        height: 755
+        x: 1525
+        y: 967
+        width: 398
+        height: 189
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1108,10 +1108,10 @@ TextureImporter:
       name: detective_sprite_master_64
       rect:
         serializedVersion: 2
-        x: 36
-        y: 2492
-        width: 612
-        height: 753
+        x: 9
+        y: 623
+        width: 154
+        height: 189
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1121,10 +1121,10 @@ TextureImporter:
       name: detective_sprite_master_65
       rect:
         serializedVersion: 2
-        x: 740
-        y: 2492
-        width: 673
-        height: 868
+        x: 185
+        y: 623
+        width: 169
+        height: 218
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1134,10 +1134,10 @@ TextureImporter:
       name: detective_sprite_master_66
       rect:
         serializedVersion: 2
-        x: 1468
-        y: 2488
-        width: 472
-        height: 1079
+        x: 367
+        y: 622
+        width: 118
+        height: 270
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1147,10 +1147,10 @@ TextureImporter:
       name: detective_sprite_master_67
       rect:
         serializedVersion: 2
-        x: 2019
-        y: 2488
-        width: 421
-        height: 1315
+        x: 504
+        y: 620
+        width: 106
+        height: 330
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1160,10 +1160,10 @@ TextureImporter:
       name: detective_sprite_master_68
       rect:
         serializedVersion: 2
-        x: 2559
-        y: 2467
-        width: 565
-        height: 885
+        x: 639
+        y: 616
+        width: 142
+        height: 222
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1173,10 +1173,10 @@ TextureImporter:
       name: detective_sprite_master_69
       rect:
         serializedVersion: 2
-        x: 3228
-        y: 2488
-        width: 612
-        height: 843
+        x: 807
+        y: 622
+        width: 153
+        height: 211
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1186,10 +1186,10 @@ TextureImporter:
       name: detective_sprite_master_70
       rect:
         serializedVersion: 2
-        x: 3928
-        y: 2450
-        width: 769
-        height: 854
+        x: 982
+        y: 612
+        width: 194
+        height: 214
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1199,10 +1199,10 @@ TextureImporter:
       name: detective_sprite_master_71
       rect:
         serializedVersion: 2
-        x: 4775
-        y: 2464
-        width: 775
-        height: 905
+        x: 1192
+        y: 616
+        width: 196
+        height: 228
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1212,10 +1212,10 @@ TextureImporter:
       name: detective_sprite_master_72
       rect:
         serializedVersion: 2
-        x: 5624
-        y: 2500
-        width: 853
-        height: 710
+        x: 1406
+        y: 625
+        width: 213
+        height: 178
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1225,10 +1225,10 @@ TextureImporter:
       name: detective_sprite_master_73
       rect:
         serializedVersion: 2
-        x: 6584
-        y: 2504
-        width: 825
-        height: 451
+        x: 1646
+        y: 626
+        width: 207
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1238,10 +1238,10 @@ TextureImporter:
       name: detective_sprite_master_74
       rect:
         serializedVersion: 2
-        x: 44
-        y: 1210
-        width: 824
-        height: 1016
+        x: 11
+        y: 300
+        width: 206
+        height: 257
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1251,10 +1251,10 @@ TextureImporter:
       name: detective_sprite_master_75
       rect:
         serializedVersion: 2
-        x: 1104
-        y: 1200
-        width: 816
-        height: 1000
+        x: 276
+        y: 300
+        width: 204
+        height: 250
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1264,10 +1264,10 @@ TextureImporter:
       name: detective_sprite_master_76
       rect:
         serializedVersion: 2
-        x: 2007
-        y: 1202
-        width: 834
-        height: 674
+        x: 500
+        y: 300
+        width: 212
+        height: 169
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1277,10 +1277,10 @@ TextureImporter:
       name: detective_sprite_master_77
       rect:
         serializedVersion: 2
-        x: 2896
-        y: 1200
-        width: 656
-        height: 928
+        x: 724
+        y: 300
+        width: 164
+        height: 232
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1290,10 +1290,10 @@ TextureImporter:
       name: detective_sprite_master_78
       rect:
         serializedVersion: 2
-        x: 3767
-        y: 1200
-        width: 457
-        height: 963
+        x: 941
+        y: 300
+        width: 115
+        height: 241
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1303,10 +1303,10 @@ TextureImporter:
       name: detective_sprite_master_79
       rect:
         serializedVersion: 2
-        x: 4294
-        y: 1220
-        width: 330
-        height: 922
+        x: 1073
+        y: 305
+        width: 83
+        height: 231
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1316,10 +1316,10 @@ TextureImporter:
       name: detective_sprite_master_80
       rect:
         serializedVersion: 2
-        x: 4678
-        y: 1205
-        width: 354
-        height: 928
+        x: 1169
+        y: 302
+        width: 88
+        height: 231
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1329,10 +1329,10 @@ TextureImporter:
       name: detective_sprite_master_81
       rect:
         serializedVersion: 2
-        x: 5142
-        y: 1208
-        width: 490
-        height: 914
+        x: 1285
+        y: 302
+        width: 123
+        height: 230
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1342,10 +1342,10 @@ TextureImporter:
       name: detective_sprite_master_82
       rect:
         serializedVersion: 2
-        x: 5831
-        y: 1220
-        width: 606
-        height: 988
+        x: 1457
+        y: 305
+        width: 153
+        height: 247
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1355,10 +1355,10 @@ TextureImporter:
       name: detective_sprite_master_83
       rect:
         serializedVersion: 2
-        x: 6712
-        y: 1208
-        width: 532
-        height: 908
+        x: 1678
+        y: 302
+        width: 133
+        height: 227
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1368,10 +1368,10 @@ TextureImporter:
       name: detective_sprite_master_84
       rect:
         serializedVersion: 2
-        x: 7580
-        y: 1200
-        width: 508
-        height: 897
+        x: 1895
+        y: 300
+        width: 127
+        height: 225
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1381,10 +1381,10 @@ TextureImporter:
       name: detective_sprite_master_85
       rect:
         serializedVersion: 2
-        x: 127
-        y: 200
-        width: 619
-        height: 786
+        x: 31
+        y: 48
+        width: 157
+        height: 200
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1394,10 +1394,10 @@ TextureImporter:
       name: detective_sprite_master_86
       rect:
         serializedVersion: 2
-        x: 883
-        y: 201
-        width: 721
-        height: 627
+        x: 220
+        y: 50
+        width: 181
+        height: 158
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1407,10 +1407,10 @@ TextureImporter:
       name: detective_sprite_master_87
       rect:
         serializedVersion: 2
-        x: 1844
-        y: 200
-        width: 1096
-        height: 280
+        x: 461
+        y: 48
+        width: 275
+        height: 72
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -7,12 +7,21 @@ public class RoundVictoryManager : MonoBehaviour {
     public RoundTimerManager timerMan;
     public HealthbarManager healthMan;
 
-    private bool roundActive;
     public int roundsToWin = 3;
 
     public Timer transitionTimer;
 
     private int currentRound = 0;
+
+    private enum TransitionState
+    {
+        NONE,
+        PREROUND,
+        ROUND,
+        POSTROUND
+    };
+
+    TransitionState transition;
 
     private List<int> numVictories = new List<int>();
 
@@ -24,49 +33,34 @@ public class RoundVictoryManager : MonoBehaviour {
         {
             numVictories.Add(0);
         }
-        startRound();	
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if(roundActive)
-        {
-            if(timerMan.timeEnd())
-            {
-                timerMan.pauseTimer(true);
-                endRound();
-            }
 
 
-        }
-        else
-        {
-            if (!transitionTimer.isActive())
-                transitionTimer.startTimer();
-            if(transitionTimer.isPassed())
-            {
-                startRound();
-            }
-            else
-            {
-
-            }
-        }
         transitionTimer.update();
 
         doMarkers();
 	}
 
+    void prepareRound()
+    {
+        transition = TransitionState.PREROUND;
+        timerMan.resetRound();
+    }
+
     void startRound()
     {
-        roundActive = true;
-        timerMan.resetRound();
+        transition = TransitionState.ROUND;
         timerMan.startRound();
     }
 
     void endRound()
     {
-
+        transition = TransitionState.POSTROUND;
+        timerMan.resetRound();
     }
 
     void endMatch()

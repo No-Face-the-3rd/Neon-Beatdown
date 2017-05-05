@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: f286037ab9627c04a820027b45667a0d
-timeCreated: 1493858384
+timeCreated: 1494021457
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -128,7 +128,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 25
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -147,13 +147,13 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Standalone
-    maxTextureSize: 8192
-    textureFormat: 12
+    maxTextureSize: 2048
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 1
+    overridden: 0
   - buildTarget: Android
     maxTextureSize: 2048
     textureFormat: -1
@@ -177,10 +177,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_0
       rect:
         serializedVersion: 2
-        x: 64
-        y: 7394
-        width: 440
-        height: 760
+        x: 16
+        y: 1848
+        width: 110
+        height: 191
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,10 +190,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_1
       rect:
         serializedVersion: 2
-        x: 573
-        y: 7388
-        width: 409
-        height: 772
+        x: 143
+        y: 1847
+        width: 103
+        height: 193
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,10 +203,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_2
       rect:
         serializedVersion: 2
-        x: 1020
-        y: 7390
-        width: 442
-        height: 756
+        x: 255
+        y: 1847
+        width: 113
+        height: 190
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,10 +216,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_3
       rect:
         serializedVersion: 2
-        x: 1486
-        y: 7390
-        width: 437
-        height: 764
+        x: 371
+        y: 1847
+        width: 113
+        height: 192
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,10 +229,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_4
       rect:
         serializedVersion: 2
-        x: 2054
-        y: 7391
-        width: 386
-        height: 759
+        x: 512
+        y: 1847
+        width: 98
+        height: 191
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,10 +242,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_5
       rect:
         serializedVersion: 2
-        x: 2496
-        y: 7408
-        width: 316
-        height: 735
+        x: 624
+        y: 1851
+        width: 79
+        height: 185
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,10 +255,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_6
       rect:
         serializedVersion: 2
-        x: 2868
-        y: 7388
-        width: 419
-        height: 760
+        x: 717
+        y: 1847
+        width: 105
+        height: 190
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,10 +268,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_7
       rect:
         serializedVersion: 2
-        x: 3345
-        y: 7392
-        width: 301
-        height: 762
+        x: 836
+        y: 1848
+        width: 76
+        height: 191
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,10 +281,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_8
       rect:
         serializedVersion: 2
-        x: 3702
-        y: 7388
-        width: 606
-        height: 752
+        x: 925
+        y: 1847
+        width: 153
+        height: 188
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,10 +294,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_9
       rect:
         serializedVersion: 2
-        x: 4405
-        y: 7403
-        width: 624
-        height: 754
+        x: 1101
+        y: 1851
+        width: 155
+        height: 189
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,10 +307,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_10
       rect:
         serializedVersion: 2
-        x: 5129
-        y: 7395
-        width: 616
-        height: 762
+        x: 1282
+        y: 1848
+        width: 152
+        height: 192
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -320,10 +320,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_11
       rect:
         serializedVersion: 2
-        x: 5833
-        y: 7391
-        width: 603
-        height: 753
+        x: 1458
+        y: 1847
+        width: 151
+        height: 190
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -333,10 +333,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_12
       rect:
         serializedVersion: 2
-        x: 6509
-        y: 7391
-        width: 379
-        height: 752
+        x: 1627
+        y: 1847
+        width: 95
+        height: 189
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -346,10 +346,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_13
       rect:
         serializedVersion: 2
-        x: 6975
-        y: 7390
-        width: 637
-        height: 667
+        x: 1743
+        y: 1847
+        width: 160
+        height: 169
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -359,10 +359,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_14
       rect:
         serializedVersion: 2
-        x: 7702
-        y: 7360
-        width: 438
-        height: 778
+        x: 1924
+        y: 1840
+        width: 111
+        height: 195
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -372,10 +372,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_15
       rect:
         serializedVersion: 2
-        x: 48
-        y: 6487
-        width: 589
-        height: 817
+        x: 12
+        y: 1621
+        width: 148
+        height: 205
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -385,10 +385,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_16
       rect:
         serializedVersion: 2
-        x: 718
-        y: 6487
-        width: 413
-        height: 638
+        x: 179
+        y: 1620
+        width: 104
+        height: 162
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -398,10 +398,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_17
       rect:
         serializedVersion: 2
-        x: 1211
-        y: 6508
-        width: 405
-        height: 852
+        x: 302
+        y: 1624
+        width: 102
+        height: 217
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -411,10 +411,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_18
       rect:
         serializedVersion: 2
-        x: 1700
-        y: 6592
-        width: 364
-        height: 647
+        x: 424
+        y: 1648
+        width: 92
+        height: 163
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -424,10 +424,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_19
       rect:
         serializedVersion: 2
-        x: 2142
-        y: 6562
-        width: 333
-        height: 674
+        x: 535
+        y: 1640
+        width: 84
+        height: 172
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -437,10 +437,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_20
       rect:
         serializedVersion: 2
-        x: 2555
-        y: 6487
-        width: 359
-        height: 592
+        x: 638
+        y: 1621
+        width: 91
+        height: 149
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -450,10 +450,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_21
       rect:
         serializedVersion: 2
-        x: 2994
-        y: 6512
-        width: 431
-        height: 754
+        x: 748
+        y: 1628
+        width: 109
+        height: 189
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -463,10 +463,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_22
       rect:
         serializedVersion: 2
-        x: 3504
-        y: 6511
-        width: 472
-        height: 758
+        x: 876
+        y: 1627
+        width: 118
+        height: 191
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -476,10 +476,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_23
       rect:
         serializedVersion: 2
-        x: 4058
-        y: 6808
-        width: 219
-        height: 227
+        x: 1014
+        y: 1700
+        width: 56
+        height: 59
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -489,10 +489,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_24
       rect:
         serializedVersion: 2
-        x: 4360
-        y: 6768
-        width: 268
-        height: 380
+        x: 1088
+        y: 1691
+        width: 70
+        height: 97
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -502,10 +502,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_25
       rect:
         serializedVersion: 2
-        x: 4708
-        y: 6487
-        width: 545
-        height: 715
+        x: 1176
+        y: 1621
+        width: 138
+        height: 180
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -515,10 +515,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_26
       rect:
         serializedVersion: 2
-        x: 5333
-        y: 6492
-        width: 687
-        height: 633
+        x: 1333
+        y: 1623
+        width: 175
+        height: 161
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -528,10 +528,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_27
       rect:
         serializedVersion: 2
-        x: 6100
-        y: 6508
-        width: 750
-        height: 653
+        x: 1524
+        y: 1627
+        width: 189
+        height: 164
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -541,10 +541,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_28
       rect:
         serializedVersion: 2
-        x: 6931
-        y: 6484
-        width: 673
-        height: 722
+        x: 1734
+        y: 1620
+        width: 168
+        height: 182
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -554,10 +554,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_29
       rect:
         serializedVersion: 2
-        x: 74
-        y: 5670
-        width: 537
-        height: 731
+        x: 18
+        y: 1416
+        width: 135
+        height: 185
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -567,10 +567,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_30
       rect:
         serializedVersion: 2
-        x: 717
-        y: 5670
-        width: 422
-        height: 748
+        x: 179
+        y: 1417
+        width: 107
+        height: 188
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -580,10 +580,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_31
       rect:
         serializedVersion: 2
-        x: 1247
-        y: 5671
-        width: 710
-        height: 730
+        x: 311
+        y: 1417
+        width: 179
+        height: 184
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -593,10 +593,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_32
       rect:
         serializedVersion: 2
-        x: 2066
-        y: 5676
-        width: 725
-        height: 703
+        x: 516
+        y: 1418
+        width: 182
+        height: 177
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -606,10 +606,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_33
       rect:
         serializedVersion: 2
-        x: 2900
-        y: 5677
-        width: 451
-        height: 702
+        x: 725
+        y: 1418
+        width: 113
+        height: 177
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -619,10 +619,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_34
       rect:
         serializedVersion: 2
-        x: 3457
-        y: 5680
-        width: 496
-        height: 717
+        x: 864
+        y: 1419
+        width: 125
+        height: 181
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -632,10 +632,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_35
       rect:
         serializedVersion: 2
-        x: 4062
-        y: 5662
-        width: 700
-        height: 738
+        x: 1015
+        y: 1415
+        width: 177
+        height: 185
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -645,10 +645,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_36
       rect:
         serializedVersion: 2
-        x: 4868
-        y: 5666
-        width: 672
-        height: 694
+        x: 1216
+        y: 1416
+        width: 170
+        height: 174
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -658,10 +658,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_37
       rect:
         serializedVersion: 2
-        x: 5646
-        y: 5671
-        width: 986
-        height: 531
+        x: 1411
+        y: 1416
+        width: 247
+        height: 135
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -671,10 +671,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_38
       rect:
         serializedVersion: 2
-        x: 6738
-        y: 5628
-        width: 718
-        height: 725
+        x: 1684
+        y: 1407
+        width: 181
+        height: 182
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -684,10 +684,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_39
       rect:
         serializedVersion: 2
-        x: 7584
-        y: 5624
-        width: 499
-        height: 735
+        x: 1897
+        y: 1406
+        width: 124
+        height: 184
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -697,10 +697,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_40
       rect:
         serializedVersion: 2
-        x: 48
-        y: 4872
-        width: 398
-        height: 689
+        x: 11
+        y: 1216
+        width: 101
+        height: 175
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -710,10 +710,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_41
       rect:
         serializedVersion: 2
-        x: 540
-        y: 4874
-        width: 412
-        height: 685
+        x: 134
+        y: 1218
+        width: 104
+        height: 172
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -723,10 +723,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_42
       rect:
         serializedVersion: 2
-        x: 1045
-        y: 4872
-        width: 397
-        height: 655
+        x: 261
+        y: 1218
+        width: 103
+        height: 164
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -736,10 +736,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_43
       rect:
         serializedVersion: 2
-        x: 1535
-        y: 4879
-        width: 396
-        height: 660
+        x: 383
+        y: 1219
+        width: 100
+        height: 166
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -749,10 +749,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_44
       rect:
         serializedVersion: 2
-        x: 2024
-        y: 4874
-        width: 629
-        height: 666
+        x: 506
+        y: 1218
+        width: 158
+        height: 167
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -762,10 +762,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_45
       rect:
         serializedVersion: 2
-        x: 2875
-        y: 4847
-        width: 466
-        height: 694
+        x: 719
+        y: 1211
+        width: 117
+        height: 174
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -775,10 +775,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_46
       rect:
         serializedVersion: 2
-        x: 3435
-        y: 4954
-        width: 500
-        height: 527
+        x: 858
+        y: 1238
+        width: 127
+        height: 134
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -788,10 +788,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_47
       rect:
         serializedVersion: 2
-        x: 4061
-        y: 4886
-        width: 383
-        height: 658
+        x: 1012
+        y: 1221
+        width: 99
+        height: 165
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -801,10 +801,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_48
       rect:
         serializedVersion: 2
-        x: 4538
-        y: 4983
-        width: 1050
-        height: 469
+        x: 1134
+        y: 1244
+        width: 263
+        height: 120
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -814,10 +814,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_49
       rect:
         serializedVersion: 2
-        x: 5681
-        y: 4685
-        width: 425
-        height: 800
+        x: 1420
+        y: 1171
+        width: 107
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -827,10 +827,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_50
       rect:
         serializedVersion: 2
-        x: 6210
-        y: 4691
-        width: 364
-        height: 793
+        x: 1552
+        y: 1172
+        width: 92
+        height: 199
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -840,10 +840,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_51
       rect:
         serializedVersion: 2
-        x: 6667
-        y: 4686
-        width: 210
-        height: 796
+        x: 1667
+        y: 1171
+        width: 53
+        height: 200
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -853,10 +853,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_52
       rect:
         serializedVersion: 2
-        x: 6952
-        y: 4686
-        width: 328
-        height: 818
+        x: 1738
+        y: 1171
+        width: 83
+        height: 205
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -866,10 +866,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_53
       rect:
         serializedVersion: 2
-        x: 7356
-        y: 4686
-        width: 345
-        height: 816
+        x: 1839
+        y: 1171
+        width: 87
+        height: 205
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -879,10 +879,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_54
       rect:
         serializedVersion: 2
-        x: 48
-        y: 3865
-        width: 419
-        height: 800
+        x: 11
+        y: 966
+        width: 106
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -892,10 +892,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_55
       rect:
         serializedVersion: 2
-        x: 560
-        y: 3865
-        width: 438
-        height: 800
+        x: 139
+        y: 966
+        width: 111
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -905,10 +905,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_56
       rect:
         serializedVersion: 2
-        x: 1121
-        y: 3865
-        width: 448
-        height: 860
+        x: 279
+        y: 966
+        width: 114
+        height: 215
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -918,10 +918,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_57
       rect:
         serializedVersion: 2
-        x: 1684
-        y: 3865
-        width: 437
-        height: 800
+        x: 420
+        y: 966
+        width: 111
+        height: 201
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -931,10 +931,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_58
       rect:
         serializedVersion: 2
-        x: 2268
-        y: 3864
-        width: 441
-        height: 777
+        x: 567
+        y: 964
+        width: 111
+        height: 197
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -944,10 +944,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_59
       rect:
         serializedVersion: 2
-        x: 2788
-        y: 3866
-        width: 459
-        height: 786
+        x: 696
+        y: 964
+        width: 116
+        height: 200
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -957,10 +957,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_60
       rect:
         serializedVersion: 2
-        x: 3381
-        y: 3866
-        width: 491
-        height: 771
+        x: 844
+        y: 966
+        width: 124
+        height: 194
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -970,10 +970,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_61
       rect:
         serializedVersion: 2
-        x: 4005
-        y: 3866
-        width: 499
-        height: 762
+        x: 1000
+        y: 964
+        width: 126
+        height: 194
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -983,10 +983,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_62
       rect:
         serializedVersion: 2
-        x: 4715
-        y: 3865
-        width: 1242
-        height: 750
+        x: 1179
+        y: 964
+        width: 311
+        height: 190
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -996,10 +996,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_63
       rect:
         serializedVersion: 2
-        x: 6108
-        y: 3871
-        width: 1580
-        height: 750
+        x: 1527
+        y: 967
+        width: 395
+        height: 188
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1009,10 +1009,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_64
       rect:
         serializedVersion: 2
-        x: 36
-        y: 2495
-        width: 610
-        height: 747
+        x: 8
+        y: 623
+        width: 156
+        height: 188
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1022,10 +1022,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_65
       rect:
         serializedVersion: 2
-        x: 743
-        y: 2496
-        width: 668
-        height: 862
+        x: 185
+        y: 624
+        width: 168
+        height: 216
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1035,10 +1035,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_66
       rect:
         serializedVersion: 2
-        x: 1471
-        y: 2491
-        width: 467
-        height: 1074
+        x: 367
+        y: 620
+        width: 118
+        height: 272
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1048,10 +1048,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_67
       rect:
         serializedVersion: 2
-        x: 2020
-        y: 2491
-        width: 417
-        height: 1305
+        x: 505
+        y: 622
+        width: 107
+        height: 327
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1061,10 +1061,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_68
       rect:
         serializedVersion: 2
-        x: 2560
-        y: 2469
-        width: 561
-        height: 880
+        x: 640
+        y: 617
+        width: 141
+        height: 221
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1074,10 +1074,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_69
       rect:
         serializedVersion: 2
-        x: 3230
-        y: 2491
-        width: 607
-        height: 838
+        x: 807
+        y: 622
+        width: 153
+        height: 211
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1087,10 +1087,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_70
       rect:
         serializedVersion: 2
-        x: 3931
-        y: 2452
-        width: 765
-        height: 850
+        x: 982
+        y: 613
+        width: 192
+        height: 213
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1100,10 +1100,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_71
       rect:
         serializedVersion: 2
-        x: 4776
-        y: 2466
-        width: 772
-        height: 902
+        x: 1194
+        y: 616
+        width: 193
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1113,10 +1113,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_72
       rect:
         serializedVersion: 2
-        x: 5627
-        y: 2500
-        width: 849
-        height: 708
+        x: 1404
+        y: 624
+        width: 215
+        height: 178
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1126,10 +1126,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_73
       rect:
         serializedVersion: 2
-        x: 6588
-        y: 2506
-        width: 819
-        height: 447
+        x: 1647
+        y: 626
+        width: 205
+        height: 113
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1139,10 +1139,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_74
       rect:
         serializedVersion: 2
-        x: 47
-        y: 1212
-        width: 818
-        height: 1012
+        x: 11
+        y: 303
+        width: 206
+        height: 253
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1152,10 +1152,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_75
       rect:
         serializedVersion: 2
-        x: 1107
-        y: 1204
-        width: 811
-        height: 993
+        x: 276
+        y: 301
+        width: 204
+        height: 249
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1165,10 +1165,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_76
       rect:
         serializedVersion: 2
-        x: 2009
-        y: 1204
-        width: 831
-        height: 670
+        x: 502
+        y: 300
+        width: 210
+        height: 169
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1178,10 +1178,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_77
       rect:
         serializedVersion: 2
-        x: 2899
-        y: 1204
-        width: 650
-        height: 920
+        x: 724
+        y: 300
+        width: 164
+        height: 232
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1191,10 +1191,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_78
       rect:
         serializedVersion: 2
-        x: 3769
-        y: 1204
-        width: 443
-        height: 957
+        x: 942
+        y: 300
+        width: 112
+        height: 241
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1204,10 +1204,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_79
       rect:
         serializedVersion: 2
-        x: 4296
-        y: 1220
-        width: 326
-        height: 920
+        x: 1073
+        y: 305
+        width: 83
+        height: 230
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1217,10 +1217,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_80
       rect:
         serializedVersion: 2
-        x: 4699
-        y: 1212
-        width: 333
-        height: 918
+        x: 1174
+        y: 303
+        width: 83
+        height: 230
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1230,10 +1230,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_81
       rect:
         serializedVersion: 2
-        x: 5143
-        y: 1210
-        width: 489
-        height: 908
+        x: 1284
+        y: 302
+        width: 124
+        height: 227
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1243,10 +1243,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_82
       rect:
         serializedVersion: 2
-        x: 5833
-        y: 1224
-        width: 602
-        height: 982
+        x: 1456
+        y: 305
+        width: 153
+        height: 247
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1256,10 +1256,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_83
       rect:
         serializedVersion: 2
-        x: 6716
-        y: 1211
-        width: 526
-        height: 902
+        x: 1679
+        y: 302
+        width: 132
+        height: 226
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1269,10 +1269,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_84
       rect:
         serializedVersion: 2
-        x: 7581
-        y: 1203
-        width: 502
-        height: 891
+        x: 1895
+        y: 300
+        width: 126
+        height: 224
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1282,10 +1282,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_85
       rect:
         serializedVersion: 2
-        x: 128
-        y: 203
-        width: 615
-        height: 781
+        x: 31
+        y: 48
+        width: 155
+        height: 199
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1295,10 +1295,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_86
       rect:
         serializedVersion: 2
-        x: 884
-        y: 203
-        width: 717
-        height: 621
+        x: 220
+        y: 50
+        width: 181
+        height: 157
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1308,10 +1308,10 @@ TextureImporter:
       name: detective_sprite_master_hitbox_87
       rect:
         serializedVersion: 2
-        x: 1851
-        y: 203
-        width: 1085
-        height: 275
+        x: 463
+        y: 50
+        width: 271
+        height: 70
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
