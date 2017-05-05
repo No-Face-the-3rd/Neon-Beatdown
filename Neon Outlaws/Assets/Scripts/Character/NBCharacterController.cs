@@ -477,6 +477,11 @@ public class NBCharacterController : MonoBehaviour
         heavyCharge = Mathf.Clamp(heavyCharge, 0, maxHeavyChargeTime);
     }
 
+    public int getHeavyCharge()
+    {
+        return heavyCharge;
+    }
+
     void doLightAttack()
     {
         numConsecutiveLights++;
