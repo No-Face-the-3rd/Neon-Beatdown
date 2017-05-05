@@ -7,7 +7,7 @@ public class HealthBarElements
 {
     public Sprite background;
     public Sprite foreground;
-    public Texture2D counterFill;
+    public Sprite counterFill;
 }
 
 
@@ -22,6 +22,9 @@ public class ObjectDB : MonoBehaviour {
     private List<GameObject> levels;
     [SerializeField]
     private List<HealthBarElements> healthBars;
+
+    [SerializeField]
+    private List<GameObject> genericPrefabs;
 
 
 	// Use this for initialization
@@ -90,11 +93,48 @@ public class ObjectDB : MonoBehaviour {
         }
     }
 
+    public GameObject getPrefab(int index)
+    {
+        if(withinRange(index, 0,genericPrefabs.Count))
+        {
+            return genericPrefabs[index];
+        }
+        else
+        {
+            return null;
+        }
+    }
+
     public bool withinRange(int value, int min, int max)
     {
         if (value >= min && value <= max)
             return true;
         else
             return false;
+    }
+
+    public int getNumCharacters()
+    {
+        return characters.Count;
+    }
+
+    public int getNumAttacks()
+    {
+        return attacks.Count;
+    }
+
+    public int getNumLevels()
+    {
+        return levels.Count;
+    }
+
+    public int getNumHealthBars()
+    {
+        return healthBars.Count;
+    }
+
+    public int getNumPrefabs()
+    {
+        return genericPrefabs.Count;
     }
 }

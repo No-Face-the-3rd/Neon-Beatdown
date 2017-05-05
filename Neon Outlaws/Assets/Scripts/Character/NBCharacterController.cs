@@ -85,6 +85,8 @@ public class NBCharacterController : MonoBehaviour
     private float curHealth = 0.0f;
     public float maxHealth = 1000.0f;
 
+    private CombatInputListener cil;
+
     // Use this for initialization
     void Start()
     {
@@ -92,8 +94,7 @@ public class NBCharacterController : MonoBehaviour
         inputQueue = new List<InputState>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        gravity = -2.0f * (maxJumpHeight) / (maxJumpTime * maxJumpTime);
-        curHealth = maxHealth;
+        resetCharacter();
     }
 
     // Update is called once per frame
@@ -106,17 +107,26 @@ public class NBCharacterController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (inputQueue.Count > 0)
+        if (cil != null)
         {
-            InputState currentInputState = inputQueue[inputQueue.Count - 1];
-            sendCrouch(currentInputState.moveY);
-            sendWalk(currentInputState.moveX);
-            sendDash(currentInputState.moveX);
-            sendBlock(currentInputState.moveX, currentInputState.buttonBlock.wasPressed);
-            sendJump(currentInputState.moveY);
-            sendLightAttack(currentInputState.lightAttack.wasPressed);
-            sendHeavyAttack(currentInputState.heavyAttack.wasPressed, currentInputState.heavyAttack.isHeld);
+            takeInput(cil.getCurState());
+            if (inputQueue.Count > 0)
+            {
+                InputState currentInputState = inputQueue[inputQueue.Count - 1];
+                sendCrouch(currentInputState.moveY);
+                sendWalk(currentInputState.moveX);
+                sendDash(currentInputState.moveX);
+                sendBlock(currentInputState.moveX, currentInputState.buttonBlock.wasPressed);
+                sendJump(currentInputState.moveY);
+                sendLightAttack(currentInputState.lightAttack.wasPressed);
+                sendHeavyAttack(currentInputState.heavyAttack.wasPressed, currentInputState.heavyAttack.isHeld);
+            }
         }
+        else
+        {
+            cil = PlayerLocator.locator.getCombatListener(playerNum);
+        }
+
         checkGrounded();
         sendGrounded();
         stateQueue.Add(currentCharacterState);
@@ -143,6 +153,12 @@ public class NBCharacterController : MonoBehaviour
         anim.SetFloat(name, value);
     }
     #endregion
+
+    public void resetCharacter()
+    {
+        gravity = -2.0f * (maxJumpHeight) / (maxJumpTime * maxJumpTime);
+        curHealth = maxHealth;
+    }
 
     public void takeInput(InputState state)
     {    
@@ -407,7 +423,7 @@ public class NBCharacterController : MonoBehaviour
         rb.velocity = new Vector2(initHorizontalVel, initVerticalVel);
     }
 
-    void doIdle()
+    public void doIdle()
     {
         CharacterState affectedStates = CharacterState.Idle | CharacterState.Crouch |
             CharacterState.Light | CharacterState.Heavy | CharacterState.HeavyCharge |

@@ -16,6 +16,7 @@ public class MenuInputListener : MonoBehaviour {
     public ButtonAction resumeAction;
 
     public int selectedCharacter = -1;
+    public float deadZone = 0.5f;
 
     public menuInputState curState = new menuInputState();
 
@@ -41,10 +42,14 @@ public class MenuInputListener : MonoBehaviour {
             setButton(declineAction.control, out curState.decline);
             setButton(resumeAction.control, out curState.resume);
         }
+        curState.horizAsButton.fromAxis(curState.horizNav, deadZone);
+        curState.vertAsButton.fromAxis(curState.vertNav, deadZone);
         //conditional to take input here
         //take input here
-        curState = new menuInputState();
+
     }
+
+
 
     public void bindInput(int index)
     {
@@ -61,11 +66,18 @@ public class MenuInputListener : MonoBehaviour {
 
     public void setCurState(menuInputState state)
     {
-        setAxis(state.horizNav, out curState.horizNav);
-        setAxis(state.vertNav, out curState.vertNav);
-        setButton(state.accept, out curState.accept);
-        setButton(state.decline, out curState.decline);
-        setButton(state.resume, out curState.resume);
+        menuInputState toAssign = new menuInputState(state);
+        setAxis(toAssign.horizNav, out curState.horizNav);
+        setAxis(toAssign.vertNav, out curState.vertNav);
+        setButton(toAssign.accept, out curState.accept);
+        setButton(toAssign.decline, out curState.decline);
+        setButton(toAssign.resume, out curState.resume);
+    }
+
+    public menuInputState getCurState()
+    {
+        menuInputState ret = new menuInputState(curState);        
+        return ret;
     }
 
     public void setAxis(float value, out float outAxis)
@@ -76,5 +88,11 @@ public class MenuInputListener : MonoBehaviour {
     public void setButton(ButtonInfo value, out ButtonInfo outButton)
     {
         outButton = value;
+    }
+
+
+    public void setActive(bool active)
+    {
+        pInput.handle.maps[0].active = active;
     }
 }
