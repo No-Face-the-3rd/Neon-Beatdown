@@ -13,7 +13,7 @@ public class goalValues
 }
 public enum InputTarget
 {
-    horizontal, jump, lightAttack, block
+    horizontal, jump, lightAttack, heavyAttack, block
 }
 
 
@@ -58,6 +58,8 @@ public class EnemyAIController : MonoBehaviour
         if (cil != null && enemyController != null)
         {
             bool lightAttack = false;
+            bool heavyAttack = false;
+            bool block = false;
             cil.overrideAI = false;
             if (enemyController != null)
             {
@@ -71,9 +73,16 @@ public class EnemyAIController : MonoBehaviour
             inputState.moveX = horizontalDesire * selfController.transform.localScale.x;
 
             //light attack evaluation
-            lightAttack = evaluateLightAttack(1.0f);
-            inputState.lightAttack.setPressState(lightAttack);
+                        lightAttack = evaluateAttack(1.0f,InputTarget.lightAttack);
+            //            inputState.lightAttack.setPressState(lightAttack);
 
+            //heavy attack evaluation
+                        heavyAttack = evaluateAttack(1.0f, InputTarget.heavyAttack);
+            //            inputState.heavyAttack.setPressState(heavyAttack);
+
+            //block evaluation
+            block = evaluateAttack(1.0f, InputTarget.block);
+            inputState.buttonBlock.setPressState(block);
             //send inputs
             cil.setCurState(inputState);
         }
@@ -143,9 +152,9 @@ public class EnemyAIController : MonoBehaviour
     //    return val;
     //}
 
-    bool evaluateLightAttack(float threshold)
+    bool evaluateAttack(float threshold, InputTarget iTarget)
     {
-        float value = evaluateGoal(InputTarget.lightAttack);
+        float value = evaluateGoal(iTarget);
 
         //Debug.Log(val);
         if (value > threshold)

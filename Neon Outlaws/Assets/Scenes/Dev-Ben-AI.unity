@@ -14922,6 +14922,8 @@ GameObject:
   - component: {fileID: 1169969400}
   - component: {fileID: 1169969401}
   - component: {fileID: 1169969403}
+  - component: {fileID: 1169969402}
+  - component: {fileID: 1169969404}
   m_Layer: 0
   m_Name: GameObject (1)
   m_TagString: Untagged
@@ -14953,7 +14955,7 @@ MonoBehaviour:
   idleStopRatio: 0.4
   walkSlowRatio: 0.5
   consecutiveLightsForSecond: 2
-  maxHeavyChargeTime: 0
+  maxHeavyChargeTime: 5
   consecutiveLightDecay: 10
   blockDamageTaken: 0.2
   minHeavyChargeDamage: 0
@@ -28110,10 +28112,7 @@ MonoBehaviour:
   opponent: {fileID: 0}
   selfController: {fileID: 0}
   enemyController: {fileID: 0}
-  values:
-  - weight: NaN
-    curveOutput: 0
-    input: 0
+  values: []
 --- !u!114 &1169969400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28340,6 +28339,125 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1169969402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1169969390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f61592293523fd478b20cec2bf2e068, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 0}
+  myValues:
+    weight: 0
+    curveOutput: 0
+    input: 0
+  inputTarget: 3
+  distance:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: -1
+      value: 5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+    - serializedVersion: 2
+      time: -0.05
+      value: 5
+      inSlope: 0
+      outSlope: -25
+      tangentMode: 69
+    - serializedVersion: 2
+      time: 0.05
+      value: 2.5
+      inSlope: -25
+      outSlope: -250.00005
+      tangentMode: 69
+    - serializedVersion: 2
+      time: 0.06
+      value: 0
+      inSlope: -250.00005
+      outSlope: -0
+      tangentMode: 69
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  distanceW:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: -1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: -2.5
+      tangentMode: 5
+    - serializedVersion: 2
+      time: 0.1
+      value: 0.01
+      inSlope: -25
+      outSlope: -0
+      tangentMode: 65
+    - serializedVersion: 2
+      time: 1
+      value: 0.01
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  chargeTime:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  chargeTimeW:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &1169969403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28420,6 +28538,83 @@ MonoBehaviour:
       inSlope: 0
       outSlope: 0
       tangentMode: 34
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!114 &1169969404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1169969390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4205d24efdac379459e380b052e2b936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 0}
+  myValues:
+    weight: 0
+    curveOutput: 0
+    input: 0
+  inputTarget: 4
+  distance:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 5
+      inSlope: -0.625
+      outSlope: -0.625
+      tangentMode: 34
+    - serializedVersion: 2
+      time: 8
+      value: 0
+      inSlope: -0.625
+      outSlope: -0.625
+      tangentMode: 34
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  distanceW:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  startupOfAttack:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0.6
+      outSlope: 0.6
+      tangentMode: 34
+    - serializedVersion: 2
+      time: 5
+      value: 3
+      inSlope: 0.6
+      outSlope: 0.6
+      tangentMode: 34
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  startupOfAttackW:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0.13246086
+      outSlope: 0.13246086
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 3
+      value: 1
+      inSlope: 0.43095386
+      outSlope: 0.43095386
+      tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0

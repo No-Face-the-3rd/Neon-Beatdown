@@ -25,9 +25,9 @@ public class LightAttackGoal : BaseGoal
             //subtract with attack range
             curDist -= 5;
             //Debug.Log("Distance" + curDist);
-            float random = Random.value;
-            float desire = desireToAttack.Evaluate(curDist + random);
-            float desireWeight = desireToAttackW.Evaluate(curDist + random);
+            float randomNum = Random.value;
+            float desire = desireToAttack.Evaluate(curDist + randomNum);
+            float desireWeight = desireToAttackW.Evaluate(curDist + randomNum);
 
             myValues.curveOutput = desire;
             myValues.weight = desireWeight;

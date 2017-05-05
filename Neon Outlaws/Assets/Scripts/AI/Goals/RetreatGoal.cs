@@ -29,7 +29,7 @@ public class RetreatGoal : BaseGoal
             float curDist = Mathf.Abs(self.selfController.transform.position.x - self.enemyController.transform.position.x);
             curDist = Mathf.Clamp(curDist, desireToRetreat.keys[0].time, desireToRetreat.keys[desireToRetreat.keys.Length - 1].time);
 
-            //int amountOfPreviousLA = 0;
+            /*//int amountOfPreviousLA = 0;
             //if (self.selfController.stateQueue.Count > 0 && self.selfController.stateQueue.Count > 10)
             //{
             //    for (int i = self.selfController.stateQueue.Count; i > self.selfController.stateQueue.Count - 10; i--)
@@ -42,6 +42,11 @@ public class RetreatGoal : BaseGoal
             //        }
             //    }
             //}
+            //int ind = stateQueue.FindIndex(state => state == CharacterState.LightRecovery);
+            //if (ind > -1 && ind < maxLightRecoveryTime)
+            //{
+            //    DoRecoveryRetreatCurve();
+            //}*/
 
             float desireWeight = desireToRetreatW.Evaluate(curDist) /*+ desireRetreatAfterLAW.Evaluate(amountOfPreviousLA)*/;
             float desire = desireToRetreat.Evaluate(curDist) /*+ desireRetreatAfterLA.Evaluate(amountOfPreviousLA)*/;
