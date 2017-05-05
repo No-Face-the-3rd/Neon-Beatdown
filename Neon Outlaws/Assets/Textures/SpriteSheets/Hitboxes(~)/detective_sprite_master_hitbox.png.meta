@@ -1,9 +1,97 @@
 fileFormatVersion: 2
 guid: f286037ab9627c04a820027b45667a0d
-timeCreated: 1493427052
+timeCreated: 1494021457
 licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: detective_sprite_master_hitbox_0
+    21300002: detective_sprite_master_hitbox_1
+    21300004: detective_sprite_master_hitbox_2
+    21300006: detective_sprite_master_hitbox_3
+    21300008: detective_sprite_master_hitbox_4
+    21300010: detective_sprite_master_hitbox_5
+    21300012: detective_sprite_master_hitbox_6
+    21300014: detective_sprite_master_hitbox_7
+    21300016: detective_sprite_master_hitbox_8
+    21300018: detective_sprite_master_hitbox_9
+    21300020: detective_sprite_master_hitbox_10
+    21300022: detective_sprite_master_hitbox_11
+    21300024: detective_sprite_master_hitbox_12
+    21300026: detective_sprite_master_hitbox_13
+    21300028: detective_sprite_master_hitbox_14
+    21300030: detective_sprite_master_hitbox_15
+    21300032: detective_sprite_master_hitbox_16
+    21300034: detective_sprite_master_hitbox_17
+    21300036: detective_sprite_master_hitbox_18
+    21300038: detective_sprite_master_hitbox_19
+    21300040: detective_sprite_master_hitbox_20
+    21300042: detective_sprite_master_hitbox_21
+    21300044: detective_sprite_master_hitbox_22
+    21300046: detective_sprite_master_hitbox_23
+    21300048: detective_sprite_master_hitbox_24
+    21300050: detective_sprite_master_hitbox_25
+    21300052: detective_sprite_master_hitbox_26
+    21300054: detective_sprite_master_hitbox_27
+    21300056: detective_sprite_master_hitbox_28
+    21300058: detective_sprite_master_hitbox_29
+    21300060: detective_sprite_master_hitbox_30
+    21300062: detective_sprite_master_hitbox_31
+    21300064: detective_sprite_master_hitbox_32
+    21300066: detective_sprite_master_hitbox_33
+    21300068: detective_sprite_master_hitbox_34
+    21300070: detective_sprite_master_hitbox_35
+    21300072: detective_sprite_master_hitbox_36
+    21300074: detective_sprite_master_hitbox_37
+    21300076: detective_sprite_master_hitbox_38
+    21300078: detective_sprite_master_hitbox_39
+    21300080: detective_sprite_master_hitbox_40
+    21300082: detective_sprite_master_hitbox_41
+    21300084: detective_sprite_master_hitbox_42
+    21300086: detective_sprite_master_hitbox_43
+    21300088: detective_sprite_master_hitbox_44
+    21300090: detective_sprite_master_hitbox_45
+    21300092: detective_sprite_master_hitbox_46
+    21300094: detective_sprite_master_hitbox_47
+    21300096: detective_sprite_master_hitbox_48
+    21300098: detective_sprite_master_hitbox_49
+    21300100: detective_sprite_master_hitbox_50
+    21300102: detective_sprite_master_hitbox_51
+    21300104: detective_sprite_master_hitbox_52
+    21300106: detective_sprite_master_hitbox_53
+    21300108: detective_sprite_master_hitbox_54
+    21300110: detective_sprite_master_hitbox_55
+    21300112: detective_sprite_master_hitbox_56
+    21300114: detective_sprite_master_hitbox_57
+    21300116: detective_sprite_master_hitbox_58
+    21300118: detective_sprite_master_hitbox_59
+    21300120: detective_sprite_master_hitbox_60
+    21300122: detective_sprite_master_hitbox_61
+    21300124: detective_sprite_master_hitbox_62
+    21300126: detective_sprite_master_hitbox_63
+    21300128: detective_sprite_master_hitbox_64
+    21300130: detective_sprite_master_hitbox_65
+    21300132: detective_sprite_master_hitbox_66
+    21300134: detective_sprite_master_hitbox_67
+    21300136: detective_sprite_master_hitbox_68
+    21300138: detective_sprite_master_hitbox_69
+    21300140: detective_sprite_master_hitbox_70
+    21300142: detective_sprite_master_hitbox_71
+    21300144: detective_sprite_master_hitbox_72
+    21300146: detective_sprite_master_hitbox_73
+    21300148: detective_sprite_master_hitbox_74
+    21300150: detective_sprite_master_hitbox_75
+    21300152: detective_sprite_master_hitbox_76
+    21300154: detective_sprite_master_hitbox_77
+    21300156: detective_sprite_master_hitbox_78
+    21300158: detective_sprite_master_hitbox_79
+    21300160: detective_sprite_master_hitbox_80
+    21300162: detective_sprite_master_hitbox_81
+    21300164: detective_sprite_master_hitbox_82
+    21300166: detective_sprite_master_hitbox_83
+    21300168: detective_sprite_master_hitbox_84
+    21300170: detective_sprite_master_hitbox_85
+    21300172: detective_sprite_master_hitbox_86
+    21300174: detective_sprite_master_hitbox_87
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -40,7 +128,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 25
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -59,13 +147,13 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Standalone
-    maxTextureSize: 8192
-    textureFormat: 12
+    maxTextureSize: 2048
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 1
+    overridden: 0
   - buildTarget: Android
     maxTextureSize: 2048
     textureFormat: -1
@@ -84,7 +172,1151 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1848
+        width: 110
+        height: 191
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_1
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 1847
+        width: 103
+        height: 193
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_2
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 1847
+        width: 113
+        height: 190
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_3
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 1847
+        width: 113
+        height: 192
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1847
+        width: 98
+        height: 191
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_5
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 1851
+        width: 79
+        height: 185
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_6
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 1847
+        width: 105
+        height: 190
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_7
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 1848
+        width: 76
+        height: 191
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_8
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 1847
+        width: 153
+        height: 188
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_9
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 1851
+        width: 155
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_10
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 1848
+        width: 152
+        height: 192
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_11
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 1847
+        width: 151
+        height: 190
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_12
+      rect:
+        serializedVersion: 2
+        x: 1627
+        y: 1847
+        width: 95
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_13
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 1847
+        width: 160
+        height: 169
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_14
+      rect:
+        serializedVersion: 2
+        x: 1924
+        y: 1840
+        width: 111
+        height: 195
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_15
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 1621
+        width: 148
+        height: 205
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_16
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 1620
+        width: 104
+        height: 162
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_17
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 1624
+        width: 102
+        height: 217
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_18
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 1648
+        width: 92
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_19
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 1640
+        width: 84
+        height: 172
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_20
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 1621
+        width: 91
+        height: 149
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_21
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 1628
+        width: 109
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_22
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 1627
+        width: 118
+        height: 191
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_23
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 1700
+        width: 56
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_24
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 1691
+        width: 70
+        height: 97
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_25
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 1621
+        width: 138
+        height: 180
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_26
+      rect:
+        serializedVersion: 2
+        x: 1333
+        y: 1623
+        width: 175
+        height: 161
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_27
+      rect:
+        serializedVersion: 2
+        x: 1524
+        y: 1627
+        width: 189
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_28
+      rect:
+        serializedVersion: 2
+        x: 1734
+        y: 1620
+        width: 168
+        height: 182
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_29
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1416
+        width: 135
+        height: 185
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_30
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 1417
+        width: 107
+        height: 188
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_31
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 1417
+        width: 179
+        height: 184
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_32
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 1418
+        width: 182
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_33
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 1418
+        width: 113
+        height: 177
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_34
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 1419
+        width: 125
+        height: 181
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_35
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 1415
+        width: 177
+        height: 185
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_36
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 1416
+        width: 170
+        height: 174
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_37
+      rect:
+        serializedVersion: 2
+        x: 1411
+        y: 1416
+        width: 247
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_38
+      rect:
+        serializedVersion: 2
+        x: 1684
+        y: 1407
+        width: 181
+        height: 182
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_39
+      rect:
+        serializedVersion: 2
+        x: 1897
+        y: 1406
+        width: 124
+        height: 184
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_40
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 1216
+        width: 101
+        height: 175
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_41
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 1218
+        width: 104
+        height: 172
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_42
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 1218
+        width: 103
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_43
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 1219
+        width: 100
+        height: 166
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_44
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 1218
+        width: 158
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_45
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 1211
+        width: 117
+        height: 174
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_46
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 1238
+        width: 127
+        height: 134
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_47
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1221
+        width: 99
+        height: 165
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_48
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 1244
+        width: 263
+        height: 120
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_49
+      rect:
+        serializedVersion: 2
+        x: 1420
+        y: 1171
+        width: 107
+        height: 201
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_50
+      rect:
+        serializedVersion: 2
+        x: 1552
+        y: 1172
+        width: 92
+        height: 199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_51
+      rect:
+        serializedVersion: 2
+        x: 1667
+        y: 1171
+        width: 53
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_52
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 1171
+        width: 83
+        height: 205
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_53
+      rect:
+        serializedVersion: 2
+        x: 1839
+        y: 1171
+        width: 87
+        height: 205
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_54
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 966
+        width: 106
+        height: 201
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_55
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 966
+        width: 111
+        height: 201
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_56
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 966
+        width: 114
+        height: 215
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_57
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 966
+        width: 111
+        height: 201
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_58
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 964
+        width: 111
+        height: 197
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_59
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 964
+        width: 116
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_60
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 966
+        width: 124
+        height: 194
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_61
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 964
+        width: 126
+        height: 194
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_62
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 964
+        width: 311
+        height: 190
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_63
+      rect:
+        serializedVersion: 2
+        x: 1527
+        y: 967
+        width: 395
+        height: 188
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_64
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 623
+        width: 156
+        height: 188
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_65
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 624
+        width: 168
+        height: 216
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_66
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 620
+        width: 118
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_67
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 622
+        width: 107
+        height: 327
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_68
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 617
+        width: 141
+        height: 221
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_69
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 622
+        width: 153
+        height: 211
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_70
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 613
+        width: 192
+        height: 213
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_71
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 616
+        width: 193
+        height: 226
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_72
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 624
+        width: 215
+        height: 178
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_73
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 626
+        width: 205
+        height: 113
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_74
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 303
+        width: 206
+        height: 253
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_75
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 301
+        width: 204
+        height: 249
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_76
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 300
+        width: 210
+        height: 169
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_77
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 300
+        width: 164
+        height: 232
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_78
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 300
+        width: 112
+        height: 241
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_79
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 305
+        width: 83
+        height: 230
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_80
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 303
+        width: 83
+        height: 230
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_81
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 302
+        width: 124
+        height: 227
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_82
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 305
+        width: 153
+        height: 247
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_83
+      rect:
+        serializedVersion: 2
+        x: 1679
+        y: 302
+        width: 132
+        height: 226
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_84
+      rect:
+        serializedVersion: 2
+        x: 1895
+        y: 300
+        width: 126
+        height: 224
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_85
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 48
+        width: 155
+        height: 199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_86
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 50
+        width: 181
+        height: 157
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_hitbox_87
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 50
+        width: 271
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 

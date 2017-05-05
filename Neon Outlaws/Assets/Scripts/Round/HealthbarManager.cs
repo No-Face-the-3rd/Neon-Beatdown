@@ -118,4 +118,23 @@ public class HealthbarManager : MonoBehaviour {
             }
         }
     }
+
+    public void activateMarkers(int playerNum, int numActive)
+    {
+        for(int i = 0;i < healthBars.Count;i++)
+        {
+            healthBars[playerNum - 1].counters[i].enabled = (i >= numActive ? false : true);
+        }
+    }
+
+    public int hasVictor()
+    {
+        int ret = -1;
+
+        for (int i = 0; i < healthBars.Count; i++)
+        {
+
+        }
+        return ret;
+    }
 }
