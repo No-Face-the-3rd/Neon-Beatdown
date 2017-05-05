@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 public class TitleMenu : MonoBehaviour {
-    public MainMenuButtons mainMenuButtons;
+    public MainMenu mainMenuButtons;
     MenuInputListener menuInputListener;
     menuInputState inputState;
 

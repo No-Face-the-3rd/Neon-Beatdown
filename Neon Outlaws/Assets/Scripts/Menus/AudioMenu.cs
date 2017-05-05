@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioMenu : MonoBehaviour {
-    public MainMenuButtons mainMenuButtons;
+    public MainMenu mainMenuButtons;
     public UnityEngine.EventSystems.EventSystem menuEventSystem;
     public GameObject soundMenuPanel;
     public GameObject mainMenuPanel;

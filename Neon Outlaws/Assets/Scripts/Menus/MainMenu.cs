@@ -1,8 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class MainMenuButtons : MonoBehaviour {
+public class MainMenu : MonoBehaviour {
+    menuInputState inputState;
+    MenuInputListener menuInputListener;
+
     public GameObject mainMenuPanel;
     public GameObject soundMenuPanel;
     public GameObject characterSelectPanel;
@@ -11,23 +15,50 @@ public class MainMenuButtons : MonoBehaviour {
     public GameObject startingMainButton;
     public GameObject startingCharacterSelectButton;
     public GameObject startingAudioButton;
-    
-    // Deactivate main panel, activate the CSS panel
-    public void LoadCharacterSelectPanel() {
+
+    void FixedUpdate()
+    {
+        if (menuInputListener != null)
+        {
+            TakeInput(menuInputListener.getCurState());
+
+            //if (inputState.vertNav > .05f) {
+
+            //}
+
+            //if (inputState.vertNav < .05f) {
+
+            //}
+        }
+        else
+        {
+            menuInputListener = PlayerLocator.locator.getMenuListener(1);
+        }
+    }
+
+    void TakeInput(menuInputState theMenuInputState)
+    {
+        inputState = theMenuInputState;
+    }
+
+    public void LoadCharacterSelectPanel()
+    {
         mainMenuPanel.SetActive(false);
         characterSelectPanel.SetActive(true);
         menuEventSystem.SetSelectedGameObject(startingCharacterSelectButton);
     }
 
     // Deactivate main panel, activate the options panel
-    public void LoadSoundPanel() {
+    public void LoadSoundPanel()
+    {
         mainMenuPanel.SetActive(false);
         soundMenuPanel.SetActive(true);
         menuEventSystem.SetSelectedGameObject(startingAudioButton);
     }
 
     // If playing through the Unity Editor, exit play mode. Otherwise exit to desktop
-    public void QuitOnSelect() {
+    public void QuitOnSelect()
+    {
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
