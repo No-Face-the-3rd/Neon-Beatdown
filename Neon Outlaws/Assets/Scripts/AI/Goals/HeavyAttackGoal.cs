@@ -28,15 +28,18 @@ public class HeavyAttackGoal : BaseGoal
         //temp awake fix
         if (self.cil != null && self.enemyController != null)
         {
-            
+            float chargeCount = (float)self.selfController.getHeavyCharge();
+            chargeTime.keys[chargeTime.keys.Length - 1].time = (float)self.selfController.maxHeavyChargeTime;
+            Debug.Log("charge count " + chargeCount);
             //get the absolute value of the distance
             float curDist = Mathf.Abs(self.selfController.transform.position.x - self.enemyController.transform.position.x);
             //subtract with attack range
-            curDist -= 7;
-            //Debug.Log("Distance" + curDist);
-            float randomNum = Random.value;
-            float desire = distance.Evaluate(curDist + randomNum) + chargeTime.Evaluate((float)self.selfController.getHeavyCharge());
-            float desireWeight = distanceW.Evaluate(curDist + randomNum) + chargeTimeW.Evaluate((float)self.selfController.getHeavyCharge());
+            curDist -= 6;
+            float randomNum = (Random.value) / 2;
+            float distanceDesire = distance.Evaluate(curDist + randomNum);
+            float chargeDesire = chargeTime.Evaluate(chargeCount);
+            float desire = distanceDesire + chargeDesire; //distance.Evaluate(curDist + randomNum) + chargeTime.Evaluate(chargeCount);
+            float desireWeight = distanceW.Evaluate(curDist + randomNum) + chargeTimeW.Evaluate(chargeCount);
 
             myValues.curveOutput = desire;
             myValues.weight = desireWeight;
