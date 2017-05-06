@@ -822,7 +822,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1370375548807040}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f61592293523fd478b20cec2bf2e068, type: 3}
   m_Name: 
@@ -904,25 +904,19 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 5
       inSlope: 0.47452337
       outSlope: -0
       tangentMode: 65
     - serializedVersion: 2
-      time: 1
-      value: 0
+      time: 18
+      value: 5
       inSlope: 0
-      outSlope: -0
-      tangentMode: 69
-    - serializedVersion: 2
-      time: 4.5
-      value: 0
-      inSlope: 0
-      outSlope: 1.783371
+      outSlope: -0.01892155
       tangentMode: 5
     - serializedVersion: 2
-      time: 5
-      value: 5
+      time: 20
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -933,25 +927,25 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      time: 0.41666698
+      value: 0.0054524243
+      inSlope: 0.025212687
+      outSlope: 0.025212687
       tangentMode: 0
     - serializedVersion: 2
       time: 10
-      value: 0.2
-      inSlope: 0.010778521
-      outSlope: 0.010778521
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 20
       value: 0.5
-      inSlope: 0.03
-      outSlope: 0.016666668
+      inSlope: 0.051604968
+      outSlope: 0.09318272
       tangentMode: 69
     - serializedVersion: 2
-      time: 50
+      time: 15
+      value: 0.9659136
+      inSlope: 0.09318272
+      outSlope: 0.0113248825
+      tangentMode: 5
+    - serializedVersion: 2
+      time: 20
       value: 1
       inSlope: -0.004783728
       outSlope: -0.004783728
@@ -996,6 +990,7 @@ MonoBehaviour:
   inputQueue: []
   queueSize: 100
   attackIndices: 
+  curHealth: 0
   maxHealth: 1000
 --- !u!114 &114749001188461712
 MonoBehaviour:
