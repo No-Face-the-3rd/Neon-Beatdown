@@ -552,7 +552,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1370375548807040}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4205d24efdac379459e380b052e2b936, type: 3}
   m_Name: 
@@ -569,14 +569,26 @@ MonoBehaviour:
     - serializedVersion: 2
       time: 0
       value: 5
-      inSlope: -0.625
-      outSlope: -0.625
+      inSlope: -1.5
+      outSlope: -1.5
       tangentMode: 34
+    - serializedVersion: 2
+      time: 2
+      value: 2
+      inSlope: -1.25
+      outSlope: -1.25
+      tangentMode: 34
+    - serializedVersion: 2
+      time: 4
+      value: 0
+      inSlope: -0.5
+      outSlope: -0
+      tangentMode: 65
     - serializedVersion: 2
       time: 8
       value: 0
-      inSlope: -0.625
-      outSlope: -0.625
+      inSlope: 0
+      outSlope: 0
       tangentMode: 34
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -586,15 +598,27 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0.5
-      inSlope: -0.0625
-      outSlope: -0.0625
+      value: 1
+      inSlope: -0.5
+      outSlope: -0.5
       tangentMode: 34
+    - serializedVersion: 2
+      time: 1
+      value: 0.5
+      inSlope: -0.33333334
+      outSlope: -0.33333334
+      tangentMode: 34
+    - serializedVersion: 2
+      time: 4
+      value: 0
+      inSlope: -0.08291667
+      outSlope: -0
+      tangentMode: 65
     - serializedVersion: 2
       time: 8
       value: 0
-      inSlope: -0.0625
-      outSlope: -0.0625
+      inSlope: 0
+      outSlope: 0
       tangentMode: 34
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -605,15 +629,21 @@ MonoBehaviour:
     - serializedVersion: 2
       time: 0
       value: 0
-      inSlope: 0.6
-      outSlope: 0.6
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 34
+    - serializedVersion: 2
+      time: 1
+      value: 2
+      inSlope: 1.375
+      outSlope: 1.375
       tangentMode: 34
     - serializedVersion: 2
       time: 5
-      value: 3
-      inSlope: 0.6
-      outSlope: 0.6
-      tangentMode: 34
+      value: 5
+      inSlope: 0.22199312
+      outSlope: 0.22199312
+      tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
@@ -623,14 +653,26 @@ MonoBehaviour:
     - serializedVersion: 2
       time: 0
       value: 0
-      inSlope: 0.13246086
-      outSlope: 0.13246086
+      inSlope: 0.029820755
+      outSlope: 0.029820755
       tangentMode: 0
     - serializedVersion: 2
-      time: 3
+      time: 1
+      value: 0.5
+      inSlope: 0.10792166
+      outSlope: 0.10792166
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 2
+      value: 0.75
+      inSlope: 0.21723402
+      outSlope: 0.21723402
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 5
       value: 1
-      inSlope: 0.43095386
-      outSlope: 0.43095386
+      inSlope: 0.01953785
+      outSlope: 0.01953785
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -705,13 +747,13 @@ MonoBehaviour:
       tangentMode: 5
     - serializedVersion: 2
       time: 0.1
-      value: 0.01
+      value: 0
       inSlope: -25
       outSlope: -0
       tangentMode: 65
     - serializedVersion: 2
       time: 1
-      value: 0.01
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 34
@@ -844,13 +886,13 @@ MonoBehaviour:
       tangentMode: 5
     - serializedVersion: 2
       time: 0.1
-      value: 0.01
+      value: 0
       inSlope: -25
       outSlope: -0
       tangentMode: 65
     - serializedVersion: 2
       time: 1
-      value: 0.01
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 34
@@ -862,13 +904,25 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0.5
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      value: 0
+      inSlope: 0.47452337
+      outSlope: -0
+      tangentMode: 65
     - serializedVersion: 2
       time: 1
-      value: 1
+      value: 0
+      inSlope: 0
+      outSlope: -0
+      tangentMode: 69
+    - serializedVersion: 2
+      time: 4.5
+      value: 0
+      inSlope: 0
+      outSlope: 1.783371
+      tangentMode: 5
+    - serializedVersion: 2
+      time: 5
+      value: 5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -880,15 +934,27 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     - serializedVersion: 2
-      time: 1
+      time: 10
+      value: 0.2
+      inSlope: 0.010778521
+      outSlope: 0.010778521
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 20
+      value: 0.5
+      inSlope: 0.03
+      outSlope: 0.016666668
+      tangentMode: 69
+    - serializedVersion: 2
+      time: 50
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: -0.004783728
+      outSlope: -0.004783728
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
