@@ -35,8 +35,8 @@ public class HeavyAttackGoal : BaseGoal
             curDist -= 7;
             //Debug.Log("Distance" + curDist);
             float randomNum = Random.value;
-            float desire = distance.Evaluate(curDist + randomNum);// + chargeTime.Evaluate((float)self.selfController.getHeavyCharge());
-            float desireWeight = distanceW.Evaluate(curDist + randomNum);// + chargeTimeW.Evaluate((float)self.selfController.getHeavyCharge());
+            float desire = distance.Evaluate(curDist + randomNum) + chargeTime.Evaluate((float)self.selfController.getHeavyCharge());
+            float desireWeight = distanceW.Evaluate(curDist + randomNum) + chargeTimeW.Evaluate((float)self.selfController.getHeavyCharge());
 
             myValues.curveOutput = desire;
             myValues.weight = desireWeight;

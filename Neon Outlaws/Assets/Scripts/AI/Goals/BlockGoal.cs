@@ -22,6 +22,7 @@ public class BlockGoal : BaseGoal
         if (self.cil != null && self.enemyController != null)
         {
             float curDist = Mathf.Abs(self.selfController.transform.position.x - self.enemyController.transform.position.x);
+            curDist = Mathf.Clamp(curDist, distance.keys[0].time, distance.keys[distance.keys.Length - 1].time);
             float randomNum = Random.value;
 
             int checkAttackThreshold = 3;
