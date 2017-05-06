@@ -5,7 +5,7 @@ using UnityEngine;
 public interface IAIStates
 {
     void UpdateState();
-    //void ToAttackState();   // Attack opponen
+    //void ToAttackState();   // Attack opponent
     void ToApproachState(); // Move towards opponent
     //void ToBlockState();    // Stay in place and block any attacks from opponent
     void ToRetreatState();  // Back away from opponent (like after taking a lot of damage for example)

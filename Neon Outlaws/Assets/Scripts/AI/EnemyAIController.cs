@@ -2,40 +2,51 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//change goalValue's name later
+//used for weighting different goals with curves
+[System.Serializable]
+public class goalValues
+{
+    public float weight;
+    public float curveOutput;
+    public InputTarget input;
+}
+public enum InputTarget
+{
+    horizontal, jump, lightAttack, heavyAttack, block
+}
+
+
 public class EnemyAIController : MonoBehaviour
 {
     //replace with player locator
-    public CombatInputListener cbi;
+    public CombatInputListener cil;
     public InputState inputState;
 
     public Rigidbody2D rb;
-    public float speed = 10;
-    public float jumpSpeed = 10;
 
-    [HideInInspector] public IAIStates     currentState;
-    [HideInInspector] public ApproachState approachState;
-    [HideInInspector] public RetreatState  retreatState;
-    [HideInInspector] public WaitState     waitState;
     [HideInInspector] public GameObject    opponent;
+    [HideInInspector] public NBCharacterController selfController;
+    [HideInInspector] public NBCharacterController enemyController;
     private Animator  animator;
+
+    public List<goalValues> values = new List<goalValues>();
 
     private void Awake()
     {
         //cbi           = GetComponent<CombatInputListener>();
+        selfController = GetComponent<NBCharacterController>();
+       // enemyController = CharacterLocator.locator.getCharacter((selfController.playerNum % 2) + 1);
+        //cil = PlayerLocator.locator.getCombatListener(selfController.playerNum);
         inputState    = new InputState();
         rb            = GetComponent<Rigidbody2D>();
         animator      = GetComponent<Animator>();
-        approachState = new ApproachState(this);
-        retreatState  = new RetreatState(this);
-        waitState     = new WaitState(this);
     }
     
 	// Use this for initialization
 	void Start ()
     {
-        cbi.overrideAI = false;
-        currentState = approachState;
-        Debug.Log(currentState);
+        //cil.overrideAI = false;
         opponent = GameObject.Find("GameObject");
         rb = GetComponent<Rigidbody2D>();
 	}
@@ -43,12 +54,122 @@ public class EnemyAIController : MonoBehaviour
     //Used for consistency along framerates
 	void FixedUpdate ()
     {
-        inputState = new InputState();
-        //inputState.moveX = speed;
-        //inputState.moveY = jumpSpeed;
+        //temp awake fix
+        if (cil != null && enemyController != null)
+        {
+            bool lightAttack = false;
+            bool heavyAttack = false;
+            bool block = false;
+            cil.overrideAI = false;
+            if (enemyController != null)
+            {
+                MenuInputListener mil = PlayerLocator.locator.getMenuListener(enemyController.playerNum);
+                if (mil != null)
+                mil.setActive(false);
+            }
+            inputState = new InputState();
+            //horizontal movement based on my horizontal animation curves
+            float horizontalDesire = evaluateGoal(InputTarget.horizontal);
+            inputState.moveX = horizontalDesire * selfController.transform.localScale.x;
 
-        currentState.UpdateState();
-        cbi.setCurState(inputState);
+            //light attack evaluation
+                        lightAttack = evaluateAttack(1.0f,InputTarget.lightAttack);
+                        inputState.lightAttack.setPressState(lightAttack);
+
+            //heavy attack evaluation
+                        heavyAttack = evaluateAttack(1.0f, InputTarget.heavyAttack);
+                        inputState.heavyAttack.setPressState(heavyAttack);
+
+            //block evaluation
+            block = evaluateAttack(1.0f, InputTarget.block);
+            inputState.buttonBlock.setPressState(block);
+            //send inputs
+            cil.setCurState(inputState);
+        }
+        else
+        {
+            enemyController = CharacterLocator.locator.getCharacter((selfController.playerNum % 2) + 1);
+            cil = PlayerLocator.locator.getCombatListener(selfController.playerNum);
+        }
+
         //Debug.Log(turn);
+
     }
+
+    //maybe have it return a float for horizontal/jump/attack/block
+    public float evaluateGoal(InputTarget iTarget)
+    {
+        float weights = 0.0f;
+        float val = 0.0f;
+
+        List<int> toRemove = new List<int>();
+        for (int i = 0; i < values.Count; ++i)
+        {
+            if (values[i].input == iTarget)
+            {
+
+                val += values[i].curveOutput;
+                weights += values[i].weight;
+                toRemove.Insert(0, i);
+            }
+        }
+        for (int i = 0; i < toRemove.Count; i++)
+        {
+            values.RemoveAt(toRemove[i]);
+        }
+        val /= weights;
+
+        return val;
+    }
+
+    public void addGoal(goalValues goalsIn)
+    {
+        values.Add(goalsIn);
+    }
+
+    //float evaluateHorizontal()
+    //{
+    //    float weights = 0.0f;
+    //    float val = 0.0f;
+
+    //    List<int> toRemove = new List<int>();
+    //    for(int i = 0; i < values.Count; ++i)
+    //    {
+    //        if(values[i].input == InputTarget.horizontal)
+    //        {
+
+    //            val += values[i].curveOutput;
+    //            weights += values[i].weight;
+    //            toRemove.Insert(0, i);
+    //        }
+    //    }
+    //    for(int i = 0;i < toRemove.Count;i++)
+    //    {
+    //        values.RemoveAt(toRemove[i]);
+    //    }
+    //    val /= weights;
+
+    //    return val;
+    //}
+
+    bool evaluateAttack(float threshold, InputTarget iTarget)
+    {
+        float value = evaluateGoal(iTarget);
+
+        //Debug.Log(val);
+        if (value > threshold)
+            return true;
+        else
+            return false;
+    }
+
+
+
+    /*
+     plan:
+     goal scripts push a desire to this script based on inputs (ie horizontal, jumping, crouch, attacks, block)
+     this script will take those goal's desires and divide by their weight
+     based on the outcome I do desired input
+     send input
+     */
 }
