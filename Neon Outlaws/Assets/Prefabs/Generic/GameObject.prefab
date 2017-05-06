@@ -13020,13 +13020,14 @@ MonoBehaviour:
   minHeavyChargeDamage: 50
   maxHeavyChargeDamage: 100
   grounded: 0
-  playerNum: 1
+  playerNum: 0
   currentCharacterState: 0
   jumpMat: {fileID: 6200000, guid: 2e3d806400896bb4eb4b90b84eb4db65, type: 2}
   stateQueue: 
   inputQueue: []
   queueSize: 100
   attackIndices: 000000000100000002000000
+  curHealth: 0
   maxHealth: 1000
 --- !u!120 &120714271293325494
 LineRenderer:

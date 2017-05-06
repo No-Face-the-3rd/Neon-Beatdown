@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1198118904940980}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.93, y: 0, z: 0}
+  m_LocalPosition: {x: -12, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -344,13 +344,14 @@ MonoBehaviour:
   minHeavyChargeDamage: 50
   maxHeavyChargeDamage: 100
   grounded: 0
-  playerNum: 2
+  playerNum: 1
   currentCharacterState: 0
   jumpMat: {fileID: 6200000, guid: 2e3d806400896bb4eb4b90b84eb4db65, type: 2}
   stateQueue: 
   inputQueue: []
   queueSize: 100
-  attackIndices: 000000000100000002000000
+  attackIndices: 040000000500000006000000
+  curHealth: 0
   maxHealth: 1000
 --- !u!114 &114793830597759178
 MonoBehaviour:
@@ -27068,7 +27069,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300362, guid: 324b9e06402d11f42b73c3ddc7c5b98e, type: 3}
+  m_Sprite: {fileID: 21300192, guid: 324b9e06402d11f42b73c3ddc7c5b98e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

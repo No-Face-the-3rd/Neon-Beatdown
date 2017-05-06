@@ -42,6 +42,7 @@ public class HealthbarManager : MonoBehaviour {
 
     public List<HealthBar> healthBars;
 
+
     private bool initialized = false;
 	// Use this for initialization
 	void Start () {
@@ -73,6 +74,7 @@ public class HealthbarManager : MonoBehaviour {
                 success = false;
                 break;
             }
+            menuListener.setActive(false);
             int character = menuListener.selectedCharacter;
             if (character >= 0)
             {
@@ -120,20 +122,48 @@ public class HealthbarManager : MonoBehaviour {
 
     public void activateMarkers(int playerNum, int numActive)
     {
-        for(int i = 0;i < healthBars.Count;i++)
+        if (initialized)
         {
-            healthBars[playerNum - 1].counters[i].enabled = (i >= numActive ? false : true);
+            for (int i = 0; i < healthBars.Count; i++)
+            {
+                healthBars[playerNum - 1].counters[i].enabled = (i >= numActive ? false : true);
+            }
         }
     }
 
-    public int hasVictor()
+    public int hasMostHealth()
     {
         int ret = -1;
-
+        float curPer = 0.0f;
         for (int i = 0; i < healthBars.Count; i++)
         {
-
+            if(healthBars[i].sliderBar.value > curPer)
+            {
+                curPer = healthBars[i].sliderBar.value;
+                ret = i;
+            }
         }
+        return ret;
+    }
+
+    public int someoneDied()
+    {
+        int ret = -2;
+
+        bool deadPerson = false;
+        for(int i = 0;i < healthBars.Count;i++)
+        {
+            if(healthBars[i].sliderBar.value <= 0.0f)
+            {
+                deadPerson = true;
+                break;
+            }
+        }
+        if(deadPerson)
+        {
+            ret = hasMostHealth();
+        }
+
         return ret;
     }
 }

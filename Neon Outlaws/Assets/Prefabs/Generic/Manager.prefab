@@ -104,22 +104,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c379555e3b57246874e0047a7684ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characters: []
+  characters:
+  - {fileID: 0}
+  - {fileID: 0}
   attacks:
   - {fileID: 1452809849070516, guid: 18f0e3a14cc43694d9354e5b7d591899, type: 2}
   - {fileID: 1745350464993564, guid: 9c59ac49c512fc0438bb4beef99ec15f, type: 2}
   - {fileID: 1717720734949474, guid: 5db2ff9c3d4a1154d9cd3b002b26f0cf, type: 2}
+  - {fileID: 1392849072339270, guid: 3ba95d0d7efed044aa376b407195db86, type: 2}
+  - {fileID: 1715149233878722, guid: 8a20519035bbd9a4c911e9d76af87ac8, type: 2}
+  - {fileID: 1042451944492918, guid: e4b4aa8ee2c377b4eb513e99aa8c5126, type: 2}
   levels: []
   healthBars:
   - background: {fileID: 21300000, guid: 57eea707ad124c7409d1905b5c66ace7, type: 3}
     foreground: {fileID: 21300000, guid: c76ca2de073295e4f8fa2b0d317ad96a, type: 3}
-    counterFill: {fileID: 2800000, guid: 7ccd1c44f00e3f348b341776de2f1a82, type: 3}
+    counterFill: {fileID: 21300000, guid: 7ccd1c44f00e3f348b341776de2f1a82, type: 3}
   - background: {fileID: 21300000, guid: 6d0cb0208813f3c4bac05367527175a2, type: 3}
     foreground: {fileID: 21300000, guid: b08b81b3d69fe5e43abee66680a0de99, type: 3}
-    counterFill: {fileID: 2800000, guid: 777a9ae2a2f1ae647b125b7912f43eae, type: 3}
+    counterFill: {fileID: 21300000, guid: 777a9ae2a2f1ae647b125b7912f43eae, type: 3}
   genericPrefabs:
   - {fileID: 1103549214683490}
   - {fileID: 1500139504155960, guid: e79ae90847310f44994d7cc4be51b10a, type: 2}
+  selectedStage: -1
 --- !u!114 &114918392874027440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,3 +137,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be439d3e733de204fbcfca91a7d734bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characters: []
