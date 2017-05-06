@@ -1723,6 +1723,7 @@ GameObject:
   - component: {fileID: 773490819}
   - component: {fileID: 773490821}
   - component: {fileID: 773490822}
+  - component: {fileID: 773490823}
   m_Layer: 0
   m_Name: RoundManager
   m_TagString: Untagged
@@ -1795,6 +1796,17 @@ MonoBehaviour:
   roundsToWin: 3
   transitionTimer:
     duration: 1
+--- !u!114 &773490823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 773490818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65cc21892f41874d97f9daa5db0d065, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &854407369
 GameObject:
   m_ObjectHideFlags: 0
