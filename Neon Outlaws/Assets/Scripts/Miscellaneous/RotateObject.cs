@@ -5,6 +5,7 @@ using UnityEngine;
 public class RotateObject : MonoBehaviour {
     public Vector3 rotateVector;
 
+    [HideInInspector]
     public bool aroundAxis = false;
 
 	// Use this for initialization
