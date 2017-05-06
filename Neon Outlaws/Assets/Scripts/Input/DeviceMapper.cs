@@ -9,13 +9,17 @@ public class PlayerInfo
     public ButtonInputControl acceptControl;
     public ButtonInputControl declineControl;
     public int playerNum;
+    public GameObject controller;
+    public bool canLeave;
 
-    public PlayerInfo(PlayerHandle inHandle, ButtonAction acceptAction, ButtonAction declineAction, int playerNumIn)
+    public PlayerInfo(PlayerHandle inHandle, ButtonAction acceptAction, ButtonAction declineAction, int playerNumIn, GameObject controllerIn)
     {
         this.handle = inHandle;
         acceptControl = (ButtonInputControl)inHandle.GetActions(acceptAction.action.actionMap)[acceptAction.action.actionIndex];
         declineControl = (ButtonInputControl)inHandle.GetActions(declineAction.action.actionMap)[declineAction.action.actionIndex];
         playerNum = playerNumIn;
+        controller = controllerIn;
+        canLeave = false;
     }
 }
 
@@ -32,6 +36,8 @@ public class DeviceMapper : MonoBehaviour {
     public List<PlayerInfo> players = new List<PlayerInfo>();
 
     public ButtonAction acceptAction, declineAction;
+
+    public int controllerIndex = -1;
 
 
 	// Use this for initialization
@@ -111,10 +117,31 @@ public class DeviceMapper : MonoBehaviour {
                     handle.maps.Add(map);
                 }
 
-                players.Add(new PlayerInfo(handle, acceptAction, declineAction, num));
+                GameObject controller = GameObject.Instantiate(ObjectDB.data.getPrefab(controllerIndex));
+                players.Add(new PlayerInfo(handle, acceptAction, declineAction, num, controller));
+                CombatInputListener cil = controller.GetComponent<CombatInputListener>();
+                MenuInputListener mil = controller.GetComponent<MenuInputListener>();
+                int index = players.Count - 1;
+                cil.bindInput(index);
+                mil.bindInput(index);                
             }
         }
 
+
+        for (int i = 0; i < players.Count; i++)
+        {
+            if (players[i].canLeave)
+            {
+                if (players[i].declineControl.wasJustReleased)
+                {
+                    players[i].handle.Destroy();
+                    Destroy(players[i].controller);
+                    players.Remove(players[i]);
+                    continue;
+                }
+
+            }
+        }
 	}
 
     public PlayerInfo getPlayer(int playerNum)
@@ -127,6 +154,20 @@ public class DeviceMapper : MonoBehaviour {
         else
         {
             return null;
+        }
+    }
+
+    public void setPlayerCanLeave(int playerNum, bool playerLeavable)
+    {
+        int ind = players.FindIndex(player => player.playerNum == playerNum);
+        if(ind >= 0)
+        {
+            players[ind].canLeave = playerLeavable;
+        }
+        else
+        {
+            Debug.LogError(System.Reflection.MethodBase.GetCurrentMethod().Name + 
+                " Could not find player with player number: " + playerNum);
         }
     }
 }

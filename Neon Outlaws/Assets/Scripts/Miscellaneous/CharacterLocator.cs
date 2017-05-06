@@ -28,6 +28,7 @@ public class CharacterLocator : MonoBehaviour {
 
     void findCharacters()
     {
+        characters.RemoveAll(character => character == null);
         NBCharacterController[] charactersExist = FindObjectsOfType<NBCharacterController>();
         for (int i = 0; i < charactersExist.Length; i++)
         {
@@ -50,5 +51,15 @@ public class CharacterLocator : MonoBehaviour {
         {
             return null;
         }            
+    }
+
+    public int getNumCharacters()
+    {
+        return characters.Count;
+    }
+
+    public void clearLists()
+    {
+        characters.Clear();
     }
 }

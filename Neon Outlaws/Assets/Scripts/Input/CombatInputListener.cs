@@ -24,6 +24,7 @@ public class CombatInputListener : MonoBehaviour {
     public ButtonAction buttonBlock;
 
     public NBCharacterController controller;
+    public float deadZone = 0.5f;
     
     public InputState curState = new InputState();
 
@@ -41,8 +42,7 @@ public class CombatInputListener : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (DeviceMapper.mapper.players.Count >= playerNum && !handled)
-            bindInput(playerNum - 1);
+
     }
 
     void FixedUpdate()
@@ -60,9 +60,10 @@ public class CombatInputListener : MonoBehaviour {
             //setButton(ult.control, out curState.ultimateAbility);
             setButton(buttonBlock.control, out curState.buttonBlock);
         }
-        if (controller != null)
-            controller.takeInput(curState);
-        curState = new InputState();
+        curState.xAsButton.fromAxis(curState.moveX, deadZone);
+        curState.yAsButton.fromAxis(curState.moveY, deadZone);
+        //if (controller != null)
+        //    controller.takeInput(getCurState());
     }
 
     public void bindInput(int index)
@@ -70,7 +71,6 @@ public class CombatInputListener : MonoBehaviour {
         handled = true;
         PlayerInfo info = DeviceMapper.mapper.players[index];
         pInput.handle = info.handle;
-        pInput.handle.maps[0].active = false;
         playerNum = info.playerNum;
         moveX.Bind(pInput.handle);
         moveY.Bind(pInput.handle);
@@ -87,16 +87,23 @@ public class CombatInputListener : MonoBehaviour {
 
     public void setCurState(InputState state)
     {
-        setAxis(state.moveX, out curState.moveX);
-        setAxis(state.moveY, out curState.moveY);
-        setButton(state.escape, out curState.escape);
-        setButton(state.lightAttack, out curState.lightAttack);
-        setButton(state.heavyAttack, out curState.heavyAttack);
-        setButton(state.abilityOne, out curState.abilityOne);
-        setButton(state.abilityTwo, out curState.abilityTwo);
-        setButton(state.abilityThree, out curState.abilityThree);
-        //setButton(state.ultimateAbility, out curState.ultimateAbility);
-        setButton(state.buttonBlock, out curState.buttonBlock);
+        InputState toAssign = new InputState(state);
+        setAxis(toAssign.moveX, out curState.moveX);
+        setAxis(toAssign.moveY, out curState.moveY);
+        setButton(toAssign.escape, out curState.escape);
+        setButton(toAssign.lightAttack, out curState.lightAttack);
+        setButton(toAssign.heavyAttack, out curState.heavyAttack);
+        setButton(toAssign.abilityOne, out curState.abilityOne);
+        setButton(toAssign.abilityTwo, out curState.abilityTwo);
+        setButton(toAssign.abilityThree, out curState.abilityThree);
+        //setButton(toAssign.ultimateAbility, out curState.ultimateAbility);
+        setButton(toAssign.buttonBlock, out curState.buttonBlock);
+    }
+
+    public InputState getCurState()
+    {
+        InputState ret = new InputState(curState);
+        return ret;
     }
 
     public void setAxis(float value, out float outAxis)
@@ -109,4 +116,8 @@ public class CombatInputListener : MonoBehaviour {
         outButton = value;
     }
 
+    public void setActive(bool active)
+    {
+        pInput.handle.maps[1].active = active;
+    }
 }

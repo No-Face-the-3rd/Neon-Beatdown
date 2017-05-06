@@ -1,0 +1,1423 @@
+fileFormatVersion: 2
+guid: 324b9e06402d11f42b73c3ddc7c5b98e
+timeCreated: 1494012550
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: detective_sprite_master 1_0
+    21300002: detective_sprite_master 1_1
+    21300004: detective_sprite_master 1_2
+    21300006: detective_sprite_master 1_3
+    21300008: detective_sprite_master 1_4
+    21300010: detective_sprite_master 1_5
+    21300012: detective_sprite_master 1_6
+    21300014: detective_sprite_master 1_7
+    21300016: detective_sprite_master 1_8
+    21300018: detective_sprite_master 1_9
+    21300020: detective_sprite_master 1_10
+    21300022: detective_sprite_master 1_11
+    21300024: detective_sprite_master 1_12
+    21300026: detective_sprite_master 1_13
+    21300028: detective_sprite_master 1_14
+    21300030: detective_sprite_master 1_15
+    21300032: detective_sprite_master 1_16
+    21300034: detective_sprite_master 1_17
+    21300036: detective_sprite_master 1_18
+    21300038: detective_sprite_master 1_19
+    21300040: detective_sprite_master 1_20
+    21300042: detective_sprite_master 1_21
+    21300044: detective_sprite_master 1_22
+    21300046: detective_sprite_master 1_23
+    21300048: detective_sprite_master 1_24
+    21300050: detective_sprite_master 1_25
+    21300052: detective_sprite_master 1_26
+    21300054: detective_sprite_master 1_27
+    21300056: detective_sprite_master 1_28
+    21300058: detective_sprite_master 1_29
+    21300060: detective_sprite_master 1_30
+    21300062: detective_sprite_master 1_31
+    21300064: detective_sprite_master 1_32
+    21300066: detective_sprite_master 1_33
+    21300068: detective_sprite_master 1_34
+    21300070: detective_sprite_master 1_35
+    21300072: detective_sprite_master 1_36
+    21300074: detective_sprite_master 1_37
+    21300076: detective_sprite_master 1_38
+    21300078: detective_sprite_master 1_39
+    21300080: detective_sprite_master 1_40
+    21300082: detective_sprite_master 1_41
+    21300084: detective_sprite_master 1_42
+    21300086: detective_sprite_master 1_43
+    21300088: detective_sprite_master 1_44
+    21300090: detective_sprite_master 1_45
+    21300092: detective_sprite_master 1_46
+    21300094: detective_sprite_master 1_47
+    21300096: detective_sprite_master 1_48
+    21300098: detective_sprite_master 1_49
+    21300100: detective_sprite_master 1_50
+    21300102: detective_sprite_master 1_51
+    21300104: detective_sprite_master 1_52
+    21300106: detective_sprite_master 1_53
+    21300108: detective_sprite_master 1_54
+    21300110: detective_sprite_master 1_55
+    21300112: detective_sprite_master 1_56
+    21300114: detective_sprite_master 1_57
+    21300116: detective_sprite_master 1_58
+    21300118: detective_sprite_master 1_59
+    21300120: detective_sprite_master 1_60
+    21300122: detective_sprite_master 1_61
+    21300124: detective_sprite_master 1_62
+    21300126: detective_sprite_master 1_63
+    21300128: detective_sprite_master 1_64
+    21300130: detective_sprite_master 1_65
+    21300132: detective_sprite_master 1_66
+    21300134: detective_sprite_master 1_67
+    21300136: detective_sprite_master 1_68
+    21300138: detective_sprite_master 1_69
+    21300140: detective_sprite_master 1_70
+    21300142: detective_sprite_master 1_71
+    21300144: detective_sprite_master 1_72
+    21300146: detective_sprite_master 1_73
+    21300148: detective_sprite_master 1_74
+    21300150: detective_sprite_master 1_75
+    21300152: detective_sprite_master 1_76
+    21300154: detective_sprite_master 1_77
+    21300156: detective_sprite_master 1_78
+    21300158: detective_sprite_master 1_80
+    21300160: detective_sprite_master 1_81
+    21300162: detective_sprite_master 1_82
+    21300164: detective_sprite_master 1_83
+    21300166: detective_sprite_master 1_84
+    21300168: detective_sprite_master 1_85
+    21300170: detective_sprite_master 1_87
+    21300172: detective_sprite_master 1_88
+    21300174: detective_sprite_master 1_90
+    21300176: detective_sprite_master 1_91
+    21300178: detective_sprite_master 1_92
+    21300180: detective_sprite_master 1_93
+    21300182: detective_sprite_master 1_94
+    21300184: detective_sprite_master 1_99
+    21300186: detective_sprite_master 1_100
+    21300188: detective_sprite_master 1_101
+    21300190: detective_sprite_master 1_102
+    21300192: detective_sprite_master_0
+    21300194: detective_sprite_master_1
+    21300196: detective_sprite_master_2
+    21300198: detective_sprite_master_3
+    21300200: detective_sprite_master_4
+    21300202: detective_sprite_master_5
+    21300204: detective_sprite_master_6
+    21300206: detective_sprite_master_7
+    21300208: detective_sprite_master_8
+    21300210: detective_sprite_master_9
+    21300212: detective_sprite_master_10
+    21300214: detective_sprite_master_11
+    21300216: detective_sprite_master_12
+    21300218: detective_sprite_master_13
+    21300220: detective_sprite_master_14
+    21300222: detective_sprite_master_15
+    21300224: detective_sprite_master_16
+    21300226: detective_sprite_master_17
+    21300228: detective_sprite_master_18
+    21300230: detective_sprite_master_19
+    21300232: detective_sprite_master_20
+    21300234: detective_sprite_master_21
+    21300236: detective_sprite_master_22
+    21300238: detective_sprite_master_23
+    21300240: detective_sprite_master_24
+    21300242: detective_sprite_master_25
+    21300244: detective_sprite_master_26
+    21300246: detective_sprite_master_27
+    21300248: detective_sprite_master_28
+    21300250: detective_sprite_master_29
+    21300252: detective_sprite_master_30
+    21300254: detective_sprite_master_31
+    21300256: detective_sprite_master_32
+    21300258: detective_sprite_master_33
+    21300260: detective_sprite_master_34
+    21300262: detective_sprite_master_35
+    21300264: detective_sprite_master_36
+    21300266: detective_sprite_master_37
+    21300268: detective_sprite_master_38
+    21300270: detective_sprite_master_39
+    21300272: detective_sprite_master_40
+    21300274: detective_sprite_master_41
+    21300276: detective_sprite_master_42
+    21300278: detective_sprite_master_43
+    21300280: detective_sprite_master_44
+    21300282: detective_sprite_master_45
+    21300284: detective_sprite_master_46
+    21300286: detective_sprite_master_47
+    21300288: detective_sprite_master_48
+    21300290: detective_sprite_master_49
+    21300292: detective_sprite_master_50
+    21300294: detective_sprite_master_51
+    21300296: detective_sprite_master_52
+    21300298: detective_sprite_master_53
+    21300300: detective_sprite_master_54
+    21300302: detective_sprite_master_55
+    21300304: detective_sprite_master_56
+    21300306: detective_sprite_master_57
+    21300308: detective_sprite_master_58
+    21300310: detective_sprite_master_59
+    21300312: detective_sprite_master_60
+    21300314: detective_sprite_master_61
+    21300316: detective_sprite_master_62
+    21300318: detective_sprite_master_63
+    21300320: detective_sprite_master_64
+    21300322: detective_sprite_master_65
+    21300324: detective_sprite_master_66
+    21300326: detective_sprite_master_67
+    21300328: detective_sprite_master_68
+    21300330: detective_sprite_master_69
+    21300332: detective_sprite_master_70
+    21300334: detective_sprite_master_71
+    21300336: detective_sprite_master_72
+    21300338: detective_sprite_master_73
+    21300340: detective_sprite_master_74
+    21300342: detective_sprite_master_75
+    21300344: detective_sprite_master_76
+    21300346: detective_sprite_master_77
+    21300348: detective_sprite_master_78
+    21300350: detective_sprite_master_79
+    21300352: detective_sprite_master_80
+    21300354: detective_sprite_master_81
+    21300356: detective_sprite_master_82
+    21300358: detective_sprite_master_83
+    21300360: detective_sprite_master_84
+    21300362: detective_sprite_master_85
+    21300364: detective_sprite_master_86
+    21300366: detective_sprite_master_87
+    21300368: detective_sprite_master_88
+    21300370: detective_sprite_master_89
+    21300372: detective_sprite_master_90
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 25
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: detective_sprite_master_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1848
+        width: 112
+        height: 191
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_1
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 1847
+        width: 106
+        height: 193
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_2
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 1847
+        width: 112
+        height: 190
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_3
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 1847
+        width: 113
+        height: 193
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_4
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 1847
+        width: 99
+        height: 192
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_5
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 1851
+        width: 81
+        height: 186
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_6
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 1844
+        width: 106
+        height: 194
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_7
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 1847
+        width: 77
+        height: 192
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_8
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 1846
+        width: 153
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_9
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 1848
+        width: 157
+        height: 192
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_10
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 1848
+        width: 153
+        height: 192
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_11
+      rect:
+        serializedVersion: 2
+        x: 1457
+        y: 1847
+        width: 153
+        height: 190
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_12
+      rect:
+        serializedVersion: 2
+        x: 1626
+        y: 1847
+        width: 96
+        height: 190
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_13
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 1847
+        width: 160
+        height: 169
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_14
+      rect:
+        serializedVersion: 2
+        x: 1925
+        y: 1836
+        width: 111
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_15
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 1621
+        width: 149
+        height: 207
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_16
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 1620
+        width: 107
+        height: 168
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_17
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 1626
+        width: 103
+        height: 215
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_18
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 1647
+        width: 93
+        height: 165
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_19
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 1638
+        width: 85
+        height: 172
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_20
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 1621
+        width: 91
+        height: 151
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_21
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 1627
+        width: 109
+        height: 190
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_22
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 1627
+        width: 120
+        height: 191
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_23
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1700
+        width: 58
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_24
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 1691
+        width: 70
+        height: 97
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_25
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 1621
+        width: 138
+        height: 181
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_26
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 1622
+        width: 174
+        height: 160
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_27
+      rect:
+        serializedVersion: 2
+        x: 1524
+        y: 1626
+        width: 190
+        height: 165
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_28
+      rect:
+        serializedVersion: 2
+        x: 1731
+        y: 1620
+        width: 171
+        height: 182
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_29
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1416
+        width: 138
+        height: 185
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_30
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 1416
+        width: 110
+        height: 190
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_31
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 1417
+        width: 179
+        height: 184
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_32
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 1416
+        width: 184
+        height: 180
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_33
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1418
+        width: 116
+        height: 178
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_34
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 1419
+        width: 126
+        height: 181
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_35
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 1415
+        width: 178
+        height: 185
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_36
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 1415
+        width: 170
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_37
+      rect:
+        serializedVersion: 2
+        x: 1411
+        y: 1417
+        width: 248
+        height: 134
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_38
+      rect:
+        serializedVersion: 2
+        x: 1683
+        y: 1406
+        width: 182
+        height: 183
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_39
+      rect:
+        serializedVersion: 2
+        x: 1895
+        y: 1404
+        width: 127
+        height: 187
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_40
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 1218
+        width: 101
+        height: 174
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_41
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 1218
+        width: 106
+        height: 173
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_42
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1218
+        width: 101
+        height: 165
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_43
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 1219
+        width: 101
+        height: 169
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_44
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1216
+        width: 160
+        height: 172
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_45
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 1211
+        width: 120
+        height: 176
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_46
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 1238
+        width: 130
+        height: 134
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_47
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 1221
+        width: 98
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_48
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 1245
+        width: 265
+        height: 119
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_49
+      rect:
+        serializedVersion: 2
+        x: 1419
+        y: 1170
+        width: 109
+        height: 202
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_50
+      rect:
+        serializedVersion: 2
+        x: 1552
+        y: 1172
+        width: 92
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_51
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 1170
+        width: 54
+        height: 202
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_52
+      rect:
+        serializedVersion: 2
+        x: 1736
+        y: 1170
+        width: 85
+        height: 206
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_53
+      rect:
+        serializedVersion: 2
+        x: 1838
+        y: 1170
+        width: 88
+        height: 206
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_54
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 965
+        width: 106
+        height: 202
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_55
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 964
+        width: 111
+        height: 204
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_56
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 965
+        width: 114
+        height: 216
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_57
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 965
+        width: 112
+        height: 203
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_58
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 966
+        width: 114
+        height: 195
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_59
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 966
+        width: 116
+        height: 198
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_60
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 966
+        width: 125
+        height: 194
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_61
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 966
+        width: 128
+        height: 192
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_62
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 965
+        width: 314
+        height: 190
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_63
+      rect:
+        serializedVersion: 2
+        x: 1525
+        y: 967
+        width: 398
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_64
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 623
+        width: 154
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_65
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 623
+        width: 169
+        height: 218
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_66
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 622
+        width: 118
+        height: 270
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_67
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 620
+        width: 106
+        height: 330
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_68
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 616
+        width: 142
+        height: 222
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_69
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 622
+        width: 153
+        height: 211
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_70
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 612
+        width: 194
+        height: 214
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_71
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 616
+        width: 196
+        height: 228
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_72
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 625
+        width: 213
+        height: 178
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_73
+      rect:
+        serializedVersion: 2
+        x: 1646
+        y: 626
+        width: 207
+        height: 135
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_74
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 300
+        width: 206
+        height: 257
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_75
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 300
+        width: 204
+        height: 250
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_76
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 300
+        width: 212
+        height: 169
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_77
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 300
+        width: 164
+        height: 232
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_78
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 300
+        width: 115
+        height: 241
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_79
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 305
+        width: 83
+        height: 231
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_80
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 302
+        width: 88
+        height: 231
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_81
+      rect:
+        serializedVersion: 2
+        x: 1285
+        y: 302
+        width: 123
+        height: 230
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_82
+      rect:
+        serializedVersion: 2
+        x: 1457
+        y: 305
+        width: 153
+        height: 247
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_83
+      rect:
+        serializedVersion: 2
+        x: 1678
+        y: 302
+        width: 133
+        height: 227
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_84
+      rect:
+        serializedVersion: 2
+        x: 1895
+        y: 300
+        width: 127
+        height: 225
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_85
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 48
+        width: 157
+        height: 200
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_86
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 50
+        width: 181
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: detective_sprite_master_87
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 48
+        width: 275
+        height: 72
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
