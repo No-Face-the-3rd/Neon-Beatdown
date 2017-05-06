@@ -12,6 +12,7 @@ public class RoundVictoryManager : MonoBehaviour {
     public Timer transitionTimer;
 
     private int currentRound = 0;
+    public StageInitData stage;
 
     private enum TransitionState
     {
@@ -33,7 +34,8 @@ public class RoundVictoryManager : MonoBehaviour {
         {
             numVictories.Add(0);
         }
-
+        stage = FindObjectOfType<StageInitData>();
+        prepareRound();
 	}
 	
 	// Update is called once per frame
@@ -42,25 +44,64 @@ public class RoundVictoryManager : MonoBehaviour {
 
         transitionTimer.update();
 
+        switch(transition)
+        {
+            case TransitionState.PREROUND:
+                if (transitionTimer.isPassed())
+                {
+                    startRound();
+                }
+                break;
+            case TransitionState.POSTROUND:
+                if(transitionTimer.isPassed())
+                {
+                    prepareRound();
+                }
+                break;
+            case TransitionState.ROUND:
+
+
+
+                break;
+        }
+
+
         doMarkers();
 	}
+
+
+    void spawnCharacters()
+    {
+        for(int i = 0;i < DeviceMapper.mapper.maxPlayers;i++)
+        {
+            MenuInputListener mil = PlayerLocator.locator.getMenuListener(i + 1);
+            GameObject tmp = Instantiate(ObjectDB.data.getCharacter(
+                mil.selectedCharacter),stage.startingPos[i],Quaternion.identity);
+                mil.setActive(false);
+
+        }
+    }
 
     void prepareRound()
     {
         transition = TransitionState.PREROUND;
         timerMan.resetRound();
+        stage.resetPositions();
     }
 
     void startRound()
     {
         transition = TransitionState.ROUND;
         timerMan.startRound();
+        transitionTimer.resetTimer();
     }
 
     void endRound()
     {
         transition = TransitionState.POSTROUND;
         timerMan.resetRound();
+        transitionTimer.resetTimer();
+        transitionTimer.setActive(true);
     }
 
     void endMatch()

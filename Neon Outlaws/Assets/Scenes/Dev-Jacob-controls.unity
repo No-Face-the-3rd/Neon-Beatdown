@@ -1786,7 +1786,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 773490818}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ca419e37215fa346b1a8014cb4514c0, type: 3}
   m_Name: 
@@ -42450,6 +42450,7 @@ MonoBehaviour:
   resumeAction:
     action: {fileID: 114610340763726446, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
   selectedCharacter: 1
+  hasSelected: 0
   deadZone: 0.5
   curState:
     horizNav: 0

@@ -114,7 +114,6 @@ public class HealthbarManager : MonoBehaviour {
             if (character != null)
             {
                 healthBars[i].sliderBar.value = character.getCurHealthPercent();
-                PlayerLocator.locator.getMenuListener(character.playerNum).setActive(false);
             }
         }
     }
