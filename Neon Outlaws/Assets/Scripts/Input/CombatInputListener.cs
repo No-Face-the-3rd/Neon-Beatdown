@@ -62,6 +62,15 @@ public class CombatInputListener : MonoBehaviour {
         }
         curState.xAsButton.fromAxis(curState.moveX, deadZone);
         curState.yAsButton.fromAxis(curState.moveY, deadZone);
+
+        //jank
+        {
+            if(curState.escape.wasReleased)
+            {
+                CombatInputListener cil = GetComponent<CombatInputListener>();
+                cil.overrideAI = overrideAI = !overrideAI;
+            }
+        }
         //if (controller != null)
         //    controller.takeInput(getCurState());
     }
