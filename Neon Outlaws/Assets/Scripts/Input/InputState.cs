@@ -61,6 +61,7 @@ public class ButtonInfo
                 wasReleased = true;
                 isDown = false;
             }
+            isHeld = false;
         }
     }
 

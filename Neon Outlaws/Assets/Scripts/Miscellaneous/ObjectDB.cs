@@ -26,6 +26,8 @@ public class ObjectDB : MonoBehaviour {
     [SerializeField]
     private List<GameObject> genericPrefabs;
 
+    public int selectedStage = -1;
+
 
 	// Use this for initialization
 	void Start () {

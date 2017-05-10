@@ -10,6 +10,7 @@ public class Timer {
 
     public void startTimer()
     {
+        resetTimer();
         setActive(true);
     }
 
