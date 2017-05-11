@@ -81,7 +81,7 @@ public class NBCharacterController : MonoBehaviour
 
     public List<int> attackIndices = new List<int>();
 
-
+    [SerializeField]
     private float curHealth = 0.0f;
     public float maxHealth = 1000.0f;
 
@@ -477,6 +477,11 @@ public class NBCharacterController : MonoBehaviour
         heavyCharge = Mathf.Clamp(heavyCharge, 0, maxHeavyChargeTime);
     }
 
+    public int getHeavyCharge()
+    {
+        return heavyCharge;
+    }
+
     void doLightAttack()
     {
         numConsecutiveLights++;
@@ -488,7 +493,6 @@ public class NBCharacterController : MonoBehaviour
     {
         numConsecutiveLights = 0;
         spawnAttack(2, 0.0f);
-
     }
 
     void doHeavyAttack()
@@ -527,6 +531,12 @@ public class NBCharacterController : MonoBehaviour
         damage.damage += damageModifier;
         tmp.transform.localScale = gameObject.transform.localScale;
         Physics2D.IgnoreCollision(tmp.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>());
+    }
+
+    public void reset()
+    {
+        curHealth = maxHealth;
+        currentCharacterState = CharacterState.Idle;
     }
 
 }
