@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterLocator : MonoBehaviour {
     public static CharacterLocator locator;
 
-    List<NBCharacterController> characters;
+    public List<NBCharacterController> characters;
 
 	// Use this for initialization
 	void Start () {

@@ -62,7 +62,7 @@ public class MyInputModule : BaseInputModule
     bool sendAxisEvent()
     {
         bool ret = false;
-        float time = Time.unscaledTime;
+        float time = Time.time;
         if (allowMove(time))
             return ret;
 
@@ -78,15 +78,21 @@ public class MyInputModule : BaseInputModule
         return ret;
     }
 
-
-
     bool sendButtonEvent()
     {
         bool ret = false;
+        float time = Time.time;
+        if (allowButton(time))
+            return ret;
+
         if (eventSystem.currentSelectedGameObject == null)
             return ret;
 
         BaseEventData bed = GetBaseEventData();
+
+        ExecuteEvents.Execute(eventSystem.currentSelectedGameObject,
+            bed, ExecuteEvents.updateSelectedHandler);
+
         if (inputState.accept.wasPressed)
         {
             ExecuteEvents.Execute(eventSystem.currentSelectedGameObject,
@@ -99,6 +105,7 @@ public class MyInputModule : BaseInputModule
         }
 
         ret = bed.used;
+        nextActionTime = time + 1.0f / inputActionsPerSecond;
         return ret;
     }
 
@@ -106,6 +113,14 @@ public class MyInputModule : BaseInputModule
     {
         bool ret = inputState.horizAsButton.wasPressed;
         ret |= inputState.vertAsButton.wasPressed;
+        ret |= (curTime > nextActionTime);
+        return !ret;
+    }
+
+    bool allowButton(float curTime)
+    {
+        bool ret = inputState.accept.wasPressed;
+        ret |= inputState.decline.wasPressed;
         ret |= (curTime > nextActionTime);
         return !ret;
     }

@@ -11,7 +11,8 @@ public class HealthBarElements
 }
 
 
-public class ObjectDB : MonoBehaviour {
+public class ObjectDB : MonoBehaviour
+{
     public static ObjectDB data;
 
     [SerializeField]
@@ -22,32 +23,38 @@ public class ObjectDB : MonoBehaviour {
     private List<GameObject> levels;
     [SerializeField]
     private List<HealthBarElements> healthBars;
+    [SerializeField]
+    private List<AnimationCurve> curves;
 
     [SerializeField]
     private List<GameObject> genericPrefabs;
 
+    public int selectedStage = -1;
 
-	// Use this for initialization
-	void Start () {
-		if(data == null)
+
+    // Use this for initialization
+    void Start()
+    {
+        if (data == null)
         {
             data = this;
             DontDestroyOnLoad(gameObject);
         }
-        else if(data != this)
+        else if (data != this)
         {
             Destroy(gameObject);
         }
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     public GameObject getCharacter(int index)
     {
-        if(withinRange(index,0, characters.Count))
+        if (withinRange(index, 0, characters.Count - 1))
         {
             return characters[index];
         }
@@ -56,10 +63,10 @@ public class ObjectDB : MonoBehaviour {
             return null;
         }
     }
-    
+
     public GameObject getAttack(int index)
     {
-        if(withinRange(index, 0, attacks.Count))
+        if (withinRange(index, 0, attacks.Count - 1))
         {
             return attacks[index];
         }
@@ -71,7 +78,7 @@ public class ObjectDB : MonoBehaviour {
 
     public GameObject getLevel(int index)
     {
-        if(withinRange(index,0,levels.Count))
+        if (withinRange(index, 0, levels.Count - 1))
         {
             return levels[index];
         }
@@ -83,7 +90,7 @@ public class ObjectDB : MonoBehaviour {
 
     public HealthBarElements getHealthbar(int index)
     {
-        if(withinRange(index, 0, healthBars.Count))
+        if (withinRange(index, 0, healthBars.Count - 1))
         {
             return healthBars[index];
         }
@@ -95,7 +102,7 @@ public class ObjectDB : MonoBehaviour {
 
     public GameObject getPrefab(int index)
     {
-        if(withinRange(index, 0,genericPrefabs.Count))
+        if (withinRange(index, 0, genericPrefabs.Count - 1))
         {
             return genericPrefabs[index];
         }
@@ -106,6 +113,14 @@ public class ObjectDB : MonoBehaviour {
     }
 
     public bool withinRange(int value, int min, int max)
+    {
+        if (value >= min && value <= max)
+            return true;
+        else
+            return false;
+    }
+
+    public bool withinRange(float value, float min, float max)
     {
         if (value >= min && value <= max)
             return true;
@@ -136,5 +151,29 @@ public class ObjectDB : MonoBehaviour {
     public int getNumPrefabs()
     {
         return genericPrefabs.Count;
+    }
+
+
+    public float computeCurve(int curveInd, float time)
+    {
+        if (withinRange(curveInd, 0, curves.Count - 1))
+        {
+            float ret = 0.0f;
+            if (withinRange(time, curves[curveInd].keys[0].time,
+                curves[curveInd].keys[curves[curveInd].keys.Length - 1].time))
+            {
+                ret = curves[curveInd].Evaluate(time);
+            }
+            else
+            {
+                ret = float.NaN;
+            }
+            return ret;
+        }
+        else
+        {
+            return float.NaN;
+        }
+
     }
 }
