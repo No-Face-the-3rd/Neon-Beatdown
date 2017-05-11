@@ -93,7 +93,7 @@ public class MyInputModule : BaseInputModule
         ExecuteEvents.Execute(eventSystem.currentSelectedGameObject,
             bed, ExecuteEvents.updateSelectedHandler);
 
-        if (inputState.accept.wasReleased)
+        if (inputState.accept.wasPressed)
         {
             ExecuteEvents.Execute(eventSystem.currentSelectedGameObject,
                 bed, ExecuteEvents.submitHandler);
