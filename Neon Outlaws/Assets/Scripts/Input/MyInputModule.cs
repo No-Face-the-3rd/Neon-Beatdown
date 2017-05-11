@@ -78,8 +78,6 @@ public class MyInputModule : BaseInputModule
         return ret;
     }
 
-
-
     bool sendButtonEvent()
     {
         bool ret = false;
@@ -87,7 +85,11 @@ public class MyInputModule : BaseInputModule
             return ret;
 
         BaseEventData bed = GetBaseEventData();
-        if (inputState.accept.wasPressed)
+
+        ExecuteEvents.Execute(eventSystem.currentSelectedGameObject,
+            bed, ExecuteEvents.updateSelectedHandler);
+
+        if (inputState.accept.wasReleased)
         {
             ExecuteEvents.Execute(eventSystem.currentSelectedGameObject,
                 bed, ExecuteEvents.submitHandler);

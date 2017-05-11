@@ -26,6 +26,7 @@ public class DamageDealer : MonoBehaviour {
             {
                 Physics2D.IgnoreCollision(collider, gameObject.GetComponent<Collider2D>());
                 other.beDamaged(damage);
+                Debug.Log(damage);
             }
         }
     }

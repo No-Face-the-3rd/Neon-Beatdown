@@ -16,6 +16,7 @@ public class MenuInputListener : MonoBehaviour {
     public ButtonAction resumeAction;
 
     public int selectedCharacter = -1;
+    public bool hasSelected = false;
     public float deadZone = 0.5f;
 
     public menuInputState curState = new menuInputState();
