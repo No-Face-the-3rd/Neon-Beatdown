@@ -40,7 +40,6 @@ public class BlockGoal : BaseGoal
                     }
                 }
             }
-            Debug.Log(ind);
             float desire = distance.Evaluate(curDist) + startupOfAttack.Evaluate(ind);
             float desireWeight = distanceW.Evaluate(curDist) + startupOfAttackW.Evaluate(ind);
 

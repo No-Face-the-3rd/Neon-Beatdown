@@ -66,10 +66,20 @@ MonoBehaviour:
     action: {fileID: 114663407223743340, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
   resumeAction:
     action: {fileID: 114610340763726446, guid: 3b4c4612996b33f43b227f877a33b263, type: 2}
-  selectedCharacter: -1
+  selectedCharacter: 0
+  hasSelected: 0
+  deadZone: 0.5
   curState:
     horizNav: 0
     vertNav: 0
+    horizAsButton:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    vertAsButton:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
     accept:
       wasPressed: 0
       wasReleased: 0
@@ -114,9 +124,18 @@ MonoBehaviour:
   buttonBlock:
     action: {fileID: 114674364586557058, guid: b3de249d5ffbf8549b030b89752a15b4, type: 2}
   controller: {fileID: 0}
+  deadZone: 0.5
   curState:
     moveX: 0
     moveY: 0
+    xAsButton:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    yAsButton:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
     escape:
       wasPressed: 0
       wasReleased: 0
