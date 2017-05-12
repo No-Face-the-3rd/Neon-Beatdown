@@ -42,7 +42,8 @@ public class NBCharacterController : MonoBehaviour
     public float walkSpeedBackward;
     public float dashSpeedForward;
     public float dashSpeedBackward;
-    public int dashLeeway;
+    [SerializeField]
+    private int dashLeeway;
     public float maxJumpHeight;
     public float maxJumpTime;
     public float fallTime;

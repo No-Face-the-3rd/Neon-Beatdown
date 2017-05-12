@@ -10,6 +10,13 @@ public class HealthBarElements
     public Sprite counterFill;
 }
 
+[System.Serializable]
+public class ourCurve
+{
+    public string label;
+    public AnimationCurve curve;
+}
+
 
 public class ObjectDB : MonoBehaviour
 {
@@ -24,7 +31,7 @@ public class ObjectDB : MonoBehaviour
     [SerializeField]
     private List<HealthBarElements> healthBars;
     [SerializeField]
-    private List<AnimationCurve> curves;
+    private List<ourCurve> curves;
 
     [SerializeField]
     private List<GameObject> genericPrefabs;
@@ -54,7 +61,7 @@ public class ObjectDB : MonoBehaviour
 
     public GameObject getCharacter(int index)
     {
-        if (withinRange(index, 0, characters.Count - 1))
+        if (withinRange(index, 0, getNumCharacters() - 1))
         {
             return characters[index];
         }
@@ -66,7 +73,7 @@ public class ObjectDB : MonoBehaviour
 
     public GameObject getAttack(int index)
     {
-        if (withinRange(index, 0, attacks.Count - 1))
+        if (withinRange(index, 0, getNumAttacks() - 1))
         {
             return attacks[index];
         }
@@ -78,7 +85,7 @@ public class ObjectDB : MonoBehaviour
 
     public GameObject getLevel(int index)
     {
-        if (withinRange(index, 0, levels.Count - 1))
+        if (withinRange(index, 0, getNumLevels() - 1))
         {
             return levels[index];
         }
@@ -90,7 +97,7 @@ public class ObjectDB : MonoBehaviour
 
     public HealthBarElements getHealthbar(int index)
     {
-        if (withinRange(index, 0, healthBars.Count - 1))
+        if (withinRange(index, 0, getNumHealthBars() - 1))
         {
             return healthBars[index];
         }
@@ -102,9 +109,20 @@ public class ObjectDB : MonoBehaviour
 
     public GameObject getPrefab(int index)
     {
-        if (withinRange(index, 0, genericPrefabs.Count - 1))
+        if (withinRange(index, 0, getNumPrefabs() - 1))
         {
             return genericPrefabs[index];
+        }
+        else
+        {
+            return null;
+        }
+    }
+    public AnimationCurve getCurve(int index)
+    {
+        if(withinRange(index, 0, getNumCurves() - 1))
+        {
+            return curves[index].curve;
         }
         else
         {
@@ -153,16 +171,20 @@ public class ObjectDB : MonoBehaviour
         return genericPrefabs.Count;
     }
 
+    public int getNumCurves()
+    {
+        return curves.Count;
+    }
 
     public float computeCurve(int curveInd, float time)
     {
         if (withinRange(curveInd, 0, curves.Count - 1))
         {
             float ret = 0.0f;
-            if (withinRange(time, curves[curveInd].keys[0].time,
-                curves[curveInd].keys[curves[curveInd].keys.Length - 1].time))
+            if (withinRange(time, curves[curveInd].curve.keys[0].time,
+                curves[curveInd].curve.keys[curves[curveInd].curve.keys.Length - 1].time))
             {
-                ret = curves[curveInd].Evaluate(time);
+                ret = curves[curveInd].curve.Evaluate(time);
             }
             else
             {
