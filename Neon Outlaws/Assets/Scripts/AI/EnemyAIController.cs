@@ -57,7 +57,7 @@ public class EnemyAIController : MonoBehaviour
         //temp awake fix
         if (cil != null && enemyController != null)
         {
-            cil.overrideAI = false;
+            
             //temp menu listener fix
             if (enemyController != null)
             {
