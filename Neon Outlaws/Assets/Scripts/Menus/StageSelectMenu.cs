@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class StageSelectMenu : MonoBehaviour {
     menuInputState inputState;
     MenuInputListener menuInputListener;
@@ -11,7 +10,7 @@ public class StageSelectMenu : MonoBehaviour {
     public GameObject stageSelectPanel;
     public GameObject characterSelectPanel;
     public GameObject[] stageButtons; // Selectable images (down below)
-    public GameObject[] stagePreviewImages;      // Large images
+    public GameObject[] stagePreviewImages; // Large images
     //public GameObject stageSelectImage; // Highlight border
 
     void Awake() {
@@ -20,23 +19,12 @@ public class StageSelectMenu : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        if (menuInputListener != null)
-        {
+        if (menuInputListener != null) {
             TakeInput(menuInputListener.getCurState());
         }
-        else
-        {
+        else {
             menuInputListener = PlayerLocator.locator.getMenuListener(1);
-        }
-
-        for (int i = 0; i < stageButtons.Length; i++)
-        {
-            for (int j = 0; i < stagePreviewImages.Length; i++)
-            {
-                //stageSelectImage.transform.position = stageButtons[i].transform.position;
-                stagePreviewImages[j] = stageButtons[i]; 
-            }
-        }
+        }        
     }
 
     void TakeInput(menuInputState theMenuInputState) {
@@ -51,5 +39,4 @@ public class StageSelectMenu : MonoBehaviour {
         stageSelectPanel.SetActive(false);
         characterSelectPanel.SetActive(true);
     }
-
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CharacterSelectMenu : MonoBehaviour {
-    MainMenu mainMenu;
     menuInputState inputState;
     MenuInputListener menuInputListener;
 
@@ -30,17 +29,14 @@ public class CharacterSelectMenu : MonoBehaviour {
     //}
 
     void FixedUpdate() {
-        if (menuInputListener != null)
-        {
+        if (menuInputListener != null) {
             TakeInput(menuInputListener.getCurState());
         }
-        else
-        {
+        else {
             menuInputListener = PlayerLocator.locator.getMenuListener(1);
         }
 
-        for (int i = 0; i < characterImages.Length; i++)
-        {
+        for (int i = 0; i < characterImages.Length; i++) {
             //if (inputState.vertNav < .05f)
             //    i += 1;
             //if (inputState.vertNav < .05f)
@@ -49,20 +45,14 @@ public class CharacterSelectMenu : MonoBehaviour {
             player1Outline.transform.position = characterImages[i].transform.position;
         }
         
-        for(int i = 1;i <= DeviceMapper.mapper.maxPlayers;i++)
-        {
+        for(int i = 1;i <= DeviceMapper.mapper.maxPlayers;i++) {
             menuInputListener = PlayerLocator.locator.getMenuListener(i);
-            if(menuInputListener != null)
-            {
+            if(menuInputListener != null) {
                 TakeInput(menuInputListener.getCurState());
                 characterSelected[i - 1] = menuInputListener.hasSelected;
-                if (nextAction[i - 1] < Time.time)
-                {
-
-                    if (!menuInputListener.hasSelected)
-                    {
-                        if (inputState.accept.wasPressed)
-                        {
+                if (nextAction[i - 1] < Time.time) { 
+                    if (!menuInputListener.hasSelected) {
+                        if (inputState.accept.wasPressed) {
                             if (menuInputListener.selectedCharacter == 4)
                                 menuInputListener.selectedCharacter = Random.Range(0, 4);
                             menuInputListener.hasSelected = true;
@@ -70,8 +60,7 @@ public class CharacterSelectMenu : MonoBehaviour {
                         }
 
                         if(inputState.horizAsButton.wasPressed ||
-                            inputState.vertAsButton.wasPressed)
-                        {
+                            inputState.vertAsButton.wasPressed) {
                             nextAction[i - 1] = Time.time + 1.0f / actionsPerSec;
                         }
                         int horizontal = (inputState.horizAsButton.wasPressed ?
@@ -83,27 +72,20 @@ public class CharacterSelectMenu : MonoBehaviour {
                         menuInputListener.selectedCharacter += horizontal + vertical;
                         menuInputListener.selectedCharacter = (menuInputListener.selectedCharacter + 5) % 5;
                     }
-                    else
-                    {
-                        if (inputState.decline.wasReleased)
-                        {
+                    else {
+                        if (inputState.decline.wasReleased) {
                             menuInputListener.hasSelected = false;
                             nextAction[i - 1] = Time.time + 1.0f / actionsPerSec;
                         }
                     }
                 }
 
-                if (i == 1)
-                {
-   
+                if (i == 1) { 
                     player1Outline.transform.position = characterImages[menuInputListener.selectedCharacter].transform.position;
                 }
-                if(i == 2)
-                {
+                if(i == 2) {
                     player2Outline.transform.position = characterImages[menuInputListener.selectedCharacter].transform.position;
-                }
-
-                                   
+                }                    
             }
         }       
     }
@@ -122,20 +104,17 @@ public class CharacterSelectMenu : MonoBehaviour {
 
     public void LoadStageSelect() {
         bool allReady = true;
-        for (int i = 0; i < characterSelected.Length; i++)
-        {
-            if (!characterSelected[i])
-            {
+        for (int i = 0; i < characterSelected.Length; i++) {
+            if (!characterSelected[i]) {
                 allReady = false;
                 break;
             }
         }
 
-        if (allReady)
-        {
+        if (allReady) {
             characterSelectPanel.SetActive(false);
             stageSelectPanel.SetActive(true);
-            menuEventSystem.SetSelectedGameObject(mainMenu.startingStageSelectButton);
+            menuEventSystem.SetSelectedGameObject(mainMenuButtons.startingStageSelectButton);
         }
     }
 }

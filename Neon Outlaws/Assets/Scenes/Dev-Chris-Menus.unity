@@ -6971,6 +6971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a7073013c9377f498b557789dea115a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenu: {fileID: 0}
   mainMenuButtons: {fileID: 1893067175}
   menuEventSystem: {fileID: 871160144}
   characterSelectPanel: {fileID: 1409956829}
@@ -8757,6 +8758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a7073013c9377f498b557789dea115a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenu: {fileID: 1893067175}
   mainMenuButtons: {fileID: 1893067175}
   menuEventSystem: {fileID: 871160144}
   characterSelectPanel: {fileID: 1409956829}
@@ -8787,14 +8789,13 @@ MonoBehaviour:
   stageSelectPanel: {fileID: 722814607}
   characterSelectPanel: {fileID: 1409956829}
   stageButtons:
-  - {fileID: 64119848}
-  - {fileID: 643759264}
-  - {fileID: 381002660}
+  - {fileID: 64119844}
+  - {fileID: 643759260}
+  - {fileID: 381002656}
   stagePreviewImages:
   - {fileID: 839665540}
   - {fileID: 943169918}
   - {fileID: 216352812}
-  stageSelectImage: {fileID: 402959444}
 --- !u!1 &1893395705
 GameObject:
   m_ObjectHideFlags: 0
