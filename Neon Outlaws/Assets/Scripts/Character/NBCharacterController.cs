@@ -42,7 +42,8 @@ public class NBCharacterController : MonoBehaviour
     public float walkSpeedBackward;
     public float dashSpeedForward;
     public float dashSpeedBackward;
-    public int dashLeeway;
+    [SerializeField]
+    private int dashLeeway;
     public float maxJumpHeight;
     public float maxJumpTime;
     public float fallTime;
@@ -398,14 +399,18 @@ public class NBCharacterController : MonoBehaviour
 
     void doFace()
     {
-        NBCharacterController opponent = 
-            CharacterLocator.locator.getCharacter((playerNum % 2) + 1);
-        if (opponent != null)
+        CharacterState affectedStates = CharacterState.Idle | CharacterState.Walk | CharacterState.Crouch;
+        if ((currentCharacterState & affectedStates) != 0)
         {
-            float facing =
-                Mathf.Sign(opponent.transform.position.x - transform.position.x);
-            transform.localScale = new Vector3(facing * Mathf.Abs(transform.localScale.x),
-                transform.localScale.y, transform.localScale.z);
+            NBCharacterController opponent =
+                CharacterLocator.locator.getCharacter((playerNum % 2) + 1);
+            if (opponent != null)
+            {
+                float facing =
+                    Mathf.Sign(opponent.transform.position.x - transform.position.x);
+                transform.localScale = new Vector3(facing * Mathf.Abs(transform.localScale.x),
+                    transform.localScale.y, transform.localScale.z);
+            }
         }
     }
 
