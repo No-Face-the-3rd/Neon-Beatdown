@@ -15115,9 +15115,9 @@ MonoBehaviour:
   dashSpeedForward: 8
   dashSpeedBackward: 6
   dashLeeway: 10
-  maxJumpHeight: 10
+  maxJumpHeight: 12
   maxJumpTime: 0.25
-  fallTime: 0.15
+  fallTime: 0.2
   jumpHorizontalModifier: 2.5
   buttonBlock: 1
   idleStopRatio: 0.4
@@ -41854,7 +41854,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300362, guid: 324b9e06402d11f42b73c3ddc7c5b98e, type: 3}
+  m_Sprite: {fileID: 21300196, guid: 324b9e06402d11f42b73c3ddc7c5b98e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
