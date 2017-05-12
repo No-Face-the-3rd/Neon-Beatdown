@@ -57,32 +57,36 @@ public class EnemyAIController : MonoBehaviour
         //temp awake fix
         if (cil != null && enemyController != null)
         {
-            bool lightAttack = false;
-            bool heavyAttack = false;
-            bool block = false;
-            cil.overrideAI = false;
+            
+            //temp menu listener fix
             if (enemyController != null)
             {
                 MenuInputListener mil = PlayerLocator.locator.getMenuListener(enemyController.playerNum);
                 if (mil != null)
                 mil.setActive(false);
             }
+
+            bool lightAttack = false;
+            bool heavyAttack = false;
+            bool block = false;
             inputState = new InputState();
-            //horizontal movement based on my horizontal animation curves
+            //horizontal movement evaluation
             float horizontalDesire = evaluateGoal(InputTarget.horizontal);
             inputState.moveX = horizontalDesire * selfController.transform.localScale.x;
 
             //light attack evaluation
-                        lightAttack = evaluateAttack(1.0f,InputTarget.lightAttack);
-                        inputState.lightAttack.setPressState(lightAttack);
+            lightAttack = evaluateAttack(1.0f,InputTarget.lightAttack);
+            inputState.lightAttack.setPressState(lightAttack);
 
             //heavy attack evaluation
-                        heavyAttack = evaluateAttack(1.0f, InputTarget.heavyAttack);
-                        inputState.heavyAttack.setPressState(heavyAttack);
+            heavyAttack = evaluateAttack(1.0f, InputTarget.heavyAttack);
+            inputState.heavyAttack.setPressState(heavyAttack);
 
             //block evaluation
             block = evaluateAttack(1.0f, InputTarget.block);
             inputState.buttonBlock.setPressState(block);
+
+
             //send inputs
             cil.setCurState(inputState);
         }
@@ -167,9 +171,8 @@ public class EnemyAIController : MonoBehaviour
 
     /*
      plan:
-     goal scripts push a desire to this script based on inputs (ie horizontal, jumping, crouch, attacks, block)
-     this script will take those goal's desires and divide by their weight
-     based on the outcome I do desired input
-     send input
+     make my AI be able to do every move in the game
+     add a list of all the curves so all my goals have to do is point to those curves in the list instead
+     make the system more generic/clean it up
      */
 }
