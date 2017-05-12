@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CharacterSelectMenu : MonoBehaviour {
+    MainMenu mainMenu;
     menuInputState inputState;
     MenuInputListener menuInputListener;
 
@@ -15,12 +16,11 @@ public class CharacterSelectMenu : MonoBehaviour {
     public Image player1Outline;
     public Image player2Outline;
     public Image[] characterImages;
-    public bool[] characterSelected;
+    public bool [] characterSelected;
     public float[] nextAction;
     public float actionsPerSec = 10.0f;
 
-    void Awake()
-    {
+    void Awake() {
         characterSelected = new bool[2];
         nextAction = new float[2];
     }
@@ -29,8 +29,7 @@ public class CharacterSelectMenu : MonoBehaviour {
     //    MenuInputListener menuInputListener = PlayerLocator.locator.getMenuListener(1);
     //}
 
-    void FixedUpdate()
-    {
+    void FixedUpdate() {
         if (menuInputListener != null)
         {
             TakeInput(menuInputListener.getCurState());
@@ -40,13 +39,12 @@ public class CharacterSelectMenu : MonoBehaviour {
             menuInputListener = PlayerLocator.locator.getMenuListener(1);
         }
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < characterImages.Length; i++)
         {
             //if (inputState.vertNav < .05f)
             //    i += 1;
             //if (inputState.vertNav < .05f)
-            //    i -= 1;
-            
+            //    i -= 1;            
 
             player1Outline.transform.position = characterImages[i].transform.position;
         }
@@ -112,20 +110,17 @@ public class CharacterSelectMenu : MonoBehaviour {
 
 
 
-    void TakeInput(menuInputState theMenuInputState)
-    {
+    void TakeInput(menuInputState theMenuInputState) {
         inputState = new menuInputState(theMenuInputState);
     }
 
-    public void LoadMainMenu()
-    {
+    public void LoadMainMenu() {
         characterSelectPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
         menuEventSystem.SetSelectedGameObject(mainMenuButtons.startingMainButton);
     }
 
-    public void LoadStageSelect()
-    {
+    public void LoadStageSelect() {
         bool allReady = true;
         for (int i = 0; i < characterSelected.Length; i++)
         {
@@ -140,7 +135,7 @@ public class CharacterSelectMenu : MonoBehaviour {
         {
             characterSelectPanel.SetActive(false);
             stageSelectPanel.SetActive(true);
+            menuEventSystem.SetSelectedGameObject(mainMenu.startingStageSelectButton);
         }
     }
-
 }

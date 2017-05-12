@@ -23,8 +23,8 @@ public class TitleMenu : MonoBehaviour {
         if (menuInputListener != null)
         {
             TakeInput(menuInputListener.getCurState());
-            if (inputState.accept.wasPressed)
-                LoadMenuPanel();
+            //if (inputState.accept.wasPressed)
+            //    LoadMenuPanel();
         }
         else
         {
