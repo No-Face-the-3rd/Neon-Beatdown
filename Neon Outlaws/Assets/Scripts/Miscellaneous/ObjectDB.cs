@@ -17,7 +17,6 @@ public class ourCurve
     public AnimationCurve curve;
 }
 
-
 public class ObjectDB : MonoBehaviour
 {
     public static ObjectDB data;
@@ -31,6 +30,7 @@ public class ObjectDB : MonoBehaviour
     [SerializeField]
     private List<HealthBarElements> healthBars;
     [SerializeField]
+
     private List<ourCurve> curves;
 
     [SerializeField]
