@@ -1,21 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class StageSelectMenu : MonoBehaviour {
+    TitleMenu titleMenu;
     menuInputState inputState;
     MenuInputListener menuInputListener;
+    public ObjectDB oDB;
 
     public GameObject stageSelectPanel;
     public GameObject characterSelectPanel;
     public GameObject[] stageButtons; // Selectable images (down below)
     public GameObject[] stagePreviewImages; // Large images
-    //public GameObject stageSelectImage; // Highlight border
+    int index = 0;
 
     void Awake() {
-        //stageSelectImage.transform.position = stageButtons[0].transform.position;
-        stagePreviewImages[0].SetActive(true);
+        //stagePreviewImages[index].SetActive(true);
     }
 
     void FixedUpdate() {
@@ -24,15 +24,34 @@ public class StageSelectMenu : MonoBehaviour {
         }
         else {
             menuInputListener = PlayerLocator.locator.getMenuListener(1);
-        }        
+        }
+
+        if (inputState.accept.wasPressed) {
+            if (oDB.selectedStage == 2)
+                oDB.selectedStage = Random.Range(0, 2);
+
+            for (index = 0; index < stagePreviewImages.Length; index++) {
+                if (titleMenu.menuEventSystem.currentSelectedGameObject == stageButtons[0])
+                    index = 0;
+                else if (titleMenu.menuEventSystem.currentSelectedGameObject == stageButtons[1])
+                    index = 1;
+                else if (titleMenu.menuEventSystem.currentSelectedGameObject == stageButtons[2])
+                    index = 2;
+            }
+
+            if (index < 0)
+                index = stagePreviewImages.Length;
+            if (index > stagePreviewImages.Length)
+                index = 0;
+        }
     }
 
     void TakeInput(menuInputState theMenuInputState) {
         inputState = new menuInputState(theMenuInputState);
     }
 
-    public void LoadSceneOnSelect() {
-        SceneManager.LoadScene("Dev-Chris-Stage");
+    public void LoadStageSceneOnSelect() {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Dev-Chris-Stage");
     }
 
     public void LoadCharacterSelect() {
