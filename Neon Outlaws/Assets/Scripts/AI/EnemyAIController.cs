@@ -55,7 +55,7 @@ public class EnemyAIController : MonoBehaviour
 	void FixedUpdate ()
     {
         //temp awake fix
-        if (cil != null && enemyController != null)
+        if (cil != null && enemyController != null && cil.overrideAI == false)
         {
             
             //temp menu listener fix

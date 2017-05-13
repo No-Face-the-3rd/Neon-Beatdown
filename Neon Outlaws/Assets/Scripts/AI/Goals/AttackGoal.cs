@@ -8,8 +8,6 @@ public class AttackGoal : BaseGoal
     public AnimationCurve desireToAttack;
     public AnimationCurve desireToAttackW;
 
-    public AnimationCurve test;
-    public AnimationCurve testw;
 
     protected override void Awake()
     {
