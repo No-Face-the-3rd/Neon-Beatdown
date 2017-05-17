@@ -37,14 +37,14 @@ public class HeavyAttackGoal : BaseGoal
             float curDist = Mathf.Abs(self.selfController.transform.position.x - self.enemyController.transform.position.x);
             //subtract with attack range
             curDist -= 6;
-
+            curDist = Mathf.Clamp(curDist, ObjectDB.data.getCurve(disIn).keys[0].time,
+                                           ObjectDB.data.getCurve(disIn).keys[ObjectDB.data.getCurve(disIn).keys.Length - 1].time);
 
 
             float randomNum = (Random.value) / 2;
-            float distanceDesire = ObjectDB.data.computeCurve(disIn, curDist + randomNum);
-            float chargeDesire = charge.Evaluate(chargeCount);
-            float desire = distanceDesire + chargeDesire; //distance.Evaluate(curDist + randomNum) + chargeTime.Evaluate(chargeCount);
-            float desireWeight = ObjectDB.data.computeCurve(disWIn, curDist + randomNum) + ObjectDB.data.computeCurve(chargeWIn, chargeCount);
+            float desire = ObjectDB.data.computeCurve(disIn, curDist + randomNum) + charge.Evaluate(chargeCount);
+            float desireWeight = ObjectDB.data.computeCurve(disWIn, curDist + randomNum) + 
+                                 ObjectDB.data.computeCurve(chargeWIn, chargeCount);
 
             myValues.curveOutput = desire;
             myValues.weight = desireWeight;

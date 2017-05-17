@@ -28,7 +28,6 @@ public class LightAttackGoal : BaseGoal
             curDist -= 5;
             curDist = Mathf.Clamp(curDist, ObjectDB.data.getCurve(disIn).keys[0].time,
                                            ObjectDB.data.getCurve(disIn).keys[ObjectDB.data.getCurve(disIn).keys.Length - 1].time);
-            Debug.Log(curDist);
             float randomNum = Random.value / 2;
             float desire = ObjectDB.data.computeCurve(disIn, curDist + randomNum);
             float desireWeight = ObjectDB.data.computeCurve(disWIn, curDist + randomNum);

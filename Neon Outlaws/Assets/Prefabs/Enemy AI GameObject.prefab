@@ -32,13 +32,14 @@ GameObject:
   - component: {fileID: 114823787111338776}
   - component: {fileID: 114524299324641990}
   - component: {fileID: 114932434939770068}
+  - component: {fileID: 114784873545406368}
   m_Layer: 0
   m_Name: Enemy AI GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4491520707724442
 Transform:
   m_ObjectHideFlags: 1
@@ -393,18 +394,6 @@ MonoBehaviour:
     curveOutput: 0
     input: 0
   inputTarget: 0
-  desireToApproach:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  desireToApproachW:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   disIn: 0
   disWIn: 1
 --- !u!114 &114524299324641990
@@ -424,138 +413,10 @@ MonoBehaviour:
     curveOutput: 0
     input: 0
   inputTarget: 3
-  distance:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: -1
-      value: 5
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-    - serializedVersion: 2
-      time: -0.05
-      value: 5
-      inSlope: 0
-      outSlope: -25
-      tangentMode: 69
-    - serializedVersion: 2
-      time: 0.05
-      value: 2.5
-      inSlope: -25
-      outSlope: -250.00005
-      tangentMode: 69
-    - serializedVersion: 2
-      time: 0.06
-      value: 0
-      inSlope: -250.00005
-      outSlope: -0
-      tangentMode: 69
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  distanceW:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: -1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: -2.5
-      tangentMode: 5
-    - serializedVersion: 2
-      time: 0.1
-      value: 0
-      inSlope: -25
-      outSlope: -0
-      tangentMode: 65
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  chargeTime:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 2.1444497
-      outSlope: 3
-      tangentMode: 69
-    - serializedVersion: 2
-      time: 1
-      value: 3
-      inSlope: 3
-      outSlope: 0.5
-      tangentMode: 69
-    - serializedVersion: 2
-      time: 2
-      value: 3.5
-      inSlope: 0.5
-      outSlope: 0.4
-      tangentMode: 69
-    - serializedVersion: 2
-      time: 4.5
-      value: 4.5
-      inSlope: 0.4
-      outSlope: 1.783371
-      tangentMode: 5
-    - serializedVersion: 2
-      time: 5
-      value: -5
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  chargeTimeW:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0.41666698
-      value: 0.0054524243
-      inSlope: 0.025212687
-      outSlope: 0.025212687
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0.5
-      inSlope: 0.051604968
-      outSlope: 0.09318272
-      tangentMode: 69
-    - serializedVersion: 2
-      time: 2
-      value: 0.75
-      inSlope: 0.25
-      outSlope: 0.083333336
-      tangentMode: 5
-    - serializedVersion: 2
-      time: 5
-      value: 1
-      inSlope: -0.004783728
-      outSlope: -0.004783728
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
+  disIn: 6
+  disWIn: 7
+  chargeIn: 8
+  chargeWIn: 9
 --- !u!114 &114563643739927798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13232,6 +13093,25 @@ MonoBehaviour:
   curInd: 0
   prevInd: 0
   showHitVisualizer: 0
+--- !u!114 &114784873545406368
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1827999859648188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c836cf48036fdd04d9784f52a9179cf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 0}
+  myValues:
+    weight: 0
+    curveOutput: 0
+    input: 0
+  inputTarget: 0
+  disIn: 12
+  disWIn: 13
 --- !u!114 &114823787111338776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13249,72 +13129,8 @@ MonoBehaviour:
     curveOutput: 0
     input: 0
   inputTarget: 2
-  desireToAttack:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: -1
-      value: 5
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-    - serializedVersion: 2
-      time: -0.05
-      value: 5
-      inSlope: 0
-      outSlope: -25
-      tangentMode: 69
-    - serializedVersion: 2
-      time: 0.05
-      value: 2.5
-      inSlope: -25
-      outSlope: -250.00005
-      tangentMode: 69
-    - serializedVersion: 2
-      time: 0.06
-      value: 0
-      inSlope: -250.00005
-      outSlope: -0
-      tangentMode: 69
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  desireToAttackW:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: -1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: -2.5
-      tangentMode: 5
-    - serializedVersion: 2
-      time: 0.1
-      value: 0
-      inSlope: -25
-      outSlope: -0
-      tangentMode: 65
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
+  disIn: 6
+  disWIn: 7
 --- !u!114 &114857424632970396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13371,120 +13187,10 @@ MonoBehaviour:
     curveOutput: 0
     input: 0
   inputTarget: 4
-  distance:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 5
-      inSlope: -1.5
-      outSlope: -1.5
-      tangentMode: 34
-    - serializedVersion: 2
-      time: 2
-      value: 2
-      inSlope: -1.25
-      outSlope: -1.25
-      tangentMode: 34
-    - serializedVersion: 2
-      time: 4
-      value: 0
-      inSlope: -0.5
-      outSlope: -0
-      tangentMode: 65
-    - serializedVersion: 2
-      time: 8
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  distanceW:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: -0.5
-      outSlope: -0.5
-      tangentMode: 34
-    - serializedVersion: 2
-      time: 1
-      value: 0.5
-      inSlope: -0.33333334
-      outSlope: -0.33333334
-      tangentMode: 34
-    - serializedVersion: 2
-      time: 4
-      value: 0
-      inSlope: -0.08291667
-      outSlope: -0
-      tangentMode: 65
-    - serializedVersion: 2
-      time: 8
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  startupOfAttack:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 34
-    - serializedVersion: 2
-      time: 1
-      value: 2
-      inSlope: 1.375
-      outSlope: 1.375
-      tangentMode: 34
-    - serializedVersion: 2
-      time: 5
-      value: 5
-      inSlope: 0.22199312
-      outSlope: 0.22199312
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  startupOfAttackW:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0.029820755
-      outSlope: 0.029820755
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0.5
-      inSlope: 0.10792166
-      outSlope: 0.10792166
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 2
-      value: 0.75
-      inSlope: 0.21723402
-      outSlope: 0.21723402
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 5
-      value: 1
-      inSlope: 0.01953785
-      outSlope: 0.01953785
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
+  disIn: 10
+  disWIn: 11
+  startIn: 12
+  startWIn: 13
 --- !u!114 &114950749741755528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13502,138 +13208,10 @@ MonoBehaviour:
     curveOutput: 0
     input: 0
   inputTarget: 0
-  desireToRetreat:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: -5
-      inSlope: 0
-      outSlope: -0
-      tangentMode: 65
-    - serializedVersion: 2
-      time: 6.2
-      value: -5
-      inSlope: 0
-      outSlope: 0.76651573
-      tangentMode: 5
-    - serializedVersion: 2
-      time: 7.1
-      value: 0
-      inSlope: 1.5377998
-      outSlope: -0
-      tangentMode: 65
-    - serializedVersion: 2
-      time: 19.994677
-      value: 0
-      inSlope: 0
-      outSlope: 0.008016211
-      tangentMode: 5
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  desireToRetreatW:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0.000057082623
-      value: 5
-      inSlope: 0.0108700385
-      outSlope: 0.0108700385
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 7
-      value: 5
-      inSlope: 0
-      outSlope: -49.900047
-      tangentMode: 69
-    - serializedVersion: 2
-      time: 7.1
-      value: 0.01
-      inSlope: -0.106938325
-      outSlope: 0.00093989144
-      tangentMode: 65
-    - serializedVersion: 2
-      time: 19.985296
-      value: 0.022110779
-      inSlope: 0.00093989144
-      outSlope: -0.014393976
-      tangentMode: 5
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  desireRetreatAfterLA:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0.5
-      inSlope: 0.115484
-      outSlope: -0
-      tangentMode: 65
-    - serializedVersion: 2
-      time: 2
-      value: 0.5
-      inSlope: 0
-      outSlope: 0.19729137
-      tangentMode: 5
-    - serializedVersion: 2
-      time: 3
-      value: 2
-      inSlope: 0.2977252
-      outSlope: 0.2977252
-      tangentMode: 1
-    - serializedVersion: 2
-      time: 4
-      value: 5
-      inSlope: 0.26226044
-      outSlope: -0
-      tangentMode: 65
-    - serializedVersion: 2
-      time: 10
-      value: 5
-      inSlope: 0
-      outSlope: 0.89060444
-      tangentMode: 5
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  desireRetreatAfterLAW:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0.2
-      outSlope: 0.2
-      tangentMode: 34
-    - serializedVersion: 2
-      time: 1
-      value: 0.2
-      inSlope: 0.23333335
-      outSlope: 0.23333335
-      tangentMode: 34
-    - serializedVersion: 2
-      time: 4
-      value: 1
-      inSlope: 0.115931034
-      outSlope: -0
-      tangentMode: 65
-    - serializedVersion: 2
-      time: 10
-      value: 1
-      inSlope: 0
-      outSlope: -0.005150694
-      tangentMode: 5
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
+  disIn: 2
+  disWIn: 3
+  AfterLA: 4
+  AfterLAW: 5
 --- !u!120 &120512361196220834
 LineRenderer:
   m_ObjectHideFlags: 1

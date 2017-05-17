@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class BlockGoal : BaseGoal
 {
-    public AnimationCurve distance;
-    public AnimationCurve distanceW;
-    //from enemy
-    public AnimationCurve startupOfAttack;
-    public AnimationCurve startupOfAttackW;
-
+    [SerializeField]
+    private int disIn, disWIn, startIn, startWIn;
     protected override void Awake()
     {
         base.Awake();
@@ -22,7 +18,8 @@ public class BlockGoal : BaseGoal
         if (self.cil != null && self.enemyController != null)
         {
             float curDist = Mathf.Abs(self.selfController.transform.position.x - self.enemyController.transform.position.x);
-            curDist = Mathf.Clamp(curDist, distance.keys[0].time, distance.keys[distance.keys.Length - 1].time);
+            curDist = Mathf.Clamp(curDist, ObjectDB.data.getCurve(disIn).keys[0].time,
+                                           ObjectDB.data.getCurve(disIn).keys[ObjectDB.data.getCurve(disIn).keys.Length - 1].time);
             float randomNum = Random.value;
 
             int checkAttackThreshold = 3;
@@ -40,8 +37,8 @@ public class BlockGoal : BaseGoal
                     }
                 }
             }
-            float desire = distance.Evaluate(curDist) + startupOfAttack.Evaluate(ind);
-            float desireWeight = distanceW.Evaluate(curDist) + startupOfAttackW.Evaluate(ind);
+            float desire = ObjectDB.data.computeCurve(disIn, curDist + randomNum) + ObjectDB.data.computeCurve(startIn, ind);
+            float desireWeight = ObjectDB.data.computeCurve(disWIn, curDist + randomNum) + ObjectDB.data.computeCurve(startWIn, ind);
 
             myValues.curveOutput = desire;
             myValues.weight = desireWeight;

@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class JumpGoal : BaseGoal
 {
-    public AnimationCurve distance, distanceW;
-
-
+    [SerializeField]
+    private int disIn, disWIn;
     protected override void Awake()
     {
         base.Awake();
@@ -19,7 +18,14 @@ public class JumpGoal : BaseGoal
         if (self.cil != null && self.enemyController != null)
         {
             float curDist = Mathf.Abs(self.selfController.transform.position.x - self.enemyController.transform.position.x);
-            curDist = Mathf.Clamp(curDist, distance.keys[0].time, distance.keys[distance.keys.Length - 1].time);
+            curDist = Mathf.Clamp(curDist, ObjectDB.data.getCurve(disIn).keys[0].time,
+                                           ObjectDB.data.getCurve(disIn).keys[ObjectDB.data.getCurve(disIn).keys.Length - 1].time);
+
+            float desire = ObjectDB.data.computeCurve(disIn, curDist);
+            float desireWeight = ObjectDB.data.computeCurve(disWIn, curDist);
+
+            myValues.curveOutput = desire;
+            myValues.weight = desireWeight;
         }
     }
 }

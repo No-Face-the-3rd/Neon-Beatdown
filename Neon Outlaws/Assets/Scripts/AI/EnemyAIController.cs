@@ -86,7 +86,9 @@ public class EnemyAIController : MonoBehaviour
             block = evaluateAttack(1.0f, InputTarget.block);
             inputState.buttonBlock.setPressState(block);
 
-
+            //jump evaluation
+            float jump = evaluateGoal(InputTarget.jump);
+            inputState.moveY = jump;
             //send inputs
             cil.setCurState(inputState);
         }
