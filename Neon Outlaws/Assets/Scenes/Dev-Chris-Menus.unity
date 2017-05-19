@@ -667,17 +667,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a09156e109f5040b265ea9e4f43455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  titleMenu: {fileID: 1893067179}
-  stageSelectPanel: {fileID: 722814607}
-  characterSelectPanel: {fileID: 1409956829}
-  stageButtons:
-  - {fileID: 64119844}
-  - {fileID: 643759260}
-  - {fileID: 381002656}
-  stagePreviewImages:
-  - {fileID: 839665540}
-  - {fileID: 943169918}
-  - {fileID: 216352812}
+  oDB: {fileID: 0}
+  stageSelectPanel: {fileID: 0}
+  characterSelectPanel: {fileID: 0}
+  stageButtons: []
+  stagePreviewImages: []
 --- !u!1 &89353924
 GameObject:
   m_ObjectHideFlags: 0
@@ -1520,7 +1514,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 40, y: 76}
+  m_AnchoredPosition: {x: 33, y: 69}
   m_SizeDelta: {x: 100, y: 106}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &344504193
@@ -1862,17 +1856,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a09156e109f5040b265ea9e4f43455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  titleMenu: {fileID: 1893067179}
-  stageSelectPanel: {fileID: 722814607}
-  characterSelectPanel: {fileID: 1409956829}
-  stageButtons:
-  - {fileID: 64119844}
-  - {fileID: 643759260}
-  - {fileID: 381002656}
-  stagePreviewImages:
-  - {fileID: 839665540}
-  - {fileID: 943169918}
-  - {fileID: 216352812}
+  oDB: {fileID: 0}
+  stageSelectPanel: {fileID: 0}
+  characterSelectPanel: {fileID: 0}
+  stageButtons: []
+  stagePreviewImages: []
 --- !u!1 &402959444
 GameObject:
   m_ObjectHideFlags: 0
@@ -1956,7 +1944,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &440341680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1975,8 +1963,8 @@ MonoBehaviour:
   curves: []
   genericPrefabs: []
   selectedStage: -1
---- !u!4 &440341681
-Transform:
+--- !u!224 &440341681
+RectTransform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -1988,6 +1976,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 960.1415, y: 539.9204}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &455163160
 GameObject:
   m_ObjectHideFlags: 0
@@ -3023,17 +3016,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a09156e109f5040b265ea9e4f43455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  titleMenu: {fileID: 1893067179}
-  stageSelectPanel: {fileID: 722814607}
-  characterSelectPanel: {fileID: 1409956829}
-  stageButtons:
-  - {fileID: 64119844}
-  - {fileID: 643759260}
-  - {fileID: 381002656}
-  stagePreviewImages:
-  - {fileID: 839665540}
-  - {fileID: 943169918}
-  - {fileID: 216352812}
+  oDB: {fileID: 0}
+  stageSelectPanel: {fileID: 0}
+  characterSelectPanel: {fileID: 0}
+  stageButtons: []
+  stagePreviewImages: []
 --- !u!1 &649631549
 GameObject:
   m_ObjectHideFlags: 0
@@ -6519,7 +6506,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1409956830
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8331,7 +8318,6 @@ GameObject:
   - component: {fileID: 1893067177}
   - component: {fileID: 1893067175}
   - component: {fileID: 1893067178}
-  - component: {fileID: 1893067179}
   m_Layer: 0
   m_Name: MenuButtonsManager
   m_TagString: Untagged
@@ -8409,7 +8395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a09156e109f5040b265ea9e4f43455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  titleMenu: {fileID: 1893067179}
+  oDB: {fileID: 440341680}
   stageSelectPanel: {fileID: 722814607}
   characterSelectPanel: {fileID: 1409956829}
   stageButtons:
@@ -8420,22 +8406,6 @@ MonoBehaviour:
   - {fileID: 839665540}
   - {fileID: 943169918}
   - {fileID: 216352812}
---- !u!114 &1893067179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1893067174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec344c6c911daff4bbb61b51b571d242, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainMenuButtons: {fileID: 0}
-  mainMenuPanel: {fileID: 0}
-  titleMenuPanel: {fileID: 0}
-  nextSelectedButton: {fileID: 0}
-  menuEventSystem: {fileID: 0}
 --- !u!1 &1893395705
 GameObject:
   m_ObjectHideFlags: 0
