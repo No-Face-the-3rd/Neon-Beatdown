@@ -20,9 +20,9 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300278, guid: 324b9e06402d11f42b73c3ddc7c5b98e, type: 3}
-    - time: 0.083333336
-      value: {fileID: 21300280, guid: 324b9e06402d11f42b73c3ddc7c5b98e, type: 3}
     - time: 0.16666667
+      value: {fileID: 21300280, guid: 324b9e06402d11f42b73c3ddc7c5b98e, type: 3}
+    - time: 0.41666666
       value: {fileID: 21300272, guid: 324b9e06402d11f42b73c3ddc7c5b98e, type: 3}
     attribute: m_Sprite
     path: 
@@ -50,7 +50,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.25
+    m_StopTime: 0.5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -79,14 +79,14 @@ AnimationClip:
     floatParameter: 0
     intParameter: 262144
     messageOptions: 0
-  - time: 0.083333336
+  - time: 0.16666667
     functionName: doHeavyAttack
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.16666667
+  - time: 0.41666666
     functionName: setState
     data: 
     objectReferenceParameter: {fileID: 0}
