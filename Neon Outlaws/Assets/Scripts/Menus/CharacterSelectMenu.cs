@@ -23,62 +23,48 @@ public class CharacterSelectMenu : MonoBehaviour {
         characterSelected = new bool[2];
         nextAction = new float[2];
     }
-    //void Start()
-    //{
-    //    MenuInputListener menuInputListener = PlayerLocator.locator.getMenuListener(1);
-    //}
 
     void FixedUpdate() {
-        if (menuInputListener != null) {
+        if (menuInputListener != null)
             TakeInput(menuInputListener.getCurState());
-        }
-        else {
+        else
             menuInputListener = PlayerLocator.locator.getMenuListener(1);
-        }
 
-        for (int i = 0; i < characterImages.Length; i++) {
-            //if (inputState.vertNav < .05f)
-            //    i += 1;
-            //if (inputState.vertNav < .05f)
-            //    i -= 1;            
-
+        for (int i = 0; i < characterImages.Length; i++) 
             player1Outline.transform.position = characterImages[i].transform.position;
-        }
-        
+                
         for(int i = 1;i <= DeviceMapper.mapper.maxPlayers;i++) {
             menuInputListener = PlayerLocator.locator.getMenuListener(i);
+
             if(menuInputListener != null) {
                 TakeInput(menuInputListener.getCurState());
                 characterSelected[i - 1] = menuInputListener.hasSelected;
-                if (nextAction[i - 1] < Time.time) { 
-                    if (!menuInputListener.hasSelected) {
-                        if (inputState.accept.wasPressed) {
-                            if (menuInputListener.selectedCharacter == 4)
-                                menuInputListener.selectedCharacter = Random.Range(0, 4);
-                            menuInputListener.hasSelected = true;
-                            nextAction[i - 1] = Time.time + 1.0f / actionsPerSec;
-                        }
 
-                        if(inputState.horizAsButton.wasPressed ||
-                            inputState.vertAsButton.wasPressed) {
-                            nextAction[i - 1] = Time.time + 1.0f / actionsPerSec;
-                        }
-                        int horizontal = (inputState.horizAsButton.wasPressed ?
-                            (inputState.horizNav > 0.0f ? 1 :
-                            (inputState.horizNav < 0.0f ? -1 : 0)) : 0);
-                        int vertical = (inputState.vertAsButton.wasPressed ?
-                            (inputState.vertNav > 0.0f ? 2 :
-                            (inputState.vertNav < 0.0f ? -2 : 0)) : 0);
-                        menuInputListener.selectedCharacter += horizontal + vertical;
-                        menuInputListener.selectedCharacter = (menuInputListener.selectedCharacter + 5) % 5;
+                if (nextAction[i - 1] < Time.time && !menuInputListener.hasSelected 
+                        && inputState.accept.wasPressed && menuInputListener.selectedCharacter == 4) {
+                            menuInputListener.selectedCharacter = Random.Range(0, 4);
+                    menuInputListener.hasSelected = true;
+                    nextAction[i - 1] = Time.time + 1.0f / actionsPerSec;
                     }
-                    else {
-                        if (inputState.decline.wasReleased) {
-                            menuInputListener.hasSelected = false;
-                            nextAction[i - 1] = Time.time + 1.0f / actionsPerSec;
-                        }
+
+                    if(inputState.horizAsButton.wasPressed ||
+                        inputState.vertAsButton.wasPressed) {
+                        nextAction[i - 1] = Time.time + 1.0f / actionsPerSec;
                     }
+                    int horizontal = (inputState.horizAsButton.wasPressed ?
+                        (inputState.horizNav > 0.0f ? 1 :
+                        (inputState.horizNav < 0.0f ? -1 : 0)) : 0);
+                    int vertical = (inputState.vertAsButton.wasPressed ?
+                        (inputState.vertNav > 0.0f ? 2 :
+                        (inputState.vertNav < 0.0f ? -2 : 0)) : 0);
+                    menuInputListener.selectedCharacter += horizontal + vertical;
+                    menuInputListener.selectedCharacter = (menuInputListener.selectedCharacter + 5) % 5;
                 }
+                else {
+                    if (inputState.decline.wasReleased) {
+                        menuInputListener.hasSelected = false;
+                        nextAction[i - 1] = Time.time + 1.0f / actionsPerSec;
+                    }
 
                 if (i == 1) { 
                     player1Outline.transform.position = characterImages[menuInputListener.selectedCharacter].transform.position;
@@ -87,15 +73,13 @@ public class CharacterSelectMenu : MonoBehaviour {
                     player2Outline.transform.position = characterImages[menuInputListener.selectedCharacter].transform.position;
                 }                    
             }
-        }       
+        }
     }
-
-
 
     void TakeInput(menuInputState theMenuInputState) {
         inputState = new menuInputState(theMenuInputState);
     }
-
+     
     public void LoadMainMenu() {
         characterSelectPanel.SetActive(false);
         mainMenuPanel.SetActive(true);

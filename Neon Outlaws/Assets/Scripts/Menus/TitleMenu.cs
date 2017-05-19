@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class TitleMenu : MonoBehaviour {
     public MainMenu mainMenuButtons;
     MenuInputListener menuInputListener;
