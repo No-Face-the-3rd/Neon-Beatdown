@@ -134,6 +134,7 @@ public class TextureToPoints : MonoBehaviour {
     
     private PolygonCollider2D poly;
     private LineRenderer lineRend;
+    private DrawCollider drawColl;
 
     public bool showHitVisualizer = false;
     private SpriteRenderer sprRend;
@@ -230,6 +231,7 @@ public class TextureToPoints : MonoBehaviour {
     public void getLineRend()
     {
         lineRend = GetComponent<LineRenderer>();
+        drawColl = GetComponent<DrawCollider>();
     }
 
     void setLineRend()
@@ -244,7 +246,8 @@ public class TextureToPoints : MonoBehaviour {
             tmp.Add(new Vector3(colliderPoints[curInd].subList[0].x, colliderPoints[curInd].subList[0].y, -0.01f));
             lineRend.numPositions = tmp.Count;
             lineRend.SetPositions(tmp.ToArray());
-
+            drawColl.positions = new List<Vector3>(tmp.ToArray());
+            drawColl.drawLine = showHitVisualizer;
         }
     }
     void clearLineRend()
@@ -254,6 +257,7 @@ public class TextureToPoints : MonoBehaviour {
             lineRend.numPositions = 0;
             Vector3[] tmp = new Vector3[0];
             lineRend.SetPositions(tmp);
+            drawColl.positions = new List<Vector3>(tmp);
 
         }
     }

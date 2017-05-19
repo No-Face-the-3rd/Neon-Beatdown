@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class StageInitData : MonoBehaviour {
-    public Vector3 startingCamera;
+    public Vector3 startingCameraPosition;
+    public Vector3 startingCameraRotation;
     public Vector3[] startingPos;
     public float minX, maxX;
 
@@ -20,7 +21,8 @@ public class StageInitData : MonoBehaviour {
     public void resetPositions()
     {
         GameObject tmp = FindObjectOfType<Camera>().gameObject;
-        tmp.transform.position = startingCamera;
+        tmp.transform.position = startingCameraPosition;
+        tmp.transform.rotation = Quaternion.Euler(startingCameraRotation);
         for(int i = 0;i< startingPos.Length;i++)
         {
             NBCharacterController character = CharacterLocator.locator.getCharacter(i + 1);

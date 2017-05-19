@@ -139,7 +139,7 @@ public class RoundVictoryManager : MonoBehaviour {
             if (chara != null)
             {
                 chara.reset();
-                chara.enabled = true;
+                chara.doInput = true;
             }
         }
     }
@@ -159,7 +159,7 @@ public class RoundVictoryManager : MonoBehaviour {
             if (chara != null)
             {
                 chara.reset();
-                chara.enabled = false;
+                chara.doInput = false;
             }
         }
         int resInd = numVictories.FindIndex(win => (win >= roundsToWin));
@@ -184,7 +184,7 @@ public class RoundVictoryManager : MonoBehaviour {
             NBCharacterController chara = CharacterLocator.locator.getCharacter(i);
             if(chara != null)
             {
-                chara.enabled = false;
+                chara.doInput = false;
             }
         }
     }
