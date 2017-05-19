@@ -9,7 +9,7 @@ public class DrawCollider : MonoBehaviour {
     public Color lineColor = Color.white;
     public bool drawLine = false;
 
-    public Shader lineShader = Shader.Find("Standard");
+    public Shader lineShader;
 
     public Material lineMaterial;
 
@@ -21,6 +21,8 @@ public class DrawCollider : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        if (lineShader == null)
+            lineShader = Shader.Find("Standard");
         if (lineMaterial == null)
             lineMaterial = new Material(lineShader);
         lineMesh = new Mesh();
@@ -46,10 +48,10 @@ public class DrawCollider : MonoBehaviour {
 
     private void updateVerts()
     {
-        Vector3[] verts = new Vector3[positions.Count * 2];
-        float halfWidth = lineWidth / 2.0f;
         if (positions.Count > 1)
         {
+            Vector3[] verts = new Vector3[positions.Count * 2];
+            float halfWidth = lineWidth / 2.0f;
 
             for (int i = 0; i < positions.Count; i++)
             {
@@ -63,7 +65,12 @@ public class DrawCollider : MonoBehaviour {
                 {
                     topOne = transform.InverseTransformPoint(positions[i] +
                         getSegmentDir(positions[i - 1], positions[i]) * halfWidth);
-                    topTwo()
+                    topTwo = transform.InverseTransformPoint(positions[i] +
+                        getSegmentDir(positions[i], positions[i + 1]) * halfWidth);
+                    botOne = transform.InverseTransformPoint(positions[i] -
+                        getSegmentDir(positions[i - 1], positions[i]) * halfWidth);
+                    botTwo = transform.InverseTransformPoint(positions[i] -
+                        getSegmentDir(positions[i], positions[i + 1]) * halfWidth);
                 }
                 else if (i == 0)
                 {
@@ -80,9 +87,13 @@ public class DrawCollider : MonoBehaviour {
                     botOne = botTwo = transform.InverseTransformPoint(positions[i] +
                         getSegmentDir(positions[i - 1], positions[i]) * -halfWidth);
                 }
+                finalTop = (topOne + topTwo) / 2.0f;
+                finalBot = (botOne + botTwo) / 2.0f;
 
-
+                verts[i * 2 + 0] = finalTop;
+                verts[i * 2 + 1] = finalBot;
             }
+            lineMesh.vertices = verts;
         }
 
     }
@@ -98,7 +109,20 @@ public class DrawCollider : MonoBehaviour {
 
     private void updateTris()
     {
-
+        if(positions.Count > 1)
+        {
+            int[] tris = new int[(positions.Count - 1) * 6];
+            for (int i = 0; i < positions.Count; i++)
+            {
+                tris[i * 6 + 0] = i * 6 + 0;
+                tris[i * 6 + 1] = i * 6 + 1;
+                tris[i * 6 + 2] = i * 6 + 2;
+                tris[i * 6 + 3] = i * 6 + 1;
+                tris[i * 6 + 4] = i * 6 + 3;
+                tris[i * 6 + 5] = i * 6 + 2;
+            }
+            lineMesh.triangles = tris;
+        }
     }
 
     private void drawMesh()

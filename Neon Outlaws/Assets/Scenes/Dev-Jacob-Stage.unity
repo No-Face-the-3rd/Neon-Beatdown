@@ -3941,6 +3941,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 120714271293325494, guid: 3daa21cf5916e6b499ebd309168fc0ea,
+        type: 2}
+      propertyPath: m_Positions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4960360534371344, guid: 3daa21cf5916e6b499ebd309168fc0ea, type: 2}
       propertyPath: m_LocalPosition.x
       value: 12
@@ -4641,6 +4646,24 @@ MonoBehaviour:
   selfController: {fileID: 0}
   enemyController: {fileID: 0}
   values: []
+--- !u!114 &244569972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 244569965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d5970cb776eca4985e50f053046959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positions: []
+  lineWidth: 0.1
+  lineColor: {r: 1, g: 1, b: 1, a: 1}
+  drawLine: 0
+  lineShader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  lineMaterial: {fileID: 0}
+  changeThreshold: 0.1
 --- !u!1 &246579349
 GameObject:
   m_ObjectHideFlags: 0
@@ -6051,6 +6074,29 @@ Transform:
   m_Father: {fileID: 1639049348}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &354112481 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1198118904940980, guid: df7d38778c89b25428e77f6f8a978874,
+    type: 2}
+  m_PrefabInternal: {fileID: 485982780}
+--- !u!114 &354112482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 354112481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d5970cb776eca4985e50f053046959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positions: []
+  lineWidth: 0.1
+  lineColor: {r: 1, g: 1, b: 1, a: 1}
+  drawLine: 0
+  lineShader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  lineMaterial: {fileID: 0}
+  changeThreshold: 0.1
 --- !u!1 &362127444
 GameObject:
   m_ObjectHideFlags: 0
@@ -7941,6 +7987,11 @@ Prefab:
     - target: {fileID: 120434116468820188, guid: df7d38778c89b25428e77f6f8a978874,
         type: 2}
       propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 120434116468820188, guid: df7d38778c89b25428e77f6f8a978874,
+        type: 2}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -31861,7 +31912,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7651f393e1a7244bbbe4dc6880a3465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingCamera: {x: 0, y: 10, z: -20}
+  startingCameraPosition: {x: 0, y: 0, z: 0}
+  startingCameraRotation: {x: 0, y: 0, z: 0}
   startingPos:
   - {x: -12, y: 4, z: 0}
   - {x: 12, y: 4, z: 0}
