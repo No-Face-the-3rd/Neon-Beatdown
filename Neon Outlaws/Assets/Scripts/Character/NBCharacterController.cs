@@ -109,7 +109,7 @@ public class NBCharacterController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(takeInput)
+        if(doInput)
         {
 
         }

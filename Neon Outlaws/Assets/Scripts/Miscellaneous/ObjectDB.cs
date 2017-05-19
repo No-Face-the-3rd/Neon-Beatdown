@@ -17,6 +17,13 @@ public class ourCurve
     public AnimationCurve curve;
 }
 
+[System.Serializable]
+public class AttackData
+{
+    public GameObject attackObject;
+    public Vector3 offsetFromPosition;
+}
+
 public class ObjectDB : MonoBehaviour
 {
     public static ObjectDB data;
