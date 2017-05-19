@@ -281,7 +281,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &141289251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1988,6 +1988,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 23845287586725502, guid: c65ee28b731e56940aaf89781d5002d0,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d178e4063bac49447b645c72c786777c, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c65ee28b731e56940aaf89781d5002d0, type: 2}
   m_IsPrefabParent: 0
@@ -3632,6 +3637,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 23322645911715944, guid: 2be7752aec463344fb812ab2148078cb,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 233a601856f4dbb479e2e22b3af8e956, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2be7752aec463344fb812ab2148078cb, type: 2}
   m_IsPrefabParent: 0
@@ -4030,7 +4040,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4552,7 +4562,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4890,7 +4900,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7651f393e1a7244bbbe4dc6880a3465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingCamera: {x: 0, y: 0, z: -15}
+  startingCameraPosition: {x: 0, y: 0, z: 0}
+  startingCameraRotation: {x: 0, y: 0, z: 0}
   startingPos:
   - {x: -4.5, y: 4, z: 0}
   - {x: 4.5, y: 4, z: 0}
