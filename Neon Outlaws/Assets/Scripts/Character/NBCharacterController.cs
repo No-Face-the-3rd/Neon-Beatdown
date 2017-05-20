@@ -109,28 +109,31 @@ public class NBCharacterController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(doInput)
+        if (doInput)
         {
-
-        }
-        if (cil != null)
-        {
-            takeInput(cil.getCurState());
-            if (inputQueue.Count > 0)
+            if (cil != null)
             {
-                InputState currentInputState = inputQueue[inputQueue.Count - 1];
-                sendCrouch(currentInputState.moveY);
-                sendWalk(currentInputState.moveX);
-                sendDash(currentInputState.moveX);
-                sendBlock(currentInputState.moveX, currentInputState.buttonBlock.wasPressed);
-                sendJump(currentInputState.moveY);
-                sendLightAttack(currentInputState.lightAttack.wasPressed);
-                sendHeavyAttack(currentInputState.heavyAttack.wasPressed, currentInputState.heavyAttack.isHeld);
+                takeInput(cil.getCurState());
+            }
+            else
+            {
+                cil = PlayerLocator.locator.getCombatListener(playerNum);
             }
         }
         else
         {
-            cil = PlayerLocator.locator.getCombatListener(playerNum);
+            takeInput(new InputState());
+        }
+        if (inputQueue.Count > 0)
+        {
+            InputState currentInputState = inputQueue[inputQueue.Count - 1];
+            sendCrouch(currentInputState.moveY);
+            sendWalk(currentInputState.moveX);
+            sendDash(currentInputState.moveX);
+            sendBlock(currentInputState.moveX, currentInputState.buttonBlock.wasPressed);
+            sendJump(currentInputState.moveY);
+            sendLightAttack(currentInputState.lightAttack.wasPressed);
+            sendHeavyAttack(currentInputState.heavyAttack.wasPressed, currentInputState.heavyAttack.isHeld);
         }
 
         checkGrounded();
@@ -547,6 +550,8 @@ public class NBCharacterController : MonoBehaviour
     {
         curHealth = maxHealth;
         currentCharacterState = CharacterState.Idle;
+        inputQueue = new List<InputState>();
+        stateQueue = new List<CharacterState>();
     }
 
 }

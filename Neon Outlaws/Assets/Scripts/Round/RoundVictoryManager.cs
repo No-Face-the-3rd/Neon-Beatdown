@@ -153,7 +153,7 @@ public class RoundVictoryManager : MonoBehaviour {
         Winner.gameObject.SetActive(true);
         transitionTimer.resetTimer();
         transitionTimer.setActive(true);
-        for (int i = 1; i < DeviceMapper.mapper.maxPlayers; i++)
+        for (int i = 1; i <= DeviceMapper.mapper.maxPlayers; i++)
         {
             NBCharacterController chara = CharacterLocator.locator.getCharacter(i);
             if (chara != null)

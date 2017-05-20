@@ -3993,7 +3993,18 @@ Prefab:
       propertyPath: m_MotionVectors
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 120714271293325494, guid: 3daa21cf5916e6b499ebd309168fc0ea,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 120714271293325494, guid: 3daa21cf5916e6b499ebd309168fc0ea,
+        type: 2}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 120714271293325494, guid: 3daa21cf5916e6b499ebd309168fc0ea, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 3daa21cf5916e6b499ebd309168fc0ea, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &244569965 stripped
@@ -4659,11 +4670,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positions: []
   lineWidth: 0.1
-  lineColor: {r: 1, g: 1, b: 1, a: 1}
+  lineColor: {r: 0, g: 1, b: 0.08965516, a: 1}
   drawLine: 0
-  lineShader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  lineShader: {fileID: 10755, guid: 0000000000000000f000000000000000, type: 0}
   lineMaterial: {fileID: 0}
-  changeThreshold: 0.1
+  changeThreshold: 0.01
 --- !u!1 &246579349
 GameObject:
   m_ObjectHideFlags: 0
@@ -6092,11 +6103,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positions: []
   lineWidth: 0.1
-  lineColor: {r: 1, g: 1, b: 1, a: 1}
+  lineColor: {r: 0.07586217, g: 1, b: 0, a: 1}
   drawLine: 0
-  lineShader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  lineShader: {fileID: 10755, guid: 0000000000000000f000000000000000, type: 0}
   lineMaterial: {fileID: 0}
-  changeThreshold: 0.1
+  changeThreshold: 0.01
 --- !u!1 &362127444
 GameObject:
   m_ObjectHideFlags: 0
@@ -7992,9 +8003,15 @@ Prefab:
     - target: {fileID: 120434116468820188, guid: df7d38778c89b25428e77f6f8a978874,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 120434116468820188, guid: df7d38778c89b25428e77f6f8a978874,
+        type: 2}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 120434116468820188, guid: df7d38778c89b25428e77f6f8a978874, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: df7d38778c89b25428e77f6f8a978874, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &488431780
@@ -31912,7 +31929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7651f393e1a7244bbbe4dc6880a3465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingCameraPosition: {x: 0, y: 0, z: 0}
+  startingCameraPosition: {x: 0, y: 10, z: -20}
   startingCameraRotation: {x: 0, y: 0, z: 0}
   startingPos:
   - {x: -12, y: 4, z: 0}
