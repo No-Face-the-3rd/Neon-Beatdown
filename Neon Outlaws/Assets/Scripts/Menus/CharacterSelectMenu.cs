@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CharacterSelectMenu : MonoBehaviour {
-    menuInputState inputState;
+    public menuInputState inputState;
     MenuInputListener menuInputListener;
 
     public MainMenu mainMenuButtons;
@@ -25,53 +25,66 @@ public class CharacterSelectMenu : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        if (menuInputListener != null)
-            TakeInput(menuInputListener.getCurState());
-        else
-            menuInputListener = PlayerLocator.locator.getMenuListener(1);
+        //if (menuInputListener != null)
+        //    TakeInput(menuInputListener.getCurState());
+        //else
+        //    menuInputListener = PlayerLocator.locator.getMenuListener(1);
 
-        for (int i = 0; i < characterImages.Length; i++) 
-            player1Outline.transform.position = characterImages[i].transform.position;
+        //for (int i = 0; i < characterImages.Length; i++) 
+            //player1Outline.transform.position = characterImages[i].transform.position;
                 
         for(int i = 1;i <= DeviceMapper.mapper.maxPlayers;i++) {
             menuInputListener = PlayerLocator.locator.getMenuListener(i);
 
-            if(menuInputListener != null) {
+            if (menuInputListener != null)
+            {
                 TakeInput(menuInputListener.getCurState());
                 characterSelected[i - 1] = menuInputListener.hasSelected;
 
-                if (nextAction[i - 1] < Time.time && !menuInputListener.hasSelected 
-                        && inputState.accept.wasPressed && menuInputListener.selectedCharacter == 4) {
-                            menuInputListener.selectedCharacter = Random.Range(0, 4);
-                    menuInputListener.hasSelected = true;
-                    nextAction[i - 1] = Time.time + 1.0f / actionsPerSec;
+                if (nextAction[i - 1] < Time.time && !menuInputListener.hasSelected)
+                {
+                    if (inputState.accept.wasPressed)
+                    {
+                        if (menuInputListener.selectedCharacter == characterImages.Length - 1)
+                        {
+                            menuInputListener.selectedCharacter = Random.Range(0, characterImages.Length - 1);
+                        }
+                        menuInputListener.hasSelected = true;
+                        nextAction[i - 1] = Time.time + 1.0f / actionsPerSec;
                     }
 
-                    if(inputState.horizAsButton.wasPressed ||
-                        inputState.vertAsButton.wasPressed) {
+                    if (inputState.horizAsButton.wasPressed ||
+                        inputState.vertAsButton.wasPressed)
+                    {
                         nextAction[i - 1] = Time.time + 1.0f / actionsPerSec;
                     }
                     int horizontal = (inputState.horizAsButton.wasPressed ?
-                        (inputState.horizNav > 0.0f ? 1 :
-                        (inputState.horizNav < 0.0f ? -1 : 0)) : 0);
+                        ((inputState.horizNav > 0.0f) ? 1 :
+                        (inputState.horizNav < 0.0f) ? -1 : 0) : 0);
                     int vertical = (inputState.vertAsButton.wasPressed ?
-                        (inputState.vertNav > 0.0f ? 2 :
-                        (inputState.vertNav < 0.0f ? -2 : 0)) : 0);
+                        ((inputState.vertNav < 0.0f) ? 2 :
+                        (inputState.vertNav > 0.0f) ? -2 : 0) : 0);
                     menuInputListener.selectedCharacter += horizontal + vertical;
-                    menuInputListener.selectedCharacter = (menuInputListener.selectedCharacter + 5) % 5;
+                    menuInputListener.selectedCharacter = (menuInputListener.selectedCharacter + characterImages.Length) % characterImages.Length;
                 }
-                else {
-                    if (inputState.decline.wasReleased) {
+
+                else
+                {
+                    if (inputState.decline.wasReleased)
+                    {
                         menuInputListener.hasSelected = false;
                         nextAction[i - 1] = Time.time + 1.0f / actionsPerSec;
                     }
 
-                if (i == 1) { 
-                    player1Outline.transform.position = characterImages[menuInputListener.selectedCharacter].transform.position;
+                    if (i == 1)
+                    {
+                        player1Outline.transform.position = characterImages[menuInputListener.selectedCharacter].transform.position;
+                    }
+                    if (i == 2)
+                    {
+                        player2Outline.transform.position = characterImages[menuInputListener.selectedCharacter].transform.position;
+                    }
                 }
-                if(i == 2) {
-                    player2Outline.transform.position = characterImages[menuInputListener.selectedCharacter].transform.position;
-                }                    
             }
         }
     }

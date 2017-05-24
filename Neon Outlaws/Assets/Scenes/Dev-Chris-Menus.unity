@@ -6519,7 +6519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1409956830
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6595,6 +6595,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a7073013c9377f498b557789dea115a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputState:
+    horizNav: 0
+    vertNav: 0
+    horizAsButton:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    vertAsButton:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    accept:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    decline:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    resume:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
   mainMenuButtons: {fileID: 1893067175}
   menuEventSystem: {fileID: 871160144}
   characterSelectPanel: {fileID: 1409956829}
@@ -8382,6 +8405,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a7073013c9377f498b557789dea115a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputState:
+    horizNav: 0
+    vertNav: 0
+    horizAsButton:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    vertAsButton:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    accept:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    decline:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
+    resume:
+      wasPressed: 0
+      wasReleased: 0
+      isHeld: 0
   mainMenuButtons: {fileID: 1893067175}
   menuEventSystem: {fileID: 871160144}
   characterSelectPanel: {fileID: 1409956829}
