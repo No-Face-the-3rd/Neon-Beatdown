@@ -2729,7 +2729,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1409956833}
+      - m_Target: {fileID: 0}
         m_MethodName: LoadMainMenu
         m_Mode: 1
         m_Arguments:
@@ -4337,7 +4337,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1409956833}
+      - m_Target: {fileID: 0}
         m_MethodName: LoadStageSelect
         m_Mode: 1
         m_Arguments:
@@ -6512,7 +6512,6 @@ GameObject:
   - component: {fileID: 1409956830}
   - component: {fileID: 1409956832}
   - component: {fileID: 1409956831}
-  - component: {fileID: 1409956833}
   m_Layer: 5
   m_Name: CharacterSelectPanel
   m_TagString: Untagged
@@ -6584,56 +6583,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1409956829}
---- !u!114 &1409956833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1409956829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a7073013c9377f498b557789dea115a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputState:
-    horizNav: 0
-    vertNav: 0
-    horizAsButton:
-      wasPressed: 0
-      wasReleased: 0
-      isHeld: 0
-    vertAsButton:
-      wasPressed: 0
-      wasReleased: 0
-      isHeld: 0
-    accept:
-      wasPressed: 0
-      wasReleased: 0
-      isHeld: 0
-    decline:
-      wasPressed: 0
-      wasReleased: 0
-      isHeld: 0
-    resume:
-      wasPressed: 0
-      wasReleased: 0
-      isHeld: 0
-  mainMenuButtons: {fileID: 1893067175}
-  menuEventSystem: {fileID: 871160144}
-  characterSelectPanel: {fileID: 1409956829}
-  stageSelectPanel: {fileID: 722814607}
-  mainMenuPanel: {fileID: 1841334992}
-  player1Outline: {fileID: 1579986729}
-  player2Outline: {fileID: 344504193}
-  characterImages:
-  - {fileID: 669699853}
-  - {fileID: 1427897286}
-  - {fileID: 2025308641}
-  - {fileID: 1025144880}
-  - {fileID: 984159562}
-  characterSelected: 
-  nextAction: []
-  actionsPerSec: 10
 --- !u!1 &1427897283
 GameObject:
   m_ObjectHideFlags: 0
@@ -8405,29 +8354,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a7073013c9377f498b557789dea115a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputState:
-    horizNav: 0
-    vertNav: 0
-    horizAsButton:
-      wasPressed: 0
-      wasReleased: 0
-      isHeld: 0
-    vertAsButton:
-      wasPressed: 0
-      wasReleased: 0
-      isHeld: 0
-    accept:
-      wasPressed: 0
-      wasReleased: 0
-      isHeld: 0
-    decline:
-      wasPressed: 0
-      wasReleased: 0
-      isHeld: 0
-    resume:
-      wasPressed: 0
-      wasReleased: 0
-      isHeld: 0
   mainMenuButtons: {fileID: 1893067175}
   menuEventSystem: {fileID: 871160144}
   characterSelectPanel: {fileID: 1409956829}

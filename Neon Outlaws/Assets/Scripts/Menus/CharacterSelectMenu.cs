@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CharacterSelectMenu : MonoBehaviour {
-    public menuInputState inputState;
-    MenuInputListener menuInputListener;
+
 
     public MainMenu mainMenuButtons;
     public UnityEngine.EventSystems.EventSystem menuEventSystem;
@@ -24,24 +23,29 @@ public class CharacterSelectMenu : MonoBehaviour {
         nextAction = new float[2];
     }
 
+
+
     void FixedUpdate() {
+
         //if (menuInputListener != null)
         //    TakeInput(menuInputListener.getCurState());
         //else
         //    menuInputListener = PlayerLocator.locator.getMenuListener(1);
 
         //for (int i = 0; i < characterImages.Length; i++) 
-            //player1Outline.transform.position = characterImages[i].transform.position;
-                
-        for(int i = 1;i <= DeviceMapper.mapper.maxPlayers;i++) {
-            menuInputListener = PlayerLocator.locator.getMenuListener(i);
+        //player1Outline.transform.position = characterImages[i].transform.position;
+
+        float curTime = Time.unscaledTime;
+
+        for (int i = 0;i < DeviceMapper.mapper.maxPlayers;i++) {
+            MenuInputListener menuInputListener = PlayerLocator.locator.getMenuListener(i + 1);
 
             if (menuInputListener != null)
             {
-                TakeInput(menuInputListener.getCurState());
-                characterSelected[i - 1] = menuInputListener.hasSelected;
+                menuInputState inputState = TakeInput(menuInputListener.getCurState());
+                characterSelected[i] = menuInputListener.hasSelected;
 
-                if (nextAction[i - 1] < Time.time && !menuInputListener.hasSelected)
+                if (nextAction[i] < curTime && !menuInputListener.hasSelected)
                 {
                     if (inputState.accept.wasPressed)
                     {
@@ -50,13 +54,13 @@ public class CharacterSelectMenu : MonoBehaviour {
                             menuInputListener.selectedCharacter = Random.Range(0, characterImages.Length - 1);
                         }
                         menuInputListener.hasSelected = true;
-                        nextAction[i - 1] = Time.time + 1.0f / actionsPerSec;
+                        nextAction[i] = curTime + 1.0f / actionsPerSec;
                     }
 
                     if (inputState.horizAsButton.wasPressed ||
                         inputState.vertAsButton.wasPressed)
                     {
-                        nextAction[i - 1] = Time.time + 1.0f / actionsPerSec;
+                        nextAction[i] = curTime + 1.0f / actionsPerSec;
                     }
                     int horizontal = (inputState.horizAsButton.wasPressed ?
                         ((inputState.horizNav > 0.0f) ? 1 :
@@ -73,14 +77,14 @@ public class CharacterSelectMenu : MonoBehaviour {
                     if (inputState.decline.wasReleased)
                     {
                         menuInputListener.hasSelected = false;
-                        nextAction[i - 1] = Time.time + 1.0f / actionsPerSec;
+                        nextAction[i] = curTime + 1.0f / actionsPerSec;
                     }
 
-                    if (i == 1)
+                    if (i == 0)
                     {
                         player1Outline.transform.position = characterImages[menuInputListener.selectedCharacter].transform.position;
                     }
-                    if (i == 2)
+                    if (i == 1)
                     {
                         player2Outline.transform.position = characterImages[menuInputListener.selectedCharacter].transform.position;
                     }
@@ -89,8 +93,8 @@ public class CharacterSelectMenu : MonoBehaviour {
         }
     }
 
-    void TakeInput(menuInputState theMenuInputState) {
-        inputState = new menuInputState(theMenuInputState);
+    menuInputState TakeInput(menuInputState theMenuInputState) {
+        return new menuInputState(theMenuInputState);
     }
      
     public void LoadMainMenu() {
