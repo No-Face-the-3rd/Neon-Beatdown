@@ -9,23 +9,20 @@ using UnityEngine;
 
 public class ApproachGoal : BaseGoal
 {
-    ////returns a desire value based on my distance (based on more later)
-    //public AnimationCurve desireToApproach;
-    ////returns the weight value of my desire to approach based on distance
-    //public AnimationCurve desireToApproachW;
-
     //curve indexes 
     [SerializeField]
     private int disIn, disWIn;
+
+    /*
+        what curves could i add?
+        health, if theyre in endlag/startup, timer since the last amount of damage ive give/taken
+    */
 
     protected override void Awake()
     {
         base.Awake();
         //setting so my enemyAiController knows this goal is for horizontal movement
         myValues.input = InputTarget.horizontal;
-        //start and end points on each curve is equal so no bugs
-        //desireToApproachW.keys[0].time = desireToApproach.keys[0].time;
-        //desireToApproachW.keys[desireToApproachW.keys.Length - 1].time = desireToApproach[desireToApproach.keys.Length - 1].time;
     }
 
     public override void evaluateGoal()
@@ -41,7 +38,6 @@ public class ApproachGoal : BaseGoal
 
             float desireWeight = ObjectDB.data.computeCurve(disWIn, curDist);
             float desire = ObjectDB.data.computeCurve(disIn, curDist);
-            //desire /= desireWeight;
 
             myValues.curveOutput = desire;
             myValues.weight = desireWeight;

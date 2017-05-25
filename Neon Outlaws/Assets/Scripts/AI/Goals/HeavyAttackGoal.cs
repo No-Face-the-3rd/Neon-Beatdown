@@ -43,12 +43,26 @@ public class HeavyAttackGoal : BaseGoal
 
             float randomNum = (Random.value) / 2;
             float desire = ObjectDB.data.computeCurve(disIn, curDist + randomNum) + charge.Evaluate(chargeCount);
-            float desireWeight = ObjectDB.data.computeCurve(disWIn, curDist + randomNum) + 
+            float desireWeight = ObjectDB.data.computeCurve(disWIn, curDist + randomNum) +
                                  ObjectDB.data.computeCurve(chargeWIn, chargeCount);
 
             myValues.curveOutput = desire;
             myValues.weight = desireWeight;
         }
         //send desire to enemy ai controller which basegoal already accomplishes
+
+    }
+    float blah()
+    {
+        return 0;
     }
 }
+
+// struct
+//  int index
+//  float value
+
+
+// desireWeight
+// foreach i
+//  desireWeight += ObjectDB.data.computeCurve(i, )

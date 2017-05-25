@@ -173,8 +173,7 @@ public class EnemyAIController : MonoBehaviour
 
     /*
      plan:
-     make my AI be able to do every move in the game
-     add a list of all the curves so all my goals have to do is point to those curves in the list instead
      make the system more generic/clean it up
+     add more curves for less predictability
      */
 }
