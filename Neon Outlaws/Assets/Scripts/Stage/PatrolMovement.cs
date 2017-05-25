@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Taken and changed from a Sebastian Lague 2D platformer tutorial
-public class BlimpMovement : MonoBehaviour {
+public class PatrolMovement : MonoBehaviour {
     public Vector3[] localWaypoints;
     Vector3[] globalWaypoints;
 
@@ -13,6 +13,7 @@ public class BlimpMovement : MonoBehaviour {
     float percentBetweenWaypoints;
     int fromWaypointIndex;
     public bool cyclic;
+    public bool rotateToNextWaypoint; // Turn to face the direction of new waypoint
     [Range(0, 2)] // Ease amount needs to be between 0 and 2
     public float easeAmount;
 
@@ -25,7 +26,7 @@ public class BlimpMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Vector3 moveAmount = blimpMovement();
+        Vector3 moveAmount = patrolMovement();
         transform.Translate(moveAmount);
 	}
 
@@ -37,7 +38,7 @@ public class BlimpMovement : MonoBehaviour {
 
     // Waypoint positions are relative to the blimp's position, not the world position
     // (so to get it to move 50 units on the Y axis, a waypoint's position needs to be set as (0, 50, 0))
-    Vector3 blimpMovement()
+    Vector3 patrolMovement()
     {
         if (Time.time < nextMoveTime)
             return Vector3.zero;
@@ -64,6 +65,13 @@ public class BlimpMovement : MonoBehaviour {
                 }
             //nextMoveTime = Time.time + waitTime;
         }
+
+        Vector3 targetDirection = newPosition - transform.position;
+        float step = speed * Time.deltaTime;
+        Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, step, 0.0f);
+        if (rotateToNextWaypoint)
+            transform.rotation = Quaternion.LookRotation(newDirection);
+
         return newPosition - transform.position;
     }
 
