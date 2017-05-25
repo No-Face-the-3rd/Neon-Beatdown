@@ -13,11 +13,6 @@ public class ApproachGoal : BaseGoal
     [SerializeField]
     private int disIn, disWIn;
 
-    /*
-        what curves could i add?
-        health, if theyre in endlag/startup, timer since the last amount of damage ive give/taken
-    */
-
     protected override void Awake()
     {
         base.Awake();
@@ -30,17 +25,12 @@ public class ApproachGoal : BaseGoal
         //temp awake fix
         if (self.cil != null && self.enemyController != null)
         {
-
             float curDist = Mathf.Abs(self.selfController.transform.position.x - self.enemyController.transform.position.x);
             curDist = Mathf.Clamp(curDist, ObjectDB.data.getCurve(disIn).keys[0].time, 
                                            ObjectDB.data.getCurve(disIn).keys[ObjectDB.data.getCurve(disIn).keys.Length - 1].time);
 
-
-            float desireWeight = ObjectDB.data.computeCurve(disWIn, curDist);
-            float desire = ObjectDB.data.computeCurve(disIn, curDist);
-
-            myValues.curveOutput = desire;
-            myValues.weight = desireWeight;
+            curves[0].value.inputToCurve = curDist;
+            curves[0].weight.inputToCurve = curDist;
         }
         //send desire to Enemy ai controller which basegoal already accomplishes
     }

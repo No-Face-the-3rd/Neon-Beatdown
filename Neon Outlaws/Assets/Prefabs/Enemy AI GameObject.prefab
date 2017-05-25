@@ -389,6 +389,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 0}
+  curves:
+  - label: Distance
+    value:
+      index: 0
+      inputToCurve: 0
+    weight:
+      index: 1
+      inputToCurve: 0
   myValues:
     weight: 0
     curveOutput: 0
@@ -402,12 +410,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1827999859648188}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f61592293523fd478b20cec2bf2e068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 0}
+  curves: []
   myValues:
     weight: 0
     curveOutput: 0
@@ -13099,12 +13108,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1827999859648188}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c836cf48036fdd04d9784f52a9179cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 0}
+  curves: []
   myValues:
     weight: 0
     curveOutput: 0
@@ -13118,12 +13128,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1827999859648188}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 547ebf32e169bac4294467610561bcef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 0}
+  curves: []
   myValues:
     weight: 0
     curveOutput: 0
@@ -13176,12 +13187,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1827999859648188}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4205d24efdac379459e380b052e2b936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 0}
+  curves: []
   myValues:
     weight: 0
     curveOutput: 0
@@ -13203,6 +13215,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 0}
+  curves:
+  - label: Distance
+    value:
+      index: 2
+      inputToCurve: 0
+    weight:
+      index: 3
+      inputToCurve: 0
   myValues:
     weight: 0
     curveOutput: 0

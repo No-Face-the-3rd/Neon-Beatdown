@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class HeavyAttackGoal : BaseGoal
 {
-    //public AnimationCurve distance;
-    //public AnimationCurve distanceW;
-
-    //public AnimationCurve chargeTime;
-    //public AnimationCurve chargeTimeW;
-
     [SerializeField]
     private int disIn, disWIn, chargeIn, chargeWIn;
     protected override void Awake()
@@ -52,17 +46,4 @@ public class HeavyAttackGoal : BaseGoal
         //send desire to enemy ai controller which basegoal already accomplishes
 
     }
-    float blah()
-    {
-        return 0;
-    }
 }
-
-// struct
-//  int index
-//  float value
-
-
-// desireWeight
-// foreach i
-//  desireWeight += ObjectDB.data.computeCurve(i, )
