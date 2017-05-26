@@ -37,11 +37,12 @@ public class BlockGoal : BaseGoal
                     }
                 }
             }
-            float desire = ObjectDB.data.computeCurve(disIn, curDist + randomNum) + ObjectDB.data.computeCurve(startIn, ind);
-            float desireWeight = ObjectDB.data.computeCurve(disWIn, curDist + randomNum) + ObjectDB.data.computeCurve(startWIn, ind);
 
-            myValues.curveOutput = desire;
-            myValues.weight = desireWeight;
+            curves[0].value.inputToCurve  = curDist + randomNum;
+            curves[0].weight.inputToCurve = curDist + randomNum;
+
+            curves[1].value.inputToCurve  = ind;
+            curves[1].weight.inputToCurve = ind;
         }
         //send desire to enemy ai controller which basegoal already accomplishes
     }

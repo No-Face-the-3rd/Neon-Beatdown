@@ -49,7 +49,7 @@ public class BaseGoal : MonoBehaviour
 			for(int i = 0; i < curves.Count; ++i)
 			{
 				myValues.curveOutput += ObjectDB.data.computeCurve(curves[i].value.index, curves[i].value.inputToCurve);
-				myValues.weight += ObjectDB.data.computeCurve(curves[i].weight.index, curves[i].weight.inputToCurve);
+				myValues.weight      += ObjectDB.data.computeCurve(curves[i].weight.index, curves[i].weight.inputToCurve);
 			}
 		}
 	}

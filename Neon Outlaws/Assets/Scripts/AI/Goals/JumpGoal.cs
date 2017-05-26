@@ -21,11 +21,9 @@ public class JumpGoal : BaseGoal
             curDist = Mathf.Clamp(curDist, ObjectDB.data.getCurve(disIn).keys[0].time,
                                            ObjectDB.data.getCurve(disIn).keys[ObjectDB.data.getCurve(disIn).keys.Length - 1].time);
 
-            float desire = ObjectDB.data.computeCurve(disIn, curDist);
-            float desireWeight = ObjectDB.data.computeCurve(disWIn, curDist);
 
-            myValues.curveOutput = desire;
-            myValues.weight = desireWeight;
+            curves[0].value.inputToCurve = curDist;
+            curves[0].weight.inputToCurve = curDist;
         }
     }
 }

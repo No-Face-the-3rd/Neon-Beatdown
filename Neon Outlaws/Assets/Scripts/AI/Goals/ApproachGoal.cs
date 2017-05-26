@@ -26,10 +26,10 @@ public class ApproachGoal : BaseGoal
         if (self.cil != null && self.enemyController != null)
         {
             float curDist = Mathf.Abs(self.selfController.transform.position.x - self.enemyController.transform.position.x);
-            curDist = Mathf.Clamp(curDist, ObjectDB.data.getCurve(disIn).keys[0].time, 
+            curDist       = Mathf.Clamp(curDist, ObjectDB.data.getCurve(disIn).keys[0].time, 
                                            ObjectDB.data.getCurve(disIn).keys[ObjectDB.data.getCurve(disIn).keys.Length - 1].time);
 
-            curves[0].value.inputToCurve = curDist;
+            curves[0].value.inputToCurve  = curDist;
             curves[0].weight.inputToCurve = curDist;
         }
         //send desire to Enemy ai controller which basegoal already accomplishes
