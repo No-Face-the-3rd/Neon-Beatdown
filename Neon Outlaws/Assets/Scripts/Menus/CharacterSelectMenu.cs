@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CharacterSelectMenu : MonoBehaviour {
-
-
+public class CharacterSelectMenu : MonoBehaviour {    
     public MainMenu mainMenuButtons;
     public UnityEngine.EventSystems.EventSystem menuEventSystem;
     public GameObject characterSelectPanel;
@@ -15,6 +13,7 @@ public class CharacterSelectMenu : MonoBehaviour {
     public Image player2Outline;
     public Image[] characterImages;
     public bool [] characterSelected;
+    // Limit the amount of inputs in menus
     public float[] nextAction;
     public float actionsPerSec = 10.0f;
 
@@ -23,45 +22,35 @@ public class CharacterSelectMenu : MonoBehaviour {
         nextAction = new float[2];
     }
 
-
-
     void FixedUpdate() {
-
-        //if (menuInputListener != null)
-        //    TakeInput(menuInputListener.getCurState());
-        //else
-        //    menuInputListener = PlayerLocator.locator.getMenuListener(1);
-
-        //for (int i = 0; i < characterImages.Length; i++) 
-        //player1Outline.transform.position = characterImages[i].transform.position;
 
         float curTime = Time.unscaledTime;
 
+        // For the number of players
         for (int i = 0;i < DeviceMapper.mapper.maxPlayers;i++) {
             MenuInputListener menuInputListener = PlayerLocator.locator.getMenuListener(i + 1);
 
-            if (menuInputListener != null)
-            {
+            // Set menu input listener if null
+            if (menuInputListener != null) {
                 menuInputState inputState = TakeInput(menuInputListener.getCurState());
-                characterSelected[i] = menuInputListener.hasSelected;
+                // characterSelected bool for each player equals menuInputListener bool hasSelected
+                characterSelected[i] = menuInputListener.hasSelected; 
 
-                if (nextAction[i] < curTime && !menuInputListener.hasSelected)
-                {
-                    if (inputState.accept.wasPressed)
-                    {
-                        if (menuInputListener.selectedCharacter == characterImages.Length - 1)
-                        {
+                if (nextAction[i] < curTime && !menuInputListener.hasSelected) {
+                    if (inputState.accept.wasPressed) {
+                        // If the random button is selected, select a new, random character
+                        if (menuInputListener.selectedCharacter == characterImages.Length - 1) { 
                             menuInputListener.selectedCharacter = Random.Range(0, characterImages.Length - 1);
                         }
                         menuInputListener.hasSelected = true;
                         nextAction[i] = curTime + 1.0f / actionsPerSec;
                     }
 
-                    if (inputState.horizAsButton.wasPressed ||
-                        inputState.vertAsButton.wasPressed)
-                    {
+                    if (inputState.horizAsButton.wasPressed || inputState.vertAsButton.wasPressed) {
                         nextAction[i] = curTime + 1.0f / actionsPerSec;
                     }
+
+                    // Character button navigation
                     int horizontal = (inputState.horizAsButton.wasPressed ?
                         ((inputState.horizNav > 0.0f) ? 1 :
                         (inputState.horizNav < 0.0f) ? -1 : 0) : 0);
@@ -72,20 +61,17 @@ public class CharacterSelectMenu : MonoBehaviour {
                     menuInputListener.selectedCharacter = (menuInputListener.selectedCharacter + characterImages.Length) % characterImages.Length;
                 }
 
-                else
-                {
-                    if (inputState.decline.wasReleased)
-                    {
+                else {
+                    if (inputState.decline.wasReleased) {
                         menuInputListener.hasSelected = false;
                         nextAction[i] = curTime + 1.0f / actionsPerSec;
                     }
 
-                    if (i == 0)
-                    {
+                    // Set player outline positions
+                    if (i == 0) {
                         player1Outline.transform.position = characterImages[menuInputListener.selectedCharacter].transform.position;
                     }
-                    if (i == 1)
-                    {
+                    if (i == 1) {
                         player2Outline.transform.position = characterImages[menuInputListener.selectedCharacter].transform.position;
                     }
                 }
@@ -96,13 +82,15 @@ public class CharacterSelectMenu : MonoBehaviour {
     menuInputState TakeInput(menuInputState theMenuInputState) {
         return new menuInputState(theMenuInputState);
     }
-     
+    
+    // Load the Main menu panel
     public void LoadMainMenu() {
         characterSelectPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
         menuEventSystem.SetSelectedGameObject(mainMenuButtons.startingMainButton);
     }
 
+    // Load the State Select Panel
     public void LoadStageSelect() {
         bool allReady = true;
         for (int i = 0; i < characterSelected.Length; i++) {
