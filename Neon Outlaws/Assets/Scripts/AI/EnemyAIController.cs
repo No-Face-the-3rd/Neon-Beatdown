@@ -163,7 +163,6 @@ public class EnemyAIController : MonoBehaviour
 
 	/*
 	 plan:
-	 make the system more generic/clean it up
 	 add more curves for less predictability
 	 could make a scriptable object to store my AI types
 	 */
