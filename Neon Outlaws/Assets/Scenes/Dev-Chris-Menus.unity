@@ -2730,7 +2730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -4366,7 +4366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -6574,7 +6574,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1409956830
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8186,7 +8186,6 @@ GameObject:
   - component: {fileID: 1841334993}
   - component: {fileID: 1841334995}
   - component: {fileID: 1841334994}
-  - component: {fileID: 1841334996}
   m_Layer: 5
   m_Name: MainPanel
   m_TagString: Untagged
@@ -8261,25 +8260,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1841334992}
---- !u!114 &1841334996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1841334992}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa6d18fa4ed9cb64b9f5b23d35fea6a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainMenuPanel: {fileID: 0}
-  soundMenuPanel: {fileID: 0}
-  characterSelectPanel: {fileID: 0}
-  menuEventSystem: {fileID: 0}
-  startingMainButton: {fileID: 0}
-  startingCharacterSelectButton: {fileID: 0}
-  startingStageSelectButton: {fileID: 0}
-  startingAudioButton: {fileID: 0}
 --- !u!1 &1873970328
 GameObject:
   m_ObjectHideFlags: 0
@@ -8383,7 +8363,7 @@ MonoBehaviour:
   characterSelectPanel: {fileID: 1409956829}
   menuEventSystem: {fileID: 871160144}
   startingMainButton: {fileID: 36983381}
-  startingCharacterSelectButton: {fileID: 587286981}
+  startingCharacterSelectButton: {fileID: 669699850}
   startingStageSelectButton: {fileID: 64119844}
   startingAudioButton: {fileID: 1522358408}
 --- !u!4 &1893067176
@@ -8459,11 +8439,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec344c6c911daff4bbb61b51b571d242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenuButtons: {fileID: 0}
-  mainMenuPanel: {fileID: 0}
-  titleMenuPanel: {fileID: 0}
-  nextSelectedButton: {fileID: 0}
-  menuEventSystem: {fileID: 0}
+  mainMenuButtons: {fileID: 1893067175}
+  mainMenuPanel: {fileID: 1841334992}
+  titleMenuPanel: {fileID: 1293280095}
+  nextSelectedButton: {fileID: 36983381}
+  menuEventSystem: {fileID: 871160144}
 --- !u!1 &1893395705
 GameObject:
   m_ObjectHideFlags: 0
@@ -8798,7 +8778,6 @@ GameObject:
   - component: {fileID: 2109022700}
   - component: {fileID: 2109022702}
   - component: {fileID: 2109022701}
-  - component: {fileID: 2109022703}
   m_Layer: 5
   m_Name: AudioPanel
   m_TagString: Untagged
@@ -8871,21 +8850,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2109022699}
---- !u!114 &2109022703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2109022699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b456f05bcc8b574a83b67a7e7a63c95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainMenuButtons: {fileID: 0}
-  menuEventSystem: {fileID: 0}
-  soundMenuPanel: {fileID: 2109022699}
-  mainMenuPanel: {fileID: 0}
 --- !u!1 &2131842702
 GameObject:
   m_ObjectHideFlags: 0

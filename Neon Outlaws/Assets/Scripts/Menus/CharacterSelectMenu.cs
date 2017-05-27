@@ -27,7 +27,7 @@ public class CharacterSelectMenu : MonoBehaviour {
         float curTime = Time.unscaledTime;
 
         // For the number of players
-        for (int i = 0;i < DeviceMapper.mapper.maxPlayers;i++) {
+        for (int i = 0; i < DeviceMapper.mapper.maxPlayers; i++) {
             MenuInputListener menuInputListener = PlayerLocator.locator.getMenuListener(i + 1);
 
             // Set menu input listener if null
