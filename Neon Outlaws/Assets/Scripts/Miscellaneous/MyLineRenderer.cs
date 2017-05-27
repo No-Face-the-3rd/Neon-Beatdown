@@ -57,7 +57,7 @@ public class MyLineRenderer : MonoBehaviour {
     private void updateMeshVerts()
     {
 
-        lineMesh.triangles = new int[0];
+        lineMesh.Clear();
         Vector3[] verts = new Vector3[positions.Count * 2];
         int[] tris = new int[(positions.Count > 0 ?
             (positions.Count - 1) : 0) * 12];
