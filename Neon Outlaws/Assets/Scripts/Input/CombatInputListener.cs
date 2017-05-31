@@ -65,10 +65,10 @@ public class CombatInputListener : MonoBehaviour {
 
         //jank
         {
-            if(curState.escape.wasReleased)
+            if(escape.control.wasJustReleased)
             {
-                CombatInputListener cil = GetComponent<CombatInputListener>();
-                cil.overrideAI = overrideAI = !overrideAI;
+                MenuInputListener mil = GetComponent<MenuInputListener>();
+                mil.overrideAI = overrideAI = !overrideAI;
             }
         }
         //if (controller != null)
