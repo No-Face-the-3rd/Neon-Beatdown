@@ -1814,9 +1814,10 @@ MonoBehaviour:
   stateQueue: 
   inputQueue: []
   queueSize: 100
-  attackIndices: 
+  attackIndices: 000000000100000002000000
   curHealth: 0
   maxHealth: 1000
+  doInput: 0
 --- !u!114 &1148691449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16372,6 +16373,11 @@ Prefab:
       propertyPath: curves.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114857424632970396, guid: af9047b547655b343b34d517b5b502ee,
+        type: 2}
+      propertyPath: attackIndices.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4491520707724442, guid: af9047b547655b343b34d517b5b502ee, type: 2}
       propertyPath: m_LocalPosition.x
       value: 4.93
@@ -16547,6 +16553,16 @@ Prefab:
         type: 2}
       propertyPath: disWIn
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857424632970396, guid: af9047b547655b343b34d517b5b502ee,
+        type: 2}
+      propertyPath: attackIndices.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857424632970396, guid: af9047b547655b343b34d517b5b502ee,
+        type: 2}
+      propertyPath: attackIndices.Array.data[2]
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af9047b547655b343b34d517b5b502ee, type: 2}
