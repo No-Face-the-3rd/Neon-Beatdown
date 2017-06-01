@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class CharacterSelectMenu : MonoBehaviour {    
     public MainMenu mainMenuButtons;
+    MenuInputListener menuInputListener;
+    menuInputState inputState;
     public UnityEngine.EventSystems.EventSystem menuEventSystem;
     public GameObject characterSelectPanel;
     public GameObject stageSelectPanel;
@@ -13,9 +15,11 @@ public class CharacterSelectMenu : MonoBehaviour {
     public Image player2Outline;
     public Image[] characterImages;
     public bool [] characterSelected;
-    // Limit the amount of inputs in menus
+    // Track and limit the amount of inputs in menus
     public float[] nextAction;
     public float actionsPerSec = 10.0f;
+
+    private bool AllReady = false;
 
     void Awake() {
         characterSelected = new bool[2];
@@ -23,16 +27,15 @@ public class CharacterSelectMenu : MonoBehaviour {
     }
 
     void FixedUpdate() {
-
         float curTime = Time.unscaledTime;
 
-        // For the number of players
+        // For the number of players (max 2)
         for (int i = 0; i < DeviceMapper.mapper.maxPlayers; i++) {
-            MenuInputListener menuInputListener = PlayerLocator.locator.getMenuListener(i + 1);
+            menuInputListener = PlayerLocator.locator.getMenuListener(i + 1);
 
             // Set menu input listener if null
             if (menuInputListener != null) {
-                menuInputState inputState = TakeInput(menuInputListener.getCurState());
+                inputState = TakeInput(menuInputListener.getCurState());
                 // characterSelected bool for each player equals menuInputListener bool hasSelected
                 characterSelected[i] = menuInputListener.hasSelected; 
 
@@ -45,7 +48,7 @@ public class CharacterSelectMenu : MonoBehaviour {
                         menuInputListener.hasSelected = true;
                         nextAction[i] = curTime + 1.0f / actionsPerSec;
                     }
-
+                    // Stick movements are counted as buttons for next action limit
                     if (inputState.horizAsButton.wasPressed || inputState.vertAsButton.wasPressed) {
                         nextAction[i] = curTime + 1.0f / actionsPerSec;
                     }
@@ -83,27 +86,30 @@ public class CharacterSelectMenu : MonoBehaviour {
         return new menuInputState(theMenuInputState);
     }
     
-    // Load the Main menu panel
+    /* Load the Main menu panel
     public void LoadMainMenu() {
-        characterSelectPanel.SetActive(false);
-        mainMenuPanel.SetActive(true);
-        menuEventSystem.SetSelectedGameObject(mainMenuButtons.startingMainButton);
+        if (menuInputListener.hasSelected = false && inputState.decline.wasReleased)
+        {
+            characterSelectPanel.SetActive(false);
+            mainMenuPanel.SetActive(true);
+            menuEventSystem.SetSelectedGameObject(mainMenuButtons.startingMainButton);
+        }
     }
 
-    // Load the State Select Panel
+    // Load the Stage Select Panel
     public void LoadStageSelect() {
-        bool allReady = true;
+        bool allReady = true; 
         for (int i = 0; i < characterSelected.Length; i++) {
-            if (!characterSelected[i]) {
+            if (!characterSelected[i]) { // If one or more players are not ready, allReady = false
                 allReady = false;
                 break;
             }
         }
-
-        if (allReady) {
+        // If all players are ready and an accept button is pressed
+        if (allReady && inputState.accept.wasReleased) { 
             characterSelectPanel.SetActive(false);
             stageSelectPanel.SetActive(true);
             menuEventSystem.SetSelectedGameObject(mainMenuButtons.startingStageSelectButton);
         }
-    }
+    }*/
 }

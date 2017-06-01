@@ -454,7 +454,7 @@ PlayerSettings:
   vrEditorSettings: {}
   cloudServicesEnabled:
     Build: 1
-    Collab: 1
+    Collab: 0
     UNet: 1
   cloudProjectId: aabb23bd-a1bf-4386-8a4b-84ed81d84acb
   projectName: Neon Outlaws
