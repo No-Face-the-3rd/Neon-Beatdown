@@ -33,6 +33,7 @@ GameObject:
   - component: {fileID: 114524299324641990}
   - component: {fileID: 114932434939770068}
   - component: {fileID: 114784873545406368}
+  - component: {fileID: 114899721268576540}
   m_Layer: 0
   m_Name: Enemy AI GameObject
   m_TagString: Untagged
@@ -373,7 +374,6 @@ MonoBehaviour:
       wasReleased: 0
       isHeld: 0
   rb: {fileID: 0}
-  opponent: {fileID: 0}
   selfController: {fileID: 0}
   enemyController: {fileID: 0}
   values: []
@@ -410,13 +410,27 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1827999859648188}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f61592293523fd478b20cec2bf2e068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 0}
-  curves: []
+  curves:
+  - label: distance
+    value:
+      index: 6
+      inputToCurve: 0
+    weight:
+      index: 7
+      inputToCurve: 0
+  - label: 'charge '
+    value:
+      index: 8
+      inputToCurve: 0
+    weight:
+      index: 9
+      inputToCurve: 0
   myValues:
     weight: 0
     curveOutput: 0
@@ -13108,33 +13122,47 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1827999859648188}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c836cf48036fdd04d9784f52a9179cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 0}
-  curves: []
+  curves:
+  - label: distance
+    value:
+      index: 14
+      inputToCurve: 0
+    weight:
+      index: 14
+      inputToCurve: 0
   myValues:
     weight: 0
     curveOutput: 0
     input: 0
-  inputTarget: 0
-  disIn: 12
-  disWIn: 13
+  inputTarget: 1
+  disIn: 14
+  disWIn: 14
 --- !u!114 &114823787111338776
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1827999859648188}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 547ebf32e169bac4294467610561bcef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 0}
-  curves: []
+  curves:
+  - label: Distance
+    value:
+      index: 6
+      inputToCurve: 0
+    weight:
+      index: 7
+      inputToCurve: 0
   myValues:
     weight: 0
     curveOutput: 0
@@ -13178,26 +13206,59 @@ MonoBehaviour:
   stateQueue: 
   inputQueue: []
   queueSize: 100
-  attackIndices: 
+  attackIndices: 000000000100000002000000
   curHealth: 0
   maxHealth: 1000
+  doInput: 0
+--- !u!114 &114899721268576540
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1827999859648188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d5970cb776eca4985e50f053046959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positions: []
+  lineWidth: 0.1
+  lineColor: {r: 1, g: 1, b: 1, a: 1}
+  drawLine: 0
+  lineShader: {fileID: 0}
+  lineMaterial: {fileID: 0}
+  changeThreshold: 0.1
 --- !u!114 &114932434939770068
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1827999859648188}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4205d24efdac379459e380b052e2b936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 0}
-  curves: []
+  curves:
+  - label: distance
+    value:
+      index: 10
+      inputToCurve: 0
+    weight:
+      index: 11
+      inputToCurve: 0
+  - label: startup
+    value:
+      index: 12
+      inputToCurve: 0
+    weight:
+      index: 13
+      inputToCurve: 0
   myValues:
     weight: 0
     curveOutput: 0
-    input: 0
+    input: 4
   inputTarget: 4
   disIn: 10
   disWIn: 11

@@ -28,7 +28,6 @@ public class EnemyAIController : MonoBehaviour
 	[HideInInspector] public NBCharacterController selfController;
 	[HideInInspector] public NBCharacterController enemyController;
 	private Animator  animator;
-
 	public List<goalValues> values = new List<goalValues>();
 
 	private void Awake()
@@ -121,7 +120,10 @@ public class EnemyAIController : MonoBehaviour
 
 	public void addGoal(goalValues goalsIn)
 	{
-		values.Add(goalsIn);
+		Debug.Log(!cil.overrideAI);
+		if(cil != null && !cil.overrideAI)
+			values.Add(goalsIn);
+		
 	}
 
 	//float evaluateHorizontal()

@@ -55,7 +55,8 @@ public class BaseGoal : MonoBehaviour
 	}
 	public virtual void sendDesire()
 	{
-		self.addGoal(myValues);
+		if(self.cil != null && !self.cil.overrideAI)
+		    self.addGoal(myValues);
 	}
 
 	public virtual void clearValues()
