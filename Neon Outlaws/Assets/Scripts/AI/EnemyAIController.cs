@@ -47,6 +47,7 @@ public class EnemyAIController : MonoBehaviour
 	//Used for consistency along framerates
 	void FixedUpdate()
 	{
+
 		//temp awake fix
 		if (cil != null && enemyController != null && cil.overrideAI == false)
 		{
@@ -120,7 +121,6 @@ public class EnemyAIController : MonoBehaviour
 
 	public void addGoal(goalValues goalsIn)
 	{
-		Debug.Log(!cil.overrideAI);
 		if(cil != null && !cil.overrideAI)
 			values.Add(goalsIn);
 		

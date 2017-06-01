@@ -48,15 +48,20 @@ public class BaseGoal : MonoBehaviour
 		{
 			for(int i = 0; i < curves.Count; ++i)
 			{
-				myValues.curveOutput += ObjectDB.data.computeCurve(curves[i].value.index, curves[i].value.inputToCurve);
-				myValues.weight      += ObjectDB.data.computeCurve(curves[i].weight.index, curves[i].weight.inputToCurve);
+				float val             = ObjectDB.data.computeCurve(curves[i].value.index, curves[i].value.inputToCurve);
+				float weight          = ObjectDB.data.computeCurve(curves[i].weight.index, curves[i].weight.inputToCurve);
+				if(float.IsNaN(val) == false)
+					myValues.curveOutput += val;
+				if(float.IsNaN(weight) == false)
+					myValues.weight      += weight;
+
 			}
 		}
 	}
 	public virtual void sendDesire()
 	{
 		if(self.cil != null && !self.cil.overrideAI)
-		    self.addGoal(myValues);
+			self.addGoal(myValues);
 	}
 
 	public virtual void clearValues()
