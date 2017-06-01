@@ -540,6 +540,8 @@ public class NBCharacterController : MonoBehaviour
         GameObject attack = ObjectDB.data.getAttack(attackIndices[attackIndex]);
         GameObject tmp = (GameObject)Instantiate(attack, transform.position, Quaternion.identity);
         DamageDealer damage = tmp.GetComponent<DamageDealer>();
+        AttackEffectData data = tmp.GetComponent<AttackEffectData>();
+        tmp.transform.position = tmp.transform.position + new Vector3(data.offset.x * Mathf.Sign(transform.localScale.x), data.offset.y, 0.0f);
         damage.owner = playerNum;
         damage.damage += damageModifier;
         tmp.transform.localScale = gameObject.transform.localScale;
