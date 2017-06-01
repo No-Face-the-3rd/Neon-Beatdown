@@ -11882,10 +11882,11 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 206}
   - {x: -56.6, y: 0, z: 355.5}
-  - {x: -372.5, y: 0, z: 625.2}
-  speed: 50
+  - {x: -350, y: 0, z: 625}
+  - {x: -255, y: 0, z: 0}
+  speed: 125
   cyclic: 1
-  rotateToNextWaypoint: 1
+  rotateToNextWaypoint: 0
   easeAmount: 0
 --- !u!1 &772424656
 GameObject:
