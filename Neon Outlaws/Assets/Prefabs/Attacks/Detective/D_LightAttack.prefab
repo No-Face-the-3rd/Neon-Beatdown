@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 61575815583853388}
   - component: {fileID: 114399760753051674}
   - component: {fileID: 114955840404288272}
+  - component: {fileID: 114034527875939510}
   m_Layer: 0
   m_Name: D_LightAttack
   m_TagString: Untagged
@@ -53,9 +54,25 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 3.62, y: 4.56}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1.25, y: 1.25}
+--- !u!114 &114034527875939510
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1392849072339270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a842a0359f786429300a236105ecf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: {x: 3.6, y: 4.55}
+  zone:
+    min: {x: 0, y: 0}
+    max: {x: 0, y: 0}
+  type: 0
 --- !u!114 &114399760753051674
 MonoBehaviour:
   m_ObjectHideFlags: 1
