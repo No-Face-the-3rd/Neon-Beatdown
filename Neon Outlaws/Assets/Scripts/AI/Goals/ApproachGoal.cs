@@ -31,7 +31,12 @@ public class ApproachGoal : BaseGoal
 
             curves[0].value.inputToCurve  = curDist;
             curves[0].weight.inputToCurve = curDist;
+            curves[1].value.inputToCurve = self.selfController.getCurHealthPercent();
+            curves[1].weight.inputToCurve = self.selfController.getCurHealthPercent();
         }
         //send desire to Enemy ai controller which basegoal already accomplishes
     }
 }
+
+//health, timer, enemy health, enemy in lag, meter, enemy meter, damage taken in previous x seconds, damage given, move hit?
+//, stage positioning

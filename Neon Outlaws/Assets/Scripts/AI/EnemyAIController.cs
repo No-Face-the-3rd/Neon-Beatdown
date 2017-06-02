@@ -164,8 +164,16 @@ public class EnemyAIController : MonoBehaviour
 
 
 	/*
+	 AI feels like calculated button mashing
+	 need to add weights for each goal and decide what to input instead of inputting everything at once if i desire it
 	 plan:
 	 add more curves for less predictability
 	 could make a scriptable object to store my AI types
+	 //could make the curves auto set in each goal(nvm for now, dont know a good way)
+	 //ex. 
+	 //void setCurveInput(float input)
+	 //for(int i = 0; i < curves.count; ++i)
+	 //{
+	 //   curves[i].value.inputToCurve = input;
 	 */
 }

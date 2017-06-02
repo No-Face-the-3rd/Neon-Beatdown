@@ -37,7 +37,7 @@ public class HeavyAttackGoal : BaseGoal
 
             float randomNum = (Random.value) / 2;
 
-            curves[0].value.inputToCurve = curDist + randomNum;
+            curves[0].value.inputToCurve  = curDist + randomNum;
             curves[0].weight.inputToCurve = curDist + randomNum;
 
             curves[1].value.inputToCurve  = chargeCount;
