@@ -11,15 +11,18 @@ public class CharacterSelectMenu : MonoBehaviour {
     public GameObject characterSelectPanel;
     public GameObject stageSelectPanel;
     public GameObject mainMenuPanel;
+    public GameObject backButton;
+    public GameObject playButton;
     public Image player1Outline;
     public Image player2Outline;
     public Image[] characterImages;
     public bool [] characterSelected;
+
     // Track and limit the amount of inputs in menus
     public float[] nextAction;
     public float actionsPerSec = 10.0f;
 
-    private bool AllReady = false;
+    bool allReady;
 
     void Awake() {
         characterSelected = new bool[2];
@@ -52,7 +55,6 @@ public class CharacterSelectMenu : MonoBehaviour {
                     if (inputState.horizAsButton.wasPressed || inputState.vertAsButton.wasPressed) {
                         nextAction[i] = curTime + 1.0f / actionsPerSec;
                     }
-
                     // Character button navigation
                     int horizontal = (inputState.horizAsButton.wasPressed ?
                         ((inputState.horizNav > 0.0f) ? 1 :
@@ -78,6 +80,11 @@ public class CharacterSelectMenu : MonoBehaviour {
                         player2Outline.transform.position = characterImages[menuInputListener.selectedCharacter].transform.position;
                     }
                 }
+
+                if (inputState.decline.wasPressed)
+                {
+                    menuEventSystem.SetSelectedGameObject(backButton);
+                }
             }
         }
     }
@@ -85,31 +92,36 @@ public class CharacterSelectMenu : MonoBehaviour {
     menuInputState TakeInput(menuInputState theMenuInputState) {
         return new menuInputState(theMenuInputState);
     }
-    
-    /* Load the Main menu panel
+
+    //Load the Main menu panel
     public void LoadMainMenu() {
-        if (menuInputListener.hasSelected = false && inputState.decline.wasReleased)
+        if (menuInputListener != null)
         {
-            characterSelectPanel.SetActive(false);
-            mainMenuPanel.SetActive(true);
-            menuEventSystem.SetSelectedGameObject(mainMenuButtons.startingMainButton);
+            if (menuInputListener.hasSelected = false && inputState.decline.wasPressed)
+            {
+                characterSelectPanel.SetActive(false);
+                mainMenuPanel.SetActive(true);
+                menuEventSystem.SetSelectedGameObject(mainMenuButtons.startingMainButton);
+            }
         }
     }
 
-    // Load the Stage Select Panel
+    //Load the Stage Select Panel
     public void LoadStageSelect() {
-        bool allReady = true; 
+        allReady = true; 
         for (int i = 0; i < characterSelected.Length; i++) {
-            if (!characterSelected[i]) { // If one or more players are not ready, allReady = false
+            // If one or more players are not ready, allReady = false
+            if (!characterSelected[i]) { 
                 allReady = false;
                 break;
             }
         }
-        // If all players are ready and an accept button is pressed
-        if (allReady && inputState.accept.wasReleased) { 
+         // If all players are ready and an accept button is held
+        if (allReady) {
+            menuEventSystem.SetSelectedGameObject(playButton);
             characterSelectPanel.SetActive(false);
-            stageSelectPanel.SetActive(true);
-            menuEventSystem.SetSelectedGameObject(mainMenuButtons.startingStageSelectButton);
+                stageSelectPanel.SetActive(true);
+                menuEventSystem.SetSelectedGameObject(mainMenuButtons.startingStageSelectButton);     
         }
-    }*/
+    }
 }
