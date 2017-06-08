@@ -30,6 +30,7 @@ public class EnemyAIController : MonoBehaviour
 	private Animator  animator;
 	public List<goalValues> values = new List<goalValues>();
 
+
 	private void Awake()
 	{
 		selfController = GetComponent<NBCharacterController>();
@@ -69,15 +70,15 @@ public class EnemyAIController : MonoBehaviour
 			inputState.moveX = horizontalDesire * selfController.transform.localScale.x;
 
 			//light attack evaluation
-			lightAttack = evaluateAttack(.9f, InputTarget.lightAttack);
+			lightAttack = evaluateThres(.9f, InputTarget.lightAttack);
 			inputState.lightAttack.setPressState(lightAttack);
 
 			//heavy attack evaluation
-			heavyAttack = evaluateAttack(.8f, InputTarget.heavyAttack);
+			heavyAttack = evaluateThres(.8f, InputTarget.heavyAttack);
 			inputState.heavyAttack.setPressState(heavyAttack);
 
 			//block evaluation
-			block = evaluateAttack(1.0f, InputTarget.block);
+			block = evaluateThres(1.0f, InputTarget.block);
 			inputState.buttonBlock.setPressState(block);
 
 			//jump evaluation
@@ -151,7 +152,7 @@ public class EnemyAIController : MonoBehaviour
 	//    return val;
 	//}
 
-	bool evaluateAttack(float threshold, InputTarget iTarget)
+	bool evaluateThres(float threshold, InputTarget iTarget)
 	{
 		float value = evaluateGoal(iTarget);
 
@@ -176,4 +177,8 @@ public class EnemyAIController : MonoBehaviour
 	 //{
 	 //   curves[i].value.inputToCurve = input;
 	 */
+
+	//health, timer, enemy health, enemy in lag, meter, enemy meter, damage taken in previous x seconds, damage given, move hit?
+	//, stage positioning, my effective range, my opponent's effective range
+	//curve ideas
 }

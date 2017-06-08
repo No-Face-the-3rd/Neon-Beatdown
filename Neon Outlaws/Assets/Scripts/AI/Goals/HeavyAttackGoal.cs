@@ -6,10 +6,13 @@ public class HeavyAttackGoal : BaseGoal
 {
     [SerializeField]
     private int disIn, disWIn, chargeIn, chargeWIn;
+
+    private float timer;
     protected override void Awake()
     {
         base.Awake();
         myValues.input = InputTarget.heavyAttack;
+        timer = 0.0f;
         //set the charge time curve's x axis to the maximum time it takes to get max damage
         //chargeTime.keys[chargeTime.keys.Length - 1].time = self.selfController.maxHeavyChargeTime;
         //chargeTimeW.keys[chargeTimeW.keys.Length - 1].time = chargeTime.keys[chargeTime.keys.Length - 1].time;
@@ -36,12 +39,24 @@ public class HeavyAttackGoal : BaseGoal
 
 
             float randomNum = (Random.value) / 2;
+            if (chargeCount == 0)
+            {
+                timer += Time.deltaTime;
+            }
+            else
+                timer = 0;
+
+            if (timer > 5.0f)
+                timer = 5.0f;
 
             curves[0].value.inputToCurve  = curDist + randomNum;
             curves[0].weight.inputToCurve = curDist + randomNum;
 
             curves[1].value.inputToCurve  = chargeCount;
             curves[1].weight.inputToCurve = chargeCount;
+
+            curves[2].value.inputToCurve = timer;
+            curves[2].weight.inputToCurve = timer;
             //float desire                = ObjectDB.data.computeCurve(disIn, curDist + randomNum) + charge.Evaluate(chargeCount);
             //float desireWeight          = ObjectDB.data.computeCurve(disWIn, curDist + randomNum) +
             //                     ObjectDB.data.computeCurve(chargeWIn, chargeCount);
