@@ -74,7 +74,7 @@ public class EnemyAIController : MonoBehaviour
 			inputState.lightAttack.setPressState(lightAttack);
 
 			//heavy attack evaluation
-			heavyAttack = evaluateThres(.8f, InputTarget.heavyAttack);
+			heavyAttack = evaluateThres(1.0f, InputTarget.heavyAttack);
 			inputState.heavyAttack.setPressState(heavyAttack);
 
 			//block evaluation

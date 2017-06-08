@@ -32,13 +32,14 @@ public class HeavyAttackGoal : BaseGoal
             charge.keys[charge.keys.Length - 1].time = (float)self.selfController.maxHeavyChargeTime;
             //get the absolute value of the distance
             float curDist = Mathf.Abs(self.selfController.transform.position.x - self.enemyController.transform.position.x);
-            //subtract with attack range
+            //subtract with attack range, fix later
             curDist -= 6;
             curDist  = Mathf.Clamp(curDist, ObjectDB.data.getCurve(disIn).keys[0].time,
                                            ObjectDB.data.getCurve(disIn).keys[ObjectDB.data.getCurve(disIn).keys.Length - 1].time);
 
 
             float randomNum = (Random.value) / 2;
+            //if im not currently doing a heavy attack, increase timer
             if (chargeCount == 0)
             {
                 timer += Time.deltaTime;
@@ -46,7 +47,7 @@ public class HeavyAttackGoal : BaseGoal
             else
                 timer = 0;
 
-            if (timer > 5.0f)
+            if (timer > 5.0f) //5 is just the limit of the curve atm
                 timer = 5.0f;
 
             curves[0].value.inputToCurve  = curDist + randomNum;
@@ -57,12 +58,6 @@ public class HeavyAttackGoal : BaseGoal
 
             curves[2].value.inputToCurve = timer;
             curves[2].weight.inputToCurve = timer;
-            //float desire                = ObjectDB.data.computeCurve(disIn, curDist + randomNum) + charge.Evaluate(chargeCount);
-            //float desireWeight          = ObjectDB.data.computeCurve(disWIn, curDist + randomNum) +
-            //                     ObjectDB.data.computeCurve(chargeWIn, chargeCount);
-
-            //myValues.curveOutput = desire;
-            //myValues.weight = desireWeight;
         }
         //send desire to enemy ai controller which basegoal already accomplishes
 
