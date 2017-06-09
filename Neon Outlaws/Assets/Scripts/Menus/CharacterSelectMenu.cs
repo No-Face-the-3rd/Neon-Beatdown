@@ -80,11 +80,10 @@ public class CharacterSelectMenu : MonoBehaviour {
                         player2Outline.transform.position = characterImages[menuInputListener.selectedCharacter].transform.position;
                     }
                 }
-
-                if (inputState.decline.wasPressed)
-                {
-                    menuEventSystem.SetSelectedGameObject(backButton);
-                }
+                // Stop selecting characters, go to back button
+                //if (inputState.decline.wasPressed) {
+                //    menuEventSystem.SetSelectedGameObject(backButton);
+                //}
             }
         }
     }
@@ -106,7 +105,7 @@ public class CharacterSelectMenu : MonoBehaviour {
         }
     }
 
-    //Load the Stage Select Panel
+    // Load the Stage Select Panel
     public void LoadStageSelect() {
         allReady = true; 
         for (int i = 0; i < characterSelected.Length; i++) {
@@ -116,7 +115,7 @@ public class CharacterSelectMenu : MonoBehaviour {
                 break;
             }
         }
-         // If all players are ready and an accept button is held
+        // If all players are ready
         if (allReady) {
             menuEventSystem.SetSelectedGameObject(playButton);
             characterSelectPanel.SetActive(false);
