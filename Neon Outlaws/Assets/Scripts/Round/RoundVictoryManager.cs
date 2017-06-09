@@ -23,6 +23,7 @@ public class RoundVictoryManager : MonoBehaviour {
 
     int roundInd = 0;
     int winInd = 0;
+    public bool inDebug = false;
 
     private enum TransitionState
     {
@@ -49,7 +50,7 @@ public class RoundVictoryManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        timerMan.roundTimer.setActive(!inDebug);
 
         transitionTimer.update();
 
@@ -99,14 +100,14 @@ public class RoundVictoryManager : MonoBehaviour {
 
     void spawnCharacters()
     {
-        //for(int i = 0;i < DeviceMapper.mapper.maxPlayers;i++)
+        //for (int i = 0; i < DeviceMapper.mapper.maxPlayers; i++)
         //{
         //    MenuInputListener mil = PlayerLocator.locator.getMenuListener(i + 1);
         //    GameObject tmp = Instantiate(ObjectDB.data.getCharacter(
-        //        mil.selectedCharacter),stage.startingPos[i],Quaternion.identity);
-        //        mil.setActive(false);
-        //   NBCharacterController.playerNum = i + 1;
-
+        //        mil.selectedCharacter), stage.startingPos[i], Quaternion.identity);
+        //    mil.setActive(false);
+        //    NBCharacterController charCon = tmp.GetComponent<NBCharacterController>();
+        //    charCon.playerNum = i + 1;
         //}
     }
 
