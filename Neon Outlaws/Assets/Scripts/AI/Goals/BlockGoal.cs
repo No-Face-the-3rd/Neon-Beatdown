@@ -20,7 +20,7 @@ public class BlockGoal : BaseGoal
             float curDist = Mathf.Abs(self.selfController.transform.position.x - self.enemyController.transform.position.x);
             curDist = Mathf.Clamp(curDist, ObjectDB.data.getCurve(disIn).keys[0].time,
                                            ObjectDB.data.getCurve(disIn).keys[ObjectDB.data.getCurve(disIn).keys.Length - 1].time);
-            float randomNum = Random.value / 2;
+            //float randomNum = Random.value / 2;
 
             int checkAttackThreshold = 5;
             int curEnemyStartup = 0;
@@ -38,8 +38,8 @@ public class BlockGoal : BaseGoal
                 }
             }
 
-            curves[0].value.inputToCurve  = curDist + randomNum;
-            curves[0].weight.inputToCurve = curDist + randomNum;
+            curves[0].value.inputToCurve  = curDist /*+ randomNum*/;
+            curves[0].weight.inputToCurve = curDist /*+ randomNum*/;
 
             curves[1].value.inputToCurve  = curEnemyStartup;
             curves[1].weight.inputToCurve = curEnemyStartup;
