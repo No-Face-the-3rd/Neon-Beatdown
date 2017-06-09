@@ -115,7 +115,7 @@ public class EnemyAIController : MonoBehaviour
 		{
 			values.RemoveAt(toRemove[i]);
 		}
-		val /= weights;
+		val *= weights;
 
 		return val;
 	}
