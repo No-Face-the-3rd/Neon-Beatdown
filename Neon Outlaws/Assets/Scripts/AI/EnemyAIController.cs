@@ -97,17 +97,17 @@ public class EnemyAIController : MonoBehaviour
 	//maybe have it return a float for horizontal/jump/attack/block
 	public float evaluateGoal(InputTarget iTarget)
 	{
-		float weights = 0.0f;
+		//float weights = 0.0f;
 		float val = 0.0f;
-
+		int ind = 0;
 		List<int> toRemove = new List<int>();
 		for (int i = 0; i < values.Count; ++i)
 		{
 			if (values[i].input == iTarget)
 			{
-
-				val += values[i].curveOutput;
-				weights += values[i].weight;
+				ind++;
+				val += values[i].curveOutput * values[i].weight;
+				//weights += values[i].weight;
 				toRemove.Insert(0, i);
 			}
 		}
@@ -115,7 +115,7 @@ public class EnemyAIController : MonoBehaviour
 		{
 			values.RemoveAt(toRemove[i]);
 		}
-		val *= weights;
+		val /= (float)ind;
 
 		return val;
 	}
@@ -168,6 +168,7 @@ public class EnemyAIController : MonoBehaviour
 	 AI feels like calculated button mashing
 	 need to add weights for each goal and decide what to input instead of inputting everything at once if i desire it
 	 plan:
+	 set up goal weights
 	 add more curves for less predictability
 	 could make a scriptable object to store my AI types
 	 //could make the curves auto set in each goal(nvm for now, dont know a good way)

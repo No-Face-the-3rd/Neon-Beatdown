@@ -9,6 +9,8 @@ using UnityEngine;
 
 public class ApproachGoal : BaseGoal
 {
+    //Goal weight
+    public float goalWeight;
     //curve indexes 
     [SerializeField]
     private int disIn, disWIn;
