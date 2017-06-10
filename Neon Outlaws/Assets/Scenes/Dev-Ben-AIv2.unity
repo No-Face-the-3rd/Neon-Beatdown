@@ -31777,7 +31777,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2021642112}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a8e250bbbb3ba140b4cda9ce4984e67, type: 3}
   m_Name: 
@@ -31810,6 +31810,7 @@ MonoBehaviour:
     curveOutput: 0
     input: 0
   inputTarget: 0
+  goalWeight: 0
   disIn: 0
   disWIn: 1
 --- !u!114 &2021642116
@@ -31818,7 +31819,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2021642112}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 515406aefa917f0408cd28e2fbba60d6, type: 3}
   m_Name: 
@@ -31974,6 +31975,54 @@ MonoBehaviour:
   inputTarget: 1
   disIn: 14
   disWIn: 14
+--- !u!114 &2021642121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2021642112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a010960b74b1644593cfeca701d21b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 0}
+  curves:
+  - label: App dist
+    value:
+      index: 0
+      inputToCurve: 0
+    weight:
+      index: 0
+      inputToCurve: 0
+  - label: App health
+    value:
+      index: 0
+      inputToCurve: 0
+    weight:
+      index: 0
+      inputToCurve: 0
+  - label: App Damage taken
+    value:
+      index: 0
+      inputToCurve: 0
+    weight:
+      index: 0
+      inputToCurve: 0
+  - label: Re dist
+    value:
+      index: 0
+      inputToCurve: 0
+    weight:
+      index: 0
+      inputToCurve: 0
+  myValues:
+    weight: 0
+    curveOutput: 0
+    input: 0
+  inputTarget: 0
+  disAIn: 0
+  disRIn: 0
 --- !u!1 &2023268497
 GameObject:
   m_ObjectHideFlags: 0

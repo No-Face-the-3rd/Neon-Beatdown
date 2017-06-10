@@ -33,12 +33,12 @@ public class ApproachGoal : BaseGoal
             curDist       = Mathf.Clamp(curDist, ObjectDB.data.getCurve(disIn).keys[0].time, 
                                            ObjectDB.data.getCurve(disIn).keys[ObjectDB.data.getCurve(disIn).keys.Length - 1].time);
             //buggy
-            //if(curHealthPer < prevHealthPer)
-            //{
-            //    float diff = Mathf.Abs(prevHealthPer - curHealthPer);
-            //    curves[2].value.inputToCurve = diff;
-            //    curves[2].weight.inputToCurve = diff;
-            //}
+            if (curHealthPer < prevHealthPer)
+            {
+                float diff = Mathf.Abs(prevHealthPer - curHealthPer);
+                curves[2].value.inputToCurve = diff;
+                curves[2].weight.inputToCurve = diff;
+            }
 
             curves[0].value.inputToCurve  = curDist;
             curves[0].weight.inputToCurve = curDist;
