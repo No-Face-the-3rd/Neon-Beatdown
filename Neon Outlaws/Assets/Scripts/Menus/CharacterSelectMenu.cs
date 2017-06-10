@@ -45,6 +45,7 @@ public class CharacterSelectMenu : MonoBehaviour {
                 if (nextAction[i] < curTime && !menuInputListener.hasSelected) {
                     if (inputState.accept.wasPressed) {
                         // If the random button is selected, select a new, random character
+                        // - 1 makes it so that random can not be selected by the random button
                         if (menuInputListener.selectedCharacter == characterImages.Length - 1) { 
                             menuInputListener.selectedCharacter = Random.Range(0, characterImages.Length - 1);
                         }
