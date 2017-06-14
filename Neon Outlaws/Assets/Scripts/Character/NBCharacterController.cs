@@ -87,6 +87,7 @@ public class NBCharacterController : MonoBehaviour
     public float maxHealth = 1000.0f;
 
     private CombatInputListener cil;
+    public bool doInput = false;
 
     // Use this for initialization
     void Start()
@@ -108,6 +109,10 @@ public class NBCharacterController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(doInput)
+        {
+
+        }
         if (cil != null)
         {
             takeInput(cil.getCurState());
