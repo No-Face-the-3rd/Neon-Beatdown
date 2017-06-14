@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 120512361196220834}
   - component: {fileID: 114563643739927798}
   - component: {fileID: 114857424632970396}
+  - component: {fileID: 114899721268576540}
   - component: {fileID: 114160402112939002}
   - component: {fileID: 114382430592172600}
   - component: {fileID: 114950749741755528}
@@ -33,7 +34,7 @@ GameObject:
   - component: {fileID: 114524299324641990}
   - component: {fileID: 114932434939770068}
   - component: {fileID: 114784873545406368}
-  - component: {fileID: 114899721268576540}
+  - component: {fileID: 114149649306603944}
   m_Layer: 0
   m_Name: Enemy AI GameObject
   m_TagString: Untagged
@@ -48,7 +49,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1827999859648188}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.93, y: 0, z: 0}
+  m_LocalPosition: {x: 12, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -322,6 +323,54 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114149649306603944
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1827999859648188}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a010960b74b1644593cfeca701d21b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 0}
+  curves:
+  - label: App dist
+    value:
+      index: 0
+      inputToCurve: 0
+    weight:
+      index: 0
+      inputToCurve: 0
+  - label: App health
+    value:
+      index: 0
+      inputToCurve: 0
+    weight:
+      index: 0
+      inputToCurve: 0
+  - label: App Damage taken
+    value:
+      index: 0
+      inputToCurve: 0
+    weight:
+      index: 0
+      inputToCurve: 0
+  - label: Re dist
+    value:
+      index: 0
+      inputToCurve: 0
+    weight:
+      index: 0
+      inputToCurve: 0
+  myValues:
+    weight: 0
+    curveOutput: 0
+    input: 0
+  inputTarget: 0
+  disAIn: 0
+  disRIn: 0
 --- !u!114 &114160402112939002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -397,11 +446,26 @@ MonoBehaviour:
     weight:
       index: 1
       inputToCurve: 0
+  - label: Health
+    value:
+      index: 16
+      inputToCurve: 0
+    weight:
+      index: 17
+      inputToCurve: 0
+  - label: Damage taken
+    value:
+      index: 18
+      inputToCurve: 0
+    weight:
+      index: 19
+      inputToCurve: 0
   myValues:
     weight: 0
     curveOutput: 0
     input: 0
   inputTarget: 0
+  goalWeight: 0
   disIn: 0
   disWIn: 1
 --- !u!114 &114524299324641990
@@ -430,6 +494,13 @@ MonoBehaviour:
       inputToCurve: 0
     weight:
       index: 9
+      inputToCurve: 0
+  - label: timer till next heavy
+    value:
+      index: 20
+      inputToCurve: 0
+    weight:
+      index: 21
       inputToCurve: 0
   myValues:
     weight: 0
@@ -13194,11 +13265,11 @@ MonoBehaviour:
   idleStopRatio: 0.4
   walkSlowRatio: 0.5
   consecutiveLightsForSecond: 2
-  maxHeavyChargeTime: 5
-  consecutiveLightDecay: 10
+  maxHeavyChargeTime: 20
+  consecutiveLightDecay: 15
   blockDamageTaken: 0.2
-  minHeavyChargeDamage: 0
-  maxHeavyChargeDamage: 0
+  minHeavyChargeDamage: 50
+  maxHeavyChargeDamage: 100
   grounded: 0
   playerNum: 2
   currentCharacterState: 0
@@ -13225,7 +13296,7 @@ MonoBehaviour:
   lineWidth: 0.1
   lineColor: {r: 1, g: 1, b: 1, a: 1}
   drawLine: 0
-  lineShader: {fileID: 0}
+  lineShader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   lineMaterial: {fileID: 0}
   changeThreshold: 0.1
 --- !u!114 &114932434939770068
@@ -13246,7 +13317,7 @@ MonoBehaviour:
       index: 10
       inputToCurve: 0
     weight:
-      index: 11
+      index: 10
       inputToCurve: 0
   - label: startup
     value:
@@ -13300,9 +13371,9 @@ LineRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1827999859648188}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_MotionVectors: 0
+  m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
@@ -13420,7 +13491,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300050, guid: d0ea6add7a49cbb40a736c6deb1cffdc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d0ea6add7a49cbb40a736c6deb1cffdc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

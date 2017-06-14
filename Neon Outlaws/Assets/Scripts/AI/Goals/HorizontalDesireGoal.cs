@@ -29,7 +29,10 @@ public class HorizontalDesireGoal : BaseGoal
             curves[0].value.inputToCurve = appDist;
             curves[0].weight.inputToCurve = appDist;
             curves[1].value.inputToCurve = curHealthPer;
+            curves[1].weight.inputToCurve = curHealthPer;
 
+            //curves[4].value.inputToCurve = timerSinceDamageTaken;
+            //curves[]
         }
     }
 }
