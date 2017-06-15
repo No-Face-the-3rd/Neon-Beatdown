@@ -10,12 +10,37 @@ public class RoundTimerManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        roundTimer.init();
 	}
 	
 	// Update is called once per frame
 	void Update () {
         roundTimer.update();
-        timerText.text = "Time: " + Mathf.Ceil(roundTimer.timeRemaining());
+        timerText.text = Mathf.Ceil(roundTimer.timeRemaining()).ToString();
 	}
+
+    public void resetRound()
+    {
+        roundTimer.resetTimer();
+    }
+
+    public void startRound()
+    {
+        roundTimer.startTimer();
+    }
+
+    public bool timeEnd()
+    {
+        return roundTimer.isPassed();
+    }
+
+    public float timeLeft()
+    {
+        return roundTimer.timeRemaining();
+    }
+
+    public void pauseTimer(bool paused = true)
+    {
+        roundTimer.setActive(!paused);
+    }
+
 }

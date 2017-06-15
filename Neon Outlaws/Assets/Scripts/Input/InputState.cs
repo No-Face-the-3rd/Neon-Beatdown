@@ -22,6 +22,21 @@ public class ButtonInfo
 
     private bool isDown = false;
 
+    public ButtonInfo()
+    {
+        wasPressed = false;
+        wasReleased = false;
+        isHeld = false;
+        isDown = false;
+    }
+
+    public ButtonInfo(ButtonInfo button)
+    {
+        wasPressed = button.wasPressed;
+        wasReleased = button.wasReleased;
+        isHeld = button.isHeld;
+        isDown = button.isDown;
+    }
     /// <summary>
     /// 
     /// </summary>
@@ -46,6 +61,7 @@ public class ButtonInfo
                 wasReleased = true;
                 isDown = false;
             }
+            isHeld = false;
         }
     }
 
@@ -66,6 +82,19 @@ public class ButtonInfo
         ret = "Is Held: " + isHeld + "\nWas Just Pressed: " + wasPressed + "\nWas Just Released: " + wasReleased;
         return ret;
     }
+    public bool axisDown(float axis, float deadZone)
+    {
+        bool ret = false;
+        if(Mathf.Abs(axis) >= deadZone)
+        {
+            ret = true;
+        }
+        return ret;
+    }
+    public void fromAxis(float axis, float deadZone)
+    {
+        setPressState(axisDown(axis, deadZone));
+    }
 }
 
 [System.Serializable]
@@ -79,6 +108,8 @@ public class InputState
     /// Value from -1 to 1. Y axis Controls
     /// </summary>
     public float moveY;
+    public ButtonInfo xAsButton;
+    public ButtonInfo yAsButton;
     /// <summary>
     /// Information on button state: escape
     /// </summary>
@@ -108,6 +139,97 @@ public class InputState
     /// <para>Not Currently Used</para>
     /// </summary>
     //public ButtonInfo ultimateAbility;
+    /// <summary>
+    /// Information on button state: block button
+    /// </summary>
+    public ButtonInfo buttonBlock;
 
+    public InputState()
+    {
+        moveX = 0.0f;
+        moveY = 0.0f;
+        escape = new ButtonInfo();
+        lightAttack = new ButtonInfo();
+        heavyAttack = new ButtonInfo();
+        abilityOne = new ButtonInfo();
+        abilityTwo = new ButtonInfo();
+        abilityThree = new ButtonInfo();
+        buttonBlock = new ButtonInfo();
+        xAsButton = new ButtonInfo();
+        yAsButton = new ButtonInfo();
+    }
 
+    public InputState(InputState input)
+    {
+        moveX = input.moveX;
+        moveY = input.moveY;
+        escape = new ButtonInfo(input.escape);
+        lightAttack = new ButtonInfo(input.lightAttack);
+        heavyAttack = new ButtonInfo(input.heavyAttack);
+        abilityOne = new ButtonInfo(input.abilityOne);
+        abilityTwo = new ButtonInfo(input.abilityTwo);
+        abilityThree = new ButtonInfo(input.abilityThree);
+        buttonBlock = new ButtonInfo(input.buttonBlock);
+        xAsButton = new ButtonInfo(input.xAsButton);
+        yAsButton = new ButtonInfo(input.yAsButton);
+    }
+
+    public void clearAxes()
+    {
+        moveX = moveY = 0.0f;
+    }
+}
+
+[System.Serializable]
+public class menuInputState
+{
+    /// <summary>
+    /// Value from -1 to 1. X axis Controls
+    /// </summary>
+    public float horizNav;
+    /// <summary>
+    /// Value from -1 to 1. Y axis Controls
+    /// </summary>
+    public float vertNav;
+    public ButtonInfo horizAsButton;
+    public ButtonInfo vertAsButton;
+    /// <summary>
+    /// Information on button state: accept
+    /// </summary>
+    public ButtonInfo accept;
+    /// <summary>
+    /// Information on button state: decline
+    /// </summary>
+    public ButtonInfo decline;
+    /// <summary>
+    /// Information on button state: resume
+    /// </summary>
+    public ButtonInfo resume;
+
+    public menuInputState()
+    {
+        horizNav = 0.0f;
+        vertNav = 0.0f;
+        accept = new ButtonInfo();
+        decline = new ButtonInfo();
+        resume = new ButtonInfo();
+        horizAsButton = new ButtonInfo();
+        vertAsButton = new ButtonInfo();
+    }
+
+    public menuInputState(menuInputState input)
+    {
+        horizNav = input.horizNav;
+        vertNav = input.vertNav;
+        accept = new ButtonInfo(input.accept);
+        decline = new ButtonInfo(input.decline);
+        resume = new ButtonInfo(input.resume);
+        horizAsButton = new ButtonInfo(input.horizAsButton);
+        vertAsButton = new ButtonInfo(input.vertAsButton);
+    }
+
+    public void clearAxes()
+    {
+        horizNav = vertNav = 0.0f;
+    }
 }

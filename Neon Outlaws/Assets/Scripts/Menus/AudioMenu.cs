@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioMenu : MonoBehaviour {
-    public GameObject optionsMenuPanel;
+    public MainMenu mainMenuButtons;
+    public UnityEngine.EventSystems.EventSystem menuEventSystem;
     public GameObject soundMenuPanel;
-    // Deactivate audio panel, bring up the options panel
-    public void LoadOptionsPanel()
+    public GameObject mainMenuPanel;
+
+    // Deactivate audio panel, bring up the main menu panel
+    public void LoadMainMenuPanel()
     {
         soundMenuPanel.SetActive(false);
-        optionsMenuPanel.SetActive(true);
+        mainMenuPanel.SetActive(true);
+        menuEventSystem.SetSelectedGameObject(mainMenuButtons.startingMainButton);
     }
 }

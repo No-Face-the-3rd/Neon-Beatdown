@@ -15,59 +15,34 @@ public class CombatInputListener : MonoBehaviour {
     public AxisAction moveX;
     public AxisAction moveY;
     public ButtonAction escape;
-    public ButtonAction buttonZero;
-    public ButtonAction buttonOne;
-    public ButtonAction buttonTwo;
-    public ButtonAction buttonThree;
-    public ButtonAction buttonFour;
+    public ButtonAction abilityOne;
+    public ButtonAction abilityTwo;
+    public ButtonAction lightAttack;
+    public ButtonAction heavyAttack;
+    public ButtonAction abilityThree;
+    //public ButtonAction ult;
+    public ButtonAction buttonBlock;
 
-    //public ButtonAction acceptAction;
-    //public ButtonAction declineAction;
-    //public ButtonAction buttonFive;
+    public NBCharacterController controller;
+    public float deadZone = 0.5f;
+    
+    public InputState curState = new InputState();
+
+    public int playerNum;
 
 
-    public InputState curState;
-
-    public List<InputState> inputQueue;
-    public int queueSize;
     private bool handled = false;
 
     // Use this for initialization
-    void Start() {
+    void Start()
+    {
         pInput = GetComponent<PlayerInput>();
-        //moveX.Bind(pInput.handle);
-        //moveY.Bind(pInput.handle);
-        //escape.Bind(pInput.handle);
-        //buttonZero.Bind(pInput.handle);
-        //buttonOne.Bind(pInput.handle);
-        //buttonTwo.Bind(pInput.handle);
-        //buttonThree.Bind(pInput.handle);
-        //buttonFour.Bind(pInput.handle);
-        //pInput.handle.maps[0].active = false;
     }
 
     // Update is called once per frame
-    void Update() {
-        //if (DeviceMapper.mapper.players.Count >= 1 && !handled)
-            //doThings();
-
-
-    }
-
-    void doThings()
+    void Update()
     {
-        handled = true;
-        DeviceMapper.PlayerInfo info = DeviceMapper.mapper.players[0];
-        pInput.handle = DeviceMapper.mapper.players[0].handle;
-        pInput.handle.maps[0].active = false;
-        moveX.Bind(pInput.handle);
-        moveY.Bind(pInput.handle);
-        escape.Bind(pInput.handle);
-        buttonZero.Bind(pInput.handle);
-        buttonOne.Bind(pInput.handle);
-        buttonTwo.Bind(pInput.handle);
-        buttonThree.Bind(pInput.handle);
-        buttonFour.Bind(pInput.handle);
+
     }
 
     void FixedUpdate()
@@ -77,29 +52,67 @@ public class CombatInputListener : MonoBehaviour {
             setAxis(moveX.control.value, out curState.moveX);
             setAxis(moveY.control.value, out curState.moveY);
             setButton(escape.control, out curState.escape);
-            setButton(buttonTwo.control, out curState.lightAttack);
-            setButton(buttonThree.control, out curState.heavyAttack);
-            setButton(buttonZero.control, out curState.abilityOne);
-            setButton(buttonOne.control, out curState.abilityTwo);
-            setButton(buttonFour.control, out curState.abilityThree);
+            setButton(lightAttack.control, out curState.lightAttack);
+            setButton(heavyAttack.control, out curState.heavyAttack);
+            setButton(abilityOne.control, out curState.abilityOne);
+            setButton(abilityTwo.control, out curState.abilityTwo);
+            setButton(abilityThree.control, out curState.abilityThree);
+            //setButton(ult.control, out curState.ultimateAbility);
+            setButton(buttonBlock.control, out curState.buttonBlock);
         }
-        inputQueue.Add(curState);
-        if (inputQueue.Count > queueSize)
-            inputQueue.RemoveAt(0);
-        curState = new InputState();
+        curState.xAsButton.fromAxis(curState.moveX, deadZone);
+        curState.yAsButton.fromAxis(curState.moveY, deadZone);
+
+        //jank
+        {
+            if(escape.control.wasJustReleased)
+            {
+                MenuInputListener mil = GetComponent<MenuInputListener>();
+                mil.overrideAI = overrideAI = !overrideAI;
+            }
+        }
+        //if (controller != null)
+        //    controller.takeInput(getCurState());
     }
+
+    public void bindInput(int index)
+    {
+        handled = true;
+        PlayerInfo info = DeviceMapper.mapper.players[index];
+        pInput.handle = info.handle;
+        playerNum = info.playerNum;
+        moveX.Bind(pInput.handle);
+        moveY.Bind(pInput.handle);
+        escape.Bind(pInput.handle);
+        abilityOne.Bind(pInput.handle);
+        abilityTwo.Bind(pInput.handle);
+        lightAttack.Bind(pInput.handle);
+        heavyAttack.Bind(pInput.handle);
+        abilityThree.Bind(pInput.handle);
+        //UltBlock.Bind(pInput.handle);
+        buttonBlock.Bind(pInput.handle);
+    }
+
 
     public void setCurState(InputState state)
     {
-        setAxis(state.moveX, out curState.moveX);
-        setAxis(state.moveY, out curState.moveY);
-        setButton(state.escape, out curState.escape);
-        setButton(state.lightAttack, out curState.lightAttack);
-        setButton(state.heavyAttack, out curState.heavyAttack);
-        setButton(state.abilityOne, out curState.abilityOne);
-        setButton(state.abilityTwo, out curState.abilityTwo);
-        setButton(state.abilityThree, out curState.abilityThree);
-        //setButton(state.ultimateAbility, out curState.ultimateAbility);
+        InputState toAssign = new InputState(state);
+        setAxis(toAssign.moveX, out curState.moveX);
+        setAxis(toAssign.moveY, out curState.moveY);
+        setButton(toAssign.escape, out curState.escape);
+        setButton(toAssign.lightAttack, out curState.lightAttack);
+        setButton(toAssign.heavyAttack, out curState.heavyAttack);
+        setButton(toAssign.abilityOne, out curState.abilityOne);
+        setButton(toAssign.abilityTwo, out curState.abilityTwo);
+        setButton(toAssign.abilityThree, out curState.abilityThree);
+        //setButton(toAssign.ultimateAbility, out curState.ultimateAbility);
+        setButton(toAssign.buttonBlock, out curState.buttonBlock);
+    }
+
+    public InputState getCurState()
+    {
+        InputState ret = new InputState(curState);
+        return ret;
     }
 
     public void setAxis(float value, out float outAxis)
@@ -112,4 +125,8 @@ public class CombatInputListener : MonoBehaviour {
         outButton = value;
     }
 
+    public void setActive(bool active)
+    {
+        pInput.handle.maps[1].active = active;
+    }
 }
