@@ -24,6 +24,27 @@ public class AttackData
     public Vector3 offsetFromPosition;
 }
 
+public static partial class NMath
+{
+    public static bool withinRange(int value, int min, int max)
+    {
+        if (value >= min && value <= max)
+            return true;
+        else
+            return false;
+    }
+
+    public static bool withinRange(float value, float min, float max)
+    {
+        if (value >= min && value <= max)
+            return true;
+        else
+            return false;
+    }
+}
+
+
+
 public class ObjectDB : MonoBehaviour
 {
     public static ObjectDB data;
@@ -68,7 +89,7 @@ public class ObjectDB : MonoBehaviour
 
     public GameObject getCharacter(int index)
     {
-        if (withinRange(index, 0, getNumCharacters() - 1))
+        if (NMath.withinRange(index, 0, getNumCharacters() - 1))
         {
             return characters[index];
         }
@@ -80,7 +101,7 @@ public class ObjectDB : MonoBehaviour
 
     public GameObject getAttack(int index)
     {
-        if (withinRange(index, 0, getNumAttacks() - 1))
+        if (NMath.withinRange(index, 0, getNumAttacks() - 1))
         {
             return attacks[index];
         }
@@ -92,7 +113,7 @@ public class ObjectDB : MonoBehaviour
 
     public GameObject getLevel(int index)
     {
-        if (withinRange(index, 0, getNumLevels() - 1))
+        if (NMath.withinRange(index, 0, getNumLevels() - 1))
         {
             return levels[index];
         }
@@ -104,7 +125,7 @@ public class ObjectDB : MonoBehaviour
 
     public HealthBarElements getHealthbar(int index)
     {
-        if (withinRange(index, 0, getNumHealthBars() - 1))
+        if (NMath.withinRange(index, 0, getNumHealthBars() - 1))
         {
             return healthBars[index];
         }
@@ -116,7 +137,7 @@ public class ObjectDB : MonoBehaviour
 
     public GameObject getPrefab(int index)
     {
-        if (withinRange(index, 0, getNumPrefabs() - 1))
+        if (NMath.withinRange(index, 0, getNumPrefabs() - 1))
         {
             return genericPrefabs[index];
         }
@@ -127,7 +148,7 @@ public class ObjectDB : MonoBehaviour
     }
     public AnimationCurve getCurve(int index)
     {
-        if(withinRange(index, 0, getNumCurves() - 1))
+        if(NMath.withinRange(index, 0, getNumCurves() - 1))
         {
             return curves[index].curve;
         }
@@ -135,22 +156,6 @@ public class ObjectDB : MonoBehaviour
         {
             return null;
         }
-    }
-
-    public bool withinRange(int value, int min, int max)
-    {
-        if (value >= min && value <= max)
-            return true;
-        else
-            return false;
-    }
-
-    public bool withinRange(float value, float min, float max)
-    {
-        if (value >= min && value <= max)
-            return true;
-        else
-            return false;
     }
 
     public int getNumCharacters()
@@ -185,10 +190,10 @@ public class ObjectDB : MonoBehaviour
 
     public float computeCurve(int curveInd, float time)
     {
-        if (withinRange(curveInd, 0, curves.Count - 1))
+        if (NMath.withinRange(curveInd, 0, curves.Count - 1))
         {
             float ret = 0.0f;
-            if (withinRange(time, curves[curveInd].curve.keys[0].time,
+            if (NMath.withinRange(time, curves[curveInd].curve.keys[0].time,
                 curves[curveInd].curve.keys[curves[curveInd].curve.keys.Length - 1].time))
             {
                 ret = curves[curveInd].curve.Evaluate(time);

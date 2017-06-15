@@ -130,7 +130,7 @@ public class NBCharacterController : MonoBehaviour
             sendCrouch(currentInputState.moveY);
             sendWalk(currentInputState.moveX);
             sendDash(currentInputState.moveX);
-            sendBlock(currentInputState.moveX, currentInputState.buttonBlock.wasPressed);
+            sendBlock(currentInputState.moveX, currentInputState.buttonBlock.isHeld);
             sendJump(currentInputState.moveY);
             sendLightAttack(currentInputState.lightAttack.wasPressed);
             sendHeavyAttack(currentInputState.heavyAttack.wasPressed, currentInputState.heavyAttack.isHeld);
@@ -262,10 +262,10 @@ public class NBCharacterController : MonoBehaviour
         }
     }
 
-    void sendBlock(float moveX, bool wasPressed)
+    void sendBlock(float moveX, bool isHeld)
     {
         CharacterState affectedStates = CharacterState.Idle | CharacterState.Crouch |
-            CharacterState.Walk;
+            CharacterState.Walk | CharacterState.Block;
         if ((currentCharacterState & affectedStates) != 0)
         {
             if (buttonBlock == false)
@@ -283,16 +283,16 @@ public class NBCharacterController : MonoBehaviour
                         if (opponentLeftCheck || opponentRightCheck)
                         {
                             sendTrigger("Block");
+                            sendBool("Block", true);
+                            return;
                         }
                     }
+                    sendBool("Block", false);
                 }
             }
             else
             {
-                if (wasPressed)
-                {
-                    sendTrigger("Block");
-                }
+                sendBool("Block", isHeld);
             }
         }
     }
@@ -482,6 +482,11 @@ public class NBCharacterController : MonoBehaviour
                 / anim.GetCurrentAnimatorStateInfo(0).length;
         }
         rb.velocity = new Vector2(vel, rb.velocity.y);
+    }
+
+    void doBlock()
+    {
+        
     }
 
     void doHeavyCharge()
