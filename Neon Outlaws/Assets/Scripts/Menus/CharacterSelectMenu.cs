@@ -92,10 +92,12 @@ public class CharacterSelectMenu : MonoBehaviour
                         if (i == 0)
                         {
                             player1Outline.transform.position = characterImages[menuInputListener.selectedCharacter].transform.position;
+                            FlashPlayerCursor(player1Outline, Color.white);
                         }
                         if (i == 1)
                         {
                             player2Outline.transform.position = characterImages[menuInputListener.selectedCharacter].transform.position;
+                            FlashPlayerCursor(player2Outline, Color.white);
                         }
                     }
                     // Stop selecting characters, go to back button
@@ -147,5 +149,10 @@ public class CharacterSelectMenu : MonoBehaviour
             stageSelectPanel.SetActive(true);
             menuEventSystem.SetSelectedGameObject(mainMenuButtons.startingStageSelectButton);
         }
+    }
+
+    public void FlashPlayerCursor(Image playerCursor, Color color)
+    {
+        playerCursor.color = color;
     }
 }
