@@ -14,7 +14,8 @@ public class MainMenu : MonoBehaviour {
     public UnityEngine.EventSystems.EventSystem menuEventSystem;
     public GameObject startingMainButton;
     public GameObject startingCharacterSelectButton;
-    public GameObject startingAudioButton;
+    public GameObject startingStageSelectButton;
+    public GameObject startingAudioButton;    
 
     void FixedUpdate()
     {

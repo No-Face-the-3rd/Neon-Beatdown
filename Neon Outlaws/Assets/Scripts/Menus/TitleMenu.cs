@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class TitleMenu : MonoBehaviour {
     public MainMenu mainMenuButtons;
     MenuInputListener menuInputListener;
@@ -23,8 +22,8 @@ public class TitleMenu : MonoBehaviour {
         if (menuInputListener != null)
         {
             TakeInput(menuInputListener.getCurState());
-            if (inputState.accept.wasPressed)
-                LoadMenuPanel();
+            //if (inputState.accept.wasPressed)
+            //    LoadMenuPanel();
         }
         else
         {

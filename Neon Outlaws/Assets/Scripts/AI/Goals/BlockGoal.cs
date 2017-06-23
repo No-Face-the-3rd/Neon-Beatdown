@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class BlockGoal : BaseGoal
 {
-    public AnimationCurve distance;
-    public AnimationCurve distanceW;
-    //from enemy
-    public AnimationCurve startupOfAttack;
-    public AnimationCurve startupOfAttackW;
-
+    [SerializeField]
+    private int disIn, disWIn, startIn, startWIn;
     protected override void Awake()
     {
         base.Awake();
@@ -22,11 +18,12 @@ public class BlockGoal : BaseGoal
         if (self.cil != null && self.enemyController != null)
         {
             float curDist = Mathf.Abs(self.selfController.transform.position.x - self.enemyController.transform.position.x);
-            curDist = Mathf.Clamp(curDist, distance.keys[0].time, distance.keys[distance.keys.Length - 1].time);
-            float randomNum = Random.value;
+            curDist = Mathf.Clamp(curDist, ObjectDB.data.getCurve(disIn).keys[0].time,
+                                           ObjectDB.data.getCurve(disIn).keys[ObjectDB.data.getCurve(disIn).keys.Length - 1].time);
+            //float randomNum = Random.value / 2;
 
-            int checkAttackThreshold = 3;
-            int ind = 0;
+            int checkAttackThreshold = 5;
+            int curEnemyStartup = 0;
             if (self.enemyController.stateQueue.Count > checkAttackThreshold)
             {
                 for (int i = self.enemyController.stateQueue.Count - 1;
@@ -36,15 +33,16 @@ public class BlockGoal : BaseGoal
                     || self.enemyController.stateQueue[i] == CharacterState.Heavy
                     || self.enemyController.stateQueue[i] == CharacterState.HeavyCharge)
                     {
-                        ind++;
+                        curEnemyStartup++;
                     }
                 }
             }
-            float desire = distance.Evaluate(curDist) + startupOfAttack.Evaluate(ind);
-            float desireWeight = distanceW.Evaluate(curDist) + startupOfAttackW.Evaluate(ind);
 
-            myValues.curveOutput = desire;
-            myValues.weight = desireWeight;
+            curves[0].value.inputToCurve  = curDist /*+ randomNum*/;
+            curves[0].weight.inputToCurve = curDist /*+ randomNum*/;
+
+            curves[1].value.inputToCurve  = curEnemyStartup;
+            curves[1].weight.inputToCurve = curEnemyStartup;
         }
         //send desire to enemy ai controller which basegoal already accomplishes
     }
