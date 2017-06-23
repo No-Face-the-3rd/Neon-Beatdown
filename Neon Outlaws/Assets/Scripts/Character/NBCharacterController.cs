@@ -109,28 +109,31 @@ public class NBCharacterController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(doInput)
+        if (doInput)
         {
-
-        }
-        if (cil != null)
-        {
-            takeInput(cil.getCurState());
-            if (inputQueue.Count > 0)
+            if (cil != null)
             {
-                InputState currentInputState = inputQueue[inputQueue.Count - 1];
-                sendCrouch(currentInputState.moveY);
-                sendWalk(currentInputState.moveX);
-                sendDash(currentInputState.moveX);
-                sendBlock(currentInputState.moveX, currentInputState.buttonBlock.wasPressed);
-                sendJump(currentInputState.moveY);
-                sendLightAttack(currentInputState.lightAttack.wasPressed);
-                sendHeavyAttack(currentInputState.heavyAttack.wasPressed, currentInputState.heavyAttack.isHeld);
+                takeInput(cil.getCurState());
+            }
+            else
+            {
+                cil = PlayerLocator.locator.getCombatListener(playerNum);
             }
         }
         else
         {
-            cil = PlayerLocator.locator.getCombatListener(playerNum);
+            takeInput(new InputState());
+        }
+        if (inputQueue.Count > 0)
+        {
+            InputState currentInputState = inputQueue[inputQueue.Count - 1];
+            sendCrouch(currentInputState.moveY);
+            sendWalk(currentInputState.moveX);
+            sendDash(currentInputState.moveX);
+            sendBlock(currentInputState.moveX, currentInputState.buttonBlock.isHeld);
+            sendJump(currentInputState.moveY);
+            sendLightAttack(currentInputState.lightAttack.wasPressed);
+            sendHeavyAttack(currentInputState.heavyAttack.wasPressed, currentInputState.heavyAttack.isHeld);
         }
 
         checkGrounded();
@@ -259,10 +262,10 @@ public class NBCharacterController : MonoBehaviour
         }
     }
 
-    void sendBlock(float moveX, bool wasPressed)
+    void sendBlock(float moveX, bool isHeld)
     {
         CharacterState affectedStates = CharacterState.Idle | CharacterState.Crouch |
-            CharacterState.Walk;
+            CharacterState.Walk | CharacterState.Block;
         if ((currentCharacterState & affectedStates) != 0)
         {
             if (buttonBlock == false)
@@ -280,16 +283,16 @@ public class NBCharacterController : MonoBehaviour
                         if (opponentLeftCheck || opponentRightCheck)
                         {
                             sendTrigger("Block");
+                            sendBool("Block", true);
+                            return;
                         }
                     }
+                    sendBool("Block", false);
                 }
             }
             else
             {
-                if (wasPressed)
-                {
-                    sendTrigger("Block");
-                }
+                sendBool("Block", isHeld);
             }
         }
     }
@@ -481,6 +484,11 @@ public class NBCharacterController : MonoBehaviour
         rb.velocity = new Vector2(vel, rb.velocity.y);
     }
 
+    void doBlock()
+    {
+        
+    }
+
     void doHeavyCharge()
     {
         heavyCharge++;
@@ -537,6 +545,8 @@ public class NBCharacterController : MonoBehaviour
         GameObject attack = ObjectDB.data.getAttack(attackIndices[attackIndex]);
         GameObject tmp = (GameObject)Instantiate(attack, transform.position, Quaternion.identity);
         DamageDealer damage = tmp.GetComponent<DamageDealer>();
+        AttackEffectData data = tmp.GetComponent<AttackEffectData>();
+        tmp.transform.position = tmp.transform.position + new Vector3(data.offset.x * Mathf.Sign(transform.localScale.x), data.offset.y, 0.0f);
         damage.owner = playerNum;
         damage.damage += damageModifier;
         tmp.transform.localScale = gameObject.transform.localScale;
@@ -547,6 +557,8 @@ public class NBCharacterController : MonoBehaviour
     {
         curHealth = maxHealth;
         currentCharacterState = CharacterState.Idle;
+        inputQueue = new List<InputState>();
+        stateQueue = new List<CharacterState>();
     }
 
 }
