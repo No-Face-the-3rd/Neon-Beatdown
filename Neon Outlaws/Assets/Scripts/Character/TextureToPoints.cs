@@ -102,7 +102,7 @@ public class ListWrapper
     public List<Vector2> subList;
 }
 
-[RequireComponent(typeof(LineRenderer))]
+
 [RequireComponent(typeof(PolygonCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
 public class TextureToPoints : MonoBehaviour {
@@ -133,8 +133,7 @@ public class TextureToPoints : MonoBehaviour {
     private int prevInd = 0;
     
     private PolygonCollider2D poly;
-    private LineRenderer lineRend;
-    private DrawCollider drawColl;
+    private MyLineRenderer drawColl;
 
     public bool showHitVisualizer = false;
     private SpriteRenderer sprRend;
@@ -149,10 +148,15 @@ public class TextureToPoints : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        showHitVisualization();
+	void LateUpdate () {
         string spriteInd = sprRend.sprite.name.Replace(sprRend.sprite.texture.name + "_", "");
         setPath(int.Parse(spriteInd));
+    }
+
+    void OnRenderObject()
+    {
+        showHitVisualization();
+
     }
 
     public Texture2D getSpriteSheet()
@@ -230,8 +234,7 @@ public class TextureToPoints : MonoBehaviour {
     }
     public void getLineRend()
     {
-        lineRend = GetComponent<LineRenderer>();
-        drawColl = GetComponent<DrawCollider>();
+        drawColl = GetComponent<MyLineRenderer>();
     }
 
     void setLineRend()
@@ -244,21 +247,17 @@ public class TextureToPoints : MonoBehaviour {
                 tmp.Add(new Vector3(colliderPoints[curInd].subList[i].x, colliderPoints[curInd].subList[i].y, -0.01f));
             }
             tmp.Add(new Vector3(colliderPoints[curInd].subList[0].x, colliderPoints[curInd].subList[0].y, -0.01f));
-            lineRend.numPositions = tmp.Count;
-            lineRend.SetPositions(tmp.ToArray());
-            drawColl.positions = new List<Vector3>(tmp.ToArray());
+            drawColl.setPoints(new List<Vector3>(tmp.ToArray()));
             drawColl.drawLine = showHitVisualizer;
+            //lineRend.numPositions = drawColl.lineMesh.vertices.Length;
+            //lineRend.SetPositions(drawColl.lineMesh.vertices);
         }
     }
     void clearLineRend()
     {
         if (prevInd != -1)
         {
-            lineRend.numPositions = 0;
-            Vector3[] tmp = new Vector3[0];
-            lineRend.SetPositions(tmp);
-            drawColl.positions = new List<Vector3>(tmp);
-
+            drawColl.setPoints(new List<Vector3>());
         }
     }
 }

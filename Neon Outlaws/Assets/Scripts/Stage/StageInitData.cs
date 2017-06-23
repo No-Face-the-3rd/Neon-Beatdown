@@ -12,6 +12,8 @@ public class StageInitData : MonoBehaviour {
         NBCameraController cam = FindObjectOfType<NBCameraController>();
         cam.minX = minX;
         cam.maxX = maxX;
+        cam.gameObject.transform.position = startingCameraPosition;
+        cam.gameObject.transform.rotation = Quaternion.Euler(startingCameraRotation);
 	}
 	
 	void Update () {

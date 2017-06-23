@@ -121,6 +121,7 @@ public class DeviceMapper : MonoBehaviour {
                 players.Add(new PlayerInfo(handle, acceptAction, declineAction, num, controller));
                 CombatInputListener cil = controller.GetComponent<CombatInputListener>();
                 MenuInputListener mil = controller.GetComponent<MenuInputListener>();
+                DontDestroyOnLoad(controller);
                 int index = players.Count - 1;
                 cil.bindInput(index);
                 mil.bindInput(index);                
