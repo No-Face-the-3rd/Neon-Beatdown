@@ -1573,7 +1573,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 472a3d291255fe04082875b2adb92916, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a889db1c9e77db14fa1f2b2d88aa20e6, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2740,6 +2740,8 @@ MonoBehaviour:
   nextAction: []
   actionsPerSec: 10
   transitionTimer: 0
+  flashTimerP1: 0
+  flashTimerP2: 0
 --- !u!114 &587286984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4421,6 +4423,8 @@ MonoBehaviour:
   nextAction: []
   actionsPerSec: 10
   transitionTimer: 0
+  flashTimerP1: 0
+  flashTimerP2: 0
 --- !u!114 &945123969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6445,7 +6449,6 @@ GameObject:
   - component: {fileID: 1409956830}
   - component: {fileID: 1409956832}
   - component: {fileID: 1409956831}
-  - component: {fileID: 1409956833}
   m_Layer: 5
   m_Name: CharacterSelectPanel
   m_TagString: Untagged
@@ -6517,36 +6520,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1409956829}
---- !u!114 &1409956833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1409956829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a7073013c9377f498b557789dea115a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainMenuButtons: {fileID: 1893067175}
-  menuEventSystem: {fileID: 871160144}
-  characterSelectPanel: {fileID: 1409956829}
-  stageSelectPanel: {fileID: 722814607}
-  mainMenuPanel: {fileID: 1841334992}
-  backButton: {fileID: 587286981}
-  playButton: {fileID: 945123966}
-  player1Outline: {fileID: 1579986729}
-  player2Outline: {fileID: 344504193}
-  characterImages:
-  - {fileID: 669699853}
-  - {fileID: 1427897286}
-  - {fileID: 2025308641}
-  - {fileID: 1025144880}
-  - {fileID: 984159562}
-  characterSelected: 
-  nextAction: []
-  actionsPerSec: 10
-  transitionTimer: 0
 --- !u!1 &1427897283
 GameObject:
   m_ObjectHideFlags: 0
@@ -7346,7 +7319,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 09c8e7efbcd90f545abf7e7404c05ad3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 572cafbb7af26e1428b283f9a33a94a4, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -8461,6 +8434,8 @@ MonoBehaviour:
   nextAction: []
   actionsPerSec: 10
   transitionTimer: 0
+  flashTimerP1: 0
+  flashTimerP2: 0
 --- !u!114 &1893067178
 MonoBehaviour:
   m_ObjectHideFlags: 0

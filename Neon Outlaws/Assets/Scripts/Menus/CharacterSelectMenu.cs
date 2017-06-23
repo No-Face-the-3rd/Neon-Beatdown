@@ -23,28 +23,52 @@ public class CharacterSelectMenu : MonoBehaviour
     public float[] nextAction;
     public float actionsPerSec = 10.0f;
     public float transitionTimer = 0.0f;
+    public float flashTimerP1 = 0.0f;
+    public float flashTimerP2 = 0.0f;
     bool allReady;
 
     void Awake()
     {
+        player1Outline.color = Color.red;
+        player2Outline.color = Color.blue;
+
         characterSelected = new bool[2];
         nextAction = new float[2];
     }
 
     void FixedUpdate()
     {
-        
+
         float transitionLimit = 5.0f;
         transitionTimer = (transitionTimer > transitionLimit) ? transitionTimer = transitionLimit : transitionTimer += Time.deltaTime;
         if (transitionTimer >= transitionLimit)
         {
+            if(flashTimerP1 >= .2f)
+            {
+                flashTimerP1 = 0.0f;
+                player1Outline.color = Color.red;
+            }
+            else if(player1Outline.color == Color.white || player1Outline.color == Color.black)
+            {
+                flashTimerP1 += Time.deltaTime;
+            }
+
+            if (flashTimerP2 >= .2f)
+            {
+                flashTimerP2 = 0.0f;
+                player2Outline.color = Color.blue;
+            }
+            else if (player2Outline.color == Color.white || player2Outline.color == Color.black)
+            {
+                flashTimerP2 += Time.deltaTime;
+            }
+
             float curTime = Time.unscaledTime;
             // For the number of players (max 2)
             for (int i = 0; i < DeviceMapper.mapper.maxPlayers; i++)
             {
                 menuInputListener = PlayerLocator.locator.getMenuListener(i + 1);
-
-                // Set menu input listener if null
+                // has menu input listener
                 if (menuInputListener != null)
                 {
                     inputState = TakeInput(menuInputListener.getCurState());
@@ -53,8 +77,17 @@ public class CharacterSelectMenu : MonoBehaviour
 
                     if (nextAction[i] < curTime && !menuInputListener.hasSelected)
                     {
+                        //character was selected
                         if (inputState.accept.wasPressed)
                         {
+                            if (i == 0)
+                            {
+                                ChangePlayerCursorColor(player1Outline, Color.white);
+                            }
+                            if(i == 1)
+                            {
+                                ChangePlayerCursorColor(player2Outline, Color.white);
+                            }
                             // If the random button is selected, select a new, random character
                             // - 1 makes it so that random can not be selected by the random button
                             if (menuInputListener.selectedCharacter == characterImages.Length - 1)
@@ -82,22 +115,31 @@ public class CharacterSelectMenu : MonoBehaviour
 
                     else
                     {
+
                         if (inputState.decline.wasReleased)
                         {
                             menuInputListener.hasSelected = false;
                             nextAction[i] = curTime + 1.0f / actionsPerSec;
+                            if (i == 0)
+                            {
+                                ChangePlayerCursorColor(player1Outline, Color.black);
+                            }
+                            if (i == 1)
+                            {
+                                ChangePlayerCursorColor(player2Outline, Color.black);
+                            }
                         }
 
                         // Set player outline positions
                         if (i == 0)
                         {
                             player1Outline.transform.position = characterImages[menuInputListener.selectedCharacter].transform.position;
-                            FlashPlayerCursor(player1Outline, Color.white);
+                            //player1Outline.color = Color.white;
                         }
                         if (i == 1)
                         {
                             player2Outline.transform.position = characterImages[menuInputListener.selectedCharacter].transform.position;
-                            FlashPlayerCursor(player2Outline, Color.white);
+                            //player2Outline.color = Color.white;
                         }
                     }
                     // Stop selecting characters, go to back button
@@ -151,7 +193,7 @@ public class CharacterSelectMenu : MonoBehaviour
         }
     }
 
-    public void FlashPlayerCursor(Image playerCursor, Color color)
+    public void ChangePlayerCursorColor(Image playerCursor, Color color)
     {
         playerCursor.color = color;
     }
