@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class NBCameraController : MonoBehaviour {
 
@@ -14,11 +15,15 @@ public class NBCameraController : MonoBehaviour {
     private Camera mainCam;
 
     private Vector3 panTarget;
+    private Vector3 prevTarget;
+    public AnimationCurve panSpeedCurve;
+    public AnimationCurve panOffsetCurve;
 
 	// Use this for initialization
 	void Start () {
         mainCam = GetComponent<Camera>();
         panTarget = transform.position;
+        prevTarget = panTarget;
 	}
 
     // Update is called once per frame
@@ -73,17 +78,19 @@ public class NBCameraController : MonoBehaviour {
         {
             Vector3 offset = Vector3.zero;
 
-            float curMinX = mainCam.ViewportToWorldPoint(new Vector3(0.0f,
+            float curMinX = mainCam.ViewportToWorldPoint(new Vector3(viewportEdgeBuffer,
                 edgeCharacters[0].character.transform.position.y,
                 edgeCharacters[0].zDist)).x;
-            float curMaxX = mainCam.ViewportToWorldPoint(new Vector3(1.0f,
+            float curMaxX = mainCam.ViewportToWorldPoint(new Vector3(1.0f - viewportEdgeBuffer,
                 edgeCharacters[0].character.transform.position.y,
                 edgeCharacters[0].zDist)).x;
             if ((leftEdge))
             {
                 if (curMinX > minX)
                 {
-                    offset.x = -1.0f * panOffset;
+                    float xToCompare = edgeCharacters.Min(charX =>
+                        charX.character.transform.position.x);
+                    offset.x = panOffsetCurve.Evaluate(curMinX - xToCompare);
                 }
                 else
                 {
@@ -92,7 +99,8 @@ public class NBCameraController : MonoBehaviour {
                         edgeCharacters[i].character.doIdle();
                         Vector3 charPos = mainCam.WorldToViewportPoint(
                             edgeCharacters[i].character.transform.position);
-                        edgeCharacters[i].character.transform.position = mainCam.ViewportToWorldPoint(
+                        edgeCharacters[i].character.transform.position =
+                            mainCam.ViewportToWorldPoint(
                             new Vector3(viewportEdgeBuffer, charPos.y, charPos.z));
                     }
                 }
@@ -101,7 +109,9 @@ public class NBCameraController : MonoBehaviour {
             {
                 if (curMaxX < maxX)
                 {
-                    offset.x = 1.0f * panOffset;
+                    float xToCompare = edgeCharacters.Max(charX =>
+                        charX.character.transform.position.x);
+                    offset.x = panOffsetCurve.Evaluate(curMaxX - xToCompare); 
                 }
                 else
                 {
@@ -110,13 +120,13 @@ public class NBCameraController : MonoBehaviour {
                         edgeCharacters[i].character.doIdle();
                         Vector3 charPos = mainCam.WorldToViewportPoint(
                             edgeCharacters[i].character.transform.position);
-                        edgeCharacters[i].character.transform.position = mainCam.ViewportToWorldPoint(
+                        edgeCharacters[i].character.transform.position = 
+                            mainCam.ViewportToWorldPoint(
                             new Vector3(1.0f - viewportEdgeBuffer, charPos.y, charPos.z));
                     }
                 }
             }
             setPanOffset(offset);
-
         }
         else if (leftEdge == true)
         {
@@ -135,14 +145,16 @@ public class NBCameraController : MonoBehaviour {
 
     public void doPan()
     {
-        Vector3 location = Vector3.Lerp(mainCam.transform.position,
-            panTarget, panSpeed * Vector3.Distance(mainCam.transform.position, panTarget));
+        Vector3 location = Vector3.Lerp(mainCam.transform.position, panTarget,
+            panSpeedCurve.Evaluate(Vector3.Distance(prevTarget,panTarget)) *
+            Vector3.Distance(mainCam.transform.position, panTarget));
         mainCam.transform.position = location;
     }
 
     public void setPanOffset(Vector3 offset)
     {
-        panTarget = mainCam.transform.position + offset;
+        prevTarget = panTarget;
+        panTarget = panTarget + offset;
     }
 }
 

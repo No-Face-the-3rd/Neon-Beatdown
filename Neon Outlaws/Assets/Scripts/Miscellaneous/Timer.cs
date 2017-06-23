@@ -1,6 +1,63 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+
+public static partial class JMath
+{
+    private const float defaultLeeway = 0.00001f;
+    public static bool withinRange(int value, int min, int max)
+    {
+        if (value >= min && value <= max)
+            return true;
+        else
+            return false;
+    }
+
+    public static bool withinRange(float value, float min, float max)
+    {
+        if (value >= min && value <= max)
+            return true;
+        else
+            return false;
+    }
+
+    public static bool Approximately(float first, float second, float leeway = defaultLeeway)
+    {
+        if (Mathf.Abs(Math.Abs(first) - Math.Abs(second)) < Math.Abs(leeway))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public static bool Approximately(Color first, Color second, float leeway = defaultLeeway, bool alphaDependant = false)
+    {
+        if (Approximately(first.r, second.r) &&
+            Approximately(first.g, second.g) &&
+            Approximately(first.b, second.b))
+        {
+            if (alphaDependant)
+            {
+                if (Approximately(first.a, second.a))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+}
 
 [System.Serializable]
 public class Timer {

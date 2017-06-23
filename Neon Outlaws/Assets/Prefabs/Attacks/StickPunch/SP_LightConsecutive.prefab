@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 61131832006140984}
   - component: {fileID: 114371080197879554}
   - component: {fileID: 114942152708570706}
+  - component: {fileID: 114953640788598506}
   m_Layer: 0
   m_Name: SP_LightConsecutive
   m_TagString: Untagged
@@ -53,7 +54,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 1.65, y: 4.8}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1.25, y: 1.25}
 --- !u!114 &114371080197879554
@@ -82,3 +83,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathTime:
     duration: 0.25
+--- !u!114 &114953640788598506
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1717720734949474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a842a0359f786429300a236105ecf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: {x: 1.65, y: 4.8}
+  zone:
+    min: {x: 0, y: 0}
+    max: {x: 0, y: 0}
+  type: 0
