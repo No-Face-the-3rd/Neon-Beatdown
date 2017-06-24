@@ -82,11 +82,11 @@ public class CharacterSelectMenu : MonoBehaviour
                         {
                             if (i == 0)
                             {
-                                ChangePlayerCursorColor(player1Outline, Color.white);
+                                player1Outline.color = Color.white;
                             }
                             if(i == 1)
                             {
-                                ChangePlayerCursorColor(player2Outline, Color.white);
+                                player2Outline.color = Color.white;
                             }
                             // If the random button is selected, select a new, random character
                             // - 1 makes it so that random can not be selected by the random button
@@ -122,11 +122,11 @@ public class CharacterSelectMenu : MonoBehaviour
                             nextAction[i] = curTime + 1.0f / actionsPerSec;
                             if (i == 0)
                             {
-                                ChangePlayerCursorColor(player1Outline, Color.black);
+                                player1Outline.color = Color.black;
                             }
                             if (i == 1)
                             {
-                                ChangePlayerCursorColor(player2Outline, Color.black);
+                                player2Outline.color = Color.black;
                             }
                         }
 
@@ -134,17 +134,16 @@ public class CharacterSelectMenu : MonoBehaviour
                         if (i == 0)
                         {
                             player1Outline.transform.position = characterImages[menuInputListener.selectedCharacter].transform.position;
-                            //player1Outline.color = Color.white;
                         }
                         if (i == 1)
                         {
                             player2Outline.transform.position = characterImages[menuInputListener.selectedCharacter].transform.position;
-                            //player2Outline.color = Color.white;
                         }
                     }
-                    // Stop selecting characters, go to back button
-                    //if (inputState.decline.wasPressed) {
-                    //    menuEventSystem.SetSelectedGameObject(backButton);
+                    // 
+                    //if (inputState.resume.wasPressed)
+                    //{
+                    //    Debug.Log("YES");
                     //}
                 }
             }
@@ -161,7 +160,7 @@ public class CharacterSelectMenu : MonoBehaviour
     {
         if (menuInputListener != null)
         {
-            if (menuInputListener.hasSelected = false && inputState.decline.wasPressed)
+            if (menuInputListener.hasSelected == false /*&& backButton*/)
             {
                 characterSelectPanel.SetActive(false);
                 mainMenuPanel.SetActive(true);
@@ -191,10 +190,5 @@ public class CharacterSelectMenu : MonoBehaviour
             stageSelectPanel.SetActive(true);
             menuEventSystem.SetSelectedGameObject(mainMenuButtons.startingStageSelectButton);
         }
-    }
-
-    public void ChangePlayerCursorColor(Image playerCursor, Color color)
-    {
-        playerCursor.color = color;
     }
 }
