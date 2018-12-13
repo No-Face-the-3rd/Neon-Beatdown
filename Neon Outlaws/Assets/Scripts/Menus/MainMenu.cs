@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour {
     public GameObject startingMainButton;
     public GameObject startingCharacterSelectButton;
     public GameObject startingStageSelectButton;
-    public GameObject startingAudioButton;    
+    public GameObject startingAudioButton;
 
     void FixedUpdate()
     {
